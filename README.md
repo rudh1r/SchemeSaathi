@@ -3,7 +3,8 @@ SchemeSaathi is a web-based conversational application that helps citizens disco
 
 Users can provide details such as age, income, occupation, location, education, and specific needs through a chat interface. The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant scheme information from its knowledge base and generate simple responses covering scheme details, eligibility, and benefits. The platform aims to simplify welfare scheme discovery and demonstrate the use of conversational AI for public-service information. 
 
-**7.2 Software Requirements:**
+**7.2 Software Requirements:**  
+
 **Programming Language:**	Python, JavaScript  
 
 **Frontend:**	React.js, HTML, CSS  
