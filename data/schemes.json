@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "PM Kisan Samman Nidhi",
+    "category": "Agriculture",
+    "beneficiary": "Farmers",
+    "description": "Income support of 6,000 per year to all landholding farmer families."
+  },
+  {
+    "id": 2,
+    "name": "Ayushman Bharat PM-JAY",
+    "category": "Healthcare",
+    "beneficiary": "Low Income Families",
+    "description": "Provides health coverage of up to 5 lakhs per family per year for secondary and tertiary care hospitalization."
+  }
+]
