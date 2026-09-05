@@ -1,16 +1,167 @@
 [
   {
-    "id": 1,
-    "name": "PM Kisan Samman Nidhi",
-    "category": "Agriculture",
-    "beneficiary": "Farmers",
-    "description": "Income support of 6,000 per year to all landholding farmer families."
+    "scheme_name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "description": "Direct income support scheme for farmer families, providing financial assistance in three equal installments per year to help meet agricultural and household needs.",
+    "benefits": "Rs. 6,000 per year, paid in three installments of Rs. 2,000 each directly to bank accounts.",
+    "application_process": "Apply online via the PM-KISAN portal or through the nearest Common Service Centre (CSC) with Aadhaar and land records.",
+    "source_url": "https://pmkisan.gov.in/",
+    "eligibility": {
+      "age_requirement": "No specific age limit",
+      "income_requirement": "Small and marginal farmer families",
+      "occupation": "Farmer / landholding agricultural family",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must hold cultivable land in family's name; excludes institutional landholders and high-income taxpayers"
+    }
   },
   {
-    "id": 2,
-    "name": "Ayushman Bharat PM-JAY",
-    "category": "Healthcare",
-    "beneficiary": "Low Income Families",
-    "description": "Provides health coverage of up to 5 lakhs per family per year for secondary and tertiary care hospitalization."
+    "scheme_name": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "description": "Housing scheme offering subsidized home loan interest rates to help economically weaker sections, low-income, and middle-income groups own a home.",
+    "benefits": "Interest subsidy on home loans, reducing effective EMI burden for eligible applicants.",
+    "application_process": "Apply online through the PMAY official portal or via participating banks/lending institutions.",
+    "source_url": "https://pmaymis.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ (adult applicant)",
+      "income_requirement": "EWS/LIG/MIG income categories as per government slabs",
+      "occupation": "Any",
+      "location": "Urban and rural areas",
+      "education": "No requirement",
+      "other_conditions": "Applicant or family should not own a pucca house anywhere in India"
+    }
+  },
+  {
+    "scheme_name": "Ayushman Bharat PM-JAY",
+    "description": "National health insurance scheme providing cashless hospitalization coverage, recently expanded to include all senior citizens aged 70 and above regardless of income.",
+    "benefits": "Health cover of Rs. 5 lakh per family per year for secondary and tertiary care hospitalization.",
+    "application_process": "Check eligibility and apply via the PM-JAY portal or nearest Ayushman Bharat empanelled hospital/CSC.",
+    "source_url": "https://pmjay.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages; automatic inclusion for citizens 70+",
+      "income_requirement": "SECC deprivation criteria for general beneficiaries; no income limit for 70+ category",
+      "occupation": "Any",
+      "location": "All states and UTs (state participation varies)",
+      "education": "No requirement",
+      "other_conditions": "Family must be listed under SECC database or qualify under the 70+ expansion"
+    }
+  },
+  {
+    "scheme_name": "PM Surya Ghar Muft Bijli Yojana",
+    "description": "Rooftop solar scheme aiming to provide free electricity to households by subsidizing solar panel installation costs.",
+    "benefits": "Up to 300 units of free electricity per month; subsidy of up to Rs. 78,000 depending on system capacity.",
+    "application_process": "Register on the PM Surya Ghar portal, select a vendor, and apply for rooftop solar installation.",
+    "source_url": "https://pmsuryaghar.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "No specific limit",
+      "occupation": "Homeowner",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must own a residential rooftop suitable for solar installation"
+    }
+  },
+  {
+    "scheme_name": "PM SVANidhi",
+    "description": "Micro-credit scheme designed to provide affordable working capital loans to urban street vendors affected by economic disruptions.",
+    "benefits": "Collateral-free loans starting at Rs. 10,000, with higher loan tiers on timely repayment; interest subsidy on repayment.",
+    "application_process": "Apply through the PM SVANidhi portal or via Urban Local Bodies (ULBs) with vendor certificate/ID.",
+    "source_url": "https://pmsvanidhi.mohua.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "Street vendor category (low-income)",
+      "occupation": "Street vendor",
+      "location": "Urban areas",
+      "education": "No requirement",
+      "other_conditions": "Must possess a Certificate of Vending or be identified in the ULB survey"
+    }
+  },
+  {
+    "scheme_name": "Atal Pension Yojana",
+    "description": "Government-backed pension scheme targeted at workers in the unorganized sector, ensuring a fixed monthly pension after age 60.",
+    "benefits": "Guaranteed monthly pension ranging from Rs. 1,000 to Rs. 5,000 after age 60, based on contribution amount.",
+    "application_process": "Apply through participating banks or post offices with a linked savings account.",
+    "source_url": "https://npscra.nsdl.co.in/scheme-details.php",
+    "eligibility": {
+      "age_requirement": "18 to 40 years at enrollment",
+      "income_requirement": "Primarily for unorganized sector workers",
+      "occupation": "Unorganized sector worker",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must have a savings bank account or post office savings account"
+    }
+  },
+  {
+    "scheme_name": "PMAY-Gramin (PMAYG)",
+    "description": "Rural housing scheme aimed at providing pucca houses with basic amenities to households currently living in kutcha or dilapidated houses.",
+    "benefits": "Financial assistance for construction of a pucca house with amenities such as toilet, LPG connection, and electricity.",
+    "application_process": "Beneficiaries are identified via the Awaas+ survey; apply through the Gram Panchayat or PMAYG portal.",
+    "source_url": "https://pmayg.nic.in/",
+    "eligibility": {
+      "age_requirement": "No specific limit",
+      "income_requirement": "BPL / SECC-identified households",
+      "occupation": "Any",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "Household should not already own a pucca house"
+    }
+  },
+  {
+    "scheme_name": "PM Vishwakarma",
+    "description": "Support scheme for traditional artisans and craftspeople across 18 identified trades, providing skill training, toolkits, and credit access.",
+    "benefits": "Toolkit incentive, skill training stipend, and collateral-free credit up to Rs. 3 lakh in two tranches.",
+    "application_process": "Register via the PM Vishwakarma portal or nearest Common Service Centre with proof of trade.",
+    "source_url": "https://pmvishwakarma.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "No specific limit",
+      "occupation": "Artisan/craftsperson in one of 18 identified trades",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must be engaged in one of the specified trades (carpentry, blacksmithing, pottery, etc.)"
+    }
+  },
+  {
+    "scheme_name": "Mission Vatsalya",
+    "description": "Umbrella child protection and welfare scheme focusing on children in difficult circumstances, including orphans and children in conflict with the law.",
+    "benefits": "Institutional and non-institutional care, foster care support, adoption facilitation, and welfare services for children in need.",
+    "application_process": "Accessed through State Child Protection Societies and District Child Protection Units.",
+    "source_url": "https://wcd.gov.in/schemes-and-boards/schemes/mission-vatsalya",
+    "eligibility": {
+      "age_requirement": "0 to 18 years (children)",
+      "income_requirement": "No specific limit",
+      "occupation": "N/A",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Applicable to children in difficult circumstances, orphans, or those in conflict with law"
+    }
+  },
+  {
+    "scheme_name": "PM Ujjwala Yojana",
+    "description": "Scheme providing LPG gas connections to women from below-poverty-line households, with an ongoing per-cylinder subsidy renewed for FY 2026-27.",
+    "benefits": "Free LPG connection plus a subsidy of Rs. 300 per cylinder for eligible beneficiaries.",
+    "application_process": "Apply through nearest LPG distributor with BPL/income certificate and Aadhaar.",
+    "source_url": "https://www.pmuy.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "BPL / low-income household",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Applicant must be a woman from an eligible BPL household without an existing LPG connection"
+    }
+  },
+  {
+    "scheme_name": "PM Rahat Scheme",
+    "description": "Newly launched scheme providing free cashless medical treatment to victims of road accidents, regardless of fault or insurance status.",
+    "benefits": "Cashless medical treatment up to Rs. 1.5 lakh for road accident victims.",
+    "application_process": "Treatment is provided automatically at network hospitals following a road accident; no prior application needed.",
+    "source_url": "https://morth.gov.in/",
+    "eligibility": {
+      "age_requirement": "No specific limit",
+      "income_requirement": "No specific limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Applicable to any victim of a road accident on Indian roads, launched 14 February 2026"
+    }
   }
 ]
