@@ -38,7 +38,7 @@ function SchemeCard({ scheme }) {
         ))}
       </div>
 
-      
+      <a
         href={scheme.source_url}
         target="_blank"
         rel="noopener noreferrer"

@@ -7,13 +7,15 @@ Users can provide details such as age, income, occupation, location, education, 
 
 **Programming Language:**	Python, JavaScript  
 
-**Frontend:**	React.js, HTML, CSS  
+**Frontend:**	React.js + Vite, HTML, CSS  
 
-**Backend/API:**	Python, FastAPI  
+**Backend/API:** Express, Node.js
 
 **AI/NLP:**	Large Language Model (LLM), Embedding Model, Retrieval-Augmented Generation (RAG)  
 
-**Vector Database:**	ChromaDB / FAISS or equivalent vector store  
+**Vector Database:**	ChromaDB  
+
+**LLM:** Groq
 
 **Database:**	MongoDB / PostgreSQL, depending on implementation requirements  
 
