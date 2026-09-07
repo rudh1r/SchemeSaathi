@@ -1,50 +1,32 @@
-import { useState, useEffect } from 'react';
-import './App.css';
+import { useState, useRef, useEffect } from 'react';
 
-function App() {
-  const [schemes, setSchemes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const API_BASE = 'http://localhost:5000';
 
-  useEffect(() => {
-    fetch('http://localhost:5000/api/schemes')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Failed to fetch schemes');
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setSchemes(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
+function SchemeCard({ scheme }) {
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
-      <h1>SchemeSaathi</h1>
-      <p>Your welfare scheme recommendation platform</p>
+    <div className="bg-white border border-border rounded-md p-4 flex-1 min-w-[260px]">
+      <div className="flex justify-between items-start mb-2">
+        <span className="text-xs font-semibold text-muted uppercase tracking-wide">
+          Central Scheme
+        </span>
+        <span className="text-xs px-2 py-0.5 rounded-sm border border-secondary text-secondary bg-secondary-light font-semibold">
+          Verified
+        </span>
+      </div>
+      <h3 className="font-serif font-semibold text-lg text-primary mb-2">
+        {scheme.scheme_name}
+      </h3>
+      <p className="text-sm text-muted mb-3">{scheme.description}</p>
 
-      <h2>Available Schemes</h2>
-      {loading && <p>Loading schemes...</p>}
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+      <div className="border-t border-border pt-3 mb-3">
+        <p className="text-xs text-muted mb-1">Benefit</p>
+        <p className="text-base font-serif font-semibold text-primary">{scheme.benefits}</p>
+      </div>
 
-      <ul>
-        {schemes.map((scheme) => (
-          <li key={scheme.id} style={{ marginBottom: '1.5rem', background: '#f9f9f9', padding: '1rem', borderRadius: '8px' }}>
-            <h3>{scheme.name}</h3>
-            <p><strong>Category:</strong> {scheme.category}</p>
-            <p><strong>Beneficiary:</strong> {scheme.beneficiary}</p>
-            <p>{scheme.description}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default App;
+      <div className="border-t border-border pt-3 mb-4">
+        <p className="text-xs font-semibold text-primary mb-1">Eligibility</p>
+        <ul className="text-sm text-muted space-y-1">
+          {scheme.eligibility && Object.entries(scheme.eligibility).map(([key, value]) => (
+            <li key={key}>✓ {value}</li>
+          ))}
+        </ul>
