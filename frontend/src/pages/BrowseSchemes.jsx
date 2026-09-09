@@ -308,7 +308,7 @@ export default function BrowseSchemes() {
 
       <SiteHeader active="schemes" />
 
-      <main className="pt-20 max-w-6xl mx-auto px-6 py-5">
+      <main className="pt-28 max-w-6xl mx-auto px-6 py-5">
 
         {/* Page Header */}
         <div className="mb-6">

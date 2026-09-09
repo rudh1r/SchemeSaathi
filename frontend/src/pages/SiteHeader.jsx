@@ -1,5 +1,34 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserCheck, Sun, CircleUserRound, Menu } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+
+function AccountButton() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  if (!user) {
+    return (
+      <Link
+        to="/login"
+        className="w-8 h-8 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center shrink-0 text-primary hover:bg-surface-container transition-colors"
+      >
+        <CircleUserRound size={18} />
+      </Link>
+    );
+  }
+
+  return (
+    <div className="hidden sm:flex items-center gap-2">
+      <span className="text-[13px] font-semibold text-primary">Hi, {user.name.split(' ')[0]}</span>
+      <button
+        onClick={() => { logout(); navigate('/'); }}
+        className="text-[11px] px-2 py-1 border border-outline-variant rounded text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors"
+      >
+        Logout
+      </button>
+    </div>
+  );
+}
 
 // Shared header for public-facing pages (Home, About). Chat/Eligibility/Browse
 // use the app Sidebar layout instead — this is just for the marketing-style pages.
@@ -62,9 +91,7 @@ export default function SiteHeader({ active }) {
             <UserCheck size={17} />
             <span>Check Eligibility</span>
           </Link>
-          <div className="w-8 h-8 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
-            <CircleUserRound size={18} />
-          </div>
+          <AccountButton />
           <button aria-label="Open navigation menu" className="lg:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface" type="button">
             <Menu size={20} />
           </button>

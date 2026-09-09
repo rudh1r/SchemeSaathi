@@ -4,6 +4,7 @@ import Chat from "./pages/Chat";
 import EligibilityForm from "./pages/EligibilityForm";
 import BrowseSchemes from "./pages/BrowseSchemes";
 import About from "./pages/About";
+import Auth from "./pages/Auth";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/eligibility" element={<EligibilityForm />} />
         <Route path="/schemes" element={<BrowseSchemes />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Auth />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

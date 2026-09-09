@@ -43,7 +43,7 @@ export default function Home() {
     <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen">
       <SiteHeader active="home" />
 
-      <main className="w-full pt-20 bg-surface">
+      <main className="w-full pt-28 bg-surface">
         <div className="flex flex-col w-full">
 
           <section className="relative w-full border-b border-outline-variant bg-surface-container-low/40 pt-10 pb-12">
