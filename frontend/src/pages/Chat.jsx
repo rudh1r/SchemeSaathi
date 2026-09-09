@@ -1,61 +1,38 @@
 import { useState, useRef, useEffect } from 'react';
 import SiteHeader from './SiteHeader';
-import { useLanguage } from '../context/LanguageContext.jsx';
+import { useLanguage } from '../context/LanguageContext';
 
 const API_BASE = 'http://localhost:5000';
-
-const SUGGESTED_PROMPTS = [
-  "I'm a farmer with 1.5 acres, what schemes can I get?",
-  "Schemes for a below-poverty-line household needing a house",
-  "Health coverage for a senior citizen",
-  "Support for a traditional artisan or craftsperson",
-];
 
 function SchemeCard({ scheme }) {
   return (
     <div className="bg-white border border-border rounded-sm flex flex-col p-4">
       <div className="flex items-start justify-between border-b border-border pb-2 mb-3">
         <div>
-          <span className="text-[11px] font-semibold text-muted uppercase block">
-            Central Scheme
-          </span>
-
-          <h3 className="font-serif text-[17px] font-bold text-primary leading-tight mt-0.5">
-            {scheme.scheme_name}
-          </h3>
+          <span className="text-[11px] font-semibold text-muted uppercase block">Central Scheme</span>
+          <h3 className="font-serif text-[17px] font-bold text-primary leading-tight mt-0.5">{scheme.scheme_name}</h3>
         </div>
-
         <span className="inline-block bg-secondary-light border border-secondary/30 text-secondary text-[11px] font-bold px-2 py-0.5 rounded-sm shrink-0">
           Verified
         </span>
       </div>
 
       <div className="bg-parchment border border-border rounded-sm p-3 mb-3">
-        <span className="text-[11px] font-bold text-secondary uppercase block">
-          Benefit
-        </span>
-
-        <span className="font-serif text-[18px] font-bold text-primary block leading-tight">
-          {scheme.benefits}
-        </span>
+        <span className="text-[11px] font-bold text-secondary uppercase block">Benefit</span>
+        <span className="font-serif text-[18px] font-bold text-primary block leading-tight">{scheme.benefits}</span>
       </div>
 
       <div className="flex-1 text-[12px] space-y-1.5 mb-4 border-b border-border pb-3">
-        <span className="text-[11px] font-bold text-primary uppercase block mb-1">
-          Eligibility
-        </span>
-
-        {scheme.eligibility &&
-          Object.values(scheme.eligibility).map((v, i) => (
-            <div key={i} className="flex items-start gap-1.5">
-              <span className="text-secondary shrink-0">✓</span>
-              <span className="text-muted">{v}</span>
-            </div>
-          ))}
+        <span className="text-[11px] font-bold text-primary uppercase block mb-1">Eligibility</span>
+        {scheme.eligibility && Object.values(scheme.eligibility).map((v, i) => (
+          <div key={i} className="flex items-start gap-1.5">
+            <span className="text-secondary shrink-0">✓</span>
+            <span className="text-muted">{v}</span>
+          </div>
+        ))}
       </div>
 
-      {/* FIXED: opening <a> tag was missing */}
-      <a
+      
         href={scheme.source_url}
         target="_blank"
         rel="noopener noreferrer"
@@ -111,13 +88,13 @@ function ChatMessage({ message }) {
 export default function Chat() {
   const { t } = useLanguage();
   const [messages, setMessages] = useState([
-    {
-      role: 'assistant',
-text: t('chat_intro'),    },
+    { role: 'assistant', text: t('chat_intro') },
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
+
+  const SUGGESTED_PROMPTS = [t('prompt1'), t('prompt2'), t('prompt3'), t('prompt4')];
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -153,11 +130,11 @@ text: t('chat_intro'),    },
     <div className="min-h-screen bg-parchment flex flex-col">
       <SiteHeader active="chat" />
 
-      <div className="flex-1 flex flex-col pt-28 h-screen">
+      <div className="flex-1 flex flex-col pt-24 h-screen">
         <main className="flex-1 overflow-y-auto px-6 py-5 max-w-5xl w-full mx-auto">
           <div className="w-full bg-secondary-light border-l-4 border-secondary border-y border-r border-border px-4 py-2.5 rounded-sm mb-6 flex items-center gap-2.5 text-[13px] text-primary font-medium">
             <span className="text-secondary">✓</span>
-            Answers are grounded only in the verified scheme database — nothing is invented.
+            {t('chat_banner')}
           </div>
 
           <div className="flex flex-col gap-6">
@@ -173,7 +150,7 @@ text: t('chat_intro'),    },
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse [animation-delay:200ms]" />
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse [animation-delay:400ms]" />
                   </span>
-                  Searching the scheme knowledge base and generating a grounded answer…
+                  {t('chat_thinking')}
                 </div>
               </div>
             )}
@@ -184,7 +161,7 @@ text: t('chat_intro'),    },
         <div className="border-t border-border bg-white p-3.5 shrink-0">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-2">
-              <span className="text-[11px] font-bold text-muted uppercase shrink-0">Try:</span>
+              <span className="text-[11px] font-bold text-muted uppercase shrink-0">{t('chat_try_label')}</span>
               {SUGGESTED_PROMPTS.map((prompt) => (
                 <button
                   key={prompt}
@@ -201,7 +178,7 @@ text: t('chat_intro'),    },
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && sendQuery(input)}
-                placeholder="Ask placeholder={t('chat_placeholder')}in English (e.g. 'How do I apply for Kisan Credit Card?')"
+                placeholder={t('chat_placeholder')}
                 className="w-full bg-transparent text-[14px] text-primary placeholder:text-muted focus:outline-none"
               />
               <button
@@ -213,7 +190,7 @@ text: t('chat_intro'),    },
               </button>
             </div>
             <p className="flex items-center gap-1 mt-2 text-[11px] text-muted">
-              This is an academic assistance tool. Always confirm details on the official scheme portal before applying.
+              {t('chat_disclaimer')}
             </p>
           </div>
         </div>
