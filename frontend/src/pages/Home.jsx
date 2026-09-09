@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import {
-  CheckCircle2, Bot, UserCheck, CircleUserRound, Sun,
-  ChevronDown, Mic, Search, ShieldCheck, CheckSquare,
-  FileCheck, Package, Menu, User
+  CheckCircle2, Bot, FileCheck, ChevronDown, Mic, Search,
+  CheckSquare, Package, User
 } from 'lucide-react';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
 
 const TESTIMONIALS = [
   {
@@ -40,56 +41,7 @@ function PlaceholderAvatar() {
 export default function Home() {
   return (
     <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
-        <div className="h-20 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center text-[10px] font-semibold text-on-surface-variant">
-              LOGO
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold">
-                  SchemeSaathi
-                </span>
-                <span className="hidden sm:inline-block border border-outline-variant bg-surface-container-low text-primary px-1.5 py-0.5 rounded text-[11px] font-semibold">
-                  Beta
-                </span>
-              </div>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">
-                Civic Welfare Copilot
-              </span>
-            </div>
-          </div>
-
-          <nav className="hidden lg:flex items-center gap-1 border-x border-outline-variant px-3 py-1">
-            <Link className="bg-primary text-on-primary font-semibold px-3 py-1.5 rounded text-label-md" to="/">Home</Link>
-            <Link className="text-on-surface-variant hover:text-primary px-3 py-1.5 font-label-md text-label-md transition-colors" to="/chat">Chat Assistant</Link>
-            <Link className="text-on-surface-variant hover:text-primary px-3 py-1.5 font-label-md text-label-md transition-colors" to="/eligibility">Check Eligibility</Link>
-            <Link className="text-on-surface-variant hover:text-primary px-3 py-1.5 font-label-md text-label-md transition-colors" to="/schemes">Browse Schemes</Link>
-            <Link className="text-on-surface-variant hover:text-primary px-3 py-1.5 font-label-md text-label-md transition-colors" to="/about">About</Link>
-          </nav>
-
-          <div className="flex items-center gap-2.5">
-            <div className="relative hidden sm:flex items-center border border-outline-variant bg-surface-container-low rounded p-0.5 gap-0.5">
-              <button type="button" className="px-2.5 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-primary text-on-primary shadow-sm">English</button>
-              <button type="button" className="px-2.5 py-0.5 rounded font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-primary transition-colors">हिन्दी</button>
-            </div>
-            <button aria-label="Toggle color mode" className="w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button">
-              <Sun size={18} />
-            </button>
-            <Link className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded bg-secondary text-on-secondary hover:bg-[#155734] transition-all font-label-md text-label-md font-semibold border border-[#155734]" to="/eligibility">
-              <UserCheck size={17} />
-              <span>Check Eligibility</span>
-            </Link>
-            <div className="w-8 h-8 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
-              <CircleUserRound size={18} />
-            </div>
-            <button aria-label="Open navigation menu" className="lg:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface" type="button">
-              <Menu size={20} />
-            </button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="home" />
 
       <main className="w-full pt-20 bg-surface">
         <div className="flex flex-col w-full">
@@ -352,7 +304,7 @@ export default function Home() {
 
           <div className="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest border-t border-outline-variant p-2.5 md:hidden flex items-center justify-between gap-2 shadow-sm">
             <div className="flex items-center gap-2 pl-1">
-              <UserCheck size={20} className="text-secondary" />
+              <CheckCircle2 size={20} className="text-secondary" />
               <div className="flex flex-col">
                 <span className="font-label-md text-label-md font-bold text-primary leading-tight">Check Welfare</span>
                 <span className="font-label-sm text-label-sm text-on-surface-variant">[N] Active Schemes</span>
@@ -365,45 +317,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="w-full bg-surface-container-lowest border-t border-outline-variant mt-12">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
-          <div className="border border-outline-variant bg-surface-container-low rounded p-4 mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-            <div className="flex items-start gap-2.5">
-              <ShieldCheck size={20} className="text-secondary shrink-0 mt-0.5" />
-              <div>
-                <span className="font-label-sm text-label-sm font-bold text-primary block">Civic &amp; Academic Notice</span>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-                  SchemeSaathi is an academic final-year project — not an official Government of India platform. Scheme data is compiled from public gazettes and open portals for demonstration purposes.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pb-6">
-            <div className="md:col-span-2 flex flex-col gap-2">
-              <span className="font-headline-sm text-[16px] font-bold text-primary">SchemeSaathi</span>
-              <p className="font-body-sm text-body-sm text-on-surface-variant max-w-md">
-                A RAG-based assistant helping citizens discover relevant government welfare schemes through natural-language conversation.
-              </p>
-            </div>
-            <div>
-              <span className="font-label-md text-label-md font-bold text-primary mb-2 block">Quick Links</span>
-              <ul className="flex flex-col gap-1.5">
-                <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/">Privacy Policy</Link></li>
-                <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/">Terms of Service</Link></li>
-              </ul>
-            </div>
-            <div>
-              <span className="font-label-md text-label-md font-bold text-primary mb-2 block">Project</span>
-              <ul className="flex flex-col gap-1.5">
-                <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/about">About</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-4 border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-2 font-label-md text-label-md text-on-surface-variant text-center sm:text-left">
-            <span>© 2026 SchemeSaathi — Dronacharya Group of Institutions</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

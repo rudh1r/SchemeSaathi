@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import EligibilityForm from "./pages/EligibilityForm";
 import BrowseSchemes from "./pages/BrowseSchemes";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/eligibility" element={<EligibilityForm />} />
         <Route path="/schemes" element={<BrowseSchemes />} />
-        <Route path="/about" element={<div>About - Coming Soon</div>} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
