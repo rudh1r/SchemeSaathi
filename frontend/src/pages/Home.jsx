@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import { useLanguage } from '../context/LanguageContext.jsx';
 
 const TESTIMONIALS = [
   {
@@ -39,6 +40,7 @@ function PlaceholderAvatar() {
 }
 
 export default function Home() {
+  const { t } = useLanguage();
   return (
     <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen">
       <SiteHeader active="home" />
@@ -50,20 +52,20 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col items-center text-center">
               <div className="max-w-4xl flex flex-col items-center gap-2 mb-4">
                 <h1 className="font-headline-xl text-[34px] sm:text-[40px] text-primary tracking-tight leading-[1.2]">
-                  Find the Government Schemes You Are Eligible For Instantly
-                </h1>
+  {t('hero_title')}
+</h1>
               </div>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8 leading-normal">
-                Describe your profile in plain Hindi or English, or complete a structured 2-minute eligibility check. Our civic engine cross-evaluates demographic, income, and state criteria against verified gazette guidelines.
-              </p>
+  {t('hero_subtitle')}
+</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-10">
                 <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container border border-primary transition-all" to="/eligibility">
                   <CheckCircle2 size={18} />
-                  <span>Check Your Eligibility</span>
+                  <span>{t('hero_cta_primary')}</span>
                 </Link>
                 <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded bg-surface-container-lowest text-primary font-label-lg text-label-lg font-semibold border border-outline-variant hover:bg-surface-container-low transition-all" to="/chat">
                   <Bot size={18} className="text-secondary" />
-                  <span>Consult SchemeSaathi Assistant</span>
+                 <span>{t('hero_cta_secondary')}</span>
                 </Link>
               </div>
             </div>

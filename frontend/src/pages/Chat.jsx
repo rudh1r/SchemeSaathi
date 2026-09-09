@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import SiteHeader from './SiteHeader';
+import { useLanguage } from '../context/LanguageContext.jsx';
 
 const API_BASE = 'http://localhost:5000';
 
@@ -108,11 +109,11 @@ function ChatMessage({ message }) {
 }
 
 export default function Chat() {
+  const { t } = useLanguage();
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      text: "Hello! Describe your situation — occupation, income, land, location, or specific needs — and I'll find welfare schemes you may be eligible for, grounded in verified scheme data.",
-    },
+text: t('chat_intro'),    },
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -152,7 +153,7 @@ export default function Chat() {
     <div className="min-h-screen bg-parchment flex flex-col">
       <SiteHeader active="chat" />
 
-      <div className="flex-1 flex flex-col pt-20 h-screen">
+      <div className="flex-1 flex flex-col pt-28 h-screen">
         <main className="flex-1 overflow-y-auto px-6 py-5 max-w-5xl w-full mx-auto">
           <div className="w-full bg-secondary-light border-l-4 border-secondary border-y border-r border-border px-4 py-2.5 rounded-sm mb-6 flex items-center gap-2.5 text-[13px] text-primary font-medium">
             <span className="text-secondary">✓</span>
@@ -200,7 +201,7 @@ export default function Chat() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && sendQuery(input)}
-                placeholder="Ask in English (e.g. 'How do I apply for Kisan Credit Card?')"
+                placeholder="Ask placeholder={t('chat_placeholder')}in English (e.g. 'How do I apply for Kisan Credit Card?')"
                 className="w-full bg-transparent text-[14px] text-primary placeholder:text-muted focus:outline-none"
               />
               <button
@@ -208,7 +209,7 @@ export default function Chat() {
                 disabled={loading}
                 className="h-9 px-4 rounded-sm bg-primary hover:bg-primary-dark text-white text-[13px] font-semibold transition-colors ml-2 shrink-0 disabled:opacity-50"
               >
-                Ask
+                {t('chat_ask_btn')}
               </button>
             </div>
             <p className="flex items-center gap-1 mt-2 text-[11px] text-muted">

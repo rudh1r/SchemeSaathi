@@ -1,9 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { UserCheck, Sun, CircleUserRound, Menu } from 'lucide-react';
+import { UserCheck, Sun, Moon, CircleUserRound, Menu } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext.jsx';
+import { useTheme } from '../context/ThemeContext';
 
 function AccountButton() {
   const { user, logout } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   if (!user) {
@@ -19,26 +22,27 @@ function AccountButton() {
 
   return (
     <div className="hidden sm:flex items-center gap-2">
-      <span className="text-[13px] font-semibold text-primary">Hi, {user.name.split(' ')[0]}</span>
+      <span className="text-[13px] font-semibold text-primary">{t('login_hi')}, {user.name.split(' ')[0]}</span>
       <button
         onClick={() => { logout(); navigate('/'); }}
         className="text-[11px] px-2 py-1 border border-outline-variant rounded text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors"
       >
-        Logout
+        {t('logout_btn')}
       </button>
     </div>
   );
 }
 
-// Shared header for public-facing pages (Home, About). Chat/Eligibility/Browse
-// use the app Sidebar layout instead — this is just for the marketing-style pages.
 export default function SiteHeader({ active }) {
+  const { language, setLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+
   const links = [
-    { key: 'home', label: 'Home', to: '/' },
-    { key: 'chat', label: 'Chat Assistant', to: '/chat' },
-    { key: 'eligibility', label: 'Check Eligibility', to: '/eligibility' },
-    { key: 'schemes', label: 'Browse Schemes', to: '/schemes' },
-    { key: 'about', label: 'About', to: '/about' },
+    { key: 'home', label: t('nav_home'), to: '/' },
+    { key: 'chat', label: t('nav_chat'), to: '/chat' },
+    { key: 'eligibility', label: t('nav_eligibility'), to: '/eligibility' },
+    { key: 'schemes', label: t('nav_schemes'), to: '/schemes' },
+    { key: 'about', label: t('nav_about'), to: '/about' },
   ];
 
   return (
@@ -81,15 +85,36 @@ export default function SiteHeader({ active }) {
 
         <div className="flex items-center gap-2.5">
           <div className="relative hidden sm:flex items-center border border-outline-variant bg-surface-container-low rounded p-0.5 gap-0.5">
-            <button type="button" className="px-2.5 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-primary text-on-primary shadow-sm">English</button>
-            <button type="button" className="px-2.5 py-0.5 rounded font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-primary transition-colors">हिन्दी</button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`px-2.5 py-0.5 rounded font-label-sm text-label-sm font-semibold transition-colors ${
+                language === 'en' ? 'bg-primary text-on-primary shadow-sm' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              English
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('hi')}
+              className={`px-2.5 py-0.5 rounded font-label-sm text-label-sm font-medium transition-colors ${
+                language === 'hi' ? 'bg-primary text-on-primary shadow-sm' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              हिन्दी
+            </button>
           </div>
-          <button aria-label="Toggle color mode" className="w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button">
-            <Sun size={18} />
+          <button
+            aria-label="Toggle color mode"
+            onClick={toggleTheme}
+            className="w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors"
+            type="button"
+          >
+            {theme === 'light' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <Link className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded bg-secondary text-on-secondary hover:bg-[#155734] transition-all font-label-md text-label-md font-semibold border border-[#155734]" to="/eligibility">
             <UserCheck size={17} />
-            <span>Check Eligibility</span>
+            <span>{t('check_eligibility_btn')}</span>
           </Link>
           <AccountButton />
           <button aria-label="Open navigation menu" className="lg:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface" type="button">

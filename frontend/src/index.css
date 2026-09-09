@@ -11,9 +11,7 @@
   --color-border: #d5d8d2;
   --color-border-strong: #8b97a8;
   --color-muted: #364558;
-  --color-amber: #9c5208;
-  --color-amber-light: #fdf5ea;
-  
+
   --color-error-container: #ffdad6;
   --color-tertiary-container: #3f1406;
   --color-on-primary-fixed-variant: #39475f;
@@ -24,7 +22,6 @@
   --color-outline: #75777e;
   --color-on-surface: #1a1c1b;
   --color-inverse-on-surface: #f1f1ef;
-  --color-tertiary: #1d0400;
   --color-on-surface-variant: #44474d;
   --color-on-primary: #ffffff;
   --color-primary-container: #132238;
@@ -41,12 +38,13 @@
   --color-surface-container-high: #e8e8e6;
   --color-on-background: #1a1c1b;
   --color-surface-variant: #f4f4f2;
-  --color-secondary: #1b663e;
   --color-surface: #fbfbfa;
   --color-surface-dim: #dadad8;
   --color-inverse-surface: #2f3130;
   --color-on-secondary: #ffffff;
   --color-surface-container-low: #f5f5f2;
+  --color-amber: #9c5208;
+  --color-amber-light: #fdf5ea;
 
   --radius-DEFAULT: 0.125rem;
   --radius-lg: 0.25rem;
@@ -92,4 +90,63 @@ body {
   background-color: #f6f6f4;
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #1a1c1b;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---------- DARK MODE OVERRIDES ---------- */
+/* Brand-colored blocks (bg-primary, bg-secondary, text-on-primary, etc.) are left
+   unchanged intentionally — only neutral surface/text/border utilities flip. */
+
+.dark body {
+  background-color: #0d1420;
+  color: #e6ebf3;
+}
+
+.dark .bg-white,
+.dark .bg-surface-container-lowest,
+.dark .bg-surface-container-low,
+.dark .bg-surface-container,
+.dark .bg-surface-container-high,
+.dark .bg-surface-container-highest {
+  background-color: #17202b;
+}
+
+.dark .bg-parchment,
+.dark .bg-surface,
+.dark .bg-background,
+.dark .bg-surface-bright,
+.dark .bg-surface-dim {
+  background-color: #0d1420;
+}
+
+.dark .text-primary,
+.dark .text-on-surface,
+.dark .text-on-background {
+  color: #e6ebf3;
+}
+
+.dark .text-muted,
+.dark .text-on-surface-variant {
+  color: #9aa5b5;
+}
+
+.dark .border-border,
+.dark .border-border-strong,
+.dark .border-outline-variant,
+.dark .border-outline {
+  border-color: #2a3547;
+}
+
+.dark .bg-secondary-light {
+  background-color: #123626;
+}
+
+.dark input,
+.dark select {
+  background-color: #101a26;
+  color: #e6ebf3;
+}
+
+.dark ::placeholder {
+  color: #6b7789;
 }
