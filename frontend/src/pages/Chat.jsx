@@ -12,9 +12,7 @@ function SchemeCard({ scheme }) {
           <span className="text-[11px] font-semibold text-muted uppercase block">Central Scheme</span>
           <h3 className="font-serif text-[17px] font-bold text-primary leading-tight mt-0.5">{scheme.scheme_name}</h3>
         </div>
-        <span className="inline-block bg-secondary-light border border-secondary/30 text-secondary text-[11px] font-bold px-2 py-0.5 rounded-sm shrink-0">
-          Verified
-        </span>
+        <span className="inline-block bg-secondary-light border border-secondary/30 text-secondary text-[11px] font-bold px-2 py-0.5 rounded-sm shrink-0">Verified</span>
       </div>
 
       <div className="bg-parchment border border-border rounded-sm p-3 mb-3">
@@ -32,14 +30,7 @@ function SchemeCard({ scheme }) {
         ))}
       </div>
 
-      
-        href={scheme.source_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full bg-primary hover:bg-primary-dark text-white text-[13px] font-semibold py-2 px-3 rounded-sm text-center block transition-colors"
-      >
-        Apply on Official Portal
-      </a>
+      <a href={scheme.source_url} target="_blank" rel="noopener noreferrer" className="w-full bg-primary hover:bg-primary-dark text-white text-[13px] font-semibold py-2 px-3 rounded-sm text-center block transition-colors">Apply on Official Portal</a>
     </div>
   );
 }
@@ -53,28 +44,20 @@ function ChatMessage({ message }) {
             <p className="text-[15px] font-medium leading-normal">{message.text}</p>
           </div>
         </div>
-        <div className="w-9 h-9 rounded-sm bg-white border border-border flex items-center justify-center text-primary shrink-0 font-bold text-[13px]">
-          You
-        </div>
+        <div className="w-9 h-9 rounded-sm bg-white border border-border flex items-center justify-center text-primary shrink-0 font-bold text-[13px]">You</div>
       </div>
     );
   }
 
   return (
     <div className="flex items-start gap-3 pr-2 md:pr-12">
-      <div className="w-9 h-9 rounded-sm bg-primary text-white flex items-center justify-center shrink-0 mt-1">
-        🏛
-      </div>
+      <div className="w-9 h-9 rounded-sm bg-primary text-white flex items-center justify-center shrink-0 mt-1">🏛</div>
       <div className="flex flex-col flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1.5">
           <span className="font-serif font-bold text-[14px] text-primary">SchemeSaathi AI</span>
-          <span className="bg-secondary-light text-secondary font-semibold px-2 py-0.5 rounded-sm text-[11px]">
-            Grounded Response
-          </span>
+          <span className="bg-secondary-light text-secondary font-semibold px-2 py-0.5 rounded-sm text-[11px]">Grounded Response</span>
         </div>
-        <div className="bg-white border border-border rounded-sm p-4 text-[14px] leading-relaxed text-muted mb-3 whitespace-pre-line">
-          {message.text}
-        </div>
+        <div className="bg-white border border-border rounded-sm p-4 text-[14px] leading-relaxed text-muted mb-3 whitespace-pre-line">{message.text}</div>
         {message.sources && message.sources.length > 0 && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {message.sources.map((s) => <SchemeCard key={s._id} scheme={s} />)}
@@ -87,9 +70,7 @@ function ChatMessage({ message }) {
 
 export default function Chat() {
   const { t } = useLanguage();
-  const [messages, setMessages] = useState([
-    { role: 'assistant', text: t('chat_intro') },
-  ]);
+  const [messages, setMessages] = useState([{ role: 'assistant', text: t('chat_intro') }]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
@@ -141,9 +122,7 @@ export default function Chat() {
             {messages.map((m, i) => <ChatMessage key={i} message={m} />)}
             {loading && (
               <div className="flex items-center gap-3 pr-4 md:pr-24">
-                <div className="w-9 h-9 rounded-sm bg-white border border-border flex items-center justify-center text-secondary shrink-0">
-                  ⏳
-                </div>
+                <div className="w-9 h-9 rounded-sm bg-white border border-border flex items-center justify-center text-secondary shrink-0">⏳</div>
                 <div className="bg-white border border-border rounded-sm px-3.5 py-2 flex items-center gap-2 text-[13px] text-muted">
                   <span className="flex gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
@@ -163,35 +142,14 @@ export default function Chat() {
             <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-2">
               <span className="text-[11px] font-bold text-muted uppercase shrink-0">{t('chat_try_label')}</span>
               {SUGGESTED_PROMPTS.map((prompt) => (
-                <button
-                  key={prompt}
-                  onClick={() => sendQuery(prompt)}
-                  className="shrink-0 bg-parchment hover:bg-border text-primary text-[12px] px-2.5 py-1 rounded-sm border border-border transition-colors"
-                >
-                  {prompt}
-                </button>
+                <button key={prompt} onClick={() => sendQuery(prompt)} className="shrink-0 bg-parchment hover:bg-border text-primary text-[12px] px-2.5 py-1 rounded-sm border border-border transition-colors">{prompt}</button>
               ))}
             </div>
             <div className="relative flex items-center bg-parchment border border-border-strong rounded-sm px-3 py-1.5 focus-within:border-primary focus-within:border-2 transition-all">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && sendQuery(input)}
-                placeholder={t('chat_placeholder')}
-                className="w-full bg-transparent text-[14px] text-primary placeholder:text-muted focus:outline-none"
-              />
-              <button
-                onClick={() => sendQuery(input)}
-                disabled={loading}
-                className="h-9 px-4 rounded-sm bg-primary hover:bg-primary-dark text-white text-[13px] font-semibold transition-colors ml-2 shrink-0 disabled:opacity-50"
-              >
-                {t('chat_ask_btn')}
-              </button>
+              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && sendQuery(input)} placeholder={t('chat_placeholder')} className="w-full bg-transparent text-[14px] text-primary placeholder:text-muted focus:outline-none" />
+              <button onClick={() => sendQuery(input)} disabled={loading} className="h-9 px-4 rounded-sm bg-primary hover:bg-primary-dark text-white text-[13px] font-semibold transition-colors ml-2 shrink-0 disabled:opacity-50">{t('chat_ask_btn')}</button>
             </div>
-            <p className="flex items-center gap-1 mt-2 text-[11px] text-muted">
-              {t('chat_disclaimer')}
-            </p>
+            <p className="flex items-center gap-1 mt-2 text-[11px] text-muted">{t('chat_disclaimer')}</p>
           </div>
         </div>
       </div>
