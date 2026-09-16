@@ -80,7 +80,7 @@ export default function About() {
     <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen">
       <SiteHeader active="about" />
 
-      <main className="w-full pt-20 bg-surface">
+      <main className="w-full pt-28 bg-surface">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
 
           {/* Page header */}

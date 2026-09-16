@@ -163,5 +163,156 @@
       "education": "No requirement",
       "other_conditions": "Applicable to any victim of a road accident on Indian roads, launched 14 February 2026"
     }
+  },
+
+  {
+  "scheme_name": "PM YASASVI Scholarship",
+  "description": "Central scholarship scheme supporting OBC, EBC, and DNT category students for pre-matric and post-matric education, covering tuition and maintenance costs.",
+  "benefits": "Up to Rs. 1,25,000 per year for post-matric students in premier institutions; lower amounts for other categories, paid directly to bank account.",
+  "application_process": "Apply online through the National Scholarship Portal (NSP) with caste certificate, income certificate, and admission proof.",
+  "source_url": "https://yet.nta.ac.in/",
+  "eligibility": {
+    "age_requirement": "Class 9 to postgraduate level",
+    "income_requirement": "Annual family income below Rs. 2,50,000",
+    "occupation": "Student",
+    "location": "All states and UTs",
+    "education": "Enrolled in recognized school/college/university",
+    "other_conditions": "Must belong to OBC, EBC, or DNT category"
   }
+},
+{
+  "scheme_name": "AICTE Pragati Scholarship for Girls",
+  "description": "Scholarship for girl students pursuing technical education (diploma or degree) in AICTE-approved institutions, aimed at reducing dropout rates among female students.",
+  "benefits": "Rs. 50,000 per year for tuition fees and other expenses, for the duration of the technical course.",
+  "application_process": "Apply online through the National Scholarship Portal (NSP) with admission proof from an AICTE-approved institution.",
+  "source_url": "https://www.aicte-india.org/schemes/students-development-schemes",
+  "eligibility": {
+    "age_requirement": "No specific limit",
+    "income_requirement": "Annual family income below Rs. 8,00,000",
+    "occupation": "Student",
+    "location": "All states and UTs",
+    "education": "Enrolled in AICTE-approved technical diploma or degree program",
+    "other_conditions": "Only one girl child per family eligible; maximum two girls per family across all AICTE scholarships"
+  }
+},
+{
+  "scheme_name": "National Means-cum-Merit Scholarship (NMMS)",
+  "description": "Scholarship to prevent dropout at the Class 8 to Class 12 stage and encourage economically weaker meritorious students to continue their education.",
+  "benefits": "Rs. 12,000 per year (Rs. 1,000 per month) for four years, from Class 9 to Class 12.",
+  "application_process": "Apply through state education department after clearing the NMMS selection test conducted at the Class 8 level.",
+  "source_url": "https://scholarships.gov.in/",
+  "eligibility": {
+    "age_requirement": "Studying in Class 9 to Class 12",
+    "income_requirement": "Annual parental income below Rs. 1,50,000",
+    "occupation": "Student",
+    "location": "All states and UTs",
+    "education": "Studying in a government, government-aided, or local body school",
+    "other_conditions": "Must clear the NMMS qualifying examination held in Class 8"
+  }
+},
+{
+  "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+  "description": "Maternity benefit scheme providing partial wage compensation to pregnant and lactating women for the first living child, encouraging adequate nutrition and rest.",
+  "benefits": "Rs. 5,000 in three installments for the first child, paid directly to the mother's bank account, linked to health checkups and vaccination milestones.",
+  "application_process": "Register at the nearest Anganwadi Centre or health facility with pregnancy registration and Aadhaar details.",
+  "source_url": "https://pmmvy.wcd.gov.in/",
+  "eligibility": {
+    "age_requirement": "18 years and above",
+    "income_requirement": "No specific limit",
+    "occupation": "Any",
+    "location": "All states and UTs",
+    "education": "No requirement",
+    "other_conditions": "Applicable for the first living child; pregnancy must be registered with Anganwadi/health facility"
+  }
+},
+{
+  "scheme_name": "Assistance to Disabled Persons Scheme (ADIP)",
+  "description": "Scheme providing assistive devices and aids such as wheelchairs, hearing aids, and artificial limbs to persons with disabilities to support their physical and economic independence.",
+  "benefits": "Free assistive devices for those with monthly income up to Rs. 22,500; 50% subsidy for income between Rs. 22,501 and Rs. 30,000.",
+  "application_process": "Apply through empanelled implementing agencies (NGOs, hospitals, district agencies) with UDID card and income certificate.",
+  "source_url": "https://depwd.gov.in/",
+  "eligibility": {
+    "age_requirement": "No specific limit",
+    "income_requirement": "Monthly income up to Rs. 30,000",
+    "occupation": "Any",
+    "location": "All states and UTs",
+    "education": "No requirement",
+    "other_conditions": "Must hold a UDID card showing 40% or more disability"
+  }
+},
+{
+  "scheme_name": "Rashtriya Vayoshri Yojana (RVY)",
+  "description": "Scheme providing free assistive living devices to senior citizens belonging to BPL households, addressing age-related physical impairments.",
+  "benefits": "Free devices such as walking sticks, wheelchairs, hearing aids, and spectacles based on assessed need.",
+  "application_process": "Apply through district-level assessment camps organized by ALIMCO with income and age proof.",
+  "source_url": "https://depwd.gov.in/",
+  "eligibility": {
+    "age_requirement": "60 years and above",
+    "income_requirement": "Monthly income below Rs. 15,000",
+    "occupation": "Any",
+    "location": "All states and UTs",
+    "education": "No requirement",
+    "other_conditions": "Must have an age-related disability or impairment assessed at the camp"
+  }
+},
+{
+  "scheme_name": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+  "description": "Urban livelihoods scheme supporting the urban poor through skill training, self-employment loans, and support for street vendors and homeless shelters.",
+  "benefits": "Bank loans up to Rs. 2 lakh for individual enterprises and Rs. 10 lakh for group enterprises, with interest subsidy.",
+  "application_process": "Apply through the Urban Local Body (ULB) or City Livelihood Centre with proof of urban residency.",
+  "source_url": "https://mohua.gov.in/DAY-NULM/",
+  "eligibility": {
+    "age_requirement": "18+",
+    "income_requirement": "Urban poor / below poverty line households",
+    "occupation": "Unemployed or informally employed urban resident",
+    "location": "Urban areas",
+    "education": "No requirement",
+    "other_conditions": "Must be a resident of the urban local body area for a minimum period as specified"
+  }
+},
+{
+  "scheme_name": "Stand-Up India Scheme",
+  "description": "Scheme facilitating bank loans for setting up greenfield enterprises in manufacturing, services, or trading sectors, specifically for women and SC/ST entrepreneurs.",
+  "benefits": "Bank loans between Rs. 10 lakh and Rs. 1 crore for setting up a new enterprise.",
+  "application_process": "Apply through the Stand-Up India portal or directly at bank branches with a business project report.",
+  "source_url": "https://www.standupmitra.in/",
+  "eligibility": {
+    "age_requirement": "18+",
+    "income_requirement": "No specific limit",
+    "occupation": "Aspiring entrepreneur",
+    "location": "All states and UTs",
+    "education": "No requirement",
+    "other_conditions": "At least one woman or SC/ST entrepreneur per bank branch; must be a greenfield (new) enterprise"
+  }
+},
+{
+  "scheme_name": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+  "description": "Concessional loan scheme for persons with disabilities to pursue self-employment ventures, skill development, or higher education.",
+  "benefits": "Loans up to Rs. 25 lakh at concessional interest rates (typically 4-8%) depending on loan amount and purpose.",
+  "application_process": "Apply through State Channelizing Agencies (SCAs) with disability certificate and business/education plan.",
+  "source_url": "https://nhfdc.nic.in/",
+  "eligibility": {
+    "age_requirement": "18+",
+    "income_requirement": "Varies by income slab (concession higher for lower income)",
+    "occupation": "Any",
+    "location": "All states and UTs",
+    "education": "No requirement for loans; academic enrollment required for education loans",
+    "other_conditions": "Must hold a valid disability certificate of 40% or more"
+  }
+},
+{
+  "scheme_name": "Central Sector Scholarship Scheme (CSSS)",
+  "description": "Merit-based scholarship for meritorious students from low-income families to pursue college and university education, covering a wide range of undergraduate courses.",
+  "benefits": "Rs. 12,000 per year for undergraduate studies (first three years), increasing to Rs. 20,000 per year for postgraduate studies.",
+  "application_process": "Apply through the National Scholarship Portal (NSP) based on Class 12 board exam merit and admission to a recognized college.",
+  "source_url": "https://scholarships.gov.in/",
+  "eligibility": {
+    "age_requirement": "Pursuing undergraduate/postgraduate studies",
+    "income_requirement": "Annual family income below Rs. 4,50,000",
+    "occupation": "Student",
+    "location": "All states and UTs",
+    "education": "Scored above 80th percentile in Class 12 board exams",
+    "other_conditions": "Must not be receiving any other central government scholarship simultaneously"
+  }
+}
 ]
