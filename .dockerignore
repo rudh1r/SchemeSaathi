@@ -1,0 +1,16 @@
+.git
+.gitignore
+**/node_modules
+**/dist
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+npm-debug.log*
+chroma_db
+backend/chroma_db
+files
+backend/files
+coverage
+.vscode
+.idea

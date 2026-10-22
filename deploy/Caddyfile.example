@@ -1,0 +1,11 @@
+# Copy to /etc/caddy/Caddyfile on the host (or run Caddy in Docker alongside
+# the compose network) and replace schemes.example.com.
+#
+# Prerequisites:
+#   - DNS A/AAAA record points at this server
+#   - ports 80 and 443 are open
+#   - TRUST_PROXY=true is set for the app container
+schemes.example.com {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:5000
+}

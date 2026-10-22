@@ -1,0 +1,3053 @@
+[
+  {
+    "id": "E01",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 45,
+      "occupation": "Farmer",
+      "land_acres": 2,
+      "land_hectares": 0.809,
+      "land_owned": true,
+      "income_tax_payer": false
+    },
+    "satisfied": [
+      "Farmer or landholding agricultural family",
+      "Holds cultivable land in the family's name",
+      "Not a high-income income-tax payer"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Matches all stated conditions: farmer, owns cultivable land in own name, no high-income-tax exclusion."
+  },
+  {
+    "id": "E02",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 30,
+      "occupation": "Salaried government employee",
+      "land_acres": 0,
+      "land_hectares": 0,
+      "land_owned": false
+    },
+    "satisfied": [],
+    "violated": [
+      "Farmer or landholding agricultural family",
+      "Holds cultivable land in the family's name"
+    ],
+    "unresolved": [
+      "Not a high-income income-tax payer"
+    ],
+    "summary": "Does not meet 2 mandatory conditions: Farmer or landholding agricultural family; Holds cultivable land in the family's name.",
+    "rationale": "Fails the core occupation/landholding requirement: not a farmer and does not hold agricultural land."
+  },
+  {
+    "id": "E03",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 52,
+      "occupation": "Farmer",
+      "land_acres": 5,
+      "land_hectares": 2.023,
+      "land_owned": true,
+      "income_tax_payer": true
+    },
+    "satisfied": [
+      "Farmer or landholding agricultural family",
+      "Holds cultivable land in the family's name"
+    ],
+    "violated": [
+      "Not a high-income income-tax payer"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Not a high-income income-tax payer.",
+    "rationale": "Explicitly excluded: scheme excludes 'high-income taxpayers' regardless of landholding."
+  },
+  {
+    "id": "E04",
+    "scheme": "Atal Pension Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 28,
+      "occupation": "Unorganized sector worker",
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Age between 18 and 40 years at enrolment",
+      "Has a savings bank or post office account"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Age within 18-40 enrollment window, unorganized-sector worker, has required bank account."
+  },
+  {
+    "id": "E05",
+    "scheme": "Atal Pension Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 41,
+      "occupation": "Unorganized sector worker"
+    },
+    "satisfied": [],
+    "violated": [
+      "Age between 18 and 40 years at enrolment"
+    ],
+    "unresolved": [
+      "Has a savings bank or post office account"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Age between 18 and 40 years at enrolment.",
+    "rationale": "One year past the enrollment window (18-40). Age 40 itself would be Eligible; 41 is Ineligible — boundary case around the upper limit."
+  },
+  {
+    "id": "E06",
+    "scheme": "Atal Pension Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 40,
+      "occupation": "Unorganized sector worker",
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Age between 18 and 40 years at enrolment",
+      "Has a savings bank or post office account"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Age 40 is inside the inclusive '18 to 40 years' window."
+  },
+  {
+    "id": "E07",
+    "scheme": "PM YASASVI Scholarship",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "income": 180000,
+      "monthly_income": 15000,
+      "category": "obc",
+      "class_level": 11,
+      "education_level": "Class 11",
+      "is_student": true
+    },
+    "satisfied": [
+      "Annual family income below ₹2,50,000",
+      "OBC, EBC or DNT category",
+      "Enrolled in a recognised school, college or university"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Class 9-PG range, income below Rs 2,50,000 threshold, OBC category matches."
+  },
+  {
+    "id": "E08",
+    "scheme": "PM YASASVI Scholarship",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 120000,
+      "monthly_income": 10000,
+      "category": "general",
+      "class_level": 10,
+      "education_level": "Class 10",
+      "is_student": true
+    },
+    "satisfied": [
+      "Annual family income below ₹2,50,000",
+      "Enrolled in a recognised school, college or university"
+    ],
+    "violated": [
+      "OBC, EBC or DNT category"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: OBC, EBC or DNT category.",
+    "rationale": "Income is under the cap, but category is 'General', not OBC/EBC/DNT — the mandatory category condition fails."
+  },
+  {
+    "id": "E09",
+    "scheme": "PM YASASVI Scholarship",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 320000,
+      "monthly_income": 26667,
+      "category": "ebc",
+      "class_level": 12,
+      "education_level": "Class 12",
+      "is_student": true
+    },
+    "satisfied": [
+      "OBC, EBC or DNT category",
+      "Enrolled in a recognised school, college or university"
+    ],
+    "violated": [
+      "Annual family income below ₹2,50,000"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Annual family income below ₹2,50,000.",
+    "rationale": "Category matches (EBC), but income of Rs 3,20,000 exceeds the Rs 2,50,000 cap."
+  },
+  {
+    "id": "E10",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "gender": "female",
+      "income": 500000,
+      "monthly_income": 41667,
+      "girl_children": 1,
+      "programme": "AICTE-approved diploma"
+    },
+    "satisfied": [
+      "Applicant is a girl student",
+      "Annual family income below ₹8,00,000",
+      "At most two girls from the family across AICTE scholarships"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Currently enrolled in a technical diploma or degree programme"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Currently enrolled in a technical diploma or degree programme.",
+    "rationale": "Girl, enrolled in AICTE-approved technical program, income under cap, only one applicant per family."
+  },
+  {
+    "id": "E11",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "expected": "Ineligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "gender": "female",
+      "income": 300000,
+      "monthly_income": 25000,
+      "programme": "BA (non-technical, non-AICTE)"
+    },
+    "satisfied": [
+      "Applicant is a girl student",
+      "Annual family income below ₹8,00,000"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Currently enrolled in a technical diploma or degree programme",
+      "At most two girls from the family across AICTE scholarships"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Currently enrolled in a technical diploma or degree programme.",
+    "rationale": "Gender and income are fine, but a BA at a general university is not an AICTE-approved technical program — this scheme is technical-education specific."
+  },
+  {
+    "id": "E12",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "gender": "female",
+      "income": 200000,
+      "monthly_income": 16667,
+      "programme": "AICTE-approved diploma"
+    },
+    "satisfied": [
+      "Applicant is a girl student",
+      "Annual family income below ₹8,00,000"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Currently enrolled in a technical diploma or degree programme",
+      "At most two girls from the family across AICTE scholarships"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Currently enrolled in a technical diploma or degree programme.",
+    "rationale": "All conditions satisfiable except the 'max two girls per family across all AICTE scholarships' cap, which depends on a fact the profile doesn't state."
+  },
+  {
+    "id": "E13",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "income": 90000,
+      "monthly_income": 7500,
+      "cleared_qualifying_exam": true,
+      "class_level": 9,
+      "school_type": "Government",
+      "is_student": true
+    },
+    "satisfied": [
+      "Studying in Class 9 to Class 12",
+      "Annual parental income below ₹1,50,000",
+      "Studying in a government, government-aided or local body school",
+      "Cleared the NMMS qualifying examination in Class 8"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "All four conditions satisfied: class range, income, school type, and cleared qualifying exam."
+  },
+  {
+    "id": "E14",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 100000,
+      "monthly_income": 8333,
+      "class_level": 10,
+      "school_type": "Private unaided",
+      "is_student": true
+    },
+    "satisfied": [
+      "Studying in Class 9 to Class 12",
+      "Annual parental income below ₹1,50,000"
+    ],
+    "violated": [
+      "Studying in a government, government-aided or local body school"
+    ],
+    "unresolved": [
+      "Cleared the NMMS qualifying examination in Class 8"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Studying in a government, government-aided or local body school.",
+    "rationale": "School type fails outright ('private unaided' is not government/government-aided/local body) — this alone disqualifies regardless of the unknown exam status."
+  },
+  {
+    "id": "E15",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "income": 120000,
+      "monthly_income": 10000,
+      "class_level": 11,
+      "school_type": "Government-aided",
+      "is_student": true
+    },
+    "satisfied": [
+      "Studying in Class 9 to Class 12",
+      "Annual parental income below ₹1,50,000",
+      "Studying in a government, government-aided or local body school"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Cleared the NMMS qualifying examination in Class 8"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Cleared the NMMS qualifying examination in Class 8.",
+    "rationale": "Class, school type and income all qualify, but the mandatory 'cleared the qualifying exam' condition is explicitly unknown, not just unstated."
+  },
+  {
+    "id": "E16",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "income": 264000,
+      "monthly_income": 22000,
+      "disability_percent": 55
+    },
+    "satisfied": [
+      "Monthly family income up to ₹30,000",
+      "UDID certificate showing 40% or more disability"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Income under Rs 30,000/month and disability percentage (55%) exceeds the 40% threshold."
+  },
+  {
+    "id": "E17",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "income": 300000,
+      "monthly_income": 25000,
+      "has_udid_card": false
+    },
+    "satisfied": [
+      "Monthly family income up to ₹30,000"
+    ],
+    "violated": [],
+    "unresolved": [
+      "UDID certificate showing 40% or more disability"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: UDID certificate showing 40% or more disability.",
+    "rationale": "Income qualifies, but there is no certified UDID percentage to check against the 40% threshold — cannot be scored as Eligible or Ineligible from a doctor's note alone."
+  },
+  {
+    "id": "E18",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 480000,
+      "monthly_income": 40000,
+      "disability_percent": 60
+    },
+    "satisfied": [
+      "UDID certificate showing 40% or more disability"
+    ],
+    "violated": [
+      "Monthly family income up to ₹30,000"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Monthly family income up to ₹30,000.",
+    "rationale": "Disability percentage qualifies, but monthly income of Rs 40,000 exceeds the Rs 30,000 cap."
+  },
+  {
+    "id": "E19",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 68,
+      "income": 96000,
+      "monthly_income": 8000,
+      "age_related_impairment": true
+    },
+    "satisfied": [
+      "Age 60 years or above",
+      "Monthly income below ₹15,000",
+      "Age-related disability or impairment"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Age above 60, income under Rs 15,000/month, and has an age-related impairment."
+  },
+  {
+    "id": "E20",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 58,
+      "income": 120000,
+      "monthly_income": 10000,
+      "age_related_impairment": true
+    },
+    "satisfied": [
+      "Monthly income below ₹15,000",
+      "Age-related disability or impairment"
+    ],
+    "violated": [
+      "Age 60 years or above"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age 60 years or above.",
+    "rationale": "Two years under the 60+ age floor; income and impairment conditions would otherwise pass — a near-boundary age failure."
+  },
+  {
+    "id": "E21",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 60,
+      "income": 178800,
+      "monthly_income": 14900,
+      "age_related_impairment": true
+    },
+    "satisfied": [
+      "Age 60 years or above",
+      "Monthly income below ₹15,000",
+      "Age-related disability or impairment"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Age exactly at the 60-year floor and income just under the Rs 15,000 ceiling — both boundaries satisfied."
+  },
+  {
+    "id": "E22",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "income": 300000,
+      "monthly_income": 25000,
+      "existing_scholarship": false,
+      "class12_percentile": 85
+    },
+    "satisfied": [
+      "Annual family income below ₹4,50,000",
+      "Above the 80th percentile in Class 12 board exams",
+      "Not receiving another central government scholarship"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Pursuing undergraduate or postgraduate studies"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Pursuing undergraduate or postgraduate studies.",
+    "rationale": "Above 80th percentile, income under cap, and no conflicting scholarship."
+  },
+  {
+    "id": "E23",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 200000,
+      "monthly_income": 16667,
+      "existing_scholarship": true,
+      "class12_percentile": 90
+    },
+    "satisfied": [
+      "Annual family income below ₹4,50,000",
+      "Above the 80th percentile in Class 12 board exams"
+    ],
+    "violated": [
+      "Not receiving another central government scholarship"
+    ],
+    "unresolved": [
+      "Pursuing undergraduate or postgraduate studies"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Not receiving another central government scholarship.",
+    "rationale": "Merit and income both qualify, but already receiving another central scholarship violates the no-double-scholarship condition."
+  },
+  {
+    "id": "E24",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 250000,
+      "monthly_income": 20833,
+      "class12_percentile": 60
+    },
+    "satisfied": [
+      "Annual family income below ₹4,50,000"
+    ],
+    "violated": [
+      "Above the 80th percentile in Class 12 board exams"
+    ],
+    "unresolved": [
+      "Pursuing undergraduate or postgraduate studies",
+      "Not receiving another central government scholarship"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Above the 80th percentile in Class 12 board exams.",
+    "rationale": "Income qualifies, but 60th percentile is below the required 80th-percentile merit threshold."
+  },
+  {
+    "id": "E25",
+    "scheme": "Stand-Up India Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 30,
+      "gender": "female",
+      "greenfield": true,
+      "business_type": "greenfield manufacturing"
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Woman, SC or ST entrepreneur",
+      "Setting up a greenfield (new) enterprise"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Woman entrepreneur setting up a new (greenfield) enterprise — matches the core eligibility condition."
+  },
+  {
+    "id": "E26",
+    "scheme": "Stand-Up India Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "age": 40,
+      "gender": "male",
+      "category": "general",
+      "business_type": "existing/expansion, trading"
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "Woman, SC or ST entrepreneur"
+    ],
+    "unresolved": [
+      "Setting up a greenfield (new) enterprise"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Woman, SC or ST entrepreneur.",
+    "rationale": "Fails two conditions at once: not a woman/SC/ST entrepreneur, and the enterprise is an expansion of an existing business, not a greenfield (new) one."
+  },
+  {
+    "id": "E27",
+    "scheme": "Stand-Up India Scheme",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "category": "st",
+      "greenfield": true,
+      "business_type": "greenfield services",
+      "branch_quota_status": "unknown"
+    },
+    "satisfied": [
+      "Woman, SC or ST entrepreneur",
+      "Setting up a greenfield (new) enterprise"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Age 18 years or above.",
+    "rationale": "Category and greenfield status both qualify, but the per-branch quota condition depends on branch-level facts the profile doesn't (and can't easily) state."
+  },
+  {
+    "id": "E28",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 24,
+      "pregnancy_registered": true,
+      "pregnant": true,
+      "which_child": 1
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Pregnant or recently delivered",
+      "First living child",
+      "Pregnancy registered with Anganwadi or health facility"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "Adult, first living child, and pregnancy formally registered — all conditions met."
+  },
+  {
+    "id": "E29",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 29,
+      "pregnancy_registered": true,
+      "pregnant": true,
+      "which_child": 3
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Pregnant or recently delivered",
+      "Pregnancy registered with Anganwadi or health facility"
+    ],
+    "violated": [
+      "First living child"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: First living child.",
+    "rationale": "Registration is fine, but the scheme is limited to the first living child — third child disqualifies."
+  },
+  {
+    "id": "E30",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 22,
+      "pregnancy_registered": false,
+      "which_child": 1
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "First living child"
+    ],
+    "violated": [
+      "Pregnancy registered with Anganwadi or health facility"
+    ],
+    "unresolved": [
+      "Pregnant or recently delivered"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Pregnancy registered with Anganwadi or health facility.",
+    "rationale": "First-child condition is satisfied, but the mandatory Anganwadi/health-facility registration explicitly has not happened yet — this is a known 'no', not unknown, so it's Ineligible rather than Insufficient Information."
+  },
+  {
+    "id": "E31",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 34,
+      "income": 250000,
+      "monthly_income": 20833,
+      "category": "ews",
+      "owns_pucca_house": false
+    },
+    "satisfied": [
+      "Adult applicant (18+)",
+      "Applicant or family does not own a pucca house anywhere in India"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Adult, EWS income slab, and no pucca house anywhere: all conditions met."
+  },
+  {
+    "id": "E32",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 40,
+      "category": "mig",
+      "owns_pucca_house": true
+    },
+    "satisfied": [
+      "Adult applicant (18+)"
+    ],
+    "violated": [
+      "Applicant or family does not own a pucca house anywhere in India"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Applicant or family does not own a pucca house anywhere in India.",
+    "rationale": "Family owns a pucca house, violating the explicit no-pucca-house condition."
+  },
+  {
+    "id": "E33",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {},
+    "satisfied": [],
+    "violated": [],
+    "unresolved": [
+      "Adult applicant (18+)",
+      "Applicant or family does not own a pucca house anywhere in India"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Adult applicant (18+); Applicant or family does not own a pucca house anywhere in India.",
+    "rationale": "Neither income slab nor house ownership is stated, so a mandatory condition cannot be established."
+  },
+  {
+    "id": "E34",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 72
+    },
+    "satisfied": [
+      "Household is on the SECC deprivation list, or the applicant is 70+"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 1 checked condition.",
+    "rationale": "Age 70+ qualifies automatically with no income limit."
+  },
+  {
+    "id": "E35",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 69,
+      "bpl": false
+    },
+    "satisfied": [],
+    "violated": [
+      "Household is on the SECC deprivation list, or the applicant is 70+"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Household is on the SECC deprivation list, or the applicant is 70+.",
+    "rationale": "Just under the 70+ expansion and explicitly not in SECC, so neither route applies."
+  },
+  {
+    "id": "E36",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "age": 50
+    },
+    "satisfied": [],
+    "violated": [],
+    "unresolved": [
+      "Household is on the SECC deprivation list, or the applicant is 70+"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Household is on the SECC deprivation list, or the applicant is 70+.",
+    "rationale": "SECC listing, a mandatory condition for under-70 applicants, is unknown."
+  },
+  {
+    "id": "E37",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 45,
+      "owns_home": true,
+      "roof_suitable": true
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Owns a residential house",
+      "Has a rooftop suitable for solar installation"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Owner of a residential rooftop that is suitable."
+  },
+  {
+    "id": "E38",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 30,
+      "owns_home": false
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "Owns a residential house"
+    ],
+    "unresolved": [
+      "Has a rooftop suitable for solar installation"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Owns a residential house.",
+    "rationale": "Occupation/ownership condition is homeowner; renter explicitly does not own."
+  },
+  {
+    "id": "E39",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "owns_home": true
+    },
+    "satisfied": [
+      "Owns a residential house"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above",
+      "Has a rooftop suitable for solar installation"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Age 18 years or above; Has a rooftop suitable for solar installation.",
+    "rationale": "Ownership is met, but rooftop suitability is not established."
+  },
+  {
+    "id": "E40",
+    "scheme": "PM SVANidhi",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 38,
+      "area": "urban",
+      "occupation": "street vendor",
+      "vending_certificate": true
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Urban street vendor",
+      "Street vendor with a certificate of vending or ULB survey listing"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Urban street vendor with certificate of vending."
+  },
+  {
+    "id": "E41",
+    "scheme": "PM SVANidhi",
+    "expected": "Ineligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 42,
+      "area": "urban",
+      "occupation": "shopkeeper"
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Urban street vendor"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Street vendor with a certificate of vending or ULB survey listing"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Street vendor with a certificate of vending or ULB survey listing.",
+    "rationale": "A permanent shop owner is not a street vendor."
+  },
+  {
+    "id": "E42",
+    "scheme": "PM SVANidhi",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "area": "urban",
+      "occupation": "street vendor"
+    },
+    "satisfied": [
+      "Urban street vendor",
+      "Street vendor with a certificate of vending or ULB survey listing"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Age 18 years or above.",
+    "rationale": "Vending certificate / ULB survey status is unknown."
+  },
+  {
+    "id": "E43",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "area": "rural",
+      "bpl": true,
+      "owns_pucca_house": false
+    },
+    "satisfied": [
+      "Rural household",
+      "BPL / SECC-identified household",
+      "Does not already own a pucca house"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Rural, BPL/SECC and no pucca house."
+  },
+  {
+    "id": "E44",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "area": "rural",
+      "bpl": true,
+      "owns_pucca_house": true
+    },
+    "satisfied": [
+      "Rural household",
+      "BPL / SECC-identified household"
+    ],
+    "violated": [
+      "Does not already own a pucca house"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Does not already own a pucca house.",
+    "rationale": "Owns a pucca house, violating the explicit condition."
+  },
+  {
+    "id": "E45",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "area": "urban",
+      "bpl": true,
+      "owns_pucca_house": false
+    },
+    "satisfied": [
+      "BPL / SECC-identified household",
+      "Does not already own a pucca house"
+    ],
+    "violated": [
+      "Rural household"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Rural household.",
+    "rationale": "Everything is met except the rural-areas location condition."
+  },
+  {
+    "id": "E46",
+    "scheme": "PM Vishwakarma",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 40,
+      "trade": "carpenter"
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Engaged in one of the 18 notified artisan trades"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Works as an artisan or craftsperson"
+    ],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Adult in one of the 18 listed trades."
+  },
+  {
+    "id": "E47",
+    "scheme": "PM Vishwakarma",
+    "expected": "Ineligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 30,
+      "occupation": "software engineer"
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "Works as an artisan or craftsperson"
+    ],
+    "unresolved": [
+      "Engaged in one of the 18 notified artisan trades"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Engaged in one of the 18 notified artisan trades.",
+    "rationale": "Not engaged in any of the 18 listed trades."
+  },
+  {
+    "id": "E48",
+    "scheme": "PM Vishwakarma",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 17,
+      "trade": "potter"
+    },
+    "satisfied": [
+      "Engaged in one of the 18 notified artisan trades"
+    ],
+    "violated": [
+      "Age 18 years or above"
+    ],
+    "unresolved": [
+      "Works as an artisan or craftsperson"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Age 18 years or above.",
+    "rationale": "Trade matches but the applicant is below the 18+ age requirement."
+  },
+  {
+    "id": "E49",
+    "scheme": "Mission Vatsalya",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 12,
+      "orphan": true
+    },
+    "satisfied": [
+      "Child aged 18 years or below",
+      "Orphan or child in difficult circumstances"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "A child under 18 who is an orphan."
+  },
+  {
+    "id": "E50",
+    "scheme": "Mission Vatsalya",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 25,
+      "orphan": true
+    },
+    "satisfied": [
+      "Orphan or child in difficult circumstances"
+    ],
+    "violated": [
+      "Child aged 18 years or below"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Child aged 18 years or below.",
+    "rationale": "Orphan status matches but the applicant is beyond the 0 to 18 age range."
+  },
+  {
+    "id": "E51",
+    "scheme": "Mission Vatsalya",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "age": 16
+    },
+    "satisfied": [
+      "Child aged 18 years or below"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Orphan or child in difficult circumstances"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Orphan or child in difficult circumstances.",
+    "rationale": "Age fits but there is no information about any difficult circumstance."
+  },
+  {
+    "id": "E52",
+    "scheme": "PM Ujjwala Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 28,
+      "gender": "female",
+      "bpl": true,
+      "has_lpg": false
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Applicant is a woman",
+      "BPL / low-income household",
+      "No existing LPG connection"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "Adult woman, BPL, no existing LPG connection."
+  },
+  {
+    "id": "E53",
+    "scheme": "PM Ujjwala Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 35,
+      "gender": "female",
+      "bpl": true,
+      "has_lpg": true
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Applicant is a woman",
+      "BPL / low-income household"
+    ],
+    "violated": [
+      "No existing LPG connection"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: No existing LPG connection.",
+    "rationale": "Household already has an LPG connection."
+  },
+  {
+    "id": "E54",
+    "scheme": "PM Ujjwala Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 35,
+      "gender": "male",
+      "bpl": true,
+      "has_lpg": false
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "BPL / low-income household",
+      "No existing LPG connection"
+    ],
+    "violated": [
+      "Applicant is a woman"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Applicant is a woman.",
+    "rationale": "The applicant must be a woman."
+  },
+  {
+    "id": "E55",
+    "scheme": "PM Rahat Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "cause": "road accident"
+    },
+    "satisfied": [
+      "Victim of a road accident on Indian roads"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 1 checked condition.",
+    "rationale": "Any victim of a road accident on Indian roads."
+  },
+  {
+    "id": "E56",
+    "scheme": "PM Rahat Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "cause": "fall at home"
+    },
+    "satisfied": [],
+    "violated": [
+      "Victim of a road accident on Indian roads"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Victim of a road accident on Indian roads.",
+    "rationale": "Not a road accident."
+  },
+  {
+    "id": "E57",
+    "scheme": "PM Rahat Scheme",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {},
+    "satisfied": [],
+    "violated": [],
+    "unresolved": [
+      "Victim of a road accident on Indian roads"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Victim of a road accident on Indian roads.",
+    "rationale": "The cause of injury is not stated."
+  },
+  {
+    "id": "E58",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 32,
+      "disability_percent": 55
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Valid disability certificate of 40% or more"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Adult with 40%+ disability certificate."
+  },
+  {
+    "id": "E59",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 30,
+      "disability_percent": 30
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "Valid disability certificate of 40% or more"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Valid disability certificate of 40% or more.",
+    "rationale": "Disability is below the required 40%."
+  },
+  {
+    "id": "E60",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {},
+    "satisfied": [],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above",
+      "Valid disability certificate of 40% or more"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Age 18 years or above; Valid disability certificate of 40% or more.",
+    "rationale": "Disability percentage and certificate not mentioned."
+  },
+  {
+    "id": "E61",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 29,
+      "area": "urban",
+      "bpl": true,
+      "employed_full_time": false,
+      "years_in_city": 10
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Resident of an urban local body area",
+      "Urban poor / below poverty line household"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Adult urban-poor unemployed resident."
+  },
+  {
+    "id": "E62",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 35,
+      "area": "rural"
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "Resident of an urban local body area"
+    ],
+    "unresolved": [
+      "Urban poor / below poverty line household"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Resident of an urban local body area.",
+    "rationale": "Scheme is for urban areas and urban poor."
+  },
+  {
+    "id": "E63",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "age": 27,
+      "area": "urban"
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Resident of an urban local body area"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Urban poor / below poverty line household"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Urban poor / below poverty line household.",
+    "rationale": "Urban poor / BPL status is not stated."
+  },
+  {
+    "id": "E64",
+    "scheme": "PM Kisan Maandhan Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 32,
+      "land_acres": 3.707,
+      "land_hectares": 1.5,
+      "land_owned": true,
+      "occupation": "Farmer",
+      "epfo_member": false
+    },
+    "satisfied": [
+      "Age between 18 and 40 years",
+      "Small or marginal farmer",
+      "Holds up to 2 hectares of land",
+      "Not an EPFO, NPS or ESIC member"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "Small farmer aged 18-40 and not in other pension systems."
+  },
+  {
+    "id": "E65",
+    "scheme": "PM Kisan Maandhan Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 41,
+      "land_acres": 2.471,
+      "land_hectares": 1,
+      "land_owned": true,
+      "occupation": "Farmer"
+    },
+    "satisfied": [
+      "Small or marginal farmer",
+      "Holds up to 2 hectares of land"
+    ],
+    "violated": [
+      "Age between 18 and 40 years"
+    ],
+    "unresolved": [
+      "Not an EPFO, NPS or ESIC member"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Age between 18 and 40 years.",
+    "rationale": "One year above the maximum entry age of 40."
+  },
+  {
+    "id": "E66",
+    "scheme": "PM Internship Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 22,
+      "income": 500000,
+      "monthly_income": 41667,
+      "government_job_in_family": false,
+      "employed_full_time": false
+    },
+    "satisfied": [
+      "Age between 21 and 24 years",
+      "Annual family income up to ₹8 lakh",
+      "Not in full-time employment",
+      "No government job in the family"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E67",
+    "scheme": "PM Internship Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 26,
+      "income": 400000,
+      "monthly_income": 33333
+    },
+    "satisfied": [
+      "Annual family income up to ₹8 lakh"
+    ],
+    "violated": [
+      "Age between 21 and 24 years"
+    ],
+    "unresolved": [
+      "Not in full-time employment",
+      "No government job in the family"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Age between 21 and 24 years.",
+    "rationale": "Age is above the 21-24 range."
+  },
+  {
+    "id": "E68",
+    "scheme": "PM Internship Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 23,
+      "income": 600000,
+      "monthly_income": 50000,
+      "government_job_in_family": true
+    },
+    "satisfied": [
+      "Age between 21 and 24 years",
+      "Annual family income up to ₹8 lakh"
+    ],
+    "violated": [
+      "No government job in the family"
+    ],
+    "unresolved": [
+      "Not in full-time employment"
+    ],
+    "summary": "Does not meet 1 mandatory condition: No government job in the family.",
+    "rationale": "Government job in the family violates the exclusion."
+  },
+  {
+    "id": "E69",
+    "scheme": "PM Internship Scheme",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "age": 23
+    },
+    "satisfied": [
+      "Age between 21 and 24 years"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Annual family income up to ₹8 lakh",
+      "Not in full-time employment",
+      "No government job in the family"
+    ],
+    "summary": "All checked conditions are met, but 3 conditions could not be verified: Annual family income up to ₹8 lakh; Not in full-time employment; No government job in the family.",
+    "rationale": "Family income and family government employment are not stated."
+  },
+  {
+    "id": "E70",
+    "scheme": "e-Shram Card",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 35,
+      "occupation": "construction worker",
+      "income_tax_payer": false,
+      "epfo_member": false
+    },
+    "satisfied": [
+      "Age between 16 and 59 years",
+      "Not an EPFO or ESIC member",
+      "Not an income-tax payer"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Unorganised worker aged 16-59 not in EPFO/ESIC."
+  },
+  {
+    "id": "E71",
+    "scheme": "e-Shram Card",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 62,
+      "occupation": "vendor"
+    },
+    "satisfied": [],
+    "violated": [
+      "Age between 16 and 59 years"
+    ],
+    "unresolved": [
+      "Not an EPFO or ESIC member",
+      "Not an income-tax payer"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Age between 16 and 59 years.",
+    "rationale": "Above the age 16-59 range."
+  },
+  {
+    "id": "E72",
+    "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 30,
+      "income": 132000,
+      "monthly_income": 11000,
+      "epfo_member": false
+    },
+    "satisfied": [
+      "Age between 18 and 40 years",
+      "Monthly income up to ₹15,000",
+      "Not an EPFO, NPS or ESIC member"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Not an income-tax payer"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Not an income-tax payer.",
+    "rationale": "Within age and income limits, unorganised, no other pension."
+  },
+  {
+    "id": "E73",
+    "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 38,
+      "income": 300000,
+      "monthly_income": 25000
+    },
+    "satisfied": [
+      "Age between 18 and 40 years"
+    ],
+    "violated": [
+      "Monthly income up to ₹15,000"
+    ],
+    "unresolved": [
+      "Not an EPFO, NPS or ESIC member",
+      "Not an income-tax payer"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Monthly income up to ₹15,000.",
+    "rationale": "Monthly income above Rs 15,000."
+  },
+  {
+    "id": "E74",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 66,
+      "bpl": true
+    },
+    "satisfied": [
+      "Age 60 years or above",
+      "Household on the BPL list"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Aged 60+ and BPL."
+  },
+  {
+    "id": "E75",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 58,
+      "bpl": true
+    },
+    "satisfied": [
+      "Household on the BPL list"
+    ],
+    "violated": [
+      "Age 60 years or above"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age 60 years or above.",
+    "rationale": "BPL but under the 60+ age requirement."
+  },
+  {
+    "id": "E76",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "age": 70
+    },
+    "satisfied": [
+      "Age 60 years or above"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Household on the BPL list"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Household on the BPL list.",
+    "rationale": "BPL status is not stated."
+  },
+  {
+    "id": "E77",
+    "scheme": "Indira Gandhi National Widow Pension Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 50,
+      "bpl": true,
+      "marital_status": "widowed"
+    },
+    "satisfied": [
+      "Age between 40 and 79 years",
+      "Below poverty line household",
+      "Applicant is a widow"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Widow aged 40-79 and BPL."
+  },
+  {
+    "id": "E78",
+    "scheme": "Indira Gandhi National Widow Pension Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 35,
+      "bpl": true,
+      "marital_status": "widowed"
+    },
+    "satisfied": [
+      "Below poverty line household",
+      "Applicant is a widow"
+    ],
+    "violated": [
+      "Age between 40 and 79 years"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age between 40 and 79 years.",
+    "rationale": "Below the minimum age of 40."
+  },
+  {
+    "id": "E79",
+    "scheme": "Indira Gandhi National Disability Pension Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 40,
+      "bpl": true,
+      "disability_percent": 60
+    },
+    "satisfied": [
+      "Age between 18 and 79 years",
+      "Below poverty line household"
+    ],
+    "violated": [
+      "80% or more disability"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: 80% or more disability.",
+    "rationale": "Disability is below the 80% requirement."
+  },
+  {
+    "id": "E80",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 30,
+      "gender": "female",
+      "income": 200000,
+      "monthly_income": 16667,
+      "state": "Maharashtra",
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Woman aged 21 to 65 years",
+      "Applicant is a woman",
+      "Resident of Maharashtra",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "All conditions satisfied."
+  },
+  {
+    "id": "E81",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 28,
+      "gender": "female",
+      "income": 200000,
+      "monthly_income": 16667,
+      "state": "Gujarat"
+    },
+    "satisfied": [
+      "Woman aged 21 to 65 years",
+      "Applicant is a woman",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "violated": [
+      "Resident of Maharashtra"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Resident of Maharashtra.",
+    "rationale": "Scheme is only for Maharashtra residents."
+  },
+  {
+    "id": "E82",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 68,
+      "gender": "female",
+      "income": 100000,
+      "monthly_income": 8333,
+      "state": "Maharashtra"
+    },
+    "satisfied": [
+      "Applicant is a woman",
+      "Resident of Maharashtra",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "violated": [
+      "Woman aged 21 to 65 years"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Woman aged 21 to 65 years.",
+    "rationale": "Above the upper age limit of 65."
+  },
+  {
+    "id": "E83",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "age": 40,
+      "state": "Maharashtra"
+    },
+    "satisfied": [
+      "Woman aged 21 to 65 years",
+      "Resident of Maharashtra"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Applicant is a woman",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Applicant is a woman; Annual family income up to ₹2.5 lakh.",
+    "rationale": "Family income is not stated."
+  },
+  {
+    "id": "E84",
+    "scheme": "Gruha Lakshmi (Karnataka)",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 40,
+      "state": "Karnataka",
+      "income_tax_payer": false,
+      "ration_card": true
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Resident of Karnataka",
+      "Not an income tax or GST payer",
+      "Holds a ration card"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Applicant is a woman"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Applicant is a woman.",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E85",
+    "scheme": "Gruha Lakshmi (Karnataka)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 45,
+      "state": "Karnataka",
+      "income_tax_payer": true,
+      "ration_card": true
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Resident of Karnataka",
+      "Holds a ration card"
+    ],
+    "violated": [
+      "Not an income tax or GST payer"
+    ],
+    "unresolved": [
+      "Applicant is a woman"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Not an income tax or GST payer.",
+    "rationale": "GST payers are excluded."
+  },
+  {
+    "id": "E86",
+    "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 35,
+      "income": 180000,
+      "monthly_income": 15000,
+      "state": "Madhya Pradesh",
+      "marital_status": "married"
+    },
+    "satisfied": [
+      "Woman aged 21 to 60 years",
+      "Resident of Madhya Pradesh",
+      "Annual family income up to ₹2.5 lakh",
+      "Married woman"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Applicant is a woman"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Applicant is a woman.",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E87",
+    "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 25,
+      "income": 100000,
+      "monthly_income": 8333,
+      "state": "Madhya Pradesh",
+      "marital_status": "single"
+    },
+    "satisfied": [
+      "Woman aged 21 to 60 years",
+      "Resident of Madhya Pradesh",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "violated": [
+      "Married woman"
+    ],
+    "unresolved": [
+      "Applicant is a woman"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Married woman.",
+    "rationale": "The scheme is for married women."
+  },
+  {
+    "id": "E88",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 15,
+      "income": 90000,
+      "monthly_income": 7500,
+      "state": "West Bengal",
+      "marital_status": "single"
+    },
+    "satisfied": [
+      "Girl aged 13 to 19 years",
+      "Resident of West Bengal",
+      "Unmarried",
+      "Annual family income up to ₹1.2 lakh"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Applicant is a girl",
+      "Currently in education"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Applicant is a girl; Currently in education.",
+    "rationale": "Unmarried girl in education within age and income."
+  },
+  {
+    "id": "E89",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 17,
+      "state": "West Bengal",
+      "marital_status": "married"
+    },
+    "satisfied": [
+      "Girl aged 13 to 19 years",
+      "Resident of West Bengal"
+    ],
+    "violated": [
+      "Unmarried"
+    ],
+    "unresolved": [
+      "Applicant is a girl",
+      "Currently in education",
+      "Annual family income up to ₹1.2 lakh"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Unmarried.",
+    "rationale": "The scheme requires an unmarried girl."
+  },
+  {
+    "id": "E90",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "daughter_age": 6
+    },
+    "satisfied": [
+      "Girl child below 10 years"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Maximum two accounts per family"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Maximum two accounts per family.",
+    "rationale": "Girl below 10 and within the two-account limit."
+  },
+  {
+    "id": "E91",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "daughter_age": 12
+    },
+    "satisfied": [],
+    "violated": [
+      "Girl child below 10 years"
+    ],
+    "unresolved": [
+      "Maximum two accounts per family"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Girl child below 10 years.",
+    "rationale": "The girl is not below 10 years."
+  },
+  {
+    "id": "E92",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "boundary",
+    "profile": {
+      "daughter_age": 9
+    },
+    "satisfied": [
+      "Girl child below 10 years"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Maximum two accounts per family"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Maximum two accounts per family.",
+    "rationale": "Still below 10, so eligible just inside the limit."
+  },
+  {
+    "id": "E93",
+    "scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 20,
+      "has_bank_account": true,
+      "employed_full_time": false
+    },
+    "satisfied": [
+      "Age between 15 and 45 years"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 1 checked condition.",
+    "rationale": "Within 15-45 with required documents."
+  },
+  {
+    "id": "E94",
+    "scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 52,
+      "employed_full_time": false
+    },
+    "satisfied": [],
+    "violated": [
+      "Age between 15 and 45 years"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age between 15 and 45 years.",
+    "rationale": "Above the 15-45 age range."
+  },
+  {
+    "id": "E95",
+    "scheme": "Pradhan Mantri Mudra Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 30,
+      "business_type": "tailoring shop"
+    },
+    "satisfied": [
+      "Age 18 years or above",
+      "Runs a non-farm income-generating activity",
+      "Activity is not crop cultivation or farming"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Non-farm income-generating activity, adult."
+  },
+  {
+    "id": "E96",
+    "scheme": "Pradhan Mantri Mudra Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "business_type": "crop cultivation"
+    },
+    "satisfied": [
+      "Runs a non-farm income-generating activity"
+    ],
+    "violated": [
+      "Activity is not crop cultivation or farming"
+    ],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Activity is not crop cultivation or farming.",
+    "rationale": "Mudra covers non-farm activities."
+  },
+  {
+    "id": "E97",
+    "scheme": "Janani Suraksha Yojana (JSY)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 24,
+      "bpl": true,
+      "pregnant": true
+    },
+    "satisfied": [
+      "Age 19 years or above",
+      "Pregnant woman or recent delivery",
+      "BPL household, or SC/ST category"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Delivery in a recognised health facility"
+    ],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Adult BPL pregnant woman delivering in a government facility."
+  },
+  {
+    "id": "E98",
+    "scheme": "Janani Suraksha Yojana (JSY)",
+    "expected": "Ineligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 26,
+      "bpl": true
+    },
+    "satisfied": [
+      "Age 19 years or above",
+      "BPL household, or SC/ST category"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Pregnant woman or recent delivery",
+      "Delivery in a recognised health facility"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Pregnant woman or recent delivery.",
+    "rationale": "Benefit requires delivery in a recognised health facility."
+  },
+  {
+    "id": "E99",
+    "scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 12,
+      "gender": "female",
+      "category": "sc",
+      "backward_block": true
+    },
+    "satisfied": [
+      "Girl aged 10 to 18 years",
+      "Applicant is a girl",
+      "Girl from SC/ST/OBC/minority/BPL background"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "Girl in age range from a disadvantaged group."
+  },
+  {
+    "id": "E100",
+    "scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 12,
+      "gender": "male",
+      "category": "sc"
+    },
+    "satisfied": [
+      "Girl aged 10 to 18 years",
+      "Girl from SC/ST/OBC/minority/BPL background"
+    ],
+    "violated": [
+      "Applicant is a girl"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Applicant is a girl.",
+    "rationale": "Schools are for girls only."
+  },
+  {
+    "id": "E101",
+    "scheme": "Eklavya Model Residential Schools",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 12,
+      "category": "st"
+    },
+    "satisfied": [
+      "Age between 11 and 18 years",
+      "Belongs to a Scheduled Tribe"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "ST student in range."
+  },
+  {
+    "id": "E102",
+    "scheme": "Eklavya Model Residential Schools",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 13,
+      "category": "general"
+    },
+    "satisfied": [
+      "Age between 11 and 18 years"
+    ],
+    "violated": [
+      "Belongs to a Scheduled Tribe"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Belongs to a Scheduled Tribe.",
+    "rationale": "Must belong to Scheduled Tribe."
+  },
+  {
+    "id": "E103",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "income": 150000,
+      "monthly_income": 12500,
+      "category": "sc",
+      "education_level": "B.A.",
+      "is_student": true
+    },
+    "satisfied": [
+      "Belongs to a Scheduled Caste",
+      "Annual family income up to ₹2.5 lakh",
+      "Studying at post-matric level"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 3 checked conditions.",
+    "rationale": "SC, post-matric and within income limit."
+  },
+  {
+    "id": "E104",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 400000,
+      "monthly_income": 33333,
+      "category": "sc",
+      "education_level": "B.Sc.",
+      "is_student": true
+    },
+    "satisfied": [
+      "Belongs to a Scheduled Caste",
+      "Studying at post-matric level"
+    ],
+    "violated": [
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Annual family income up to ₹2.5 lakh.",
+    "rationale": "Family income exceeds Rs 2.5 lakh."
+  },
+  {
+    "id": "E105",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "category": "sc"
+    },
+    "satisfied": [
+      "Belongs to a Scheduled Caste"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Annual family income up to ₹2.5 lakh",
+      "Studying at post-matric level"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Annual family income up to ₹2.5 lakh; Studying at post-matric level.",
+    "rationale": "Family income is not stated."
+  },
+  {
+    "id": "E106",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "income": 150000,
+      "monthly_income": 12500,
+      "category": "minority",
+      "minority": true,
+      "class_level": 11,
+      "marks_percent": 65,
+      "is_student": true
+    },
+    "satisfied": [
+      "Belongs to a notified minority community",
+      "Annual family income up to ₹2 lakh",
+      "At least 50% marks in the previous examination",
+      "Currently a student"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
+    "rationale": "Notified minority, above 50% marks, within post-matric income limit."
+  },
+  {
+    "id": "E107",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "expected": "Ineligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 100000,
+      "monthly_income": 8333,
+      "category": "hindu",
+      "marks_percent": 80
+    },
+    "satisfied": [
+      "Annual family income up to ₹2 lakh",
+      "At least 50% marks in the previous examination"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Belongs to a notified minority community",
+      "Currently a student"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Belongs to a notified minority community; Currently a student.",
+    "rationale": "Hindu is not a notified minority community."
+  },
+  {
+    "id": "E108",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "income": 100000,
+      "monthly_income": 8333,
+      "category": "minority",
+      "minority": true,
+      "marks_percent": 42
+    },
+    "satisfied": [
+      "Belongs to a notified minority community",
+      "Annual family income up to ₹2 lakh"
+    ],
+    "violated": [
+      "At least 50% marks in the previous examination"
+    ],
+    "unresolved": [
+      "Currently a student"
+    ],
+    "summary": "Does not meet 1 mandatory condition: At least 50% marks in the previous examination.",
+    "rationale": "Marks are below the 50% minimum."
+  },
+  {
+    "id": "E109",
+    "scheme": "PM-KUSUM",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "occupation": "farmer",
+      "land_acres": 3,
+      "land_hectares": 1.214,
+      "land_owned": true
+    },
+    "satisfied": [
+      "Farmer",
+      "Landowning farmer"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Age 18 years or above.",
+    "rationale": "Landowner farmer."
+  },
+  {
+    "id": "E110",
+    "scheme": "PM-KUSUM",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "occupation": "farm labourer",
+      "land_owned": false
+    },
+    "satisfied": [],
+    "violated": [
+      "Farmer",
+      "Landowning farmer"
+    ],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "Does not meet 2 mandatory conditions: Farmer; Landowning farmer.",
+    "rationale": "Scheme requires a landowner farmer."
+  },
+  {
+    "id": "E111",
+    "scheme": "Senior Citizens Savings Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 62
+    },
+    "satisfied": [
+      "Age 60+, or 55+ and retired"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 1 checked condition.",
+    "rationale": "Aged 60+."
+  },
+  {
+    "id": "E112",
+    "scheme": "Senior Citizens Savings Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 45,
+      "retired": false
+    },
+    "satisfied": [],
+    "violated": [
+      "Age 60+, or 55+ and retired"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age 60+, or 55+ and retired.",
+    "rationale": "Below 60 and not a retiree."
+  },
+  {
+    "id": "E113",
+    "scheme": "Senior Citizens Savings Scheme",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "boundary",
+    "profile": {
+      "age": 57,
+      "retired": true
+    },
+    "satisfied": [
+      "Age 60+, or 55+ and retired"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 1 checked condition.",
+    "rationale": "Retirees aged 55+ qualify."
+  },
+  {
+    "id": "E114",
+    "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 40,
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Age between 18 and 50 years",
+      "Has a bank account"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Within 18-50 with a bank account."
+  },
+  {
+    "id": "E115",
+    "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 55,
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Has a bank account"
+    ],
+    "violated": [
+      "Age between 18 and 50 years"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age between 18 and 50 years.",
+    "rationale": "Above the age of 50."
+  },
+  {
+    "id": "E116",
+    "scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 65,
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Age between 18 and 70 years",
+      "Has a bank account"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Within 18-70 with bank account."
+  },
+  {
+    "id": "E117",
+    "scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 72,
+      "has_bank_account": true
+    },
+    "satisfied": [
+      "Has a bank account"
+    ],
+    "violated": [
+      "Age between 18 and 70 years"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age between 18 and 70 years.",
+    "rationale": "Above 70."
+  },
+  {
+    "id": "E118",
+    "scheme": "Startup India Seed Fund Scheme",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "dpiit_recognised": true,
+      "incorporated_years_ago": 1
+    },
+    "satisfied": [
+      "DPIIT-recognised startup",
+      "Incorporated within the last 2 years"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Age 18 years or above.",
+    "rationale": "Recognised and within 2 years."
+  },
+  {
+    "id": "E119",
+    "scheme": "Startup India Seed Fund Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "dpiit_recognised": true,
+      "incorporated_years_ago": 5
+    },
+    "satisfied": [
+      "DPIIT-recognised startup"
+    ],
+    "violated": [
+      "Incorporated within the last 2 years"
+    ],
+    "unresolved": [
+      "Age 18 years or above"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Incorporated within the last 2 years.",
+    "rationale": "Incorporated more than 2 years ago."
+  },
+  {
+    "id": "E120",
+    "scheme": "Startup India Seed Fund Scheme",
+    "expected": "Insufficient Information",
+    "predicted": "Insufficient Information",
+    "correct": true,
+    "category": "insufficient_information",
+    "profile": {
+      "incorporated_years_ago": 1
+    },
+    "satisfied": [
+      "Incorporated within the last 2 years"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Age 18 years or above",
+      "DPIIT-recognised startup"
+    ],
+    "summary": "All checked conditions are met, but 2 conditions could not be verified: Age 18 years or above; DPIIT-recognised startup.",
+    "rationale": "DPIIT recognition not stated."
+  },
+  {
+    "id": "E121",
+    "scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "expected": "Eligible",
+    "predicted": "Eligible",
+    "correct": true,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 22,
+      "area": "rural",
+      "bpl": true
+    },
+    "satisfied": [
+      "Age between 15 and 35 years",
+      "Resident of a rural area"
+    ],
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
+    "rationale": "Rural poor youth in range."
+  },
+  {
+    "id": "E122",
+    "scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 40,
+      "area": "rural"
+    },
+    "satisfied": [
+      "Resident of a rural area"
+    ],
+    "violated": [
+      "Age between 15 and 35 years"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: Age between 15 and 35 years.",
+    "rationale": "Above the 15-35 age range."
+  },
+  {
+    "id": "E123",
+    "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "expected": "Eligible",
+    "predicted": "Ineligible",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 30,
+      "education_level": "Class 10",
+      "is_student": true,
+      "business_type": "manufacturing",
+      "project_cost": 1200000
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "At least Class 8 pass for projects above ₹10 lakh"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: At least Class 8 pass for projects above ₹10 lakh.",
+    "rationale": "Meets the Class 8 requirement for projects above Rs 10 lakh."
+  },
+  {
+    "id": "E124",
+    "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 28,
+      "education_level": "Class 5",
+      "is_student": true,
+      "business_type": "manufacturing",
+      "project_cost": 1500000
+    },
+    "satisfied": [
+      "Age 18 years or above"
+    ],
+    "violated": [
+      "At least Class 8 pass for projects above ₹10 lakh"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 1 mandatory condition: At least Class 8 pass for projects above ₹10 lakh.",
+    "rationale": "Class 8 pass needed for manufacturing projects above Rs 10 lakh."
+  },
+  {
+    "id": "E125",
+    "scheme": "Lakshmir Bhandar (West Bengal)",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 40,
+      "state": "West Bengal",
+      "other_pension": false,
+      "swasthya_sathi": true
+    },
+    "satisfied": [
+      "Woman aged 25 to 60 years",
+      "Resident of West Bengal",
+      "Not receiving another government pension",
+      "Holds a Swasthya Sathi card"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Applicant is a woman"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Applicant is a woman.",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E126",
+    "scheme": "Lakshmir Bhandar (West Bengal)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_single_condition",
+    "profile": {
+      "age": 22,
+      "state": "West Bengal",
+      "swasthya_sathi": true
+    },
+    "satisfied": [
+      "Resident of West Bengal",
+      "Holds a Swasthya Sathi card"
+    ],
+    "violated": [
+      "Woman aged 25 to 60 years"
+    ],
+    "unresolved": [
+      "Applicant is a woman",
+      "Not receiving another government pension"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Woman aged 25 to 60 years.",
+    "rationale": "Below the minimum age of 25."
+  },
+  {
+    "id": "E127",
+    "scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+    "expected": "Eligible",
+    "predicted": "Insufficient Information",
+    "correct": false,
+    "category": "clearly_eligible",
+    "profile": {
+      "age": 35,
+      "income": 150000,
+      "monthly_income": 12500,
+      "state": "Tamil Nadu",
+      "ration_card": true
+    },
+    "satisfied": [
+      "Age 21 years or above",
+      "Resident of Tamil Nadu",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "violated": [],
+    "unresolved": [
+      "Applicant is a woman"
+    ],
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Applicant is a woman.",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E128",
+    "scheme": "PM Internship Scheme",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "age": 27,
+      "income": 1200000,
+      "monthly_income": 100000
+    },
+    "satisfied": [],
+    "violated": [
+      "Age between 21 and 24 years",
+      "Annual family income up to ₹8 lakh"
+    ],
+    "unresolved": [
+      "Not in full-time employment",
+      "No government job in the family"
+    ],
+    "summary": "Does not meet 2 mandatory conditions: Age between 21 and 24 years; Annual family income up to ₹8 lakh.",
+    "rationale": "Fails both the age range (21-24) and the family income limit (Rs 8 lakh)."
+  },
+  {
+    "id": "E129",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "age": 70,
+      "gender": "female",
+      "state": "Gujarat"
+    },
+    "satisfied": [
+      "Applicant is a woman"
+    ],
+    "violated": [
+      "Woman aged 21 to 65 years",
+      "Resident of Maharashtra"
+    ],
+    "unresolved": [
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "summary": "Does not meet 2 mandatory conditions: Woman aged 21 to 65 years; Resident of Maharashtra.",
+    "rationale": "Fails both the age limit (21-65) and the Maharashtra residence requirement."
+  },
+  {
+    "id": "E130",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "age": 22,
+      "state": "Delhi",
+      "marital_status": "married"
+    },
+    "satisfied": [],
+    "violated": [
+      "Girl aged 13 to 19 years",
+      "Resident of West Bengal",
+      "Unmarried"
+    ],
+    "unresolved": [
+      "Applicant is a girl",
+      "Currently in education",
+      "Annual family income up to ₹1.2 lakh"
+    ],
+    "summary": "Does not meet 3 mandatory conditions: Girl aged 13 to 19 years; Resident of West Bengal; Unmarried.",
+    "rationale": "Fails age, residence and unmarried condition."
+  },
+  {
+    "id": "E131",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "area": "urban",
+      "bpl": false,
+      "owns_pucca_house": true
+    },
+    "satisfied": [],
+    "violated": [
+      "Rural household",
+      "BPL / SECC-identified household",
+      "Does not already own a pucca house"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 3 mandatory conditions: Rural household; BPL / SECC-identified household; Does not already own a pucca house.",
+    "rationale": "Fails rural location, BPL/SECC and no-pucca-house conditions."
+  },
+  {
+    "id": "E132",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "income": 600000,
+      "monthly_income": 50000,
+      "category": "general"
+    },
+    "satisfied": [],
+    "violated": [
+      "Belongs to a Scheduled Caste",
+      "Annual family income up to ₹2.5 lakh"
+    ],
+    "unresolved": [
+      "Studying at post-matric level"
+    ],
+    "summary": "Does not meet 2 mandatory conditions: Belongs to a Scheduled Caste; Annual family income up to ₹2.5 lakh.",
+    "rationale": "Not Scheduled Caste and family income above Rs 2.5 lakh."
+  },
+  {
+    "id": "E133",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "expected": "Ineligible",
+    "predicted": "Ineligible",
+    "correct": true,
+    "category": "ineligible_multiple_conditions",
+    "profile": {
+      "age": 45,
+      "bpl": false
+    },
+    "satisfied": [],
+    "violated": [
+      "Age 60 years or above",
+      "Household on the BPL list"
+    ],
+    "unresolved": [],
+    "summary": "Does not meet 2 mandatory conditions: Age 60 years or above; Household on the BPL list.",
+    "rationale": "Fails both age (60+) and BPL conditions."
+  }
+]

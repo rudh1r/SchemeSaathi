@@ -1,0 +1,14 @@
+{
+  "concurrency": 3,
+  "requests": 40,
+  "errors": 16,
+  "wall_s": 144.704,
+  "throughput_rps": 0.276,
+  "latency": {
+    "n": 24,
+    "mean_s": 7.380333333333333,
+    "median_s": 7.39,
+    "p95_s": 17.523,
+    "max_s": 17.569
+  }
+}

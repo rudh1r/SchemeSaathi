@@ -1,36 +1,40 @@
-require('dotenv').config();
+/**
+ * Rebuilds the Chroma "schemes" collection from MongoDB.
+ *
+ * Prerequisites:
+ *   1. MongoDB reachable (MONGODB_URI in backend/.env)
+ *   2. Chroma running:  npm run chroma   (from backend/)
+ *
+ * Usage: npm run embed
+ */
+require('dotenv').config({ quiet: true });
 const { MongoClient } = require('mongodb');
-const { ChromaClient } = require('chromadb');
+const config = require('./src/config');
+const { syncIndex } = require('./src/vector-index');
 
-const uri = process.env.MONGODB_URI;
-const mongoClient = new MongoClient(uri);
-const chroma = new ChromaClient({ path: 'http://localhost:8000' });
+const mongoClient = new MongoClient(config.mongoUri);
 
-async function embedSchemes() {
-    try {
-        await mongoClient.connect();
-        console.log('✅ Connected to MongoDB');
+async function main() {
+  if (!config.mongoUri) throw new Error('MONGODB_URI is missing from backend/.env');
 
-        const db = mongoClient.db('schemesaathi');
-        const schemes = await db.collection('schemes').find({}).toArray();
-        console.log(`Fetched ${schemes.length} schemes from MongoDB`);
+  await mongoClient.connect();
+  console.log('Connected to MongoDB');
+  const db = mongoClient.db(config.mongoDbName);
 
-        const collection = await chroma.getOrCreateCollection({ name: 'schemes' });
+  const result = await syncIndex({
+    db,
+    force: true,
+    onProgress: (done, total) => process.stdout.write(`\r  embedded ${done}/${total}`),
+  });
 
-        const ids = schemes.map(s => s._id.toString());
-        const documents = schemes.map(s =>
-            `${s.scheme_name}. ${s.description} Eligibility: ${JSON.stringify(s.eligibility)}`
-        );
-        const metadatas = schemes.map(s => ({ scheme_name: s.scheme_name, mongo_id: s._id.toString() }));
-
-        await collection.add({ ids, documents, metadatas });
-
-        console.log(`✅ Embedded and stored ${ids.length} schemes in Chroma`);
-    } catch (err) {
-        console.error('❌ Embedding failed:', err.message);
-    } finally {
-        await mongoClient.close();
-    }
+  console.log(`\nIndexed ${result.count} schemes in Chroma collection "${result.collection}"`);
 }
 
-embedSchemes();
+main()
+  .catch((err) => {
+    console.error('\nEmbedding failed:', err.message);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    await mongoClient.close().catch(() => {});
+  });

@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      ONNXRUNTIME_NODE_INSTALL_CUDA: skip
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+
+      - name: Backend unit tests
+        working-directory: backend
+        run: npm test
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Frontend lint
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Frontend production build
+        working-directory: frontend
+        run: npm run build

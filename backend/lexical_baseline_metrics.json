@@ -1,0 +1,38 @@
+{
+  "baseline": "BM25 over scheme_name + description + benefits + eligibility",
+  "schemes": 112,
+  "single_relevant": {
+    "k3": {
+      "queries": 245,
+      "k": 3,
+      "top1_accuracy": 87.76,
+      "hit_at_3": 96.33,
+      "recall_at_3": 96.33,
+      "precision_at_3": 32.11,
+      "f1_at_3": 48.16,
+      "mrr": 0.921
+    },
+    "k5": {
+      "queries": 245,
+      "k": 5,
+      "top1_accuracy": 87.76,
+      "hit_at_5": 99.18,
+      "recall_at_5": 99.18,
+      "precision_at_5": 19.84,
+      "f1_at_5": 33.06,
+      "mrr": 0.921
+    }
+  },
+  "multi_relevant": {
+    "k3": {
+      "queries": 15,
+      "k": 3,
+      "top1_accuracy": 73.33,
+      "hit_at_3": 93.33,
+      "recall_at_3": 65.56,
+      "precision_at_3": 60,
+      "f1_at_3": 62.65,
+      "mrr": 0.8222
+    }
+  }
+}

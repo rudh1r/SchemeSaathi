@@ -164,155 +164,1792 @@
       "other_conditions": "Applicable to any victim of a road accident on Indian roads, launched 14 February 2026"
     }
   },
-
   {
-  "scheme_name": "PM YASASVI Scholarship",
-  "description": "Central scholarship scheme supporting OBC, EBC, and DNT category students for pre-matric and post-matric education, covering tuition and maintenance costs.",
-  "benefits": "Up to Rs. 1,25,000 per year for post-matric students in premier institutions; lower amounts for other categories, paid directly to bank account.",
-  "application_process": "Apply online through the National Scholarship Portal (NSP) with caste certificate, income certificate, and admission proof.",
-  "source_url": "https://yet.nta.ac.in/",
-  "eligibility": {
-    "age_requirement": "Class 9 to postgraduate level",
-    "income_requirement": "Annual family income below Rs. 2,50,000",
-    "occupation": "Student",
-    "location": "All states and UTs",
-    "education": "Enrolled in recognized school/college/university",
-    "other_conditions": "Must belong to OBC, EBC, or DNT category"
+    "scheme_name": "PM YASASVI Scholarship",
+    "description": "Central scholarship scheme supporting OBC, EBC, and DNT category students for pre-matric and post-matric education, covering tuition and maintenance costs.",
+    "benefits": "Up to Rs. 1,25,000 per year for post-matric students in premier institutions; lower amounts for other categories, paid directly to bank account.",
+    "application_process": "Apply online through the National Scholarship Portal (NSP) with caste certificate, income certificate, and admission proof.",
+    "source_url": "https://yet.nta.ac.in/",
+    "eligibility": {
+      "age_requirement": "Class 9 to postgraduate level",
+      "income_requirement": "Annual family income below Rs. 2,50,000",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "Enrolled in recognized school/college/university",
+      "other_conditions": "Must belong to OBC, EBC, or DNT category"
+    }
+  },
+  {
+    "scheme_name": "AICTE Pragati Scholarship for Girls",
+    "description": "Scholarship for girl students pursuing technical education (diploma or degree) in AICTE-approved institutions, aimed at reducing dropout rates among female students.",
+    "benefits": "Rs. 50,000 per year for tuition fees and other expenses, for the duration of the technical course.",
+    "application_process": "Apply online through the National Scholarship Portal (NSP) with admission proof from an AICTE-approved institution.",
+    "source_url": "https://www.aicte-india.org/schemes/students-development-schemes",
+    "eligibility": {
+      "age_requirement": "No specific limit",
+      "income_requirement": "Annual family income below Rs. 8,00,000",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "Enrolled in AICTE-approved technical diploma or degree program",
+      "other_conditions": "Only one girl child per family eligible; maximum two girls per family across all AICTE scholarships"
+    }
+  },
+  {
+    "scheme_name": "National Means-cum-Merit Scholarship (NMMS)",
+    "description": "Scholarship to prevent dropout at the Class 8 to Class 12 stage and encourage economically weaker meritorious students to continue their education.",
+    "benefits": "Rs. 12,000 per year (Rs. 1,000 per month) for four years, from Class 9 to Class 12.",
+    "application_process": "Apply through state education department after clearing the NMMS selection test conducted at the Class 8 level.",
+    "source_url": "https://scholarships.gov.in/",
+    "eligibility": {
+      "age_requirement": "Studying in Class 9 to Class 12",
+      "income_requirement": "Annual parental income below Rs. 1,50,000",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "Studying in a government, government-aided, or local body school",
+      "other_conditions": "Must clear the NMMS qualifying examination held in Class 8"
+    }
+  },
+  {
+    "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "description": "Maternity benefit scheme providing partial wage compensation to pregnant and lactating women for the first living child, encouraging adequate nutrition and rest.",
+    "benefits": "Rs. 5,000 in three installments for the first child, paid directly to the mother's bank account, linked to health checkups and vaccination milestones.",
+    "application_process": "Register at the nearest Anganwadi Centre or health facility with pregnancy registration and Aadhaar details.",
+    "source_url": "https://pmmvy.wcd.gov.in/",
+    "eligibility": {
+      "age_requirement": "18 years and above",
+      "income_requirement": "No specific limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Applicable for the first living child; pregnancy must be registered with Anganwadi/health facility"
+    }
+  },
+  {
+    "scheme_name": "Assistance to Disabled Persons Scheme (ADIP)",
+    "description": "Scheme providing assistive devices and aids such as wheelchairs, hearing aids, and artificial limbs to persons with disabilities to support their physical and economic independence.",
+    "benefits": "Free assistive devices for those with monthly income up to Rs. 22,500; 50% subsidy for income between Rs. 22,501 and Rs. 30,000.",
+    "application_process": "Apply through empanelled implementing agencies (NGOs, hospitals, district agencies) with UDID card and income certificate.",
+    "source_url": "https://depwd.gov.in/",
+    "eligibility": {
+      "age_requirement": "No specific limit",
+      "income_requirement": "Monthly income up to Rs. 30,000",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must hold a UDID card showing 40% or more disability"
+    }
+  },
+  {
+    "scheme_name": "Rashtriya Vayoshri Yojana (RVY)",
+    "description": "Scheme providing free assistive living devices to senior citizens belonging to BPL households, addressing age-related physical impairments.",
+    "benefits": "Free devices such as walking sticks, wheelchairs, hearing aids, and spectacles based on assessed need.",
+    "application_process": "Apply through district-level assessment camps organized by ALIMCO with income and age proof.",
+    "source_url": "https://depwd.gov.in/",
+    "eligibility": {
+      "age_requirement": "60 years and above",
+      "income_requirement": "Monthly income below Rs. 15,000",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must have an age-related disability or impairment assessed at the camp"
+    }
+  },
+  {
+    "scheme_name": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "description": "Urban livelihoods scheme supporting the urban poor through skill training, self-employment loans, and support for street vendors and homeless shelters.",
+    "benefits": "Bank loans up to Rs. 2 lakh for individual enterprises and Rs. 10 lakh for group enterprises, with interest subsidy.",
+    "application_process": "Apply through the Urban Local Body (ULB) or City Livelihood Centre with proof of urban residency.",
+    "source_url": "https://mohua.gov.in/DAY-NULM/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "Urban poor / below poverty line households",
+      "occupation": "Unemployed or informally employed urban resident",
+      "location": "Urban areas",
+      "education": "No requirement",
+      "other_conditions": "Must be a resident of the urban local body area for a minimum period as specified"
+    }
+  },
+  {
+    "scheme_name": "Stand-Up India Scheme",
+    "description": "Scheme facilitating bank loans for setting up greenfield enterprises in manufacturing, services, or trading sectors, specifically for women and SC/ST entrepreneurs.",
+    "benefits": "Bank loans between Rs. 10 lakh and Rs. 1 crore for setting up a new enterprise.",
+    "application_process": "Apply through the Stand-Up India portal or directly at bank branches with a business project report.",
+    "source_url": "https://www.standupmitra.in/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "No specific limit",
+      "occupation": "Aspiring entrepreneur",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "At least one woman or SC/ST entrepreneur per bank branch; must be a greenfield (new) enterprise"
+    }
+  },
+  {
+    "scheme_name": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "description": "Concessional loan scheme for persons with disabilities to pursue self-employment ventures, skill development, or higher education.",
+    "benefits": "Loans up to Rs. 25 lakh at concessional interest rates (typically 4-8%) depending on loan amount and purpose.",
+    "application_process": "Apply through State Channelizing Agencies (SCAs) with disability certificate and business/education plan.",
+    "source_url": "https://nhfdc.nic.in/",
+    "eligibility": {
+      "age_requirement": "18+",
+      "income_requirement": "Varies by income slab (concession higher for lower income)",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement for loans; academic enrollment required for education loans",
+      "other_conditions": "Must hold a valid disability certificate of 40% or more"
+    }
+  },
+  {
+    "scheme_name": "Central Sector Scholarship Scheme (CSSS)",
+    "description": "Merit-based scholarship for meritorious students from low-income families to pursue college and university education, covering a wide range of undergraduate courses.",
+    "benefits": "Rs. 12,000 per year for undergraduate studies (first three years), increasing to Rs. 20,000 per year for postgraduate studies.",
+    "application_process": "Apply through the National Scholarship Portal (NSP) based on Class 12 board exam merit and admission to a recognized college.",
+    "source_url": "https://scholarships.gov.in/",
+    "eligibility": {
+      "age_requirement": "Pursuing undergraduate/postgraduate studies",
+      "income_requirement": "Annual family income below Rs. 4,50,000",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "Scored above 80th percentile in Class 12 board exams",
+      "other_conditions": "Must not be receiving any other central government scholarship simultaneously"
+    }
+  },
+  {
+    "scheme_name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "description": "Crop insurance scheme protecting farmers against yield loss from natural calamities, pests and diseases.",
+    "benefits": "Insurance cover for notified crops at low farmer-paid premium (2% Kharif, 1.5% Rabi, 5% commercial/horticulture crops).",
+    "application_process": "Apply via bank, CSC, insurance company or the PMFBY portal before the cut-off date for the season.",
+    "source_url": "https://pmfby.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer (landowner or tenant)",
+      "location": "All states and UTs (state participation varies)",
+      "education": "No requirement",
+      "other_conditions": "Crop must be notified in the area; enrol before season cut-off"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Kisan Credit Card (KCC)",
+    "description": "Credit facility giving farmers timely, low-cost short-term loans for cultivation and allied activities.",
+    "benefits": "Revolving credit with interest subvention; effective interest as low as 4% on timely repayment for loans up to Rs. 3 lakh.",
+    "application_process": "Apply at any commercial bank, RRB or cooperative bank with ID, land records and photographs.",
+    "source_url": "https://www.myscheme.gov.in/",
+    "eligibility": {
+      "age_requirement": "18-75 years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer, tenant farmer, fisher, animal husbandry farmer",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Co-borrower required above 60 years"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "PM Kisan Maandhan Yojana",
+    "description": "Voluntary pension scheme for small and marginal farmers.",
+    "benefits": "Rs. 3,000 monthly pension after age 60.",
+    "application_process": "Enrol at nearest CSC with Aadhaar, bank account and land records.",
+    "source_url": "https://maandhan.in/",
+    "eligibility": {
+      "age_requirement": "18-40 years",
+      "income_requirement": "Small and marginal farmers (up to 2 hectares)",
+      "occupation": "Farmer",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Monthly contribution Rs. 55-200 depending on entry age; not for EPFO/NPS/ESIC members"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Soil Health Card Scheme",
+    "description": "Provides farmers with soil nutrient status and crop-wise fertilizer recommendations.",
+    "benefits": "Free soil testing and soil health card every cycle.",
+    "application_process": "Contact the local agriculture department or Krishi Vigyan Kendra for soil sampling.",
+    "source_url": "https://soilhealth.dac.gov.in/",
+    "eligibility": {
+      "age_requirement": "No age limit",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must be a cultivator"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+    "description": "Improves irrigation coverage and water-use efficiency (\"Per Drop More Crop\").",
+    "benefits": "Subsidy on drip and sprinkler irrigation and water-source creation.",
+    "application_process": "Apply via state agriculture/horticulture department or the PMKSY portal.",
+    "source_url": "https://pmksy.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Subsidy rates vary by state and farmer category"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Mission on Edible Oils",
+    "description": "Boosts domestic oilseed and oil palm production.",
+    "benefits": "Seed, planting material and assistance for oilseed/oil palm farmers.",
+    "application_process": "Apply through state agriculture department.",
+    "source_url": "https://agriwelfare.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must cultivate oilseeds or oil palm"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Agriculture Infrastructure Fund",
+    "description": "Financing for post-harvest management and community farming assets.",
+    "benefits": "Loans up to Rs. 2 crore with 3% interest subvention and credit guarantee.",
+    "application_process": "Apply online at the Agriculture Infrastructure Fund portal via participating banks.",
+    "source_url": "https://agriinfra.dac.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmers, FPOs, agri-entrepreneurs, startups, cooperatives",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Project must be for eligible post-harvest/farm-gate infrastructure"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Matsya Sampada Yojana",
+    "description": "Develops the fisheries sector and supports fishers' livelihoods.",
+    "benefits": "Subsidy of 40-60% on fish farming, boats, cold chain and related units.",
+    "application_process": "Apply via state fisheries department or the PMMSY portal.",
+    "source_url": "https://pmmsy.dof.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Fisher, fish farmer, fisheries entrepreneur",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Subsidy higher for women and SC/ST beneficiaries"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Rashtriya Gokul Mission",
+    "description": "Conserves and develops indigenous cattle breeds and boosts milk productivity.",
+    "benefits": "Support for breed improvement, AI services and dairy units.",
+    "application_process": "Apply through state livestock development board.",
+    "source_url": "https://dahd.nic.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Dairy farmer / livestock owner",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must own cattle or run dairy activity"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "e-NAM (National Agriculture Market)",
+    "description": "Online trading platform linking mandis nationwide.",
+    "benefits": "Better price discovery and access to buyers across states.",
+    "application_process": "Register as a farmer on the e-NAM portal/app with Aadhaar and bank account.",
+    "source_url": "https://enam.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer / trader",
+      "location": "All states and UTs (registered mandis)",
+      "education": "No requirement",
+      "other_conditions": "Bank account required"
+    },
+    "category": "Agriculture",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Jan Aushadhi Pariyojana",
+    "description": "Provides quality generic medicines at affordable prices.",
+    "benefits": "Generic medicines at 50-90% lower than branded prices.",
+    "application_process": "Visit nearest Jan Aushadhi Kendra; pharmacists can apply to open a Kendra.",
+    "source_url": "https://janaushadhi.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Open to all citizens"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Janani Suraksha Yojana (JSY)",
+    "description": "Promotes institutional delivery among pregnant women.",
+    "benefits": "Cash incentive for delivery in a government/accredited health facility.",
+    "application_process": "Register at ANM/ASHA or nearest government health centre.",
+    "source_url": "https://nhm.gov.in/",
+    "eligibility": {
+      "age_requirement": "19+ years",
+      "income_requirement": "Primarily BPL / SC / ST (varies by state)",
+      "occupation": "Pregnant woman",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Delivery in a recognised health facility"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Surakshit Matritva Abhiyan",
+    "description": "Free quality antenatal care on the 9th of every month.",
+    "benefits": "Free check-ups and diagnostics by specialists for pregnant women.",
+    "application_process": "Visit nearest government health facility on the 9th of each month.",
+    "source_url": "https://pmsma.mohfw.gov.in/",
+    "eligibility": {
+      "age_requirement": "Any age (pregnant women)",
+      "income_requirement": "No income limit",
+      "occupation": "Pregnant woman",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Second or third trimester"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Programme for Health Care of Elderly",
+    "description": "Provides dedicated health care for senior citizens.",
+    "benefits": "Preventive, curative and rehabilitative services at government facilities.",
+    "application_process": "Visit district hospital geriatric clinic.",
+    "source_url": "https://nhm.gov.in/",
+    "eligibility": {
+      "age_requirement": "60+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Senior citizens"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Rashtriya Bal Swasthya Karyakram (RBSK)",
+    "description": "Child health screening and early intervention for birth defects, diseases and developmental delays.",
+    "benefits": "Free screening and treatment including surgery for children 0-18.",
+    "application_process": "Screening done at Anganwadi/schools; referral to district centres.",
+    "source_url": "https://nhm.gov.in/",
+    "eligibility": {
+      "age_requirement": "0-18 years",
+      "income_requirement": "No income limit",
+      "occupation": "Child",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Free of cost at public facilities"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Mission Indradhanush (Universal Immunisation)",
+    "description": "Vaccination drive for children and pregnant women.",
+    "benefits": "Free vaccines against preventable diseases.",
+    "application_process": "Visit nearest anganwadi or government health centre.",
+    "source_url": "https://nhm.gov.in/",
+    "eligibility": {
+      "age_requirement": "0-5 years and pregnant women",
+      "income_requirement": "No income limit",
+      "occupation": "Child / pregnant woman",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Free of cost"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Ayushman Bharat Health and Wellness Centres (Ayushman Arogya Mandir)",
+    "description": "Comprehensive primary health care near homes.",
+    "benefits": "Free primary care, screening, medicines and diagnostics.",
+    "application_process": "Visit nearest Ayushman Arogya Mandir.",
+    "source_url": "https://ab-hwc.nhp.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Open to all"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Rashtriya Arogya Nidhi",
+    "description": "Financial help for BPL patients with life-threatening diseases.",
+    "benefits": "One-time financial assistance for treatment in government hospitals.",
+    "application_process": "Apply through the treating government hospital medical superintendent.",
+    "source_url": "https://main.mohfw.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Below poverty line",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Treatment at a government hospital"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Tuberculosis Elimination Programme - Nikshay Poshan Yojana",
+    "description": "Nutritional support to TB patients.",
+    "benefits": "Rs. 500 per month through DBT during treatment.",
+    "application_process": "Registered automatically when TB is notified at a government health facility.",
+    "source_url": "https://tbcindia.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must be a notified TB patient"
+    },
+    "category": "Health",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Credit Linked Subsidy Scheme (CLSS)",
+    "description": "Interest subsidy on home loans for EWS/LIG/MIG.",
+    "benefits": "Interest subsidy up to about Rs. 2.67 lakh depending on income group.",
+    "application_process": "Apply via bank/housing finance company.",
+    "source_url": "https://pmaymis.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Up to Rs. 18 lakh annual household income",
+      "occupation": "Any",
+      "location": "Urban and rural areas",
+      "education": "No requirement",
+      "other_conditions": "No pucca house in family name"
+    },
+    "category": "Housing",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Scholarship Portal (NSP)",
+    "description": "Single portal for central and state scholarships.",
+    "benefits": "Scholarships from various ministries for school and college students.",
+    "application_process": "Register and apply online on scholarships.gov.in.",
+    "source_url": "https://scholarships.gov.in/",
+    "eligibility": {
+      "age_requirement": "Student age",
+      "income_requirement": "Varies by scholarship",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Eligibility depends on chosen scholarship"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Post Matric Scholarship for SC Students",
+    "description": "Financial aid for SC students studying after Class 10.",
+    "benefits": "Maintenance allowance plus tuition and compulsory fees.",
+    "application_process": "Apply on the National Scholarship Portal.",
+    "source_url": "https://scholarships.gov.in/",
+    "eligibility": {
+      "age_requirement": "Student age",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must belong to Scheduled Caste; studying post-matric"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "description": "Supports minority community students.",
+    "benefits": "Scholarship covering admission/tuition fees and maintenance allowance.",
+    "application_process": "Apply on the National Scholarship Portal.",
+    "source_url": "https://scholarships.gov.in/",
+    "eligibility": {
+      "age_requirement": "Student age",
+      "income_requirement": "Family income up to Rs. 1 lakh (pre-matric) / Rs. 2 lakh (post-matric)",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Min. 50% marks in previous exam; notified minority communities"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Prime Minister Research Fellowship (PMRF)",
+    "description": "Fellowship for top PhD researchers in science and technology.",
+    "benefits": "Monthly fellowship plus research grant for up to five years.",
+    "application_process": "Apply on the PMRF portal.",
+    "source_url": "https://pmrf.in/",
+    "eligibility": {
+      "age_requirement": "Eligible PhD applicants",
+      "income_requirement": "No income limit",
+      "occupation": "Student / researcher",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Admission in IITs/IISc/NITs etc.; GATE/NET score requirement"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Samagra Shiksha Abhiyan",
+    "description": "Integrated school education programme from pre-school to Class 12.",
+    "benefits": "Free books, uniforms, infrastructure, and inclusive education support.",
+    "application_process": "Enrol in government school; implemented via state education department.",
+    "source_url": "https://samagra.education.gov.in/",
+    "eligibility": {
+      "age_requirement": "3-18 years",
+      "income_requirement": "No income limit",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Enrolment in government/aided school"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "PM POSHAN (Mid Day Meal)",
+    "description": "Free cooked meals for school children.",
+    "benefits": "Hot cooked meal on school days.",
+    "application_process": "Enrol in a government or aided school.",
+    "source_url": "https://pmposhan.education.gov.in/",
+    "eligibility": {
+      "age_requirement": "6-14 years (extended to pre-primary)",
+      "income_requirement": "No income limit",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Enrolled in government/aided school"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Kasturba Gandhi Balika Vidyalaya",
+    "description": "Residential schools for girls from disadvantaged groups.",
+    "benefits": "Free residential schooling for upper primary girls.",
+    "application_process": "Admission via local education office.",
+    "source_url": "https://samagra.education.gov.in/",
+    "eligibility": {
+      "age_requirement": "10-18 years",
+      "income_requirement": "Disadvantaged groups",
+      "occupation": "Student (girl)",
+      "location": "Educationally backward blocks",
+      "education": "No requirement",
+      "other_conditions": "Girls from SC/ST/OBC/minority/BPL"
+    },
+    "category": "Education",
+    "state": "Educationally backward blocks",
+    "level": "State"
+  },
+  {
+    "scheme_name": "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+    "description": "Collateral-free education loans for meritorious students.",
+    "benefits": "Collateral-free loans and interest subvention for eligible students.",
+    "application_process": "Apply on the PM-Vidyalaxmi portal.",
+    "source_url": "https://pmvidyalaxmi.co.in/",
+    "eligibility": {
+      "age_requirement": "Student age",
+      "income_requirement": "Interest subsidy for family income up to Rs. 8 lakh",
+      "occupation": "Student",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Admission to top-ranked higher education institutions"
+    },
+    "category": "Education",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Beti Bachao Beti Padhao",
+    "description": "Improves child sex ratio and promotes girls' education.",
+    "benefits": "Awareness, education support and welfare for girls.",
+    "application_process": "Via district administration and Anganwadi centres.",
+    "source_url": "https://wcd.nic.in/bbbp-scheme",
+    "eligibility": {
+      "age_requirement": "Girl child",
+      "income_requirement": "No income limit",
+      "occupation": "Girl child",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Girl child focus"
+    },
+    "category": "Women & Child",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Sukanya Samriddhi Yojana",
+    "description": "Small savings scheme for girl child's education and marriage.",
+    "benefits": "High interest rate (set quarterly, ~8%), tax benefits under 80C.",
+    "application_process": "Open at any post office or authorised bank with birth certificate.",
+    "source_url": "https://www.indiapost.gov.in/",
+    "eligibility": {
+      "age_requirement": "Girl child below 10 years",
+      "income_requirement": "No income limit",
+      "occupation": "Parent/guardian of girl child",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Max two accounts per family (exceptions for twins/triplets)"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "description": "Free skill training with certification.",
+    "benefits": "Free short-term training, certification and placement support.",
+    "application_process": "Register at a PMKVY training centre or Skill India portal.",
+    "source_url": "https://www.skillindiadigital.gov.in/",
+    "eligibility": {
+      "age_requirement": "15-45 years",
+      "income_requirement": "No income limit",
+      "occupation": "Unemployed / school or college dropout",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Indian national with Aadhaar and bank account"
+    },
+    "category": "Skill Development",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Mahatma Gandhi NREGA",
+    "description": "Guarantees 100 days of wage employment to rural households.",
+    "benefits": "100 days of unskilled manual work per household per year.",
+    "application_process": "Apply for a job card at the Gram Panchayat.",
+    "source_url": "https://nrega.nic.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Rural households",
+      "occupation": "Rural unskilled worker",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "Adult members willing to do manual work"
+    },
+    "category": "Employment",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Mudra Yojana",
+    "description": "Collateral-free loans to micro and small businesses.",
+    "benefits": "Loans up to Rs. 20 lakh: Shishu (to Rs. 50,000), Kishor (to Rs. 5 lakh), Tarun (to Rs. 10 lakh), Tarun Plus.",
+    "application_process": "Apply at any bank, NBFC or MFI, or on the Udyamimitra portal.",
+    "source_url": "https://www.mudra.org.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Small business owner / entrepreneur",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Non-farm income-generating activity"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "description": "Credit-linked subsidy for setting up micro enterprises.",
+    "benefits": "Subsidy of 15-35% of project cost.",
+    "application_process": "Apply online on the PMEGP e-portal.",
+    "source_url": "https://www.kviconline.gov.in/pmegpeportal/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Entrepreneur",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Min. Class 8 pass for projects above Rs. 10 lakh (manufacturing)"
+    },
+    "category": "Employment",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Startup India Seed Fund Scheme",
+    "description": "Financial support to early-stage startups.",
+    "benefits": "Grants up to Rs. 20 lakh for proof of concept and up to Rs. 50 lakh convertible instruments.",
+    "application_process": "Apply on Startup India portal via selected incubators.",
+    "source_url": "https://seedfund.startupindia.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Startup founder",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "DPIIT-recognised startup incorporated within last 2 years"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Employees' Provident Fund - Employment Linked Incentive",
+    "description": "Incentive for new employees and employers.",
+    "benefits": "Incentive paid on first-time EPFO enrolment.",
+    "application_process": "Through EPFO UAN activation by employer.",
+    "source_url": "https://www.epfindia.gov.in/",
+    "eligibility": {
+      "age_requirement": "Eligible first-time employees",
+      "income_requirement": "Salary within notified limit",
+      "occupation": "Salaried employee",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "First-time formal sector employee"
+    },
+    "category": "Employment",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "description": "Placement-linked skilling for rural youth.",
+    "benefits": "Free training, boarding, certification and placement.",
+    "application_process": "Register at DDU-GKY centre or via state rural development mission.",
+    "source_url": "https://ddugky.info/",
+    "eligibility": {
+      "age_requirement": "15-35 years",
+      "income_requirement": "Rural poor households",
+      "occupation": "Rural youth",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "Priority to SC/ST, women and minorities"
+    },
+    "category": "Skill Development",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Apprenticeship Promotion Scheme",
+    "description": "Encourages apprenticeship training.",
+    "benefits": "Stipend support to employers; apprentices get on-the-job training and stipend.",
+    "application_process": "Register on the Apprenticeship India portal.",
+    "source_url": "https://www.apprenticeshipindia.gov.in/",
+    "eligibility": {
+      "age_requirement": "14+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Apprentice",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Meets trade qualification"
+    },
+    "category": "Skill Development",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "PM Internship Scheme",
+    "description": "12-month internship in top companies for youth.",
+    "benefits": "Monthly stipend of Rs. 5,000 and one-time grant of Rs. 6,000.",
+    "application_process": "Apply on the PM Internship portal.",
+    "source_url": "https://pminternship.mca.gov.in/",
+    "eligibility": {
+      "age_requirement": "21-24 years",
+      "income_requirement": "Family income up to Rs. 8 lakh",
+      "occupation": "Youth",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Not full-time employed or in full-time education; no govt job in family"
+    },
+    "category": "Employment",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+    "description": "Financial inclusion programme for zero-balance accounts.",
+    "benefits": "Zero-balance account, RuPay debit card, accident insurance cover and overdraft facility.",
+    "application_process": "Open at any bank branch or Business Correspondent with KYC.",
+    "source_url": "https://pmjdy.gov.in/",
+    "eligibility": {
+      "age_requirement": "10+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "No existing bank account needed"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "description": "Low-cost life insurance.",
+    "benefits": "Rs. 2 lakh life cover for annual premium of Rs. 436.",
+    "application_process": "Enrol via bank/post office with auto-debit.",
+    "source_url": "https://jansuraksha.gov.in/",
+    "eligibility": {
+      "age_requirement": "18-50 years",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must have bank account"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Suraksha Bima Yojana",
+    "description": "Low-cost accident insurance.",
+    "benefits": "Rs. 2 lakh for accidental death/full disability, Rs. 1 lakh for partial; premium Rs. 20/year.",
+    "application_process": "Enrol via bank/post office with auto-debit.",
+    "source_url": "https://jansuraksha.gov.in/",
+    "eligibility": {
+      "age_requirement": "18-70 years",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must have bank account"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Shram Yogi Maandhan",
+    "description": "Pension for unorganised workers.",
+    "benefits": "Rs. 3,000 monthly pension after age 60.",
+    "application_process": "Enrol at CSC with Aadhaar and bank details.",
+    "source_url": "https://maandhan.in/",
+    "eligibility": {
+      "age_requirement": "18-40 years",
+      "income_requirement": "Monthly income up to Rs. 15,000",
+      "occupation": "Unorganised worker (rickshaw puller, domestic worker, etc.)",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Not an EPFO/NPS/ESIC member or income tax payer"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "description": "Pension for elderly poor.",
+    "benefits": "Monthly pension (Centre Rs. 200-500; states add more).",
+    "application_process": "Apply through Gram Panchayat/municipality or state social welfare department.",
+    "source_url": "https://nsap.nic.in/",
+    "eligibility": {
+      "age_requirement": "60+ years",
+      "income_requirement": "Below poverty line",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "BPL list household"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Indira Gandhi National Widow Pension Scheme",
+    "description": "Pension for widows from BPL families.",
+    "benefits": "Monthly pension from Centre plus state top-up.",
+    "application_process": "Apply via state social welfare department.",
+    "source_url": "https://nsap.nic.in/",
+    "eligibility": {
+      "age_requirement": "40-79 years",
+      "income_requirement": "Below poverty line",
+      "occupation": "Widow",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "BPL household"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Indira Gandhi National Disability Pension Scheme",
+    "description": "Pension for persons with severe disabilities.",
+    "benefits": "Monthly pension plus state top-up.",
+    "application_process": "Apply via state social welfare department.",
+    "source_url": "https://nsap.nic.in/",
+    "eligibility": {
+      "age_requirement": "18-79 years",
+      "income_requirement": "Below poverty line",
+      "occupation": "Person with disability",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "80% or more disability"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "e-Shram Card",
+    "description": "National database of unorganised workers.",
+    "benefits": "Rs. 2 lakh accidental insurance cover and access to welfare schemes.",
+    "application_process": "Register on the e-Shram portal or at CSC with Aadhaar.",
+    "source_url": "https://eshram.gov.in/",
+    "eligibility": {
+      "age_requirement": "16-59 years",
+      "income_requirement": "Not EPFO/ESIC member",
+      "occupation": "Unorganised worker",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Not an income tax payer"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Senior Citizens Savings Scheme",
+    "description": "Post office/bank deposit scheme for seniors.",
+    "benefits": "Quarterly interest income with tax benefit under 80C.",
+    "application_process": "Open at post office or authorised bank.",
+    "source_url": "https://www.indiapost.gov.in/",
+    "eligibility": {
+      "age_requirement": "60+ years (55+ for retirees)",
+      "income_requirement": "No income limit",
+      "occupation": "Senior citizen",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Deposit limit applies"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Public Provident Fund (PPF)",
+    "description": "Long-term tax-saving savings scheme.",
+    "benefits": "15-year account with tax-free interest and 80C deduction.",
+    "application_process": "Open at post office or bank.",
+    "source_url": "https://www.indiapost.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages (adults/guardians)",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "One account per person"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Pension System (NPS)",
+    "description": "Voluntary pension scheme.",
+    "benefits": "Market-linked retirement corpus with annuity and tax benefits.",
+    "application_process": "Open through eNPS or bank/POP.",
+    "source_url": "https://www.npscra.nsdl.co.in/",
+    "eligibility": {
+      "age_requirement": "18-70 years",
+      "income_requirement": "No income limit",
+      "occupation": "Any citizen",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "KYC required"
+    },
+    "category": "Social Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "description": "Subsidised/free foodgrains for poor households.",
+    "benefits": "5 kg foodgrains per person per month free for priority households; 35 kg for AAY.",
+    "application_process": "Apply for ration card with state food department.",
+    "source_url": "https://nfsa.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Priority household (state criteria)",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Ration card holder"
+    },
+    "category": "Food Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Antyodaya Anna Yojana",
+    "description": "Highest-subsidy food scheme for poorest households.",
+    "benefits": "35 kg foodgrain per household per month at nominal price.",
+    "application_process": "Apply through state food and civil supplies department.",
+    "source_url": "https://nfsa.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Poorest of the poor",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Identified AAY household"
+    },
+    "category": "Food Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "One Nation One Ration Card",
+    "description": "Allows ration portability anywhere in India.",
+    "benefits": "Collect foodgrain from any fair price shop nationwide.",
+    "application_process": "Use Aadhaar-seeded ration card at any FPS with e-PoS.",
+    "source_url": "https://impds.nic.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "NFSA beneficiaries",
+      "occupation": "Migrant worker / any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Aadhaar-seeded ration card"
+    },
+    "category": "Food Security",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Gram Sadak Yojana",
+    "description": "Rural road connectivity.",
+    "benefits": "All-weather roads to unconnected habitations.",
+    "application_process": "Implemented via state rural roads agency; citizens can raise demand via Panchayat.",
+    "source_url": "https://pmgsy.nic.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Not applicable",
+      "occupation": "Rural community",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "Habitation size criteria"
+    },
+    "category": "Rural Development",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)",
+    "description": "Self-help group programme for rural women.",
+    "benefits": "Credit linkage, interest subvention and training for SHGs.",
+    "application_process": "Join/form an SHG through local NRLM office.",
+    "source_url": "https://aajeevika.gov.in/",
+    "eligibility": {
+      "age_requirement": "18-60 years",
+      "income_requirement": "Rural poor",
+      "occupation": "Rural woman",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "Must be member of SHG"
+    },
+    "category": "Women Empowerment",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Mission Shakti",
+    "description": "Umbrella scheme for women safety and empowerment.",
+    "benefits": "One Stop Centres, women helplines, shelter and support.",
+    "application_process": "Contact One Stop Centre or helpline 181.",
+    "source_url": "https://missionshakti.wcd.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Woman",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Women in distress"
+    },
+    "category": "Women & Child",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Integrated Child Development Services (Poshan 2.0)",
+    "description": "Nutrition and early education for children and mothers.",
+    "benefits": "Supplementary nutrition, pre-school education and health services.",
+    "application_process": "Register at local Anganwadi centre.",
+    "source_url": "https://poshanabhiyaan.gov.in/",
+    "eligibility": {
+      "age_requirement": "0-6 years and pregnant/lactating women",
+      "income_requirement": "No income limit",
+      "occupation": "Child / mother",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Anganwadi enrolment"
+    },
+    "category": "Women & Child",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "PM CARES for Children",
+    "description": "Support for children orphaned by COVID-19.",
+    "benefits": "Education support, health insurance and corpus at 18/23 years.",
+    "application_process": "Apply on the PM CARES portal via District Magistrate.",
+    "source_url": "https://pmcaresforchildren.in/",
+    "eligibility": {
+      "age_requirement": "0-18 years",
+      "income_requirement": "Not applicable",
+      "occupation": "Child",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Parents/guardians died due to COVID-19"
+    },
+    "category": "Women & Child",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Swadhar Greh",
+    "description": "Shelter for women in difficult circumstances.",
+    "benefits": "Food, shelter, counselling and legal aid.",
+    "application_process": "Contact state women and child development department.",
+    "source_url": "https://wcd.nic.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Not applicable",
+      "occupation": "Woman in distress",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Destitute/abandoned women"
+    },
+    "category": "Women & Child",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Unique Disability ID (UDID)",
+    "description": "National ID for persons with disabilities.",
+    "benefits": "Single document for availing benefits across schemes.",
+    "application_process": "Apply on the UDID portal.",
+    "source_url": "https://www.swavlambancard.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Person with disability",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Medical disability certificate"
+    },
+    "category": "Disability",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)",
+    "description": "Development of SC-majority villages and skill support for SCs.",
+    "benefits": "Infrastructure, skilling and income-generation grants.",
+    "application_process": "Through state social welfare department.",
+    "source_url": "https://socialjustice.gov.in/",
+    "eligibility": {
+      "age_requirement": "Eligible ages vary",
+      "income_requirement": "Poor households",
+      "occupation": "Scheduled Caste community",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must belong to Scheduled Caste"
+    },
+    "category": "Social Welfare",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Venture Capital Fund for Scheduled Castes",
+    "description": "Funding for SC entrepreneurs.",
+    "benefits": "Concessional finance for start-ups.",
+    "application_process": "Apply through IFCI Venture Capital Funds.",
+    "source_url": "https://socialjustice.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Entrepreneur (SC)",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must be SC entrepreneur"
+    },
+    "category": "Finance",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Eklavya Model Residential Schools",
+    "description": "Quality residential education for tribal children.",
+    "benefits": "Free residential education from Class 6-12.",
+    "application_process": "Admission via state tribal welfare department entrance.",
+    "source_url": "https://tribal.nic.in/",
+    "eligibility": {
+      "age_requirement": "11-18 years",
+      "income_requirement": "Not applicable",
+      "occupation": "Student (ST)",
+      "location": "Tribal areas",
+      "education": "No requirement",
+      "other_conditions": "Must belong to Scheduled Tribe"
+    },
+    "category": "Education",
+    "state": "Tribal areas",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Janjatiya Vikas Mission",
+    "description": "Livelihood and market access for tribal communities.",
+    "benefits": "Support for forest produce value chains and tribal enterprises.",
+    "application_process": "Through state tribal welfare department / TRIFED.",
+    "source_url": "https://trifed.tribal.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Not applicable",
+      "occupation": "Tribal entrepreneur",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Must belong to Scheduled Tribe"
+    },
+    "category": "Social Welfare",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Nai Udaan and Nai Roshni (Minority Schemes)",
+    "description": "Support for minority women leadership and civil services aspirants.",
+    "benefits": "Training and financial assistance.",
+    "application_process": "Apply on respective ministry portals.",
+    "source_url": "https://minorityaffairs.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Family income limits apply",
+      "occupation": "Minority student / woman",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Notified minority communities"
+    },
+    "category": "Social Welfare",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "PM-KUSUM",
+    "description": "Solar pumps and grid-connected solar plants for farmers.",
+    "benefits": "Subsidy of up to 60% (Centre+state) on solar pumps; farmers can earn from solar power.",
+    "application_process": "Apply via state nodal agency / DISCOM.",
+    "source_url": "https://pmkusum.mnre.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Landowner farmer"
+    },
+    "category": "Energy",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Saubhagya (Universal Household Electrification)",
+    "description": "Electricity connections to unelectrified households.",
+    "benefits": "Free electricity connections for poor households.",
+    "application_process": "Apply with local DISCOM.",
+    "source_url": "https://saubhagya.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "BPL / SECC",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Unelectrified household"
+    },
+    "category": "Energy",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "UJALA LED Scheme",
+    "description": "Affordable energy-efficient LED bulbs.",
+    "benefits": "LED bulbs at subsidised price.",
+    "application_process": "Purchase via EESL/DISCOM distribution points.",
+    "source_url": "https://www.eeslindia.org/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Any",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Domestic consumers"
+    },
+    "category": "Energy",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+    "description": "Toilet construction support.",
+    "benefits": "Incentive of Rs. 12,000 for building a household toilet.",
+    "application_process": "Apply through Gram Panchayat.",
+    "source_url": "https://swachhbharatmission.ddws.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "BPL and select APL categories",
+      "occupation": "Any",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "No toilet in household"
+    },
+    "category": "Sanitation",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Jal Jeevan Mission",
+    "description": "Tap water to every rural household.",
+    "benefits": "Functional household tap connection.",
+    "application_process": "Through Gram Panchayat / state water department.",
+    "source_url": "https://jaljeevanmission.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Not applicable",
+      "occupation": "Rural household",
+      "location": "Rural areas",
+      "education": "No requirement",
+      "other_conditions": "Household without tap connection"
+    },
+    "category": "Water",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Digital India - Common Service Centres",
+    "description": "Digital access points for govt services.",
+    "benefits": "Access to many e-services and banking at village level.",
+    "application_process": "Apply to become a Village Level Entrepreneur on CSC portal.",
+    "source_url": "https://csc.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Entrepreneur",
+      "location": "All states and UTs",
+      "education": "No requirement",
+      "other_conditions": "Basic computer literacy"
+    },
+    "category": "Digital",
+    "state": "All",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "description": "Maharashtra monthly cash support for women.",
+    "benefits": "Monthly financial assistance of Rs. 1,500 directly to bank account (as notified).",
+    "application_process": "Apply via Nari Shakti Doot app/portal or Anganwadi centre.",
+    "source_url": "https://ladakibahin.maharashtra.gov.in/",
+    "eligibility": {
+      "age_requirement": "21-65 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "occupation": "Woman",
+      "location": "Maharashtra",
+      "education": "No requirement",
+      "other_conditions": "Maharashtra resident; Aadhaar-linked bank account"
+    },
+    "category": "Women Empowerment",
+    "state": "Maharashtra",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mahalakshmi Scheme (Telangana)",
+    "description": "Telangana women welfare guarantee.",
+    "benefits": "Free bus travel for women in state RTC buses plus other benefits.",
+    "application_process": "Apply through Praja Palana / state portal.",
+    "source_url": "https://www.telangana.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "State criteria",
+      "occupation": "Woman",
+      "location": "Telangana",
+      "education": "No requirement",
+      "other_conditions": "Telangana resident"
+    },
+    "category": "Women Empowerment",
+    "state": "Telangana",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Rythu Bharosa (Telangana)",
+    "description": "Investment support for Telangana farmers.",
+    "benefits": "Per-acre per-season financial assistance (as notified).",
+    "application_process": "Through Agriculture Department; land-linked beneficiaries.",
+    "source_url": "https://rythubharosa.telangana.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Farmer",
+      "location": "Telangana",
+      "education": "No requirement",
+      "other_conditions": "Pattadar farmer"
+    },
+    "category": "Agriculture",
+    "state": "Telangana",
+    "level": "State"
+  },
+  {
+    "scheme_name": "KALIA Scheme (Odisha)",
+    "description": "Odisha farmer livelihood and income augmentation.",
+    "benefits": "Financial assistance for cultivation, livelihood and insurance support.",
+    "application_process": "Apply via Odisha agriculture department.",
+    "source_url": "https://kalia.odisha.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Small/marginal and landless farmers",
+      "occupation": "Farmer",
+      "location": "Odisha",
+      "education": "No requirement",
+      "other_conditions": "Odisha resident farmer"
+    },
+    "category": "Agriculture",
+    "state": "Odisha",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Subhadra Yojana (Odisha)",
+    "description": "Odisha cash assistance for women.",
+    "benefits": "Rs. 50,000 over five years (in instalments) for eligible women.",
+    "application_process": "Apply at Mo Seba Kendra / Subhadra portal.",
+    "source_url": "https://subhadra.odisha.gov.in/",
+    "eligibility": {
+      "age_requirement": "21-60 years",
+      "income_requirement": "Not an income tax payer; state criteria",
+      "occupation": "Woman",
+      "location": "Odisha",
+      "education": "No requirement",
+      "other_conditions": "Odisha resident; not in govt job"
+    },
+    "category": "Women Empowerment",
+    "state": "Odisha",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Lakshmir Bhandar (West Bengal)",
+    "description": "Monthly basic income for women heads of households.",
+    "benefits": "Monthly assistance (higher for SC/ST) as notified.",
+    "application_process": "Apply at Duare Sarkar camps / WB portal.",
+    "source_url": "https://socialsecurity.wb.gov.in/",
+    "eligibility": {
+      "age_requirement": "25-60 years",
+      "income_requirement": "Not receiving other govt pension",
+      "occupation": "Woman",
+      "location": "West Bengal",
+      "education": "No requirement",
+      "other_conditions": "WB resident with Swasthya Sathi card"
+    },
+    "category": "Women Empowerment",
+    "state": "West Bengal",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Kanyashree Prakalpa (West Bengal)",
+    "description": "Conditional cash transfer for girls' education.",
+    "benefits": "Annual scholarship and one-time grant on completing education.",
+    "application_process": "Apply via school/college on Kanyashree portal.",
+    "source_url": "https://wbkanyashree.gov.in/",
+    "eligibility": {
+      "age_requirement": "13-19 years",
+      "income_requirement": "Family income up to Rs. 1.2 lakh (with exceptions)",
+      "occupation": "Student (girl)",
+      "location": "West Bengal",
+      "education": "No requirement",
+      "other_conditions": "Unmarried girl in education"
+    },
+    "category": "Education",
+    "state": "West Bengal",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Gruha Lakshmi (Karnataka)",
+    "description": "Monthly assistance to women heads of households.",
+    "benefits": "Rs. 2,000 per month to head of household.",
+    "application_process": "Register through Seva Sindhu portal.",
+    "source_url": "https://sevasindhu.karnataka.gov.in/",
+    "eligibility": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Not income tax or GST payer",
+      "occupation": "Woman",
+      "location": "Karnataka",
+      "education": "No requirement",
+      "other_conditions": "Ration card holder (BPL/APL/AAY)"
+    },
+    "category": "Women Empowerment",
+    "state": "Karnataka",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Gruha Jyothi (Karnataka)",
+    "description": "Free electricity for households.",
+    "benefits": "Up to 200 units free per month.",
+    "application_process": "Register on Seva Sindhu portal.",
+    "source_url": "https://sevasindhu.karnataka.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Not applicable",
+      "occupation": "Household consumer",
+      "location": "Karnataka",
+      "education": "No requirement",
+      "other_conditions": "Domestic consumer with eligible usage"
+    },
+    "category": "Energy",
+    "state": "Karnataka",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Ladli Behna Yojana (Madhya Pradesh)",
+    "description": "MP monthly assistance for women.",
+    "benefits": "Monthly financial assistance (as notified).",
+    "application_process": "Apply at Gram Panchayat / ward office.",
+    "source_url": "https://cmladlibahna.mp.gov.in/",
+    "eligibility": {
+      "age_requirement": "21-60 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "occupation": "Woman",
+      "location": "Madhya Pradesh",
+      "education": "No requirement",
+      "other_conditions": "MP resident married woman"
+    },
+    "category": "Women Empowerment",
+    "state": "Madhya Pradesh",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+    "description": "UP financial support for girl child.",
+    "benefits": "Staged cash benefits from birth to graduation.",
+    "application_process": "Apply on UP Kanya Sumangala portal.",
+    "source_url": "https://mksy.up.gov.in/",
+    "eligibility": {
+      "age_requirement": "Girl child",
+      "income_requirement": "Family income up to Rs. 3 lakh per year",
+      "occupation": "Parent/girl child",
+      "location": "Uttar Pradesh",
+      "education": "No requirement",
+      "other_conditions": "UP resident; up to two children"
+    },
+    "category": "Women & Child",
+    "state": "Uttar Pradesh",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Amma Vodi / Thalliki Vandanam (Andhra Pradesh)",
+    "description": "Financial support for mothers sending children to school.",
+    "benefits": "Annual cash assistance to mothers/guardians.",
+    "application_process": "Through school and village/ward secretariat.",
+    "source_url": "https://www.ap.gov.in/",
+    "eligibility": {
+      "age_requirement": "Mother of school-going child",
+      "income_requirement": "BPL / state criteria",
+      "occupation": "Parent",
+      "location": "Andhra Pradesh",
+      "education": "No requirement",
+      "other_conditions": "Child in school with min. attendance"
+    },
+    "category": "Education",
+    "state": "Andhra Pradesh",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+    "description": "Bihar incentives for girls' education.",
+    "benefits": "Staged cash incentives from birth to graduation.",
+    "application_process": "Apply on state education portal.",
+    "source_url": "https://medhasoft.bih.nic.in/",
+    "eligibility": {
+      "age_requirement": "Girl child",
+      "income_requirement": "Not applicable",
+      "occupation": "Student (girl)",
+      "location": "Bihar",
+      "education": "No requirement",
+      "other_conditions": "Bihar resident"
+    },
+    "category": "Education",
+    "state": "Bihar",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)",
+    "description": "Rajasthan health insurance.",
+    "benefits": "Cashless treatment cover up to notified limit.",
+    "application_process": "Register via Jan Aadhaar at empanelled hospital/e-Mitra.",
+    "source_url": "https://health.rajasthan.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "Eligible families per state criteria",
+      "occupation": "Any",
+      "location": "Rajasthan",
+      "education": "No requirement",
+      "other_conditions": "Rajasthan resident with Jan Aadhaar"
+    },
+    "category": "Health",
+    "state": "Rajasthan",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Free Bus Travel for Women (Delhi - Pink Saheli)",
+    "description": "Delhi free bus travel for women.",
+    "benefits": "Free travel in DTC/cluster buses.",
+    "application_process": "Obtain Pink Saheli smart card with Delhi residence proof.",
+    "source_url": "https://transport.delhi.gov.in/",
+    "eligibility": {
+      "age_requirement": "12+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Woman",
+      "location": "Delhi",
+      "education": "No requirement",
+      "other_conditions": "Delhi resident woman"
+    },
+    "category": "Women Empowerment",
+    "state": "Delhi",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+    "description": "Free pilgrimage for senior citizens.",
+    "benefits": "Free travel to select pilgrimage destinations.",
+    "application_process": "Apply to the Delhi Tirth Yatra Development Committee.",
+    "source_url": "https://delhi.gov.in/",
+    "eligibility": {
+      "age_requirement": "60+ years",
+      "income_requirement": "No income limit",
+      "occupation": "Senior citizen",
+      "location": "Delhi",
+      "education": "No requirement",
+      "other_conditions": "Delhi voter / resident"
+    },
+    "category": "Social Welfare",
+    "state": "Delhi",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Free Bus Travel for Women (Tamil Nadu - Vidiyal Payanam)",
+    "description": "Tamil Nadu free bus travel for women.",
+    "benefits": "Free travel in town buses.",
+    "application_process": "No application; board eligible buses.",
+    "source_url": "https://www.tn.gov.in/",
+    "eligibility": {
+      "age_requirement": "All ages",
+      "income_requirement": "No income limit",
+      "occupation": "Woman",
+      "location": "Tamil Nadu",
+      "education": "No requirement",
+      "other_conditions": "Tamil Nadu town buses"
+    },
+    "category": "Women Empowerment",
+    "state": "Tamil Nadu",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+    "description": "Monthly assistance for women heads of families.",
+    "benefits": "Rs. 1,000 per month.",
+    "application_process": "Apply at ration shop camps / state portal.",
+    "source_url": "https://kmut.tn.gov.in/",
+    "eligibility": {
+      "age_requirement": "21+ years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "occupation": "Woman",
+      "location": "Tamil Nadu",
+      "education": "No requirement",
+      "other_conditions": "Ration card; limits on land and electricity use"
+    },
+    "category": "Women Empowerment",
+    "state": "Tamil Nadu",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mukhyamantri Maiyan Samman Yojana (Jharkhand)",
+    "description": "Jharkhand monthly support for women.",
+    "benefits": "Monthly financial assistance (as notified).",
+    "application_process": "Apply through Jharkhand government portal / camps.",
+    "source_url": "https://mmsy.jharkhand.gov.in/",
+    "eligibility": {
+      "age_requirement": "18-50 years",
+      "income_requirement": "State criteria",
+      "occupation": "Woman",
+      "location": "Jharkhand",
+      "education": "No requirement",
+      "other_conditions": "Jharkhand resident"
+    },
+    "category": "Women Empowerment",
+    "state": "Jharkhand",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mukhyamantri Ladli Laxmi (Madhya Pradesh)",
+    "description": "Girl-child savings and education support.",
+    "benefits": "Staged financial support up to graduation.",
+    "application_process": "Apply through Anganwadi centre.",
+    "source_url": "https://ladlilaxmi.mp.gov.in/",
+    "eligibility": {
+      "age_requirement": "Girl child",
+      "income_requirement": "Family-based criteria",
+      "occupation": "Parent/girl child",
+      "location": "Madhya Pradesh",
+      "education": "No requirement",
+      "other_conditions": "MP resident girl child"
+    },
+    "category": "Women & Child",
+    "state": "Madhya Pradesh",
+    "level": "State"
   }
-},
-{
-  "scheme_name": "AICTE Pragati Scholarship for Girls",
-  "description": "Scholarship for girl students pursuing technical education (diploma or degree) in AICTE-approved institutions, aimed at reducing dropout rates among female students.",
-  "benefits": "Rs. 50,000 per year for tuition fees and other expenses, for the duration of the technical course.",
-  "application_process": "Apply online through the National Scholarship Portal (NSP) with admission proof from an AICTE-approved institution.",
-  "source_url": "https://www.aicte-india.org/schemes/students-development-schemes",
-  "eligibility": {
-    "age_requirement": "No specific limit",
-    "income_requirement": "Annual family income below Rs. 8,00,000",
-    "occupation": "Student",
-    "location": "All states and UTs",
-    "education": "Enrolled in AICTE-approved technical diploma or degree program",
-    "other_conditions": "Only one girl child per family eligible; maximum two girls per family across all AICTE scholarships"
-  }
-},
-{
-  "scheme_name": "National Means-cum-Merit Scholarship (NMMS)",
-  "description": "Scholarship to prevent dropout at the Class 8 to Class 12 stage and encourage economically weaker meritorious students to continue their education.",
-  "benefits": "Rs. 12,000 per year (Rs. 1,000 per month) for four years, from Class 9 to Class 12.",
-  "application_process": "Apply through state education department after clearing the NMMS selection test conducted at the Class 8 level.",
-  "source_url": "https://scholarships.gov.in/",
-  "eligibility": {
-    "age_requirement": "Studying in Class 9 to Class 12",
-    "income_requirement": "Annual parental income below Rs. 1,50,000",
-    "occupation": "Student",
-    "location": "All states and UTs",
-    "education": "Studying in a government, government-aided, or local body school",
-    "other_conditions": "Must clear the NMMS qualifying examination held in Class 8"
-  }
-},
-{
-  "scheme_name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
-  "description": "Maternity benefit scheme providing partial wage compensation to pregnant and lactating women for the first living child, encouraging adequate nutrition and rest.",
-  "benefits": "Rs. 5,000 in three installments for the first child, paid directly to the mother's bank account, linked to health checkups and vaccination milestones.",
-  "application_process": "Register at the nearest Anganwadi Centre or health facility with pregnancy registration and Aadhaar details.",
-  "source_url": "https://pmmvy.wcd.gov.in/",
-  "eligibility": {
-    "age_requirement": "18 years and above",
-    "income_requirement": "No specific limit",
-    "occupation": "Any",
-    "location": "All states and UTs",
-    "education": "No requirement",
-    "other_conditions": "Applicable for the first living child; pregnancy must be registered with Anganwadi/health facility"
-  }
-},
-{
-  "scheme_name": "Assistance to Disabled Persons Scheme (ADIP)",
-  "description": "Scheme providing assistive devices and aids such as wheelchairs, hearing aids, and artificial limbs to persons with disabilities to support their physical and economic independence.",
-  "benefits": "Free assistive devices for those with monthly income up to Rs. 22,500; 50% subsidy for income between Rs. 22,501 and Rs. 30,000.",
-  "application_process": "Apply through empanelled implementing agencies (NGOs, hospitals, district agencies) with UDID card and income certificate.",
-  "source_url": "https://depwd.gov.in/",
-  "eligibility": {
-    "age_requirement": "No specific limit",
-    "income_requirement": "Monthly income up to Rs. 30,000",
-    "occupation": "Any",
-    "location": "All states and UTs",
-    "education": "No requirement",
-    "other_conditions": "Must hold a UDID card showing 40% or more disability"
-  }
-},
-{
-  "scheme_name": "Rashtriya Vayoshri Yojana (RVY)",
-  "description": "Scheme providing free assistive living devices to senior citizens belonging to BPL households, addressing age-related physical impairments.",
-  "benefits": "Free devices such as walking sticks, wheelchairs, hearing aids, and spectacles based on assessed need.",
-  "application_process": "Apply through district-level assessment camps organized by ALIMCO with income and age proof.",
-  "source_url": "https://depwd.gov.in/",
-  "eligibility": {
-    "age_requirement": "60 years and above",
-    "income_requirement": "Monthly income below Rs. 15,000",
-    "occupation": "Any",
-    "location": "All states and UTs",
-    "education": "No requirement",
-    "other_conditions": "Must have an age-related disability or impairment assessed at the camp"
-  }
-},
-{
-  "scheme_name": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
-  "description": "Urban livelihoods scheme supporting the urban poor through skill training, self-employment loans, and support for street vendors and homeless shelters.",
-  "benefits": "Bank loans up to Rs. 2 lakh for individual enterprises and Rs. 10 lakh for group enterprises, with interest subsidy.",
-  "application_process": "Apply through the Urban Local Body (ULB) or City Livelihood Centre with proof of urban residency.",
-  "source_url": "https://mohua.gov.in/DAY-NULM/",
-  "eligibility": {
-    "age_requirement": "18+",
-    "income_requirement": "Urban poor / below poverty line households",
-    "occupation": "Unemployed or informally employed urban resident",
-    "location": "Urban areas",
-    "education": "No requirement",
-    "other_conditions": "Must be a resident of the urban local body area for a minimum period as specified"
-  }
-},
-{
-  "scheme_name": "Stand-Up India Scheme",
-  "description": "Scheme facilitating bank loans for setting up greenfield enterprises in manufacturing, services, or trading sectors, specifically for women and SC/ST entrepreneurs.",
-  "benefits": "Bank loans between Rs. 10 lakh and Rs. 1 crore for setting up a new enterprise.",
-  "application_process": "Apply through the Stand-Up India portal or directly at bank branches with a business project report.",
-  "source_url": "https://www.standupmitra.in/",
-  "eligibility": {
-    "age_requirement": "18+",
-    "income_requirement": "No specific limit",
-    "occupation": "Aspiring entrepreneur",
-    "location": "All states and UTs",
-    "education": "No requirement",
-    "other_conditions": "At least one woman or SC/ST entrepreneur per bank branch; must be a greenfield (new) enterprise"
-  }
-},
-{
-  "scheme_name": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
-  "description": "Concessional loan scheme for persons with disabilities to pursue self-employment ventures, skill development, or higher education.",
-  "benefits": "Loans up to Rs. 25 lakh at concessional interest rates (typically 4-8%) depending on loan amount and purpose.",
-  "application_process": "Apply through State Channelizing Agencies (SCAs) with disability certificate and business/education plan.",
-  "source_url": "https://nhfdc.nic.in/",
-  "eligibility": {
-    "age_requirement": "18+",
-    "income_requirement": "Varies by income slab (concession higher for lower income)",
-    "occupation": "Any",
-    "location": "All states and UTs",
-    "education": "No requirement for loans; academic enrollment required for education loans",
-    "other_conditions": "Must hold a valid disability certificate of 40% or more"
-  }
-},
-{
-  "scheme_name": "Central Sector Scholarship Scheme (CSSS)",
-  "description": "Merit-based scholarship for meritorious students from low-income families to pursue college and university education, covering a wide range of undergraduate courses.",
-  "benefits": "Rs. 12,000 per year for undergraduate studies (first three years), increasing to Rs. 20,000 per year for postgraduate studies.",
-  "application_process": "Apply through the National Scholarship Portal (NSP) based on Class 12 board exam merit and admission to a recognized college.",
-  "source_url": "https://scholarships.gov.in/",
-  "eligibility": {
-    "age_requirement": "Pursuing undergraduate/postgraduate studies",
-    "income_requirement": "Annual family income below Rs. 4,50,000",
-    "occupation": "Student",
-    "location": "All states and UTs",
-    "education": "Scored above 80th percentile in Class 12 board exams",
-    "other_conditions": "Must not be receiving any other central government scholarship simultaneously"
-  }
-}
 ]

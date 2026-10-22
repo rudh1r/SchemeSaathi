@@ -1,0 +1,67 @@
+name: schemesaathi
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: '10m'
+    max-file: '3'
+
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    logging: *default-logging
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ['CMD', 'mongosh', '--quiet', '--eval', "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    # Not published: only the app container needs MongoDB.
+
+  chroma:
+    image: chromadb/chroma:1.5.9
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      IS_PERSISTENT: 'TRUE'
+      ANONYMIZED_TELEMETRY: 'FALSE'
+    volumes:
+      - chroma_data:/data
+    # Not published: only the app container needs Chroma.
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - '${APP_PORT:-5000}:5000'
+    env_file:
+      # Deployment secrets live in the repository-root .env (gitignored).
+      # Copy .env.deploy.example to .env before the first start.
+      - path: .env
+        required: false
+    environment:
+      NODE_ENV: production
+      PORT: '5000'
+      MONGODB_URI: ${MONGODB_URI:-mongodb://mongo:27017}
+      MONGODB_DB: ${MONGODB_DB:-schemesaathi}
+      CHROMA_URL: ${CHROMA_URL:-http://chroma:8000}
+      CHROMA_COLLECTION: ${CHROMA_COLLECTION:-schemes}
+      FRONTEND_DIST: /app/frontend/dist
+      # The app is directly exposed in this compose file. Set TRUST_PROXY=true
+      # only when adding Caddy/Nginx in front.
+      TRUST_PROXY: '${TRUST_PROXY:-false}'
+    depends_on:
+      mongo:
+        condition: service_healthy
+      chroma:
+        condition: service_started
+
+volumes:
+  mongo_data:
+  chroma_data:

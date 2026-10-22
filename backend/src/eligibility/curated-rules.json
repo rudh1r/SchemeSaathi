@@ -1,0 +1,455 @@
+{
+  "AICTE Pragati Scholarship for Girls": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a girl student" },
+      { "attr": "income", "op": "lte", "value": 800000, "label": "Annual family income below ₹8,00,000" },
+      { "attr": "is_student", "op": "is_true", "value": true, "label": "Currently enrolled in a technical diploma or degree programme" },
+      { "attr": "girl_children", "op": "lte", "value": 2, "label": "At most two girls from the family across AICTE scholarships", "optional": true }
+    ]
+  },
+  "Assistance to Disabled Persons Scheme (ADIP)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "income", "op": "lte", "value": 360000, "label": "Monthly family income up to ₹30,000" },
+      { "attr": "disability_percent", "op": "gte", "value": 40, "label": "UDID certificate showing 40% or more disability" }
+    ]
+  },
+  "Atal Pension Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [18, 40], "label": "Age between 18 and 40 years at enrolment" },
+      { "attr": "has_bank_account", "op": "is_true", "value": true, "label": "Has a savings bank or post office account" }
+    ]
+  },
+  "Ayushman Bharat PM-JAY": {
+    "reviewed": true,
+    "conditions": [
+      {
+        "attr": "coverage",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "age", "op": "gte", "value": 70, "label": "Age 70 years or above" }],
+          [{ "attr": "bpl", "op": "is_true", "value": true, "label": "Household listed under SECC / BPL" }]
+        ],
+        "label": "Household is on the SECC deprivation list, or the applicant is 70+"
+      }
+    ]
+  },
+  "Central Sector Scholarship Scheme (CSSS)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "income", "op": "lte", "value": 450000, "label": "Annual family income below ₹4,50,000" },
+      { "attr": "class12_percentile", "op": "gte", "value": 80, "label": "Above the 80th percentile in Class 12 board exams" },
+      { "attr": "is_student", "op": "is_true", "value": true, "label": "Pursuing undergraduate or postgraduate studies" },
+      { "attr": "existing_scholarship", "op": "is_false", "value": false, "label": "Not receiving another central government scholarship" }
+    ]
+  },
+  "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [15, 35], "label": "Age between 15 and 35 years" },
+      { "attr": "area", "op": "eq", "value": "rural", "label": "Resident of a rural area" }
+    ]
+  },
+  "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "area", "op": "eq", "value": "urban", "label": "Resident of an urban local body area" },
+      { "attr": "bpl", "op": "is_true", "value": true, "label": "Urban poor / below poverty line household" }
+    ]
+  },
+  "Eklavya Model Residential Schools": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [11, 18], "label": "Age between 11 and 18 years" },
+      { "attr": "category", "op": "eq", "value": "st", "label": "Belongs to a Scheduled Tribe" }
+    ]
+  },
+  "Gruha Lakshmi (Karnataka)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a woman" },
+      { "attr": "state", "op": "eq", "value": "Karnataka", "label": "Resident of Karnataka" },
+      { "attr": "income_tax_payer", "op": "is_false", "value": false, "label": "Not an income tax or GST payer" },
+      { "attr": "ration_card", "op": "is_true", "value": true, "label": "Holds a ration card" }
+    ]
+  },
+  "Indira Gandhi National Disability Pension Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [18, 79], "label": "Age between 18 and 79 years" },
+      { "attr": "bpl", "op": "is_true", "value": true, "label": "Below poverty line household" },
+      { "attr": "disability_percent", "op": "gte", "value": 80, "label": "80% or more disability" }
+    ]
+  },
+  "Indira Gandhi National Widow Pension Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [40, 79], "label": "Age between 40 and 79 years" },
+      { "attr": "bpl", "op": "is_true", "value": true, "label": "Below poverty line household" },
+      { "attr": "marital_status", "op": "eq", "value": "widowed", "label": "Applicant is a widow" }
+    ]
+  },
+  "Janani Suraksha Yojana (JSY)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 19, "label": "Age 19 years or above" },
+      { "attr": "pregnant", "op": "is_true", "value": true, "label": "Pregnant woman or recent delivery" },
+      {
+        "attr": "coverage",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "bpl", "op": "is_true", "value": true, "label": "BPL household" }],
+          [{ "attr": "category", "op": "in", "value": ["sc", "st"], "label": "SC or ST household" }]
+        ],
+        "label": "BPL household, or SC/ST category"
+      },
+      { "attr": "delivery_in_facility", "op": "is_true", "value": true, "label": "Delivery in a recognised health facility", "optional": true }
+    ]
+  },
+  "Kalaignar Magalir Urimai Thogai (Tamil Nadu)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 21, "label": "Age 21 years or above" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a woman" },
+      { "attr": "state", "op": "eq", "value": "Tamil Nadu", "label": "Resident of Tamil Nadu" },
+      { "attr": "income", "op": "lte", "value": 250000, "label": "Annual family income up to ₹2.5 lakh" }
+    ]
+  },
+  "Kanyashree Prakalpa (West Bengal)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [13, 19], "label": "Girl aged 13 to 19 years" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a girl" },
+      { "attr": "state", "op": "eq", "value": "West Bengal", "label": "Resident of West Bengal" },
+      { "attr": "marital_status", "op": "eq", "value": "single", "label": "Unmarried" },
+      { "attr": "is_student", "op": "is_true", "value": true, "label": "Currently in education" },
+      { "attr": "income", "op": "lte", "value": 120000, "label": "Annual family income up to ₹1.2 lakh" }
+    ]
+  },
+  "Kasturba Gandhi Balika Vidyalaya": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [10, 18], "label": "Girl aged 10 to 18 years" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a girl" },
+      {
+        "attr": "coverage",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "category", "op": "in", "value": ["sc", "st", "obc"], "label": "SC, ST or OBC category" }],
+          [{ "attr": "minority", "op": "is_true", "value": true, "label": "Minority community" }],
+          [{ "attr": "bpl", "op": "is_true", "value": true, "label": "BPL household" }]
+        ],
+        "label": "Girl from SC/ST/OBC/minority/BPL background"
+      }
+    ]
+  },
+  "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [21, 65], "label": "Woman aged 21 to 65 years" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a woman" },
+      { "attr": "state", "op": "eq", "value": "Maharashtra", "label": "Resident of Maharashtra" },
+      { "attr": "income", "op": "lte", "value": 250000, "label": "Annual family income up to ₹2.5 lakh" }
+    ]
+  },
+  "Ladli Behna Yojana (Madhya Pradesh)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [21, 60], "label": "Woman aged 21 to 60 years" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a woman" },
+      { "attr": "state", "op": "eq", "value": "Madhya Pradesh", "label": "Resident of Madhya Pradesh" },
+      { "attr": "income", "op": "lte", "value": 250000, "label": "Annual family income up to ₹2.5 lakh" },
+      { "attr": "marital_status", "op": "eq", "value": "married", "label": "Married woman" }
+    ]
+  },
+  "Lakshmir Bhandar (West Bengal)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [25, 60], "label": "Woman aged 25 to 60 years" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a woman" },
+      { "attr": "state", "op": "eq", "value": "West Bengal", "label": "Resident of West Bengal" },
+      { "attr": "other_pension", "op": "is_false", "value": false, "label": "Not receiving another government pension" },
+      { "attr": "swasthya_sathi", "op": "is_true", "value": true, "label": "Holds a Swasthya Sathi card", "optional": true }
+    ]
+  },
+  "Mission Vatsalya": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "lte", "value": 18, "label": "Child aged 18 years or below" },
+      { "attr": "orphan", "op": "is_true", "value": true, "label": "Orphan or child in difficult circumstances" }
+    ]
+  },
+  "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "disability_percent", "op": "gte", "value": 40, "label": "Valid disability certificate of 40% or more" }
+    ]
+  },
+  "National Means-cum-Merit Scholarship (NMMS)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "class_level", "op": "between", "value": [9, 12], "label": "Studying in Class 9 to Class 12" },
+      { "attr": "income", "op": "lte", "value": 150000, "label": "Annual parental income below ₹1,50,000" },
+      { "attr": "school_type", "op": "matches", "value": ["government", "govt", "local body"], "label": "Studying in a government, government-aided or local body school" },
+      { "attr": "cleared_qualifying_exam", "op": "is_true", "value": true, "label": "Cleared the NMMS qualifying examination in Class 8" }
+    ]
+  },
+  "National Social Assistance Programme - Indira Gandhi National Old Age Pension": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 60, "label": "Age 60 years or above" },
+      { "attr": "bpl", "op": "is_true", "value": true, "label": "Household on the BPL list" }
+    ]
+  },
+  "PM Internship Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [21, 24], "label": "Age between 21 and 24 years" },
+      { "attr": "income", "op": "lte", "value": 800000, "label": "Annual family income up to ₹8 lakh" },
+      { "attr": "employed_full_time", "op": "is_false", "value": false, "label": "Not in full-time employment" },
+      { "attr": "government_job_in_family", "op": "is_false", "value": false, "label": "No government job in the family" }
+    ]
+  },
+  "PM Kisan Maandhan Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [18, 40], "label": "Age between 18 and 40 years" },
+      { "attr": "occupation", "op": "matches", "value": ["farmer", "agricultur"], "label": "Small or marginal farmer" },
+      { "attr": "land_hectares", "op": "lte", "value": 2, "label": "Holds up to 2 hectares of land" },
+      { "attr": "epfo_member", "op": "is_false", "value": false, "label": "Not an EPFO, NPS or ESIC member" }
+    ]
+  },
+  "PM Rahat Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "cause", "op": "matches", "value": ["road accident", "accident"], "label": "Victim of a road accident on Indian roads" }
+    ]
+  },
+  "PM SVANidhi": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "area", "op": "eq", "value": "urban", "label": "Urban street vendor" },
+      {
+        "attr": "coverage",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "occupation", "op": "matches", "value": ["vendor", "street"], "label": "Works as a street vendor" }],
+          [{ "attr": "vending_certificate", "op": "is_true", "value": true, "label": "Certificate of vending / ULB survey ID" }]
+        ],
+        "label": "Street vendor with a certificate of vending or ULB survey listing"
+      }
+    ]
+  },
+  "PM Surya Ghar Muft Bijli Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "owns_home", "op": "is_true", "value": true, "label": "Owns a residential house" },
+      { "attr": "roof_suitable", "op": "is_true", "value": true, "label": "Has a rooftop suitable for solar installation" }
+    ]
+  },
+  "PM Ujjwala Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a woman" },
+      { "attr": "bpl", "op": "is_true", "value": true, "label": "BPL / low-income household" },
+      { "attr": "has_lpg", "op": "is_false", "value": false, "label": "No existing LPG connection" }
+    ]
+  },
+  "PM Vishwakarma": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "trade", "op": "exists", "value": true, "label": "Engaged in one of the 18 notified artisan trades" },
+      { "attr": "occupation", "op": "matches", "value": ["artisan", "craft", "carpenter", "blacksmith", "potter", "weaver", "barber", "cobbler", "goldsmith", "sculptor", "tailor", "fisher"], "label": "Works as an artisan or craftsperson", "optional": true }
+    ]
+  },
+  "PM YASASVI Scholarship": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "income", "op": "lte", "value": 250000, "label": "Annual family income below ₹2,50,000" },
+      { "attr": "category", "op": "in", "value": ["obc", "ebc", "dnt"], "label": "OBC, EBC or DNT category" },
+      { "attr": "is_student", "op": "is_true", "value": true, "label": "Enrolled in a recognised school, college or university" }
+    ]
+  },
+  "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "occupation", "op": "matches", "value": ["farmer", "agricultur"], "label": "Farmer or landholding agricultural family" },
+      { "attr": "land_owned", "op": "is_true", "value": true, "label": "Holds cultivable land in the family's name" },
+      { "attr": "income_tax_payer", "op": "is_false", "value": false, "label": "Not a high-income income-tax payer" }
+    ]
+  },
+  "PM-KUSUM": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "occupation", "op": "matches", "value": ["farmer", "agricultur"], "label": "Farmer" },
+      { "attr": "land_owned", "op": "is_true", "value": true, "label": "Landowning farmer" }
+    ]
+  },
+  "PMAY (Pradhan Mantri Awas Yojana) 2.0": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Adult applicant (18+)" },
+      { "attr": "owns_pucca_house", "op": "is_false", "value": false, "label": "Applicant or family does not own a pucca house anywhere in India" }
+    ]
+  },
+  "PMAY-Gramin (PMAYG)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "area", "op": "eq", "value": "rural", "label": "Rural household" },
+      { "attr": "bpl", "op": "is_true", "value": true, "label": "BPL / SECC-identified household" },
+      { "attr": "owns_pucca_house", "op": "is_false", "value": false, "label": "Does not already own a pucca house" }
+    ]
+  },
+  "Post Matric Scholarship for SC Students": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "category", "op": "eq", "value": "sc", "label": "Belongs to a Scheduled Caste" },
+      { "attr": "income", "op": "lte", "value": 250000, "label": "Annual family income up to ₹2.5 lakh" },
+      { "attr": "is_student", "op": "is_true", "value": true, "label": "Studying at post-matric level" }
+    ]
+  },
+  "Pradhan Mantri Employment Generation Programme (PMEGP)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      {
+        "attr": "education",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "project_cost", "op": "lte", "value": 1000000, "label": "Project cost up to ₹10 lakh" }],
+          [{ "attr": "education_level", "op": "matches", "value": ["class 8", "8th", "9th", "10th", "12th", "graduate", "diploma", "degree"], "label": "At least Class 8 pass" }]
+        ],
+        "label": "At least Class 8 pass for projects above ₹10 lakh"
+      }
+    ]
+  },
+  "Pradhan Mantri Jeevan Jyoti Bima Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [18, 50], "label": "Age between 18 and 50 years" },
+      { "attr": "has_bank_account", "op": "is_true", "value": true, "label": "Has a bank account" }
+    ]
+  },
+  "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [15, 45], "label": "Age between 15 and 45 years" }
+    ]
+  },
+  "Pradhan Mantri Matru Vandana Yojana (PMMVY)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "pregnant", "op": "is_true", "value": true, "label": "Pregnant or recently delivered" },
+      { "attr": "which_child", "op": "lte", "value": 1, "label": "First living child" },
+      { "attr": "pregnancy_registered", "op": "is_true", "value": true, "label": "Pregnancy registered with Anganwadi or health facility" }
+    ]
+  },
+  "Pradhan Mantri Mudra Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "business_type", "op": "exists", "value": true, "label": "Runs a non-farm income-generating activity" },
+      { "attr": "business_type", "op": "not_matches", "value": ["crop", "farm", "agricultur", "cultivation"], "label": "Activity is not crop cultivation or farming" }
+    ]
+  },
+  "Pradhan Mantri Shram Yogi Maandhan": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [18, 40], "label": "Age between 18 and 40 years" },
+      { "attr": "monthly_income", "op": "lte", "value": 15000, "label": "Monthly income up to ₹15,000" },
+      { "attr": "epfo_member", "op": "is_false", "value": false, "label": "Not an EPFO, NPS or ESIC member" },
+      { "attr": "income_tax_payer", "op": "is_false", "value": false, "label": "Not an income-tax payer" }
+    ]
+  },
+  "Pradhan Mantri Suraksha Bima Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [18, 70], "label": "Age between 18 and 70 years" },
+      { "attr": "has_bank_account", "op": "is_true", "value": true, "label": "Has a bank account" }
+    ]
+  },
+  "Pre-Matric and Post-Matric Scholarship for Minorities": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "minority", "op": "is_true", "value": true, "label": "Belongs to a notified minority community" },
+      { "attr": "income", "op": "lte", "value": 200000, "label": "Annual family income up to ₹2 lakh" },
+      { "attr": "marks_percent", "op": "gte", "value": 50, "label": "At least 50% marks in the previous examination" },
+      { "attr": "is_student", "op": "is_true", "value": true, "label": "Currently a student" }
+    ]
+  },
+  "Rashtriya Vayoshri Yojana (RVY)": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 60, "label": "Age 60 years or above" },
+      { "attr": "income", "op": "lte", "value": 180000, "label": "Monthly income below ₹15,000" },
+      { "attr": "age_related_impairment", "op": "is_true", "value": true, "label": "Age-related disability or impairment" }
+    ]
+  },
+  "Senior Citizens Savings Scheme": {
+    "reviewed": true,
+    "conditions": [
+      {
+        "attr": "coverage",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "age", "op": "gte", "value": 60, "label": "Age 60 years or above" }],
+          [
+            { "attr": "age", "op": "gte", "value": 55, "label": "Age 55 years or above" },
+            { "attr": "retired", "op": "is_true", "value": true, "label": "Retired on superannuation" }
+          ]
+        ],
+        "label": "Age 60+, or 55+ and retired"
+      }
+    ]
+  },
+  "Stand-Up India Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      {
+        "attr": "coverage",
+        "op": "any_of",
+        "value": [
+          [{ "attr": "gender", "op": "eq", "value": "female", "label": "Woman entrepreneur" }],
+          [{ "attr": "category", "op": "in", "value": ["sc", "st"], "label": "SC or ST entrepreneur" }]
+        ],
+        "label": "Woman, SC or ST entrepreneur"
+      },
+      { "attr": "greenfield", "op": "is_true", "value": true, "label": "Setting up a greenfield (new) enterprise" }
+    ]
+  },
+  "Startup India Seed Fund Scheme": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "gte", "value": 18, "label": "Age 18 years or above" },
+      { "attr": "dpiit_recognised", "op": "is_true", "value": true, "label": "DPIIT-recognised startup" },
+      { "attr": "incorporated_years_ago", "op": "lte", "value": 2, "label": "Incorporated within the last 2 years" }
+    ]
+  },
+  "Sukanya Samriddhi Yojana": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "daughter_age", "op": "lte", "value": 10, "label": "Girl child below 10 years" },
+      { "attr": "girl_children", "op": "lte", "value": 2, "label": "Maximum two accounts per family" }
+    ]
+  },
+  "e-Shram Card": {
+    "reviewed": true,
+    "conditions": [
+      { "attr": "age", "op": "between", "value": [16, 59], "label": "Age between 16 and 59 years" },
+      { "attr": "epfo_member", "op": "is_false", "value": false, "label": "Not an EPFO or ESIC member" },
+      { "attr": "income_tax_payer", "op": "is_false", "value": false, "label": "Not an income-tax payer" }
+    ]
+  }
+}

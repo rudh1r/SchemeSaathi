@@ -1,0 +1,2295 @@
+[
+  {
+    "id": "E01",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "eligibility_source": {
+      "income_requirement": "Small and marginal farmer families",
+      "occupation": "Farmer / landholding agricultural family",
+      "other_conditions": "Must hold cultivable land in family's name; excludes institutional landholders and high-income taxpayers"
+    },
+    "profile_narrative": "I am a 45-year-old farmer in Uttar Pradesh. I own 2 acres of cultivable land in my own name and this is my only source of income.",
+    "profile_fields": {
+      "age": 45,
+      "occupation": "Farmer",
+      "land_owned_acres": 2,
+      "land_in_own_name": true,
+      "income_tax_payer": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Matches all stated conditions: farmer, owns cultivable land in own name, no high-income-tax exclusion."
+  },
+  {
+    "id": "E02",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "eligibility_source": {
+      "occupation": "Farmer / landholding agricultural family",
+      "other_conditions": "Must hold cultivable land in family's name; excludes institutional landholders and high-income taxpayers"
+    },
+    "profile_narrative": "I am a 30-year-old government employee in Bihar. My family does not own or farm any agricultural land.",
+    "profile_fields": {
+      "age": 30,
+      "occupation": "Salaried government employee",
+      "land_owned_acres": 0,
+      "land_in_own_name": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Fails the core occupation/landholding requirement: not a farmer and does not hold agricultural land."
+  },
+  {
+    "id": "E03",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "eligibility_source": {
+      "other_conditions": "Must hold cultivable land in family's name; excludes institutional landholders and high-income taxpayers"
+    },
+    "profile_narrative": "I am a 52-year-old farmer who owns 5 acres of land, but I also pay high income tax as I run a separate profitable business.",
+    "profile_fields": {
+      "age": 52,
+      "occupation": "Farmer",
+      "land_owned_acres": 5,
+      "land_in_own_name": true,
+      "income_tax_payer": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Explicitly excluded: scheme excludes 'high-income taxpayers' regardless of landholding."
+  },
+  {
+    "id": "E04",
+    "scheme": "Atal Pension Yojana",
+    "eligibility_source": {
+      "age_requirement": "18 to 40 years at enrollment",
+      "occupation": "Unorganized sector worker",
+      "other_conditions": "Must have a savings bank account or post office savings account"
+    },
+    "profile_narrative": "I am 28 years old, work as a daily-wage construction worker with no formal employer, and I have a savings account at my local bank.",
+    "profile_fields": {
+      "age": 28,
+      "occupation": "Unorganized sector worker",
+      "has_bank_account": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Age within 18-40 enrollment window, unorganized-sector worker, has required bank account."
+  },
+  {
+    "id": "E05",
+    "scheme": "Atal Pension Yojana",
+    "eligibility_source": {
+      "age_requirement": "18 to 40 years at enrollment"
+    },
+    "profile_narrative": "I am 41 years old and work as an unorganized-sector laborer. I want to enrol in a pension scheme for my old age.",
+    "profile_fields": {
+      "age": 41,
+      "occupation": "Unorganized sector worker"
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "One year past the enrollment window (18-40). Age 40 itself would be Eligible; 41 is Ineligible — boundary case around the upper limit."
+  },
+  {
+    "id": "E06",
+    "scheme": "Atal Pension Yojana",
+    "eligibility_source": {
+      "age_requirement": "18 to 40 years at enrollment"
+    },
+    "profile_narrative": "I am exactly 40 years old today and work in the unorganized sector with a post office savings account.",
+    "profile_fields": {
+      "age": 40,
+      "occupation": "Unorganized sector worker",
+      "has_bank_account": true
+    },
+    "ground_truth": "Eligible",
+    "category": "boundary",
+    "rationale": "Age 40 is inside the inclusive '18 to 40 years' window."
+  },
+  {
+    "id": "E07",
+    "scheme": "PM YASASVI Scholarship",
+    "eligibility_source": {
+      "age_requirement": "Class 9 to postgraduate level",
+      "income_requirement": "Annual family income below Rs. 2,50,000",
+      "other_conditions": "Must belong to OBC, EBC, or DNT category"
+    },
+    "profile_narrative": "I am a Class 11 student from an OBC family. Our annual family income is about Rs. 1,80,000.",
+    "profile_fields": {
+      "class_or_level": "Class 11",
+      "category": "OBC",
+      "family_income": 180000
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Class 9-PG range, income below Rs 2,50,000 threshold, OBC category matches."
+  },
+  {
+    "id": "E08",
+    "scheme": "PM YASASVI Scholarship",
+    "eligibility_source": {
+      "income_requirement": "Annual family income below Rs. 2,50,000",
+      "other_conditions": "Must belong to OBC, EBC, or DNT category"
+    },
+    "profile_narrative": "I am a General-category Class 10 student. My family's annual income is Rs. 1,20,000.",
+    "profile_fields": {
+      "class_or_level": "Class 10",
+      "category": "General",
+      "family_income": 120000
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Income is under the cap, but category is 'General', not OBC/EBC/DNT — the mandatory category condition fails."
+  },
+  {
+    "id": "E09",
+    "scheme": "PM YASASVI Scholarship",
+    "eligibility_source": {
+      "income_requirement": "Annual family income below Rs. 2,50,000",
+      "other_conditions": "Must belong to OBC, EBC, or DNT category"
+    },
+    "profile_narrative": "I am an EBC-category student in Class 12. My family's annual income is Rs. 3,20,000.",
+    "profile_fields": {
+      "class_or_level": "Class 12",
+      "category": "EBC",
+      "family_income": 320000
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Category matches (EBC), but income of Rs 3,20,000 exceeds the Rs 2,50,000 cap."
+  },
+  {
+    "id": "E10",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "eligibility_source": {
+      "income_requirement": "Annual family income below Rs. 8,00,000",
+      "education": "Enrolled in AICTE-approved technical diploma or degree program",
+      "other_conditions": "Only one girl child per family eligible; maximum two girls per family across all AICTE scholarships"
+    },
+    "profile_narrative": "I am a girl studying for a diploma in mechanical engineering at an AICTE-approved polytechnic. My family's annual income is Rs. 5,00,000, and I am the only daughter.",
+    "profile_fields": {
+      "gender": "Female",
+      "program": "AICTE-approved diploma",
+      "family_income": 500000,
+      "girls_in_family_applying": 1
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Girl, enrolled in AICTE-approved technical program, income under cap, only one applicant per family."
+  },
+  {
+    "id": "E11",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "eligibility_source": {
+      "education": "Enrolled in AICTE-approved technical diploma or degree program"
+    },
+    "profile_narrative": "I am a girl pursuing a Bachelor of Arts degree at a general university, family income Rs. 3,00,000.",
+    "profile_fields": {
+      "gender": "Female",
+      "program": "BA (non-technical, non-AICTE)",
+      "family_income": 300000
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Gender and income are fine, but a BA at a general university is not an AICTE-approved technical program — this scheme is technical-education specific."
+  },
+  {
+    "id": "E12",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "eligibility_source": {
+      "income_requirement": "Annual family income below Rs. 8,00,000",
+      "other_conditions": "Only one girl child per family eligible; maximum two girls per family across all AICTE scholarships"
+    },
+    "profile_narrative": "I am a girl in an AICTE-approved diploma program, family income Rs. 2,00,000, and I'm not sure how many of my sisters are also applying for AICTE scholarships this year.",
+    "profile_fields": {
+      "gender": "Female",
+      "program": "AICTE-approved diploma",
+      "family_income": 200000,
+      "girls_in_family_applying": "unknown"
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "All conditions satisfiable except the 'max two girls per family across all AICTE scholarships' cap, which depends on a fact the profile doesn't state."
+  },
+  {
+    "id": "E13",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "eligibility_source": {
+      "age_requirement": "Studying in Class 9 to Class 12",
+      "income_requirement": "Annual parental income below Rs. 1,50,000",
+      "education": "Studying in a government, government-aided, or local body school",
+      "other_conditions": "Must clear the NMMS qualifying examination held in Class 8"
+    },
+    "profile_narrative": "I am in Class 9 at a government school. My parents' annual income is Rs. 90,000. I cleared the NMMS qualifying exam when I was in Class 8.",
+    "profile_fields": {
+      "class": "Class 9",
+      "school_type": "Government",
+      "parental_income": 90000,
+      "cleared_nmms_qualifying_exam": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All four conditions satisfied: class range, income, school type, and cleared qualifying exam."
+  },
+  {
+    "id": "E14",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "eligibility_source": {
+      "income_requirement": "Annual parental income below Rs. 1,50,000",
+      "education": "Studying in a government, government-aided, or local body school",
+      "other_conditions": "Must clear the NMMS qualifying examination held in Class 8"
+    },
+    "profile_narrative": "I am in Class 10 at a private unaided school. My parents' annual income is Rs. 1,00,000.",
+    "profile_fields": {
+      "class": "Class 10",
+      "school_type": "Private unaided",
+      "parental_income": 100000,
+      "cleared_nmms_qualifying_exam": "unknown"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "School type fails outright ('private unaided' is not government/government-aided/local body) — this alone disqualifies regardless of the unknown exam status."
+  },
+  {
+    "id": "E15",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "eligibility_source": {
+      "income_requirement": "Annual parental income below Rs. 1,50,000",
+      "education": "Studying in a government, government-aided, or local body school",
+      "other_conditions": "Must clear the NMMS qualifying examination held in Class 8"
+    },
+    "profile_narrative": "I am in Class 11 at a government-aided school, parental income Rs. 1,20,000. I'm not sure whether I actually cleared the Class 8 NMMS qualifying exam or just appeared for it.",
+    "profile_fields": {
+      "class": "Class 11",
+      "school_type": "Government-aided",
+      "parental_income": 120000,
+      "cleared_nmms_qualifying_exam": "unknown"
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Class, school type and income all qualify, but the mandatory 'cleared the qualifying exam' condition is explicitly unknown, not just unstated."
+  },
+  {
+    "id": "E16",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "eligibility_source": {
+      "income_requirement": "Monthly income up to Rs. 30,000",
+      "other_conditions": "Must hold a UDID card showing 40% or more disability"
+    },
+    "profile_narrative": "My monthly income is Rs. 22,000 and I have a UDID card showing 55% locomotor disability. I need a wheelchair.",
+    "profile_fields": {
+      "monthly_income": 22000,
+      "udid_disability_percent": 55
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Income under Rs 30,000/month and disability percentage (55%) exceeds the 40% threshold."
+  },
+  {
+    "id": "E17",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "eligibility_source": {
+      "other_conditions": "Must hold a UDID card showing 40% or more disability"
+    },
+    "profile_narrative": "My monthly income is Rs. 25,000. I have a doctor's note describing a mild hearing impairment, but I don't have a UDID card and I don't know my certified disability percentage.",
+    "profile_fields": {
+      "monthly_income": 25000,
+      "udid_disability_percent": "unknown",
+      "has_udid_card": false
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Income qualifies, but there is no certified UDID percentage to check against the 40% threshold — cannot be scored as Eligible or Ineligible from a doctor's note alone."
+  },
+  {
+    "id": "E18",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "eligibility_source": {
+      "income_requirement": "Monthly income up to Rs. 30,000",
+      "other_conditions": "Must hold a UDID card showing 40% or more disability"
+    },
+    "profile_narrative": "My monthly income is Rs. 40,000, and my UDID card shows 60% disability.",
+    "profile_fields": {
+      "monthly_income": 40000,
+      "udid_disability_percent": 60
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Disability percentage qualifies, but monthly income of Rs 40,000 exceeds the Rs 30,000 cap."
+  },
+  {
+    "id": "E19",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "eligibility_source": {
+      "age_requirement": "60 years and above",
+      "income_requirement": "Monthly income below Rs. 15,000",
+      "other_conditions": "Must have an age-related disability or impairment assessed at the camp"
+    },
+    "profile_narrative": "I am 68 years old, my monthly income is Rs. 8,000, and I have age-related difficulty walking and hearing.",
+    "profile_fields": {
+      "age": 68,
+      "monthly_income": 8000,
+      "has_age_related_impairment": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Age above 60, income under Rs 15,000/month, and has an age-related impairment."
+  },
+  {
+    "id": "E20",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "eligibility_source": {
+      "age_requirement": "60 years and above",
+      "income_requirement": "Monthly income below Rs. 15,000"
+    },
+    "profile_narrative": "I am 58 years old with monthly income Rs. 10,000 and mobility issues.",
+    "profile_fields": {
+      "age": 58,
+      "monthly_income": 10000,
+      "has_age_related_impairment": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "Two years under the 60+ age floor; income and impairment conditions would otherwise pass — a near-boundary age failure."
+  },
+  {
+    "id": "E21",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "eligibility_source": {
+      "age_requirement": "60 years and above",
+      "income_requirement": "Monthly income below Rs. 15,000"
+    },
+    "profile_narrative": "I am exactly 60 years old, monthly income Rs. 14,900, with an age-related hearing impairment.",
+    "profile_fields": {
+      "age": 60,
+      "monthly_income": 14900,
+      "has_age_related_impairment": true
+    },
+    "ground_truth": "Eligible",
+    "category": "boundary",
+    "rationale": "Age exactly at the 60-year floor and income just under the Rs 15,000 ceiling — both boundaries satisfied."
+  },
+  {
+    "id": "E22",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "eligibility_source": {
+      "income_requirement": "Annual family income below Rs. 4,50,000",
+      "education": "Scored above 80th percentile in Class 12 board exams",
+      "other_conditions": "Must not be receiving any other central government scholarship simultaneously"
+    },
+    "profile_narrative": "I scored in the 85th percentile in my Class 12 boards, my family's annual income is Rs. 3,00,000, and I'm not receiving any other central scholarship.",
+    "profile_fields": {
+      "class12_percentile": 85,
+      "family_income": 300000,
+      "receiving_other_central_scholarship": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Above 80th percentile, income under cap, and no conflicting scholarship."
+  },
+  {
+    "id": "E23",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "eligibility_source": {
+      "education": "Scored above 80th percentile in Class 12 board exams",
+      "other_conditions": "Must not be receiving any other central government scholarship simultaneously"
+    },
+    "profile_narrative": "I scored in the 90th percentile in Class 12 boards, family income Rs. 2,00,000, but I am currently receiving the PM YASASVI Scholarship.",
+    "profile_fields": {
+      "class12_percentile": 90,
+      "family_income": 200000,
+      "receiving_other_central_scholarship": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Merit and income both qualify, but already receiving another central scholarship violates the no-double-scholarship condition."
+  },
+  {
+    "id": "E24",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "eligibility_source": {
+      "income_requirement": "Annual family income below Rs. 4,50,000",
+      "education": "Scored above 80th percentile in Class 12 board exams"
+    },
+    "profile_narrative": "I scored in the 60th percentile in Class 12 boards, family income Rs. 2,50,000.",
+    "profile_fields": {
+      "class12_percentile": 60,
+      "family_income": 250000
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Income qualifies, but 60th percentile is below the required 80th-percentile merit threshold."
+  },
+  {
+    "id": "E25",
+    "scheme": "Stand-Up India Scheme",
+    "eligibility_source": {
+      "other_conditions": "At least one woman or SC/ST entrepreneur per bank branch; must be a greenfield (new) enterprise"
+    },
+    "profile_narrative": "I am a 30-year-old woman planning to set up a brand-new manufacturing unit; no such branch loan has been given yet at my chosen bank branch this year.",
+    "profile_fields": {
+      "age": 30,
+      "gender": "Female",
+      "enterprise_type": "greenfield manufacturing"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Woman entrepreneur setting up a new (greenfield) enterprise — matches the core eligibility condition."
+  },
+  {
+    "id": "E26",
+    "scheme": "Stand-Up India Scheme",
+    "eligibility_source": {
+      "other_conditions": "At least one woman or SC/ST entrepreneur per bank branch; must be a greenfield (new) enterprise"
+    },
+    "profile_narrative": "I am a 40-year-old General-category man looking to expand my already-running trading business with a new loan.",
+    "profile_fields": {
+      "age": 40,
+      "gender": "Male",
+      "category": "General",
+      "enterprise_type": "existing/expansion, trading"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Fails two conditions at once: not a woman/SC/ST entrepreneur, and the enterprise is an expansion of an existing business, not a greenfield (new) one."
+  },
+  {
+    "id": "E27",
+    "scheme": "Stand-Up India Scheme",
+    "eligibility_source": {
+      "other_conditions": "At least one woman or SC/ST entrepreneur per bank branch; must be a greenfield (new) enterprise"
+    },
+    "profile_narrative": "I am an ST-category entrepreneur starting a new services business, but I haven't checked whether my chosen bank branch has already sanctioned a Stand-Up India loan to another SC/ST or woman entrepreneur this cycle.",
+    "profile_fields": {
+      "category": "ST",
+      "enterprise_type": "greenfield services",
+      "branch_quota_status": "unknown"
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Category and greenfield status both qualify, but the per-branch quota condition depends on branch-level facts the profile doesn't (and can't easily) state."
+  },
+  {
+    "id": "E28",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "eligibility_source": {
+      "age_requirement": "18 years and above",
+      "other_conditions": "Applicable for the first living child; pregnancy must be registered with Anganwadi/health facility"
+    },
+    "profile_narrative": "I am 24 years old, pregnant with my first child, and I registered my pregnancy at the local Anganwadi centre.",
+    "profile_fields": {
+      "age": 24,
+      "which_child": "first",
+      "pregnancy_registered": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult, first living child, and pregnancy formally registered — all conditions met."
+  },
+  {
+    "id": "E29",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "eligibility_source": {
+      "other_conditions": "Applicable for the first living child; pregnancy must be registered with Anganwadi/health facility"
+    },
+    "profile_narrative": "I am 29 years old and pregnant with my third child; I have registered this pregnancy at my local health centre.",
+    "profile_fields": {
+      "age": 29,
+      "which_child": "third",
+      "pregnancy_registered": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Registration is fine, but the scheme is limited to the first living child — third child disqualifies."
+  },
+  {
+    "id": "E30",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "eligibility_source": {
+      "other_conditions": "Applicable for the first living child; pregnancy must be registered with Anganwadi/health facility"
+    },
+    "profile_narrative": "I am pregnant with my first child but haven't yet registered the pregnancy anywhere, and I'm not sure if I need to before applying.",
+    "profile_fields": {
+      "age": 22,
+      "which_child": "first",
+      "pregnancy_registered": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "First-child condition is satisfied, but the mandatory Anganwadi/health-facility registration explicitly has not happened yet — this is a known 'no', not unknown, so it's Ineligible rather than Insufficient Information."
+  },
+  {
+    "id": "E31",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "eligibility_source": {
+      "age_requirement": "18+ (adult applicant)",
+      "income_requirement": "EWS/LIG/MIG income categories as per government slabs",
+      "other_conditions": "Applicant or family should not own a pucca house anywhere in India"
+    },
+    "profile_narrative": "I am 34, my family income is about Rs 2.5 lakh a year (EWS category) and none of us owns a house anywhere in India. I want a subsidy on a home loan.",
+    "profile_fields": {
+      "age": 34,
+      "income_lakh": 2.5,
+      "category": "EWS",
+      "owns_pucca_house": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult, EWS income slab, and no pucca house anywhere: all conditions met."
+  },
+  {
+    "id": "E32",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "eligibility_source": {
+      "age_requirement": "18+ (adult applicant)",
+      "income_requirement": "EWS/LIG/MIG income categories as per government slabs",
+      "other_conditions": "Applicant or family should not own a pucca house anywhere in India"
+    },
+    "profile_narrative": "I am 40 and in the MIG income group, but my family already owns a pucca house in our native village. I want a subsidy for buying a second home.",
+    "profile_fields": {
+      "age": 40,
+      "category": "MIG",
+      "owns_pucca_house": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Family owns a pucca house, violating the explicit no-pucca-house condition."
+  },
+  {
+    "id": "E33",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "eligibility_source": {
+      "age_requirement": "18+ (adult applicant)",
+      "income_requirement": "EWS/LIG/MIG income categories as per government slabs",
+      "other_conditions": "Applicant or family should not own a pucca house anywhere in India"
+    },
+    "profile_narrative": "I want to buy my first flat in a city and take a home loan. Can I get the PMAY subsidy?",
+    "profile_fields": {
+      "age": null,
+      "income": null,
+      "owns_pucca_house": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Neither income slab nor house ownership is stated, so a mandatory condition cannot be established."
+  },
+  {
+    "id": "E34",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "eligibility_source": {
+      "age_requirement": "All ages; automatic inclusion for citizens 70+",
+      "income_requirement": "SECC deprivation criteria for general beneficiaries; no income limit for 70+ category",
+      "other_conditions": "Family must be listed under SECC database or qualify under the 70+ expansion"
+    },
+    "profile_narrative": "I am 72 years old and a retired bank manager with a good pension. Can I get Ayushman Bharat cover?",
+    "profile_fields": {
+      "age": 72,
+      "income": "high"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Age 70+ qualifies automatically with no income limit."
+  },
+  {
+    "id": "E35",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "eligibility_source": {
+      "age_requirement": "All ages; automatic inclusion for citizens 70+",
+      "income_requirement": "SECC deprivation criteria for general beneficiaries; no income limit for 70+ category",
+      "other_conditions": "Family must be listed under SECC database or qualify under the 70+ expansion"
+    },
+    "profile_narrative": "I am 69 years old and I checked that our family is not listed in the SECC database.",
+    "profile_fields": {
+      "age": 69,
+      "in_secc": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "Just under the 70+ expansion and explicitly not in SECC, so neither route applies."
+  },
+  {
+    "id": "E36",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "eligibility_source": {
+      "age_requirement": "All ages; automatic inclusion for citizens 70+",
+      "income_requirement": "SECC deprivation criteria for general beneficiaries; no income limit for 70+ category",
+      "other_conditions": "Family must be listed under SECC database or qualify under the 70+ expansion"
+    },
+    "profile_narrative": "I am 50, my income is low and I want health insurance for my family. I'm not sure if we are in any government list.",
+    "profile_fields": {
+      "age": 50,
+      "income": "low",
+      "in_secc": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "SECC listing, a mandatory condition for under-70 applicants, is unknown."
+  },
+  {
+    "id": "E37",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "occupation": "Homeowner",
+      "other_conditions": "Must own a residential rooftop suitable for solar installation"
+    },
+    "profile_narrative": "I am 45 and own an independent house with a large open terrace that gets full sun. I want rooftop solar.",
+    "profile_fields": {
+      "age": 45,
+      "owns_home": true,
+      "roof_suitable": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Owner of a residential rooftop that is suitable."
+  },
+  {
+    "id": "E38",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "eligibility_source": {
+      "occupation": "Homeowner",
+      "other_conditions": "Must own a residential rooftop suitable for solar installation"
+    },
+    "profile_narrative": "I am 30 and live in a rented flat. I don't own the building and have no right to its roof.",
+    "profile_fields": {
+      "age": 30,
+      "owns_home": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Occupation/ownership condition is homeowner; renter explicitly does not own."
+  },
+  {
+    "id": "E39",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "eligibility_source": {
+      "occupation": "Homeowner",
+      "other_conditions": "Must own a residential rooftop suitable for solar installation"
+    },
+    "profile_narrative": "I own my house but trees and neighbouring buildings shade most of my roof. Will I be eligible for the solar subsidy?",
+    "profile_fields": {
+      "owns_home": true,
+      "roof_suitable": "unclear"
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Ownership is met, but rooftop suitability is not established."
+  },
+  {
+    "id": "E40",
+    "scheme": "PM SVANidhi",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "occupation": "Street vendor",
+      "location": "Urban areas",
+      "other_conditions": "Must possess a Certificate of Vending or be identified in the ULB survey"
+    },
+    "profile_narrative": "I am 38 and sell fruit from a cart in Pune. I have a Certificate of Vending from the municipal corporation.",
+    "profile_fields": {
+      "age": 38,
+      "occupation": "street vendor",
+      "urban": true,
+      "vending_certificate": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Urban street vendor with certificate of vending."
+  },
+  {
+    "id": "E41",
+    "scheme": "PM SVANidhi",
+    "eligibility_source": {
+      "occupation": "Street vendor",
+      "other_conditions": "Must possess a Certificate of Vending or be identified in the ULB survey"
+    },
+    "profile_narrative": "I am 42 and run a permanent shop with a shop licence in a city market. I want a working capital loan under SVANidhi.",
+    "profile_fields": {
+      "age": 42,
+      "occupation": "shopkeeper",
+      "urban": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "A permanent shop owner is not a street vendor."
+  },
+  {
+    "id": "E42",
+    "scheme": "PM SVANidhi",
+    "eligibility_source": {
+      "occupation": "Street vendor",
+      "other_conditions": "Must possess a Certificate of Vending or be identified in the ULB survey"
+    },
+    "profile_narrative": "I sell tea on a roadside in Delhi. I don't know if I am in the municipality's vendor survey or have any certificate.",
+    "profile_fields": {
+      "occupation": "street vendor",
+      "urban": true,
+      "vending_certificate": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Vending certificate / ULB survey status is unknown."
+  },
+  {
+    "id": "E43",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "eligibility_source": {
+      "income_requirement": "BPL / SECC-identified households",
+      "location": "Rural areas",
+      "other_conditions": "Household should not already own a pucca house"
+    },
+    "profile_narrative": "We are a BPL family in a village, listed in the SECC data, living in a mud house with no pucca house anywhere.",
+    "profile_fields": {
+      "area": "rural",
+      "bpl": true,
+      "in_secc": true,
+      "owns_pucca_house": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Rural, BPL/SECC and no pucca house."
+  },
+  {
+    "id": "E44",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "eligibility_source": {
+      "income_requirement": "BPL / SECC-identified households",
+      "location": "Rural areas",
+      "other_conditions": "Household should not already own a pucca house"
+    },
+    "profile_narrative": "We are a BPL family in a village but already own a two-storey pucca house inherited from my father.",
+    "profile_fields": {
+      "area": "rural",
+      "bpl": true,
+      "owns_pucca_house": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Owns a pucca house, violating the explicit condition."
+  },
+  {
+    "id": "E45",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "eligibility_source": {
+      "income_requirement": "BPL / SECC-identified households",
+      "location": "Rural areas",
+      "other_conditions": "Household should not already own a pucca house"
+    },
+    "profile_narrative": "I live in a small city slum in a kutcha house; my family is BPL and has no pucca house.",
+    "profile_fields": {
+      "area": "urban",
+      "bpl": true,
+      "owns_pucca_house": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "Everything is met except the rural-areas location condition."
+  },
+  {
+    "id": "E46",
+    "scheme": "PM Vishwakarma",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "occupation": "Artisan/craftsperson in one of 18 identified trades",
+      "other_conditions": "Must be engaged in one of the specified trades (carpentry, blacksmithing, pottery, etc.)"
+    },
+    "profile_narrative": "I am 40 and a carpenter working from my own small workshop. I want the toolkit and the training.",
+    "profile_fields": {
+      "age": 40,
+      "trade": "carpenter"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult in one of the 18 listed trades."
+  },
+  {
+    "id": "E47",
+    "scheme": "PM Vishwakarma",
+    "eligibility_source": {
+      "occupation": "Artisan/craftsperson in one of 18 identified trades",
+      "other_conditions": "Must be engaged in one of the specified trades (carpentry, blacksmithing, pottery, etc.)"
+    },
+    "profile_narrative": "I am 30 and work as a software engineer. I'd like the toolkit and collateral-free credit.",
+    "profile_fields": {
+      "age": 30,
+      "occupation": "software engineer"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Not engaged in any of the 18 listed trades."
+  },
+  {
+    "id": "E48",
+    "scheme": "PM Vishwakarma",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "occupation": "Artisan/craftsperson in one of 18 identified trades",
+      "other_conditions": "Must be engaged in one of the specified trades (carpentry, blacksmithing, pottery, etc.)"
+    },
+    "profile_narrative": "I am 17 and learning pottery from my father. Can I register for PM Vishwakarma?",
+    "profile_fields": {
+      "age": 17,
+      "trade": "potter"
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "Trade matches but the applicant is below the 18+ age requirement."
+  },
+  {
+    "id": "E49",
+    "scheme": "Mission Vatsalya",
+    "eligibility_source": {
+      "age_requirement": "0 to 18 years (children)",
+      "other_conditions": "Applicable to children in difficult circumstances, orphans, or those in conflict with law"
+    },
+    "profile_narrative": "My 12-year-old nephew lost both parents and now has nobody to look after him.",
+    "profile_fields": {
+      "age": 12,
+      "orphan": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "A child under 18 who is an orphan."
+  },
+  {
+    "id": "E50",
+    "scheme": "Mission Vatsalya",
+    "eligibility_source": {
+      "age_requirement": "0 to 18 years (children)",
+      "other_conditions": "Applicable to children in difficult circumstances, orphans, or those in conflict with law"
+    },
+    "profile_narrative": "I am 25 and lost both my parents some years ago. Is there any support from Mission Vatsalya for me?",
+    "profile_fields": {
+      "age": 25,
+      "orphan": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Orphan status matches but the applicant is beyond the 0 to 18 age range."
+  },
+  {
+    "id": "E51",
+    "scheme": "Mission Vatsalya",
+    "eligibility_source": {
+      "age_requirement": "0 to 18 years (children)",
+      "other_conditions": "Applicable to children in difficult circumstances, orphans, or those in conflict with law"
+    },
+    "profile_narrative": "I am 16 and live with my parents. I just want to know if Mission Vatsalya gives me any help.",
+    "profile_fields": {
+      "age": 16,
+      "circumstance": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Age fits but there is no information about any difficult circumstance."
+  },
+  {
+    "id": "E52",
+    "scheme": "PM Ujjwala Yojana",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "income_requirement": "BPL / low-income household",
+      "other_conditions": "Applicant must be a woman from an eligible BPL household without an existing LPG connection"
+    },
+    "profile_narrative": "I am a 28-year-old woman from a BPL household and cook on firewood. We have no LPG connection.",
+    "profile_fields": {
+      "age": 28,
+      "gender": "female",
+      "bpl": true,
+      "has_lpg": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult woman, BPL, no existing LPG connection."
+  },
+  {
+    "id": "E53",
+    "scheme": "PM Ujjwala Yojana",
+    "eligibility_source": {
+      "income_requirement": "BPL / low-income household",
+      "other_conditions": "Applicant must be a woman from an eligible BPL household without an existing LPG connection"
+    },
+    "profile_narrative": "I am a 35-year-old woman from a BPL family and we already have an LPG connection in my husband's name.",
+    "profile_fields": {
+      "age": 35,
+      "gender": "female",
+      "bpl": true,
+      "has_lpg": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Household already has an LPG connection."
+  },
+  {
+    "id": "E54",
+    "scheme": "PM Ujjwala Yojana",
+    "eligibility_source": {
+      "income_requirement": "BPL / low-income household",
+      "other_conditions": "Applicant must be a woman from an eligible BPL household without an existing LPG connection"
+    },
+    "profile_narrative": "I am a 35-year-old man from a BPL household with no LPG connection. I want to apply in my name.",
+    "profile_fields": {
+      "age": 35,
+      "gender": "male",
+      "bpl": true,
+      "has_lpg": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "The applicant must be a woman."
+  },
+  {
+    "id": "E55",
+    "scheme": "PM Rahat Scheme",
+    "eligibility_source": {
+      "other_conditions": "Applicable to any victim of a road accident on Indian roads, launched 14 February 2026"
+    },
+    "profile_narrative": "I was injured in a road accident on the highway near Jaipur and need emergency treatment.",
+    "profile_fields": {
+      "cause": "road accident",
+      "location": "India"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Any victim of a road accident on Indian roads."
+  },
+  {
+    "id": "E56",
+    "scheme": "PM Rahat Scheme",
+    "eligibility_source": {
+      "other_conditions": "Applicable to any victim of a road accident on Indian roads, launched 14 February 2026"
+    },
+    "profile_narrative": "I broke my leg after falling down the stairs at home. Can PM Rahat pay for it?",
+    "profile_fields": {
+      "cause": "fall at home"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Not a road accident."
+  },
+  {
+    "id": "E57",
+    "scheme": "PM Rahat Scheme",
+    "eligibility_source": {
+      "other_conditions": "Applicable to any victim of a road accident on Indian roads, launched 14 February 2026"
+    },
+    "profile_narrative": "I was injured and the doctor says I need treatment. Does PM Rahat cover me?",
+    "profile_fields": {
+      "cause": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "The cause of injury is not stated."
+  },
+  {
+    "id": "E58",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "other_conditions": "Must hold a valid disability certificate of 40% or more"
+    },
+    "profile_narrative": "I am 32 and have a 55% locomotor disability with a valid disability certificate. I want a business loan.",
+    "profile_fields": {
+      "age": 32,
+      "disability_percent": 55,
+      "certificate": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult with 40%+ disability certificate."
+  },
+  {
+    "id": "E59",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "other_conditions": "Must hold a valid disability certificate of 40% or more"
+    },
+    "profile_narrative": "I am 30 and have a 30% hearing impairment with a certificate. I want a business loan.",
+    "profile_fields": {
+      "age": 30,
+      "disability_percent": 30,
+      "certificate": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Disability is below the required 40%."
+  },
+  {
+    "id": "E60",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "other_conditions": "Must hold a valid disability certificate of 40% or more"
+    },
+    "profile_narrative": "I have a disability and want a concessional loan to start a shop.",
+    "profile_fields": {
+      "disability_percent": null,
+      "certificate": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Disability percentage and certificate not mentioned."
+  },
+  {
+    "id": "E61",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "income_requirement": "Urban poor / below poverty line households",
+      "occupation": "Unemployed or informally employed urban resident",
+      "location": "Urban areas",
+      "other_conditions": "Must be a resident of the urban local body area for a minimum period as specified"
+    },
+    "profile_narrative": "I am 29, unemployed, living in a slum in an Indian city for 10 years in a BPL household.",
+    "profile_fields": {
+      "age": 29,
+      "urban": true,
+      "bpl": true,
+      "employed": false,
+      "years_in_city": 10
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult urban-poor unemployed resident."
+  },
+  {
+    "id": "E62",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "eligibility_source": {
+      "income_requirement": "Urban poor / below poverty line households",
+      "occupation": "Unemployed or informally employed urban resident",
+      "location": "Urban areas"
+    },
+    "profile_narrative": "I am 35 and a farmer in a village. I want a self-employment loan under NULM.",
+    "profile_fields": {
+      "age": 35,
+      "area": "rural"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Scheme is for urban areas and urban poor."
+  },
+  {
+    "id": "E63",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "eligibility_source": {
+      "age_requirement": "18+",
+      "income_requirement": "Urban poor / below poverty line households",
+      "occupation": "Unemployed or informally employed urban resident",
+      "location": "Urban areas"
+    },
+    "profile_narrative": "I am 27, unemployed and live in a city. I want to start a small business with a subsidised loan.",
+    "profile_fields": {
+      "age": 27,
+      "urban": true,
+      "income": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Urban poor / BPL status is not stated."
+  },
+  {
+    "id": "E64",
+    "scheme": "PM Kisan Maandhan Yojana",
+    "eligibility_source": {
+      "age_requirement": "18-40 years",
+      "income_requirement": "Small and marginal farmers (up to 2 hectares)",
+      "other_conditions": "Monthly contribution Rs. 55-200 depending on entry age; not for EPFO/NPS/ESIC members"
+    },
+    "profile_narrative": "I am 32 and have 1.5 hectares of farmland. I am not a member of EPFO, NPS or ESIC.",
+    "profile_fields": {
+      "age": 32,
+      "land_hectares": 1.5,
+      "epfo_nps_esic": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Small farmer aged 18-40 and not in other pension systems."
+  },
+  {
+    "id": "E65",
+    "scheme": "PM Kisan Maandhan Yojana",
+    "eligibility_source": {
+      "age_requirement": "18-40 years",
+      "income_requirement": "Small and marginal farmers (up to 2 hectares)",
+      "other_conditions": "Monthly contribution Rs. 55-200 depending on entry age; not for EPFO/NPS/ESIC members"
+    },
+    "profile_narrative": "I am 41 and a marginal farmer with 1 hectare. I'd like to join the pension scheme.",
+    "profile_fields": {
+      "age": 41,
+      "land_hectares": 1
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "One year above the maximum entry age of 40."
+  },
+  {
+    "id": "E66",
+    "scheme": "PM Internship Scheme",
+    "eligibility_source": {
+      "age_requirement": "21-24 years",
+      "income_requirement": "Family income up to Rs. 8 lakh",
+      "other_conditions": "Not full-time employed or in full-time education; no govt job in family"
+    },
+    "profile_narrative": "I am 22, a B.Com graduate not working or studying full-time. Our family income is Rs 5 lakh and no one in my family has a government job.",
+    "profile_fields": {
+      "age": 22,
+      "family_income_lakh": 5,
+      "employed": false,
+      "govt_job_in_family": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E67",
+    "scheme": "PM Internship Scheme",
+    "eligibility_source": {
+      "age_requirement": "21-24 years",
+      "income_requirement": "Family income up to Rs. 8 lakh"
+    },
+    "profile_narrative": "I am 26, unemployed, with family income of Rs 4 lakh.",
+    "profile_fields": {
+      "age": 26,
+      "family_income_lakh": 4
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Age is above the 21-24 range."
+  },
+  {
+    "id": "E68",
+    "scheme": "PM Internship Scheme",
+    "eligibility_source": {
+      "age_requirement": "21-24 years",
+      "income_requirement": "Family income up to Rs. 8 lakh",
+      "other_conditions": "Not full-time employed or in full-time education; no govt job in family"
+    },
+    "profile_narrative": "I am 23 and unemployed with family income Rs 6 lakh, but my father is a government clerk.",
+    "profile_fields": {
+      "age": 23,
+      "family_income_lakh": 6,
+      "govt_job_in_family": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Government job in the family violates the exclusion."
+  },
+  {
+    "id": "E69",
+    "scheme": "PM Internship Scheme",
+    "eligibility_source": {
+      "age_requirement": "21-24 years",
+      "income_requirement": "Family income up to Rs. 8 lakh",
+      "other_conditions": "Not full-time employed or in full-time education; no govt job in family"
+    },
+    "profile_narrative": "I am 23, a graduate and currently unemployed. I'd like to apply for the PM Internship.",
+    "profile_fields": {
+      "age": 23,
+      "family_income_lakh": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Family income and family government employment are not stated."
+  },
+  {
+    "id": "E70",
+    "scheme": "e-Shram Card",
+    "eligibility_source": {
+      "age_requirement": "16-59 years",
+      "occupation": "Unorganised worker",
+      "other_conditions": "Not an income tax payer"
+    },
+    "profile_narrative": "I am 35, a construction worker. I do not pay income tax and am not in EPFO or ESIC.",
+    "profile_fields": {
+      "age": 35,
+      "occupation": "construction worker",
+      "income_tax_payer": false,
+      "epfo_esic": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Unorganised worker aged 16-59 not in EPFO/ESIC."
+  },
+  {
+    "id": "E71",
+    "scheme": "e-Shram Card",
+    "eligibility_source": {
+      "age_requirement": "16-59 years",
+      "occupation": "Unorganised worker"
+    },
+    "profile_narrative": "I am 62 and sell vegetables from a stall. I want an e-Shram card.",
+    "profile_fields": {
+      "age": 62,
+      "occupation": "vendor"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Above the age 16-59 range."
+  },
+  {
+    "id": "E72",
+    "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "eligibility_source": {
+      "age_requirement": "18-40 years",
+      "income_requirement": "Monthly income up to Rs. 15,000",
+      "occupation": "Unorganised worker (rickshaw puller, domestic worker, etc.)",
+      "other_conditions": "Not an EPFO/NPS/ESIC member or income tax payer"
+    },
+    "profile_narrative": "I am 30 and work as a domestic worker earning Rs 11,000 a month. I have no EPFO, NPS or ESIC.",
+    "profile_fields": {
+      "age": 30,
+      "monthly_income": 11000,
+      "epfo_nps_esic": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Within age and income limits, unorganised, no other pension."
+  },
+  {
+    "id": "E73",
+    "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "eligibility_source": {
+      "age_requirement": "18-40 years",
+      "income_requirement": "Monthly income up to Rs. 15,000",
+      "occupation": "Unorganised worker (rickshaw puller, domestic worker, etc.)"
+    },
+    "profile_narrative": "I am 38, a rickshaw puller, but my monthly income is about Rs 25,000.",
+    "profile_fields": {
+      "age": 38,
+      "monthly_income": 25000
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Monthly income above Rs 15,000."
+  },
+  {
+    "id": "E74",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "eligibility_source": {
+      "age_requirement": "60+ years",
+      "income_requirement": "Below poverty line",
+      "other_conditions": "BPL list household"
+    },
+    "profile_narrative": "I am 66 and my family is on the BPL list. I have no pension.",
+    "profile_fields": {
+      "age": 66,
+      "bpl": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Aged 60+ and BPL."
+  },
+  {
+    "id": "E75",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "eligibility_source": {
+      "age_requirement": "60+ years",
+      "income_requirement": "Below poverty line",
+      "other_conditions": "BPL list household"
+    },
+    "profile_narrative": "I am 58 and from a BPL household. Can I get old age pension now?",
+    "profile_fields": {
+      "age": 58,
+      "bpl": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "BPL but under the 60+ age requirement."
+  },
+  {
+    "id": "E76",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "eligibility_source": {
+      "age_requirement": "60+ years",
+      "income_requirement": "Below poverty line",
+      "other_conditions": "BPL list household"
+    },
+    "profile_narrative": "I am 70 years old and have no income. Can I get the old age pension?",
+    "profile_fields": {
+      "age": 70,
+      "bpl": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "BPL status is not stated."
+  },
+  {
+    "id": "E77",
+    "scheme": "Indira Gandhi National Widow Pension Scheme",
+    "eligibility_source": {
+      "age_requirement": "40-79 years",
+      "income_requirement": "Below poverty line",
+      "occupation": "Widow",
+      "other_conditions": "BPL household"
+    },
+    "profile_narrative": "I am 50, widowed and my family is on the BPL list.",
+    "profile_fields": {
+      "age": 50,
+      "widow": true,
+      "bpl": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Widow aged 40-79 and BPL."
+  },
+  {
+    "id": "E78",
+    "scheme": "Indira Gandhi National Widow Pension Scheme",
+    "eligibility_source": {
+      "age_requirement": "40-79 years",
+      "income_requirement": "Below poverty line",
+      "other_conditions": "BPL household"
+    },
+    "profile_narrative": "I am 35, a widow from a BPL household. Can I get the widow pension?",
+    "profile_fields": {
+      "age": 35,
+      "widow": true,
+      "bpl": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "Below the minimum age of 40."
+  },
+  {
+    "id": "E79",
+    "scheme": "Indira Gandhi National Disability Pension Scheme",
+    "eligibility_source": {
+      "age_requirement": "18-79 years",
+      "income_requirement": "Below poverty line",
+      "other_conditions": "80% or more disability"
+    },
+    "profile_narrative": "I am 40, BPL, with a 60% disability certificate.",
+    "profile_fields": {
+      "age": 40,
+      "bpl": true,
+      "disability_percent": 60
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Disability is below the 80% requirement."
+  },
+  {
+    "id": "E80",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "eligibility_source": {
+      "age_requirement": "21-65 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Maharashtra",
+      "other_conditions": "Maharashtra resident; Aadhaar-linked bank account"
+    },
+    "profile_narrative": "I am a 30-year-old woman in Pune, Maharashtra. Our family income is Rs 2 lakh and my bank account is linked with Aadhaar.",
+    "profile_fields": {
+      "age": 30,
+      "gender": "female",
+      "state": "Maharashtra",
+      "family_income_lakh": 2,
+      "aadhaar_linked_bank": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All conditions satisfied."
+  },
+  {
+    "id": "E81",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "eligibility_source": {
+      "age_requirement": "21-65 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Maharashtra"
+    },
+    "profile_narrative": "I am a 28-year-old woman living in Gujarat with family income Rs 2 lakh.",
+    "profile_fields": {
+      "age": 28,
+      "gender": "female",
+      "state": "Gujarat",
+      "family_income_lakh": 2
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Scheme is only for Maharashtra residents."
+  },
+  {
+    "id": "E82",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "eligibility_source": {
+      "age_requirement": "21-65 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Maharashtra"
+    },
+    "profile_narrative": "I am a 68-year-old woman in Nagpur, Maharashtra with family income Rs 1 lakh.",
+    "profile_fields": {
+      "age": 68,
+      "gender": "female",
+      "state": "Maharashtra",
+      "family_income_lakh": 1
+    },
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "rationale": "Above the upper age limit of 65."
+  },
+  {
+    "id": "E83",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "eligibility_source": {
+      "age_requirement": "21-65 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Maharashtra",
+      "other_conditions": "Maharashtra resident; Aadhaar-linked bank account"
+    },
+    "profile_narrative": "I am a 40-year-old woman living in Maharashtra. Can I get the monthly Rs 1500?",
+    "profile_fields": {
+      "age": 40,
+      "state": "Maharashtra",
+      "family_income_lakh": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Family income is not stated."
+  },
+  {
+    "id": "E84",
+    "scheme": "Gruha Lakshmi (Karnataka)",
+    "eligibility_source": {
+      "age_requirement": "18+ years",
+      "income_requirement": "Not income tax or GST payer",
+      "location": "Karnataka",
+      "other_conditions": "Ration card holder (BPL/APL/AAY)"
+    },
+    "profile_narrative": "I am 40, the woman head of my household in Mysuru, Karnataka with a BPL ration card. We pay no income tax or GST.",
+    "profile_fields": {
+      "age": 40,
+      "state": "Karnataka",
+      "ration_card": "BPL",
+      "tax_or_gst_payer": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E85",
+    "scheme": "Gruha Lakshmi (Karnataka)",
+    "eligibility_source": {
+      "income_requirement": "Not income tax or GST payer",
+      "other_conditions": "Ration card holder (BPL/APL/AAY)"
+    },
+    "profile_narrative": "I am 45, a woman head of household in Karnataka with a ration card, but I run a business registered under GST.",
+    "profile_fields": {
+      "age": 45,
+      "state": "Karnataka",
+      "ration_card": true,
+      "gst_payer": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "GST payers are excluded."
+  },
+  {
+    "id": "E86",
+    "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "eligibility_source": {
+      "age_requirement": "21-60 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Madhya Pradesh",
+      "other_conditions": "MP resident married woman"
+    },
+    "profile_narrative": "I am 35, married, in Indore, Madhya Pradesh and our family income is Rs 1.8 lakh.",
+    "profile_fields": {
+      "age": 35,
+      "married": true,
+      "state": "Madhya Pradesh",
+      "family_income_lakh": 1.8
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E87",
+    "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "eligibility_source": {
+      "age_requirement": "21-60 years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Madhya Pradesh",
+      "other_conditions": "MP resident married woman"
+    },
+    "profile_narrative": "I am 25, unmarried, living in Bhopal, Madhya Pradesh with family income Rs 1 lakh.",
+    "profile_fields": {
+      "age": 25,
+      "married": false,
+      "state": "Madhya Pradesh",
+      "family_income_lakh": 1
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "The scheme is for married women."
+  },
+  {
+    "id": "E88",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "eligibility_source": {
+      "age_requirement": "13-19 years",
+      "income_requirement": "Family income up to Rs. 1.2 lakh (with exceptions)",
+      "location": "West Bengal",
+      "other_conditions": "Unmarried girl in education"
+    },
+    "profile_narrative": "I am 15, an unmarried schoolgirl in West Bengal. Our family income is Rs 90,000 a year.",
+    "profile_fields": {
+      "age": 15,
+      "married": false,
+      "state": "West Bengal",
+      "family_income": 90000
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Unmarried girl in education within age and income."
+  },
+  {
+    "id": "E89",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "eligibility_source": {
+      "age_requirement": "13-19 years",
+      "other_conditions": "Unmarried girl in education"
+    },
+    "profile_narrative": "I am 17, a married girl in West Bengal still attending school.",
+    "profile_fields": {
+      "age": 17,
+      "married": true,
+      "state": "West Bengal"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "The scheme requires an unmarried girl."
+  },
+  {
+    "id": "E90",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "eligibility_source": {
+      "age_requirement": "Girl child below 10 years",
+      "other_conditions": "Max two accounts per family (exceptions for twins/triplets)"
+    },
+    "profile_narrative": "My daughter is 6 and we have no Sukanya account yet.",
+    "profile_fields": {
+      "daughter_age": 6,
+      "existing_accounts": 0
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Girl below 10 and within the two-account limit."
+  },
+  {
+    "id": "E91",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "eligibility_source": {
+      "age_requirement": "Girl child below 10 years"
+    },
+    "profile_narrative": "My daughter is 12 years old and I'd like to open a Sukanya Samriddhi account for her.",
+    "profile_fields": {
+      "daughter_age": 12
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "The girl is not below 10 years."
+  },
+  {
+    "id": "E92",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "eligibility_source": {
+      "age_requirement": "Girl child below 10 years",
+      "other_conditions": "Max two accounts per family (exceptions for twins/triplets)"
+    },
+    "profile_narrative": "My daughter is 9 years old and I want to open the account now.",
+    "profile_fields": {
+      "daughter_age": 9
+    },
+    "ground_truth": "Eligible",
+    "category": "boundary",
+    "rationale": "Still below 10, so eligible just inside the limit."
+  },
+  {
+    "id": "E93",
+    "scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "eligibility_source": {
+      "age_requirement": "15-45 years",
+      "occupation": "Unemployed / school or college dropout",
+      "other_conditions": "Indian national with Aadhaar and bank account"
+    },
+    "profile_narrative": "I am 20, dropped out of college, unemployed, with an Aadhaar card and bank account.",
+    "profile_fields": {
+      "age": 20,
+      "employed": false,
+      "aadhaar": true,
+      "bank_account": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Within 15-45 with required documents."
+  },
+  {
+    "id": "E94",
+    "scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "eligibility_source": {
+      "age_requirement": "15-45 years"
+    },
+    "profile_narrative": "I am 52 and unemployed. I want to join PMKVY.",
+    "profile_fields": {
+      "age": 52,
+      "employed": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Above the 15-45 age range."
+  },
+  {
+    "id": "E95",
+    "scheme": "Pradhan Mantri Mudra Yojana",
+    "eligibility_source": {
+      "age_requirement": "18+ years",
+      "occupation": "Small business owner / entrepreneur",
+      "other_conditions": "Non-farm income-generating activity"
+    },
+    "profile_narrative": "I am 30 and want to open a tailoring shop. I need Rs 3 lakh and have no collateral.",
+    "profile_fields": {
+      "age": 30,
+      "purpose": "tailoring shop",
+      "loan_lakh": 3
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Non-farm income-generating activity, adult."
+  },
+  {
+    "id": "E96",
+    "scheme": "Pradhan Mantri Mudra Yojana",
+    "eligibility_source": {
+      "other_conditions": "Non-farm income-generating activity"
+    },
+    "profile_narrative": "I am a farmer and need a loan for buying seeds and fertiliser for my crops.",
+    "profile_fields": {
+      "purpose": "crop cultivation"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Mudra covers non-farm activities."
+  },
+  {
+    "id": "E97",
+    "scheme": "Janani Suraksha Yojana (JSY)",
+    "eligibility_source": {
+      "age_requirement": "19+ years",
+      "income_requirement": "Primarily BPL / SC / ST (varies by state)",
+      "other_conditions": "Delivery in a recognised health facility"
+    },
+    "profile_narrative": "I am 24, pregnant and from a BPL family. I plan to deliver at the district hospital.",
+    "profile_fields": {
+      "age": 24,
+      "pregnant": true,
+      "bpl": true,
+      "delivery": "government hospital"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Adult BPL pregnant woman delivering in a government facility."
+  },
+  {
+    "id": "E98",
+    "scheme": "Janani Suraksha Yojana (JSY)",
+    "eligibility_source": {
+      "income_requirement": "Primarily BPL / SC / ST (varies by state)",
+      "other_conditions": "Delivery in a recognised health facility"
+    },
+    "profile_narrative": "I am 26, BPL and pregnant but plan to give birth at home with a dai.",
+    "profile_fields": {
+      "age": 26,
+      "bpl": true,
+      "delivery": "home"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Benefit requires delivery in a recognised health facility."
+  },
+  {
+    "id": "E99",
+    "scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "eligibility_source": {
+      "age_requirement": "10-18 years",
+      "income_requirement": "Disadvantaged groups",
+      "occupation": "Student (girl)",
+      "location": "Educationally backward blocks",
+      "other_conditions": "Girls from SC/ST/OBC/minority/BPL"
+    },
+    "profile_narrative": "I am a 12-year-old girl from an SC family living in an educationally backward block.",
+    "profile_fields": {
+      "age": 12,
+      "gender": "female",
+      "category": "SC",
+      "backward_block": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Girl in age range from a disadvantaged group."
+  },
+  {
+    "id": "E100",
+    "scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "eligibility_source": {
+      "occupation": "Student (girl)",
+      "other_conditions": "Girls from SC/ST/OBC/minority/BPL"
+    },
+    "profile_narrative": "I am a 12-year-old boy from an SC family. Can I join a Kasturba Gandhi Balika Vidyalaya?",
+    "profile_fields": {
+      "age": 12,
+      "gender": "male",
+      "category": "SC"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Schools are for girls only."
+  },
+  {
+    "id": "E101",
+    "scheme": "Eklavya Model Residential Schools",
+    "eligibility_source": {
+      "age_requirement": "11-18 years",
+      "other_conditions": "Must belong to Scheduled Tribe"
+    },
+    "profile_narrative": "I am 12 and belong to a Scheduled Tribe family in a tribal area.",
+    "profile_fields": {
+      "age": 12,
+      "category": "ST"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "ST student in range."
+  },
+  {
+    "id": "E102",
+    "scheme": "Eklavya Model Residential Schools",
+    "eligibility_source": {
+      "age_requirement": "11-18 years",
+      "other_conditions": "Must belong to Scheduled Tribe"
+    },
+    "profile_narrative": "I am 13 from the General category and want admission to an Eklavya school.",
+    "profile_fields": {
+      "age": 13,
+      "category": "General"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Must belong to Scheduled Tribe."
+  },
+  {
+    "id": "E103",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "eligibility_source": {
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "occupation": "Student",
+      "other_conditions": "Must belong to Scheduled Caste; studying post-matric"
+    },
+    "profile_narrative": "I am an SC student doing B.A. and our family income is Rs 1.5 lakh.",
+    "profile_fields": {
+      "category": "SC",
+      "course": "B.A.",
+      "family_income_lakh": 1.5
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "SC, post-matric and within income limit."
+  },
+  {
+    "id": "E104",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "eligibility_source": {
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "other_conditions": "Must belong to Scheduled Caste; studying post-matric"
+    },
+    "profile_narrative": "I am an SC student in B.Sc. and our family income is Rs 4 lakh.",
+    "profile_fields": {
+      "category": "SC",
+      "course": "B.Sc.",
+      "family_income_lakh": 4
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Family income exceeds Rs 2.5 lakh."
+  },
+  {
+    "id": "E105",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "eligibility_source": {
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "other_conditions": "Must belong to Scheduled Caste; studying post-matric"
+    },
+    "profile_narrative": "I am an SC student in college. Do I qualify for the post-matric scholarship?",
+    "profile_fields": {
+      "category": "SC",
+      "family_income_lakh": null
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "Family income is not stated."
+  },
+  {
+    "id": "E106",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "eligibility_source": {
+      "income_requirement": "Family income up to Rs. 1 lakh (pre-matric) / Rs. 2 lakh (post-matric)",
+      "other_conditions": "Min. 50% marks in previous exam; notified minority communities"
+    },
+    "profile_narrative": "I am a Muslim student in Class 11, scored 65% last year, and our family income is Rs 1.5 lakh.",
+    "profile_fields": {
+      "community": "Muslim",
+      "class": 11,
+      "marks_percent": 65,
+      "family_income_lakh": 1.5
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Notified minority, above 50% marks, within post-matric income limit."
+  },
+  {
+    "id": "E107",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "eligibility_source": {
+      "other_conditions": "Min. 50% marks in previous exam; notified minority communities"
+    },
+    "profile_narrative": "I am a Hindu student with 80% marks and family income of Rs 1 lakh.",
+    "profile_fields": {
+      "community": "Hindu",
+      "marks_percent": 80,
+      "family_income_lakh": 1
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Hindu is not a notified minority community."
+  },
+  {
+    "id": "E108",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "eligibility_source": {
+      "income_requirement": "Family income up to Rs. 1 lakh (pre-matric) / Rs. 2 lakh (post-matric)",
+      "other_conditions": "Min. 50% marks in previous exam; notified minority communities"
+    },
+    "profile_narrative": "I am a Sikh student with 42% marks last year and family income Rs 1 lakh.",
+    "profile_fields": {
+      "community": "Sikh",
+      "marks_percent": 42,
+      "family_income_lakh": 1
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Marks are below the 50% minimum."
+  },
+  {
+    "id": "E109",
+    "scheme": "PM-KUSUM",
+    "eligibility_source": {
+      "age_requirement": "18+ years",
+      "occupation": "Farmer",
+      "other_conditions": "Landowner farmer"
+    },
+    "profile_narrative": "I am a farmer who owns 3 acres and I want a solar pump.",
+    "profile_fields": {
+      "occupation": "farmer",
+      "owns_land": true,
+      "land_acres": 3
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Landowner farmer."
+  },
+  {
+    "id": "E110",
+    "scheme": "PM-KUSUM",
+    "eligibility_source": {
+      "occupation": "Farmer",
+      "other_conditions": "Landowner farmer"
+    },
+    "profile_narrative": "I am a landless agricultural labourer in a village and want a subsidised solar pump.",
+    "profile_fields": {
+      "occupation": "farm labourer",
+      "owns_land": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Scheme requires a landowner farmer."
+  },
+  {
+    "id": "E111",
+    "scheme": "Senior Citizens Savings Scheme",
+    "eligibility_source": {
+      "age_requirement": "60+ years (55+ for retirees)"
+    },
+    "profile_narrative": "I am 62 and want to put my savings in a safe post office scheme.",
+    "profile_fields": {
+      "age": 62
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Aged 60+."
+  },
+  {
+    "id": "E112",
+    "scheme": "Senior Citizens Savings Scheme",
+    "eligibility_source": {
+      "age_requirement": "60+ years (55+ for retirees)"
+    },
+    "profile_narrative": "I am 45 and still working. Can I open a Senior Citizens Savings account?",
+    "profile_fields": {
+      "age": 45,
+      "retired": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Below 60 and not a retiree."
+  },
+  {
+    "id": "E113",
+    "scheme": "Senior Citizens Savings Scheme",
+    "eligibility_source": {
+      "age_requirement": "60+ years (55+ for retirees)"
+    },
+    "profile_narrative": "I am 57 and took voluntary retirement last month.",
+    "profile_fields": {
+      "age": 57,
+      "retired": true
+    },
+    "ground_truth": "Eligible",
+    "category": "boundary",
+    "rationale": "Retirees aged 55+ qualify."
+  },
+  {
+    "id": "E114",
+    "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "eligibility_source": {
+      "age_requirement": "18-50 years",
+      "other_conditions": "Must have bank account"
+    },
+    "profile_narrative": "I am 40 and have a savings account with a bank.",
+    "profile_fields": {
+      "age": 40,
+      "bank_account": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Within 18-50 with a bank account."
+  },
+  {
+    "id": "E115",
+    "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "eligibility_source": {
+      "age_requirement": "18-50 years"
+    },
+    "profile_narrative": "I am 55 and have a bank account. I want Jeevan Jyoti life cover.",
+    "profile_fields": {
+      "age": 55,
+      "bank_account": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Above the age of 50."
+  },
+  {
+    "id": "E116",
+    "scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "eligibility_source": {
+      "age_requirement": "18-70 years",
+      "other_conditions": "Must have bank account"
+    },
+    "profile_narrative": "I am 65 with a savings account and want cheap accident insurance.",
+    "profile_fields": {
+      "age": 65,
+      "bank_account": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Within 18-70 with bank account."
+  },
+  {
+    "id": "E117",
+    "scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "eligibility_source": {
+      "age_requirement": "18-70 years"
+    },
+    "profile_narrative": "I am 72 with a bank account. Can I get the Suraksha Bima accident cover?",
+    "profile_fields": {
+      "age": 72,
+      "bank_account": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Above 70."
+  },
+  {
+    "id": "E118",
+    "scheme": "Startup India Seed Fund Scheme",
+    "eligibility_source": {
+      "other_conditions": "DPIIT-recognised startup incorporated within last 2 years"
+    },
+    "profile_narrative": "My startup is DPIIT recognised and was incorporated 1 year ago. We need seed funding.",
+    "profile_fields": {
+      "dpiit": true,
+      "incorporated_years_ago": 1
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Recognised and within 2 years."
+  },
+  {
+    "id": "E119",
+    "scheme": "Startup India Seed Fund Scheme",
+    "eligibility_source": {
+      "other_conditions": "DPIIT-recognised startup incorporated within last 2 years"
+    },
+    "profile_narrative": "My DPIIT-recognised startup was incorporated 5 years ago.",
+    "profile_fields": {
+      "dpiit": true,
+      "incorporated_years_ago": 5
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Incorporated more than 2 years ago."
+  },
+  {
+    "id": "E120",
+    "scheme": "Startup India Seed Fund Scheme",
+    "eligibility_source": {
+      "other_conditions": "DPIIT-recognised startup incorporated within last 2 years"
+    },
+    "profile_narrative": "I have a tech startup that started last year and need seed funding.",
+    "profile_fields": {
+      "dpiit": null,
+      "incorporated_years_ago": 1
+    },
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "rationale": "DPIIT recognition not stated."
+  },
+  {
+    "id": "E121",
+    "scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "eligibility_source": {
+      "age_requirement": "15-35 years",
+      "income_requirement": "Rural poor households",
+      "location": "Rural areas"
+    },
+    "profile_narrative": "I am 22 and from a rural BPL household looking for job-linked training.",
+    "profile_fields": {
+      "age": 22,
+      "area": "rural",
+      "bpl": true
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Rural poor youth in range."
+  },
+  {
+    "id": "E122",
+    "scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "eligibility_source": {
+      "age_requirement": "15-35 years"
+    },
+    "profile_narrative": "I am 40 and live in a village. Can I join DDU-GKY training?",
+    "profile_fields": {
+      "age": 40,
+      "area": "rural"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Above the 15-35 age range."
+  },
+  {
+    "id": "E123",
+    "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "eligibility_source": {
+      "age_requirement": "18+ years",
+      "other_conditions": "Min. Class 8 pass for projects above Rs. 10 lakh (manufacturing)"
+    },
+    "profile_narrative": "I am 30, passed Class 10, and want a Rs 12 lakh manufacturing unit.",
+    "profile_fields": {
+      "age": 30,
+      "education": "Class 10",
+      "project_lakh": 12,
+      "type": "manufacturing"
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "Meets the Class 8 requirement for projects above Rs 10 lakh."
+  },
+  {
+    "id": "E124",
+    "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "eligibility_source": {
+      "age_requirement": "18+ years",
+      "other_conditions": "Min. Class 8 pass for projects above Rs. 10 lakh (manufacturing)"
+    },
+    "profile_narrative": "I am 28 and studied only up to Class 5. I want a Rs 15 lakh manufacturing unit.",
+    "profile_fields": {
+      "age": 28,
+      "education": "Class 5",
+      "project_lakh": 15,
+      "type": "manufacturing"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Class 8 pass needed for manufacturing projects above Rs 10 lakh."
+  },
+  {
+    "id": "E125",
+    "scheme": "Lakshmir Bhandar (West Bengal)",
+    "eligibility_source": {
+      "age_requirement": "25-60 years",
+      "location": "West Bengal",
+      "other_conditions": "WB resident with Swasthya Sathi card"
+    },
+    "profile_narrative": "I am a 40-year-old woman in West Bengal with a Swasthya Sathi card and no other government pension.",
+    "profile_fields": {
+      "age": 40,
+      "state": "West Bengal",
+      "swasthya_sathi": true,
+      "other_pension": false
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E126",
+    "scheme": "Lakshmir Bhandar (West Bengal)",
+    "eligibility_source": {
+      "age_requirement": "25-60 years",
+      "other_conditions": "WB resident with Swasthya Sathi card"
+    },
+    "profile_narrative": "I am a 22-year-old woman in West Bengal with a Swasthya Sathi card.",
+    "profile_fields": {
+      "age": 22,
+      "state": "West Bengal",
+      "swasthya_sathi": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "rationale": "Below the minimum age of 25."
+  },
+  {
+    "id": "E127",
+    "scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+    "eligibility_source": {
+      "age_requirement": "21+ years",
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "location": "Tamil Nadu",
+      "other_conditions": "Ration card; limits on land and electricity use"
+    },
+    "profile_narrative": "I am a 35-year-old woman head of family in Tamil Nadu with a ration card and family income Rs 1.5 lakh.",
+    "profile_fields": {
+      "age": 35,
+      "state": "Tamil Nadu",
+      "ration_card": true,
+      "family_income_lakh": 1.5
+    },
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "rationale": "All conditions met."
+  },
+  {
+    "id": "E128",
+    "scheme": "PM Internship Scheme",
+    "eligibility_source": {
+      "age_requirement": "21-24 years",
+      "income_requirement": "Family income up to Rs. 8 lakh"
+    },
+    "profile_narrative": "I am 27 and my family income is Rs 12 lakh. I'd like to join the PM Internship.",
+    "profile_fields": {
+      "age": 27,
+      "family_income_lakh": 12
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Fails both the age range (21-24) and the family income limit (Rs 8 lakh)."
+  },
+  {
+    "id": "E129",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "eligibility_source": {
+      "age_requirement": "21-65 years",
+      "location": "Maharashtra"
+    },
+    "profile_narrative": "I am a 70-year-old woman living in Gujarat. Can I get the Ladki Bahin money?",
+    "profile_fields": {
+      "age": 70,
+      "gender": "female",
+      "state": "Gujarat"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Fails both the age limit (21-65) and the Maharashtra residence requirement."
+  },
+  {
+    "id": "E130",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "eligibility_source": {
+      "age_requirement": "13-19 years",
+      "location": "West Bengal",
+      "other_conditions": "Unmarried girl in education"
+    },
+    "profile_narrative": "I am 22, married, and live in Delhi. Can I get Kanyashree?",
+    "profile_fields": {
+      "age": 22,
+      "married": true,
+      "state": "Delhi"
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Fails age, residence and unmarried condition."
+  },
+  {
+    "id": "E131",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "eligibility_source": {
+      "income_requirement": "BPL / SECC-identified households",
+      "location": "Rural areas",
+      "other_conditions": "Household should not already own a pucca house"
+    },
+    "profile_narrative": "We live in a city, our family earns well above BPL level, and we own a pucca flat.",
+    "profile_fields": {
+      "area": "urban",
+      "bpl": false,
+      "owns_pucca_house": true
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Fails rural location, BPL/SECC and no-pucca-house conditions."
+  },
+  {
+    "id": "E132",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "eligibility_source": {
+      "income_requirement": "Family income up to Rs. 2.5 lakh per year",
+      "other_conditions": "Must belong to Scheduled Caste; studying post-matric"
+    },
+    "profile_narrative": "I am a General category student and our family income is Rs 6 lakh.",
+    "profile_fields": {
+      "category": "General",
+      "family_income_lakh": 6
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Not Scheduled Caste and family income above Rs 2.5 lakh."
+  },
+  {
+    "id": "E133",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "eligibility_source": {
+      "age_requirement": "60+ years",
+      "income_requirement": "Below poverty line",
+      "other_conditions": "BPL list household"
+    },
+    "profile_narrative": "I am 45 and my family is well off, not BPL. Can I get the old age pension?",
+    "profile_fields": {
+      "age": 45,
+      "bpl": false
+    },
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "rationale": "Fails both age (60+) and BPL conditions."
+  }
+]

@@ -1,66 +1,66 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { api, getToken, setToken } from '../lib/api';
 
 const AuthContext = createContext(null);
-const API_BASE = 'http://localhost:5000';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem('schemesaathi_token'));
-  const [loading, setLoading] = useState(true);
+  const [token, setTokenState] = useState(getToken());
+  const [loading, setLoading] = useState(() => Boolean(getToken()));
 
   useEffect(() => {
-    if (!token) {
-      setLoading(false);
-      return;
-    }
-    fetch(`${API_BASE}/api/me`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((data) => setUser(data.user))
-      .catch(() => {
-        localStorage.removeItem('schemesaathi_token');
-        setToken(null);
+    let cancelled = false;
+    if (!getToken()) return undefined;
+
+    api.me()
+      .then((data) => {
+        if (!cancelled) setUser(data.user);
       })
-      .finally(() => setLoading(false));
-  }, [token]);
+      .catch(() => {
+        if (cancelled) return;
+        setToken(null);
+        setTokenState(null);
+        setUser(null);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const login = async (email, password) => {
-    const res = await fetch(`${API_BASE}/api/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Login failed');
-    localStorage.setItem('schemesaathi_token', data.token);
+    const data = await api.login({ email, password });
     setToken(data.token);
+    setTokenState(data.token);
     setUser(data.user);
     return data.user;
   };
 
   const register = async (name, email, password) => {
-    const res = await fetch(`${API_BASE}/api/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Registration failed');
-    localStorage.setItem('schemesaathi_token', data.token);
+    const data = await api.register({ name, email, password });
     setToken(data.token);
+    setTokenState(data.token);
     setUser(data.user);
     return data.user;
   };
 
   const logout = () => {
-    localStorage.removeItem('schemesaathi_token');
     setToken(null);
+    setTokenState(null);
     setUser(null);
   };
 
+  const updateProfile = async (profile) => {
+    const data = await api.saveProfile(profile);
+    setUser((prev) => (prev ? { ...prev, profile: data.profile } : prev));
+    return data.profile;
+  };
+
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, token, loading, login, register, logout, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );

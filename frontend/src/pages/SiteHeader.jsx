@@ -1,5 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { UserCheck, Sun, Moon, CircleUserRound, Menu } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { UserCheck, Sun, Moon, CircleUserRound, Menu, X, Landmark, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext.jsx';
 import { useTheme } from '../context/ThemeContext';
@@ -8,11 +9,14 @@ function AccountButton() {
   const { user, logout } = useAuth();
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const location = useLocation();
 
   if (!user) {
     return (
       <Link
         to="/login"
+        state={{ from: location.pathname }}
+        aria-label="Sign in"
         className="w-8 h-8 rounded border border-outline-variant bg-surface-container-low flex items-center justify-center shrink-0 text-primary hover:bg-surface-container transition-colors"
       >
         <CircleUserRound size={18} />
@@ -36,22 +40,39 @@ function AccountButton() {
 export default function SiteHeader({ active }) {
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const { user, logout } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
     { key: 'home', label: t('nav_home'), to: '/' },
     { key: 'chat', label: t('nav_chat'), to: '/chat' },
     { key: 'eligibility', label: t('nav_eligibility'), to: '/eligibility' },
     { key: 'schemes', label: t('nav_schemes'), to: '/schemes' },
+    { key: 'history', label: t('nav_history'), to: '/history' },
     { key: 'about', label: t('nav_about'), to: '/about' },
   ];
+
+  // Close the drawer whenever a link is used.
+  const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
       <div className="h-20 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center text-[10px] font-semibold text-on-surface-variant">
-            LOGO
-          </div>
+        <Link to="/" className="flex items-center gap-3 group" aria-label="SchemeSaathi home">
+          <span className="h-9 w-9 rounded bg-primary text-on-primary flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors">
+            <Landmark size={19} />
+          </span>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold">
@@ -65,7 +86,7 @@ export default function SiteHeader({ active }) {
               Civic Welfare Copilot
             </span>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-1 border-x border-outline-variant px-3 py-1">
           {links.map((link) => (
@@ -105,7 +126,7 @@ export default function SiteHeader({ active }) {
             </button>
           </div>
           <button
-            aria-label="Toggle color mode"
+            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             onClick={toggleTheme}
             className="w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors"
             type="button"
@@ -117,11 +138,107 @@ export default function SiteHeader({ active }) {
             <span>{t('check_eligibility_btn')}</span>
           </Link>
           <AccountButton />
-          <button aria-label="Open navigation menu" className="lg:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface" type="button">
-            <Menu size={20} />
+          <button
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="lg:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors"
+            type="button"
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <div className="lg:hidden fixed inset-0 top-20 z-40 bg-black/30" onClick={() => setMenuOpen(false)}>
+          <nav
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+            className="bg-surface-container-lowest border-b border-outline-variant shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto p-3"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex flex-col gap-1">
+              {links.map((link) => (
+                <Link
+                  key={link.key}
+                  to={link.to}
+                  onClick={closeMenu}
+                  className={
+                    active === link.key
+                      ? 'bg-primary text-on-primary font-semibold px-3 py-2.5 rounded text-body-sm'
+                      : 'text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-3 py-2.5 rounded text-body-sm transition-colors'
+                  }
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-3 pt-3 border-t border-outline-variant flex flex-col gap-3">
+              <Link
+                to="/eligibility"
+                onClick={closeMenu}
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded bg-secondary text-on-secondary font-label-md text-label-md font-semibold"
+              >
+                <UserCheck size={17} />
+                <span>{t('check_eligibility_btn')}</span>
+              </Link>
+
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center border border-outline-variant bg-surface-container-low rounded p-0.5 gap-0.5">
+                  <button
+                    type="button"
+                    onClick={() => setLanguage('en')}
+                    className={`px-3 py-1 rounded font-label-sm text-label-sm font-semibold transition-colors ${
+                      language === 'en' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setLanguage('hi')}
+                    className={`px-3 py-1 rounded font-label-sm text-label-sm font-medium transition-colors ${
+                      language === 'hi' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+                    }`}
+                  >
+                    हिन्दी
+                  </button>
+                </div>
+
+                {user ? (
+                  <button
+                    type="button"
+                    onClick={() => { logout(); setMenuOpen(false); navigate('/'); }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant text-on-surface-variant font-label-sm text-label-sm font-semibold hover:text-primary"
+                  >
+                    <LogOut size={14} />
+                    <span>{t('logout_btn')}</span>
+                  </button>
+                ) : (
+                  <Link
+                    to="/login"
+                    state={{ from: location.pathname }}
+                    onClick={closeMenu}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant text-primary font-label-sm text-label-sm font-semibold"
+                  >
+                    <CircleUserRound size={14} />
+                    <span>Sign in</span>
+                  </Link>
+                )}
+              </div>
+
+              {user && (
+                <p className="font-label-sm text-label-sm text-on-surface-variant">
+                  {t('login_hi')}, {user.name}
+                </p>
+              )}
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

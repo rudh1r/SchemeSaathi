@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "Q001",
+    "query": "I have a small farm and want yearly cash support deposited in my bank account",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q002",
+    "query": "Government scheme giving farmers Rs 2000 three times a year",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q003",
+    "query": "Income support for farming families who own cultivable land",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q004",
+    "query": "I want to buy my first home and need a subsidy on the home loan interest",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q005",
+    "query": "Housing loan interest subsidy for lower and middle income families in cities",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q006",
+    "query": "I don't own any pucca house anywhere, how can I get help to buy one with a loan?",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q007",
+    "query": "Health insurance giving Rs 5 lakh cover for hospital treatment for poor families",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q008",
+    "query": "My 72 year old father needs a hospital operation and we have no insurance",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q009",
+    "query": "Cashless hospitalisation scheme from the central government",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q010",
+    "query": "I want to put solar panels on my roof and get a government subsidy",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q011",
+    "query": "How can I get free electricity up to 300 units a month using solar?",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q012",
+    "query": "Rooftop solar subsidy for homeowners",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q013",
+    "query": "I sell vegetables on a cart and need a small working capital loan without collateral",
+    "expected_scheme": "PM SVANidhi",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q014",
+    "query": "Loan for street hawkers that grows when I repay on time",
+    "expected_scheme": "PM SVANidhi",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q015",
+    "query": "Government loan for roadside vendors after COVID",
+    "expected_scheme": "PM SVANidhi",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q016",
+    "query": "I run a small tea stall and want a guaranteed monthly pension after 60",
+    "expected_scheme": "Atal Pension Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q017",
+    "query": "Pension scheme for people working in the unorganised sector aged 18 to 40",
+    "expected_scheme": "Atal Pension Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q018",
+    "query": "How can a 30 year old get Rs 5000 monthly pension after retirement?",
+    "expected_scheme": "Atal Pension Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q019",
+    "query": "I live in a village in a kutcha house and want help building a pucca house",
+    "expected_scheme": "PMAY-Gramin (PMAYG)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q020",
+    "query": "Rural housing scheme for BPL families",
+    "expected_scheme": "PMAY-Gramin (PMAYG)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q021",
+    "query": "Financial help to construct a house with toilet and LPG connection in a village",
+    "expected_scheme": "PMAY-Gramin (PMAYG)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q022",
+    "query": "I am a traditional potter and want a toolkit and skill training stipend",
+    "expected_scheme": "PM Vishwakarma",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q023",
+    "query": "Scheme for carpenters and blacksmiths with collateral free credit",
+    "expected_scheme": "PM Vishwakarma",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q024",
+    "query": "Support for 18 traditional trades like cobblers, barbers and goldsmiths",
+    "expected_scheme": "PM Vishwakarma",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q025",
+    "query": "Government support for orphans and children needing care and protection",
+    "expected_scheme": "Mission Vatsalya",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q026",
+    "query": "Foster care and adoption facilitation scheme for children",
+    "expected_scheme": "Mission Vatsalya",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q027",
+    "query": "Welfare services for children in difficult circumstances",
+    "expected_scheme": "Mission Vatsalya",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q028",
+    "query": "I am a woman from a poor household and don't have a gas connection",
+    "expected_scheme": "PM Ujjwala Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q029",
+    "query": "Free LPG cylinder connection for BPL families",
+    "expected_scheme": "PM Ujjwala Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q030",
+    "query": "Subsidy of Rs 300 per LPG cylinder for poor women",
+    "expected_scheme": "PM Ujjwala Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q031",
+    "query": "Cashless treatment up to 1.5 lakh for road accident victims",
+    "expected_scheme": "PM Rahat Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q032",
+    "query": "My brother was injured in a road accident and we cannot pay hospital bills",
+    "expected_scheme": "PM Rahat Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q033",
+    "query": "Free emergency treatment scheme after road crashes",
+    "expected_scheme": "PM Rahat Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q034",
+    "query": "Scholarship for OBC students with family income below 2.5 lakh",
+    "expected_scheme": "PM YASASVI Scholarship",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q035",
+    "query": "I belong to a denotified tribe and want scholarship for higher studies",
+    "expected_scheme": "PM YASASVI Scholarship",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q036",
+    "query": "Scholarship for EBC students in top institutions",
+    "expected_scheme": "PM YASASVI Scholarship",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q037",
+    "query": "Scholarship for girls studying in AICTE approved engineering diploma",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q038",
+    "query": "I am a girl pursuing technical degree and need Rs 50,000 per year",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q039",
+    "query": "Financial help for girl students in technical education from AICTE",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q040",
+    "query": "Scholarship of Rs 12,000 a year for talented Class 8 students from poor families",
+    "expected_scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q041",
+    "query": "Merit scholarship to stop dropouts after Class 8",
+    "expected_scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q042",
+    "query": "I cleared an exam in Class 8 and want a scholarship for Class 9 to 12",
+    "expected_scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q043",
+    "query": "Cash help of Rs 5000 for pregnant women for the first child",
+    "expected_scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q044",
+    "query": "I am expecting my first baby and want maternity benefit money",
+    "expected_scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q045",
+    "query": "Maternity cash benefit paid in three instalments linked to health check-ups",
+    "expected_scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q046",
+    "query": "Free wheelchair or hearing aid for a person with 50 percent disability",
+    "expected_scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q047",
+    "query": "Assistive devices scheme for UDID card holders",
+    "expected_scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q048",
+    "query": "Prosthetic limbs and aids at subsidised cost for disabled people",
+    "expected_scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q049",
+    "query": "Free walking stick and spectacles for elderly people below poverty line",
+    "expected_scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q050",
+    "query": "Assistive devices for senior citizens with age related disability",
+    "expected_scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q051",
+    "query": "My 75 year old grandmother needs a hearing aid and wheelchair, any free scheme?",
+    "expected_scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q052",
+    "query": "Urban poor self employment loan with interest subsidy up to Rs 2 lakh",
+    "expected_scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q053",
+    "query": "Group enterprise loans for people living in city slums",
+    "expected_scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q054",
+    "query": "Skill training and livelihood support for urban unemployed",
+    "expected_scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q055",
+    "query": "Bank loan between 10 lakh and 1 crore for a woman starting a new business",
+    "expected_scheme": "Stand-Up India Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q056",
+    "query": "SC ST entrepreneur wants loan to start a greenfield enterprise",
+    "expected_scheme": "Stand-Up India Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q057",
+    "query": "Loan for first time entrepreneurs from SC ST or women category",
+    "expected_scheme": "Stand-Up India Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q058",
+    "query": "Concessional loan up to Rs 25 lakh for a person with disability to start business",
+    "expected_scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q059",
+    "query": "Low interest loan for persons with 40 percent disability certificate",
+    "expected_scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q060",
+    "query": "Disabled entrepreneur seeking finance at 4 to 8 percent interest",
+    "expected_scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q061",
+    "query": "Rs 12,000 per year scholarship for college students scoring above 80 percentile in Class 12",
+    "expected_scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q062",
+    "query": "Central scholarship for undergraduates with family income below 4.5 lakh",
+    "expected_scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q063",
+    "query": "Scholarship for top Class 12 board scorers pursuing graduation",
+    "expected_scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q064",
+    "query": "My wheat crop got destroyed by flood, is there crop insurance?",
+    "expected_scheme": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q065",
+    "query": "Low premium insurance for crop loss from drought and pests",
+    "expected_scheme": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q066",
+    "query": "Cheap short term farm loan with revolving credit limit for a cultivator",
+    "expected_scheme": "Kisan Credit Card (KCC)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q067",
+    "query": "How can a farmer get a loan at 4 percent interest for seeds and fertiliser?",
+    "expected_scheme": "Kisan Credit Card (KCC)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q068",
+    "query": "Pension for small farmers after age 60 with monthly contribution",
+    "expected_scheme": "PM Kisan Maandhan Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q069",
+    "query": "I am a 35 year old marginal farmer, is there a pension scheme for farmers?",
+    "expected_scheme": "PM Kisan Maandhan Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q070",
+    "query": "Where can I get my farm soil tested for free and get fertiliser advice?",
+    "expected_scheme": "Soil Health Card Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q071",
+    "query": "Government card telling farmers soil nutrient status",
+    "expected_scheme": "Soil Health Card Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q072",
+    "query": "Subsidy on drip and sprinkler irrigation for farmers",
+    "expected_scheme": "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q073",
+    "query": "Scheme to save water in farming, more crop per drop",
+    "expected_scheme": "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q074",
+    "query": "Support for farmers growing oilseeds and oil palm",
+    "expected_scheme": "National Mission on Edible Oils",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q075",
+    "query": "Government mission to reduce import of cooking oil by boosting domestic production",
+    "expected_scheme": "National Mission on Edible Oils",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q076",
+    "query": "Loan with 3 percent interest subvention to build a cold storage on my farm",
+    "expected_scheme": "Agriculture Infrastructure Fund",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q077",
+    "query": "Funding for FPOs and agri startups for post harvest infrastructure",
+    "expected_scheme": "Agriculture Infrastructure Fund",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q078",
+    "query": "Subsidy for starting fish farming and buying fishing boats",
+    "expected_scheme": "Pradhan Mantri Matsya Sampada Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q079",
+    "query": "I am a fisherman and want government support for cold chain and fish processing",
+    "expected_scheme": "Pradhan Mantri Matsya Sampada Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q080",
+    "query": "Scheme to improve milk yield and conserve indigenous cow breeds",
+    "expected_scheme": "Rashtriya Gokul Mission",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q081",
+    "query": "I run a small dairy and want help with breed improvement",
+    "expected_scheme": "Rashtriya Gokul Mission",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q082",
+    "query": "Online platform to sell my crops to buyers across states",
+    "expected_scheme": "e-NAM (National Agriculture Market)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q083",
+    "query": "How can a farmer get a better price by trading in a digital mandi?",
+    "expected_scheme": "e-NAM (National Agriculture Market)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q084",
+    "query": "Where can I buy cheap generic medicines?",
+    "expected_scheme": "Pradhan Mantri Jan Aushadhi Pariyojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q085",
+    "query": "Government shops selling medicines at lower prices than branded drugs",
+    "expected_scheme": "Pradhan Mantri Jan Aushadhi Pariyojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q086",
+    "query": "Cash incentive for giving birth in a government hospital",
+    "expected_scheme": "Janani Suraksha Yojana (JSY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q087",
+    "query": "Scheme to promote institutional delivery for poor pregnant women",
+    "expected_scheme": "Janani Suraksha Yojana (JSY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q088",
+    "query": "Free antenatal check-up by doctors on the 9th of every month",
+    "expected_scheme": "Pradhan Mantri Surakshit Matritva Abhiyan",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q089",
+    "query": "Free check-ups for pregnant women in second or third trimester at government centres",
+    "expected_scheme": "Pradhan Mantri Surakshit Matritva Abhiyan",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q090",
+    "query": "Geriatric clinic services for senior citizens at district hospital",
+    "expected_scheme": "National Programme for Health Care of Elderly",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q091",
+    "query": "Free healthcare programme for people above 60",
+    "expected_scheme": "National Programme for Health Care of Elderly",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q092",
+    "query": "Free screening of newborns and children for birth defects and developmental delays",
+    "expected_scheme": "Rashtriya Bal Swasthya Karyakram (RBSK)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q093",
+    "query": "Treatment including surgery for children found with disabilities in school screening",
+    "expected_scheme": "Rashtriya Bal Swasthya Karyakram (RBSK)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q094",
+    "query": "Free vaccination drive for children and pregnant women",
+    "expected_scheme": "Mission Indradhanush (Universal Immunisation)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q095",
+    "query": "My baby is behind on vaccines, is there a government immunisation programme?",
+    "expected_scheme": "Mission Indradhanush (Universal Immunisation)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q096",
+    "query": "Free primary health care and basic medicines near my village",
+    "expected_scheme": "Ayushman Bharat Health and Wellness Centres (Ayushman Arogya Mandir)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q097",
+    "query": "Government health centre offering hypertension and diabetes screening",
+    "expected_scheme": "Ayushman Bharat Health and Wellness Centres (Ayushman Arogya Mandir)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q098",
+    "query": "Financial help for a poor patient with a life threatening disease in a government hospital",
+    "expected_scheme": "Rashtriya Arogya Nidhi",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q099",
+    "query": "One time medical assistance for BPL patient with cancer treatment",
+    "expected_scheme": "Rashtriya Arogya Nidhi",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q100",
+    "query": "Monthly Rs 500 nutrition support for TB patients",
+    "expected_scheme": "National Tuberculosis Elimination Programme - Nikshay Poshan Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q101",
+    "query": "My father has tuberculosis, is there any monetary support during treatment?",
+    "expected_scheme": "National Tuberculosis Elimination Programme - Nikshay Poshan Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q102",
+    "query": "Interest subsidy of about 2.67 lakh on home loan for middle income group",
+    "expected_scheme": "Credit Linked Subsidy Scheme (CLSS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q103",
+    "query": "Subsidy on home loan for people with income up to 18 lakh",
+    "expected_scheme": "Credit Linked Subsidy Scheme (CLSS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q104",
+    "query": "Single website to apply for all government scholarships",
+    "expected_scheme": "National Scholarship Portal (NSP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q105",
+    "query": "Where do students register to find central and state scholarships?",
+    "expected_scheme": "National Scholarship Portal (NSP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q106",
+    "query": "Scholarship for Scheduled Caste students after Class 10 with family income up to 2.5 lakh",
+    "expected_scheme": "Post Matric Scholarship for SC Students",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q107",
+    "query": "I am an SC student in college and need maintenance allowance and fee support",
+    "expected_scheme": "Post Matric Scholarship for SC Students",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q108",
+    "query": "Scholarship for Muslim, Christian, Sikh or Buddhist students with 50 percent marks",
+    "expected_scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q109",
+    "query": "Minority community student needs help with admission and tuition fees",
+    "expected_scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q110",
+    "query": "Fellowship for PhD students at IITs and IISc with research grant",
+    "expected_scheme": "Prime Minister Research Fellowship (PMRF)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q111",
+    "query": "Monthly fellowship for top science and technology researchers for five years",
+    "expected_scheme": "Prime Minister Research Fellowship (PMRF)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q112",
+    "query": "Integrated programme for school education from pre-school to class 12",
+    "expected_scheme": "Samagra Shiksha Abhiyan",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q113",
+    "query": "Government support for free books, uniforms and school infrastructure",
+    "expected_scheme": "Samagra Shiksha Abhiyan",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q114",
+    "query": "Free cooked meal for children in government schools",
+    "expected_scheme": "PM POSHAN (Mid Day Meal)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q115",
+    "query": "Mid day meal scheme",
+    "expected_scheme": "PM POSHAN (Mid Day Meal)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q116",
+    "query": "Residential school for girls from disadvantaged groups in backward blocks",
+    "expected_scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q117",
+    "query": "I am a 12 year old girl from a poor SC family, any free hostel school?",
+    "expected_scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q118",
+    "query": "Collateral free education loan for admission to top ranked colleges",
+    "expected_scheme": "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q119",
+    "query": "Interest subvention on student loans for family income up to 8 lakh",
+    "expected_scheme": "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q120",
+    "query": "Campaign to improve child sex ratio and promote girls' education",
+    "expected_scheme": "Beti Bachao Beti Padhao",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q121",
+    "query": "Government programme to save and educate the girl child",
+    "expected_scheme": "Beti Bachao Beti Padhao",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q122",
+    "query": "Savings account for my 5 year old daughter with high interest and tax benefit",
+    "expected_scheme": "Sukanya Samriddhi Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q123",
+    "query": "Post office savings scheme for girl child's education and marriage",
+    "expected_scheme": "Sukanya Samriddhi Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q124",
+    "query": "Free short-term skill training with certificate for unemployed youth",
+    "expected_scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q125",
+    "query": "I dropped out of school at 16, is there free vocational training?",
+    "expected_scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q126",
+    "query": "100 days guaranteed wage work for rural households",
+    "expected_scheme": "Mahatma Gandhi NREGA",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q127",
+    "query": "How do I get a job card for manual work in my village?",
+    "expected_scheme": "Mahatma Gandhi NREGA",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q128",
+    "query": "Collateral free business loan for a small shop up to 10 lakh",
+    "expected_scheme": "Pradhan Mantri Mudra Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q129",
+    "query": "Shishu, Kishor and Tarun loan categories for micro enterprises",
+    "expected_scheme": "Pradhan Mantri Mudra Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q130",
+    "query": "Credit linked subsidy of 15 to 35 percent for starting a micro enterprise",
+    "expected_scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q131",
+    "query": "Subsidy to set up a small manufacturing unit through KVIC",
+    "expected_scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q132",
+    "query": "Grant for early stage startup for proof of concept",
+    "expected_scheme": "Startup India Seed Fund Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q133",
+    "query": "DPIIT recognised startup needs seed funding up to 20 lakh",
+    "expected_scheme": "Startup India Seed Fund Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q134",
+    "query": "Incentive for first time employee in formal sector registered with EPFO",
+    "expected_scheme": "Employees' Provident Fund - Employment Linked Incentive",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q135",
+    "query": "Scheme giving employers and new workers incentive on first EPFO enrolment",
+    "expected_scheme": "Employees' Provident Fund - Employment Linked Incentive",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q136",
+    "query": "Placement linked free training with boarding for rural youth",
+    "expected_scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q137",
+    "query": "Skilling programme for rural poor youth aged 15 to 35",
+    "expected_scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q138",
+    "query": "Stipend support for companies hiring apprentices",
+    "expected_scheme": "National Apprenticeship Promotion Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q139",
+    "query": "How do I register for apprenticeship training in India?",
+    "expected_scheme": "National Apprenticeship Promotion Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q140",
+    "query": "12 month internship in top companies with Rs 5000 monthly stipend",
+    "expected_scheme": "PM Internship Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q141",
+    "query": "Government internship for 21 to 24 year olds with family income below 8 lakh",
+    "expected_scheme": "PM Internship Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q142",
+    "query": "Zero balance bank account with RuPay card and accident insurance",
+    "expected_scheme": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q143",
+    "query": "I have no bank account, how can I open one without minimum balance?",
+    "expected_scheme": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q144",
+    "query": "Life insurance of Rs 2 lakh for Rs 436 a year",
+    "expected_scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q145",
+    "query": "Cheap term life cover for people aged 18 to 50 with a bank account",
+    "expected_scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q146",
+    "query": "Accident insurance of Rs 2 lakh for premium of Rs 20 per year",
+    "expected_scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q147",
+    "query": "Very low cost accidental death and disability cover",
+    "expected_scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q148",
+    "query": "Rs 3000 monthly pension for rickshaw pullers and domestic workers",
+    "expected_scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q149",
+    "query": "Pension for unorganised workers earning up to 15000 a month",
+    "expected_scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q150",
+    "query": "Monthly pension for BPL senior citizens above 60",
+    "expected_scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q151",
+    "query": "My grandfather is 68 and below the poverty line, is there an old age pension?",
+    "expected_scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q152",
+    "query": "Monthly pension for a widow from a BPL family",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q153",
+    "query": "I am a 45 year old widow with no income, any central pension?",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q154",
+    "query": "Pension for persons with 80 percent or more disability from poor households",
+    "expected_scheme": "Indira Gandhi National Disability Pension Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q155",
+    "query": "Monthly pension for severely disabled BPL adults",
+    "expected_scheme": "Indira Gandhi National Disability Pension Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q156",
+    "query": "National registration for unorganised workers with Rs 2 lakh accident insurance",
+    "expected_scheme": "e-Shram Card",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q157",
+    "query": "Register as a gig or construction worker to get an e-Shram card",
+    "expected_scheme": "e-Shram Card",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q158",
+    "query": "Post office deposit scheme for retirees with quarterly interest",
+    "expected_scheme": "Senior Citizens Savings Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q159",
+    "query": "Safe savings scheme for people above 60 with tax benefit under 80C",
+    "expected_scheme": "Senior Citizens Savings Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q160",
+    "query": "15 year tax free savings account at the post office",
+    "expected_scheme": "Public Provident Fund (PPF)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q161",
+    "query": "Long term tax saving small savings scheme",
+    "expected_scheme": "Public Provident Fund (PPF)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q162",
+    "query": "Voluntary retirement pension account with annuity and tax benefit",
+    "expected_scheme": "National Pension System (NPS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q163",
+    "query": "How do I open an NPS account online?",
+    "expected_scheme": "National Pension System (NPS)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q164",
+    "query": "Free foodgrains of 5 kg per person every month for ration card holders",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q165",
+    "query": "Subsidised wheat and rice for priority households under food security law",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q166",
+    "query": "35 kg grain per month for the poorest of the poor households",
+    "expected_scheme": "Antyodaya Anna Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q167",
+    "query": "Highest priority ration card category for extremely poor families",
+    "expected_scheme": "Antyodaya Anna Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q168",
+    "query": "I am a migrant worker, can I collect ration in another state?",
+    "expected_scheme": "One Nation One Ration Card",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q169",
+    "query": "Ration card portability across states",
+    "expected_scheme": "One Nation One Ration Card",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q170",
+    "query": "Roads to connect unconnected villages",
+    "expected_scheme": "Pradhan Mantri Gram Sadak Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q171",
+    "query": "Our habitation has no all weather road, which scheme builds it?",
+    "expected_scheme": "Pradhan Mantri Gram Sadak Yojana",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q172",
+    "query": "Self help group loans and training for rural women",
+    "expected_scheme": "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q173",
+    "query": "Rural livelihoods mission to help women earn above one lakh a year",
+    "expected_scheme": "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q174",
+    "query": "One stop centre and helpline for women in distress",
+    "expected_scheme": "Mission Shakti",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q175",
+    "query": "Government umbrella programme for women's safety and empowerment",
+    "expected_scheme": "Mission Shakti",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q176",
+    "query": "Anganwadi nutrition support for children under 6 and pregnant women",
+    "expected_scheme": "Integrated Child Development Services (Poshan 2.0)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q177",
+    "query": "Supplementary nutrition and pre-school education at the village centre",
+    "expected_scheme": "Integrated Child Development Services (Poshan 2.0)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q178",
+    "query": "Support for children who lost both parents to COVID-19",
+    "expected_scheme": "PM CARES for Children",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q179",
+    "query": "Scholarship and corpus at 18 for COVID orphans",
+    "expected_scheme": "PM CARES for Children",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q180",
+    "query": "Shelter and counselling for destitute or abandoned women",
+    "expected_scheme": "Swadhar Greh",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q181",
+    "query": "Where can a woman in distress get food, shelter and legal aid?",
+    "expected_scheme": "Swadhar Greh",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q182",
+    "query": "How do I get a single national ID card for my disability?",
+    "expected_scheme": "Unique Disability ID (UDID)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q183",
+    "query": "UDID card application for persons with disabilities",
+    "expected_scheme": "Unique Disability ID (UDID)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q184",
+    "query": "Development of villages with majority Scheduled Caste population",
+    "expected_scheme": "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q185",
+    "query": "Skilling and income generation grants for SC communities",
+    "expected_scheme": "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q186",
+    "query": "Venture funding for SC entrepreneurs starting a business",
+    "expected_scheme": "Venture Capital Fund for Scheduled Castes",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q187",
+    "query": "Concessional finance for Scheduled Caste startups through IFCI",
+    "expected_scheme": "Venture Capital Fund for Scheduled Castes",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q188",
+    "query": "Free residential school for tribal children from class 6 to 12",
+    "expected_scheme": "Eklavya Model Residential Schools",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q189",
+    "query": "My child belongs to a Scheduled Tribe and needs a good boarding school",
+    "expected_scheme": "Eklavya Model Residential Schools",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q190",
+    "query": "Support for tribal forest produce value chains and enterprises",
+    "expected_scheme": "Pradhan Mantri Janjatiya Vikas Mission",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q191",
+    "query": "Livelihood mission for tribal communities through TRIFED",
+    "expected_scheme": "Pradhan Mantri Janjatiya Vikas Mission",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q192",
+    "query": "Support for minority students preparing for civil services prelims",
+    "expected_scheme": "Nai Udaan and Nai Roshni (Minority Schemes)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q193",
+    "query": "Leadership training and assistance for minority women",
+    "expected_scheme": "Nai Udaan and Nai Roshni (Minority Schemes)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q194",
+    "query": "Subsidy on solar water pump for farmers",
+    "expected_scheme": "PM-KUSUM",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q195",
+    "query": "Farmers can earn by selling solar power from their land",
+    "expected_scheme": "PM-KUSUM",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q196",
+    "query": "Free electricity connection for poor household without power",
+    "expected_scheme": "Saubhagya (Universal Household Electrification)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q197",
+    "query": "Universal household electrification scheme",
+    "expected_scheme": "Saubhagya (Universal Household Electrification)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q198",
+    "query": "Cheap LED bulbs from the government",
+    "expected_scheme": "UJALA LED Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q199",
+    "query": "Affordable energy efficient bulbs scheme for households",
+    "expected_scheme": "UJALA LED Scheme",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q200",
+    "query": "Rs 12,000 incentive to build a toilet at home in a village",
+    "expected_scheme": "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q201",
+    "query": "Subsidy for constructing household latrine in rural areas",
+    "expected_scheme": "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q202",
+    "query": "Tap water connection to every rural household",
+    "expected_scheme": "Jal Jeevan Mission",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q203",
+    "query": "Our village has no piped water, which mission provides it?",
+    "expected_scheme": "Jal Jeevan Mission",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q204",
+    "query": "How can I become a village level entrepreneur and run a digital service centre?",
+    "expected_scheme": "Digital India - Common Service Centres",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q205",
+    "query": "Centres providing government e-services and banking in villages",
+    "expected_scheme": "Digital India - Common Service Centres",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q206",
+    "query": "Maharashtra monthly Rs 1500 scheme for women aged 21 to 65",
+    "expected_scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q207",
+    "query": "I live in Maharashtra and my family income is below 2.5 lakh, can I get monthly money as a woman?",
+    "expected_scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q208",
+    "query": "Free bus travel for women in Telangana state buses",
+    "expected_scheme": "Mahalakshmi Scheme (Telangana)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q209",
+    "query": "Telangana guarantee scheme for women",
+    "expected_scheme": "Mahalakshmi Scheme (Telangana)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q210",
+    "query": "Per acre investment support for Telangana pattadar farmers each season",
+    "expected_scheme": "Rythu Bharosa (Telangana)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q211",
+    "query": "Telangana farmer financial assistance per acre",
+    "expected_scheme": "Rythu Bharosa (Telangana)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q212",
+    "query": "Odisha scheme for farmers' livelihood and cultivation support",
+    "expected_scheme": "KALIA Scheme (Odisha)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q213",
+    "query": "Financial assistance to small and landless farmers in Odisha",
+    "expected_scheme": "KALIA Scheme (Odisha)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q214",
+    "query": "Odisha scheme giving Rs 50,000 to women over five years",
+    "expected_scheme": "Subhadra Yojana (Odisha)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q215",
+    "query": "Cash assistance for women aged 21 to 60 in Odisha",
+    "expected_scheme": "Subhadra Yojana (Odisha)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q216",
+    "query": "West Bengal monthly basic income for women heads of households",
+    "expected_scheme": "Lakshmir Bhandar (West Bengal)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q217",
+    "query": "Monthly money for women in Bengal with Swasthya Sathi card",
+    "expected_scheme": "Lakshmir Bhandar (West Bengal)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q218",
+    "query": "West Bengal scholarship for unmarried girls aged 13 to 19 in school",
+    "expected_scheme": "Kanyashree Prakalpa (West Bengal)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q219",
+    "query": "Bengal conditional cash transfer to keep girls in education",
+    "expected_scheme": "Kanyashree Prakalpa (West Bengal)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q220",
+    "query": "Karnataka Rs 2000 per month for women heads of household",
+    "expected_scheme": "Gruha Lakshmi (Karnataka)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q221",
+    "query": "Monthly assistance for woman head of family in Karnataka",
+    "expected_scheme": "Gruha Lakshmi (Karnataka)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q222",
+    "query": "Karnataka free electricity up to 200 units",
+    "expected_scheme": "Gruha Jyothi (Karnataka)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q223",
+    "query": "Free power for households in Karnataka",
+    "expected_scheme": "Gruha Jyothi (Karnataka)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q224",
+    "query": "Madhya Pradesh monthly financial help for married women aged 21 to 60",
+    "expected_scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q225",
+    "query": "MP scheme for women with family income below 2.5 lakh",
+    "expected_scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q226",
+    "query": "Uttar Pradesh scheme giving staged cash benefits to girl child from birth to graduation",
+    "expected_scheme": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q227",
+    "query": "UP financial support for daughters up to two children",
+    "expected_scheme": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q228",
+    "query": "Andhra Pradesh cash for mothers sending children to school",
+    "expected_scheme": "Amma Vodi / Thalliki Vandanam (Andhra Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q229",
+    "query": "AP annual assistance to mothers with school going kids and attendance condition",
+    "expected_scheme": "Amma Vodi / Thalliki Vandanam (Andhra Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q230",
+    "query": "Bihar incentive scheme for girls from birth to graduation",
+    "expected_scheme": "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q231",
+    "query": "Cash incentives for girl students in Bihar",
+    "expected_scheme": "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q232",
+    "query": "Rajasthan cashless health insurance via Jan Aadhaar",
+    "expected_scheme": "Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q233",
+    "query": "Health cover for families in Rajasthan",
+    "expected_scheme": "Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q234",
+    "query": "Delhi free bus travel for women with smart card",
+    "expected_scheme": "Free Bus Travel for Women (Delhi - Pink Saheli)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q235",
+    "query": "DTC free ride for women in Delhi",
+    "expected_scheme": "Free Bus Travel for Women (Delhi - Pink Saheli)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q236",
+    "query": "Delhi free pilgrimage trip for senior citizens",
+    "expected_scheme": "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q237",
+    "query": "Free religious tour for elderly Delhi voters",
+    "expected_scheme": "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q238",
+    "query": "Tamil Nadu free town bus travel for women",
+    "expected_scheme": "Free Bus Travel for Women (Tamil Nadu - Vidiyal Payanam)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q239",
+    "query": "Free bus ride for women in Tamil Nadu",
+    "expected_scheme": "Free Bus Travel for Women (Tamil Nadu - Vidiyal Payanam)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q240",
+    "query": "Tamil Nadu Rs 1000 per month for women heads of families",
+    "expected_scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q241",
+    "query": "Monthly assistance for women in Tamil Nadu with ration card",
+    "expected_scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q242",
+    "query": "Jharkhand monthly assistance for women aged 18 to 50",
+    "expected_scheme": "Mukhyamantri Maiyan Samman Yojana (Jharkhand)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q243",
+    "query": "Jharkhand scheme giving cash to women",
+    "expected_scheme": "Mukhyamantri Maiyan Samman Yojana (Jharkhand)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q244",
+    "query": "Madhya Pradesh savings and education support for girl child registered at anganwadi",
+    "expected_scheme": "Mukhyamantri Ladli Laxmi (Madhya Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q245",
+    "query": "MP scheme for daughters with staged payments up to graduation",
+    "expected_scheme": "Mukhyamantri Ladli Laxmi (Madhya Pradesh)",
+    "also_relevant": [],
+    "type": "single"
+  },
+  {
+    "id": "Q246",
+    "query": "I am a poor small farmer, what government help can I get?",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "also_relevant": [
+      "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "Kisan Credit Card (KCC)"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q247",
+    "query": "Schemes for pregnant women",
+    "expected_scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "also_relevant": [
+      "Janani Suraksha Yojana (JSY)",
+      "Pradhan Mantri Surakshit Matritva Abhiyan"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q248",
+    "query": "Free or cheap medical help for a poor family",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "also_relevant": [
+      "Pradhan Mantri Jan Aushadhi Pariyojana",
+      "Rashtriya Arogya Nidhi"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q249",
+    "query": "Scholarships for girls from poor families",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [
+      "Kanyashree Prakalpa (West Bengal)",
+      "Kasturba Gandhi Balika Vidyalaya"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q250",
+    "query": "I want to start a small business and need a loan",
+    "expected_scheme": "Pradhan Mantri Mudra Yojana",
+    "also_relevant": [
+      "Stand-Up India Scheme",
+      "Pradhan Mantri Employment Generation Programme (PMEGP)"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q251",
+    "query": "Pension schemes for old age",
+    "expected_scheme": "Atal Pension Yojana",
+    "also_relevant": [
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "National Pension System (NPS)"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q252",
+    "query": "I am unemployed youth looking for training or jobs",
+    "expected_scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "also_relevant": [
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "PM Internship Scheme"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q253",
+    "query": "Help for building or buying a house",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "also_relevant": [
+      "PMAY-Gramin (PMAYG)",
+      "Credit Linked Subsidy Scheme (CLSS)"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q254",
+    "query": "Insurance schemes for ordinary people at very low premium",
+    "expected_scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "also_relevant": [
+      "Pradhan Mantri Suraksha Bima Yojana",
+      "Pradhan Mantri Fasal Bima Yojana (PMFBY)"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q255",
+    "query": "Support for persons with disabilities",
+    "expected_scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "also_relevant": [
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Indira Gandhi National Disability Pension Scheme"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q256",
+    "query": "Free monthly money for women in my state Maharashtra or Karnataka",
+    "expected_scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "also_relevant": [
+      "Gruha Lakshmi (Karnataka)"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q257",
+    "query": "Solar energy subsidy",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "also_relevant": [
+      "PM-KUSUM"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q258",
+    "query": "Scholarships for SC or minority students",
+    "expected_scheme": "Post Matric Scholarship for SC Students",
+    "also_relevant": [
+      "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "PM YASASVI Scholarship"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q259",
+    "query": "Food security and ration for poor",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "also_relevant": [
+      "Antyodaya Anna Yojana",
+      "One Nation One Ration Card"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q260",
+    "query": "Support for fishermen and dairy farmers",
+    "expected_scheme": "Pradhan Mantri Matsya Sampada Yojana",
+    "also_relevant": [
+      "Rashtriya Gokul Mission"
+    ],
+    "type": "multi_relevant"
+  },
+  {
+    "id": "Q261",
+    "query": "Scheme to give free iPhones to college students",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q262",
+    "query": "Government subsidy for buying a luxury car",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q263",
+    "query": "How do I renew my passport?",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q264",
+    "query": "What is the capital of Australia?",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q265",
+    "query": "Visa application for the United States",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q266",
+    "query": "Free air tickets for all senior citizens abroad",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q267",
+    "query": "Subsidy to buy a private jet",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q268",
+    "query": "Best recipe for butter chicken",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q269",
+    "query": "Cryptocurrency investment scheme by the Indian government",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  },
+  {
+    "id": "Q270",
+    "query": "Scheme for free gold to brides nationwide",
+    "expected_scheme": null,
+    "also_relevant": [],
+    "type": "out_of_scope"
+  }
+]

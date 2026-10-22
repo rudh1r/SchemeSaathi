@@ -29,14 +29,17 @@ export default function SiteFooter() {
           <div>
             <span className="font-label-md text-label-md font-bold text-primary mb-2 block">{t('footer_quicklinks')}</span>
             <ul className="flex flex-col gap-1.5">
-              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/">{t('footer_privacy')}</Link></li>
-              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/">{t('footer_terms')}</Link></li>
+              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/schemes">{t('nav_schemes')}</Link></li>
+              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/eligibility">{t('nav_eligibility')}</Link></li>
+              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/history">{t('nav_history')}</Link></li>
             </ul>
           </div>
           <div>
             <span className="font-label-md text-label-md font-bold text-primary mb-2 block">{t('footer_project')}</span>
             <ul className="flex flex-col gap-1.5">
               <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/about">{t('footer_about_link')}</Link></li>
+              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/privacy">{t('footer_privacy')}</Link></li>
+              <li className="font-body-sm text-body-sm"><Link className="text-on-surface-variant hover:text-primary transition-colors" to="/terms">{t('footer_terms')}</Link></li>
             </ul>
           </div>
         </div>

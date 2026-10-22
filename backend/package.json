@@ -1,24 +1,45 @@
 {
-  "name": "backend",
+  "name": "schemesaathi-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "SchemeSaathi API: RAG retrieval + deterministic eligibility matching over Indian welfare schemes",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "start:prod": "npm run bootstrap && node server.js",
+    "dev": "node --watch server.js",
+    "bootstrap": "node scripts/bootstrap.js",
+    "chroma": "chroma run --path ../chroma_db --port 8000",
+    "migrate": "node migrate.js",
+    "embed": "node embed-schemes.js",
+    "rules": "node scripts/build-rules.js",
+    "test": "node --test \"test/**/*.test.js\"",
+    "smoke": "node scripts/smoke.js",
+    "eval": "node run_eval_v2.js",
+    "eval:eligibility": "node run_eligibility_eval.js"
   },
-  "keywords": [],
-  "author": "",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "rag",
+    "eligibility",
+    "welfare-schemes",
+    "chromadb",
+    "groq"
+  ],
+  "author": "SchemeSaathi team",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "@chroma-core/default-embed": "^0.1.9",
     "bcryptjs": "^3.0.3",
     "chromadb": "^3.5.0",
-    "chromadb-default-embed": "^2.14.0",
+    "compression": "^1.8.2",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "groq-sdk": "^1.6.0",
+    "helmet": "^8.3.0",
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^7.6.0"
   }

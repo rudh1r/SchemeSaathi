@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ShieldCheck, LogIn, UserPlus, ArrowRight, Shield } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ShieldCheck, LogIn, UserPlus, ArrowRight, Shield, Eye, EyeOff, CheckCircle2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
@@ -10,11 +10,15 @@ export default function Auth() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const { login, register } = useAuth();
+  const { user, login, register, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const requestedPath = location.state?.from;
+  const target = requestedPath && requestedPath !== '/login' ? requestedPath : '/history';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,13 +30,49 @@ export default function Auth() {
       } else {
         await register(name, email, password);
       }
-      navigate('/');
+      navigate(target, { replace: true });
     } catch (err) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
   };
+
+  if (user) {
+    return (
+      <div className="min-h-screen bg-parchment">
+        <SiteHeader />
+        <main className="pt-28 pb-16 max-w-7xl mx-auto px-6">
+          <div className="max-w-md mx-auto w-full bg-white rounded-xl shadow-[0_12px_40px_rgba(0,11,31,0.06)] p-8 border border-border flex flex-col items-center text-center gap-3">
+            <div className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+              <CheckCircle2 size={24} className="text-secondary" />
+            </div>
+            <h1 className="font-serif text-xl text-primary font-bold">You are signed in</h1>
+            <p className="text-sm text-muted">
+              Signed in as <span className="font-semibold text-primary">{user.email}</span>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-2 w-full mt-2">
+              <button
+                type="button"
+                onClick={() => navigate('/history')}
+                className="flex-1 py-2.5 px-4 bg-secondary hover:bg-[#155332] text-white font-semibold text-sm rounded-lg transition-all"
+              >
+                Go to My Activity
+              </button>
+              <button
+                type="button"
+                onClick={() => { logout(); navigate('/'); }}
+                className="flex-1 py-2.5 px-4 border border-border text-primary font-semibold text-sm rounded-lg hover:bg-parchment transition-all"
+              >
+                Sign out
+              </button>
+            </div>
+          </div>
+        </main>
+        <SiteFooter />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-parchment">
@@ -77,10 +117,12 @@ export default function Auth() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-1">
               {mode === 'register' && (
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-sm font-bold text-primary">Full Name</label>
+                  <label className="text-sm font-bold text-primary" htmlFor="auth-name">Full Name</label>
                   <input
+                    id="auth-name"
                     type="text"
                     required
+                    autoComplete="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="h-11 border border-border rounded-lg px-3 text-sm bg-parchment focus:outline-none focus:border-primary"
@@ -90,10 +132,12 @@ export default function Auth() {
               )}
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-bold text-primary">Email</label>
+                <label className="text-sm font-bold text-primary" htmlFor="auth-email">Email</label>
                 <input
+                  id="auth-email"
                   type="email"
                   required
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="h-11 border border-border rounded-lg px-3 text-sm bg-parchment focus:outline-none focus:border-primary"
@@ -102,20 +146,35 @@ export default function Auth() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-bold text-primary">Password</label>
-                <input
-                  type="password"
-                  required
-                  minLength={6}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="h-11 border border-border rounded-lg px-3 text-sm bg-parchment focus:outline-none focus:border-primary"
-                  placeholder={mode === 'register' ? 'At least 6 characters' : '••••••••'}
-                />
+                <label className="text-sm font-bold text-primary" htmlFor="auth-password">Password</label>
+                <div className="relative">
+                  <input
+                    id="auth-password"
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    minLength={8}
+                    autoComplete={mode === 'register' ? 'new-password' : 'current-password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="h-11 w-full border border-border rounded-lg pl-3 pr-11 text-sm bg-parchment focus:outline-none focus:border-primary"
+                    placeholder={mode === 'register' ? 'At least 8 characters' : '••••••••'}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((visible) => !visible)}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    className="absolute right-0 top-0 h-11 w-11 flex items-center justify-center text-muted hover:text-primary"
+                  >
+                    {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
+                  </button>
+                </div>
+                {mode === 'register' && (
+                  <span className="text-[11px] text-muted">Use 8 or more characters with at least one letter and one number.</span>
+                )}
               </div>
 
               {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-3">
+                <div role="alert" className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-3">
                   {error}
                 </div>
               )}

@@ -1,0 +1,1460 @@
+[
+  {
+    "id": "E01",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am a 45-year-old farmer in Uttar Pradesh. I own 2 acres of cultivable land in my own name and this is my only source of income. Am I eligible for PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYes, you are eligible for **PM‑KISAN** – the scheme gives every small or marginal farmer 6,000 ₹ a year in three payments of 2,000 ₹.  \nYou’re not eligible for the PM Kisan Maandhan pension (age 18‑40) or the irrigation‑subsidy scheme (PMKSY), which is for different needs.\n\n---\n\n## Why you qualify for PM‑KISAN\n\n| Requirement | What the scheme says | How it matches you |\n|-------------|---------------------|--------------------|\n| **Age** | No specific age limit | You are 45 yrs – OK |\n| **Income / Farmer type** | Small and marginal farmer families | You own 2 acres (≈ 0.81 ha) in your own name – a small/marginal farm |\n| **Occupation** | Farmer / land‑holding agricultural family | You’re a farmer |\n| **Location** | All states & UTs | You’re in Uttar Pradesh |\n| **Land ownership** | Must hold cultivable land in the family’s name | You own 2 acres in your name – meets the rule |\n| **Other** | Excludes institutional landholders and high‑income taxpayers | No such exclusions apply to you |\n\nBecause all the stated criteria are met, you can apply for PM‑KISAN.  \n\n**How to apply**\n\n1. Go to the PM‑KISAN portal (pmkisan.gov.in) or visit the nearest Common Service Centre (CSC).  \n2. Submit your Aadhaar card, bank account details, and land‑record documents.  \n3. Once verified, you’ll receive ₹2,000 every four months – a total of ₹6,000 a year.\n\n---\n\n## What the other schemes are for\n\n| Scheme | Purpose | Why you don’t need it right now |\n|--------|---------|---------------------------------|\n| **PM Kisan Maandhan Yojana** | Voluntary pension after 60 yrs | Age limit is 18‑40 yrs – you’re 45 |\n| **PMKSY (Pradhan Mantri Krishi Sinchayee Yojana)** | Irrigation subsidies for drip/sprinkler systems | It helps with irrigation costs, not a direct income support scheme |\n\nIf you’re interested in irrigation improvements, PMKSY could be worth exploring, but it doesn’t replace PM‑KISAN.\n\n---\n\n### Bottom line\n- **Apply for PM‑KISAN now** – it’s a direct income‑support scheme that matches your age, land size, and occupation.  \n- **Skip PM Kisan Maandhan** – age disqualifies you.  \n- **PMKSY** is optional and geared toward irrigation, not income support.\n\nGood luck with your application! If you need help filling out the form, the CSC staff will walk you through it.",
+    "retrieved_sources": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "PM Kisan Maandhan Yojana",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)"
+    ],
+    "latency_ms": 2423,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E02",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am a 30-year-old government employee in Bihar. My family does not own or farm any agricultural land. Am I eligible for PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer**\n\nNo – you are **not eligible** for **PM‑KISAN**.\n\n**Why?**  \nThe PM‑KISAN scheme is aimed at *small and marginal farmer families* who **own or work on cultivable land**. The key eligibility points are:\n\n| Requirement | What it means for you |\n|-------------|------------------------|\n| **Occupation** | Must be a **farmer or a land‑holding agricultural family**. |\n| **Land** | You must **hold cultivable land in your family’s name**. |\n| **Income** | The scheme is for *small and marginal* farmers – it is not open to families that do not meet this land‑based criterion. |\n\nSince you:\n\n* are a **government employee**,\n* do **not own any agricultural land**, and\n* do not farm,\n\nyou do not satisfy the “farmer”/“landholder” condition, so you cannot receive the Rs. 6,000 annual support (Rs. 2,000 in each of the three installments).\n\n**Other schemes listed**\n\n- **PM Kisan Maandhan Yojana** – also requires a small or marginal farmer with up to 2 hectares of land.  \n- **Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)** – provides irrigation subsidies only to farmers.\n\nBoth of these, like PM‑KISAN, are land‑based farmer schemes. Hence, none of the schemes mentioned would apply to your situation.\n\n---\n\n**In short:** Because you don’t own or farm any agricultural land, you don’t meet the core eligibility criteria for PM‑KISAN or the other listed schemes. If you’re looking for financial support or schemes tailored to non‑farmers or government employees, you might need to explore other welfare programmes outside the scope of the information provided.",
+    "retrieved_sources": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "PM Kisan Maandhan Yojana",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)"
+    ],
+    "latency_ms": 1406,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E03",
+    "scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am a 52-year-old farmer who owns 5 acres of land, but I also pay high income tax as I run a separate profitable business. Am I eligible for PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou probably *do not* qualify for PM‑KISAN.\n\n---\n\n### Why PM‑KISAN isn’t right for you\n\n| What the scheme asks for | How you match (or don’t) |\n|---------------------------|--------------------------|\n| **No age limit** | ✔ You’re 52 – that’s fine. |\n| **Small‑ and marginal‑farmer families** | ✖ You own 5 acres (≈ 2 hectares) and run a profitable business that pulls in high income taxes. The scheme says it’s for *small and marginal farmers* and specifically excludes *high‑income taxpayers*. |\n| **Cultivable land in the family’s name** | ✔ You do have land in your name. |\n| **No educational requirement** | ✔ You meet this. |\n| **All states & UTs** | ✔ Location is fine. |\n\nBecause the scheme’s **income rule** says “excludes institutional landholders and high‑income taxpayers,” and you’re running a separate profitable business that taxes you heavily, you fall outside the target group of *small and marginal farmers*. The 5‑acre holding is also larger than what the scheme typically covers.\n\n---\n\n### What you could look at instead\n\n* **PM Kisan Maandhan Yojana** – but it’s for farmers aged 18‑40 and only for those with up to 2 hectares (≈ 5 acres). Unfortunately you’re 52, so you’d miss the age cut‑off.\n\n* **PMKSY (Pradhan Mantri Krishi Sinchayee Yojana)** – this isn’t an income‑support scheme; it gives subsidies for drip and sprinkler irrigation, and there’s no income limit. If you’re interested in getting better irrigation for your land, you could still apply. (You’d need to check state‑specific rules for the subsidy rates.)\n\n---\n\n### Bottom line\n\nBased on the official criteria you shared, PM‑KISAN is *not* a fit for you because of the “high‑income taxpayer” exclusion. If you’re interested in other kinds of support, the irrigation‑subsidy scheme (PMKSY) might be worth exploring, but it’s a different kind of help.",
+    "retrieved_sources": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "PM Kisan Maandhan Yojana",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)"
+    ],
+    "latency_ms": 2712,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E04",
+    "scheme": "Atal Pension Yojana",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 28 years old, work as a daily-wage construction worker with no formal employer, and I have a savings account at my local bank. Am I eligible for Atal Pension Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – you are eligible for the Atal Pension Yojana (APY).**  \nHere’s why, based on the official eligibility rules:\n\n| Criterion | APY rule | How it matches your situation |\n|-----------|----------|--------------------------------|\n| **Age at enrollment** | 18 – 40 years | You’re 28 years old, so you’re in the right age band. |\n| **Work sector** | Unorganised‑sector workers | You work as a daily‑wage construction worker with no formal employer, which is exactly the target group. |\n| **Savings account** | Must hold a savings bank account **or** a post‑office savings account | You already have a savings account at your local bank. |\n| **Location** | All states & union territories | No restriction for your state. |\n| **Education** | No requirement | Not needed. |\n\nBecause all the listed conditions are satisfied, you can apply for APY.  \n\n### How to apply\n1. **Visit your bank’s APY desk** – most banks that participate in APY have a dedicated counter or a special form.\n2. **Fill in the application** – you’ll need to provide basic ID details (e.g., Aadhar), your savings account number, and agree to the monthly contribution amount (the more you pay, the higher the pension you’ll receive after age 60).\n3. **Submit the form** – the bank will forward it to the APY office, and you’ll start the enrollment process.\n\n### Quick recap\n- **Age:** ✅ 18‑40 (you’re 28)\n- **Sector:** ✅ Unorganised (daily wage construction)\n- **Savings account:** ✅ Yes\n- **Other conditions:** All satisfied\n\nSo you are fully eligible and can start the APY process right away. If you’re interested in additional retirement options, you might also look into the National Pension System (NPS), but that’s optional and not required for APY. Happy planning!",
+    "retrieved_sources": [
+      "Atal Pension Yojana",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "National Pension System (NPS)"
+    ],
+    "latency_ms": 1740,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E05",
+    "scheme": "Atal Pension Yojana",
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "query_sent": "I am 41 years old and work as an unorganized-sector laborer. I want to enrol in a pension scheme for my old age. Am I eligible for Atal Pension Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you’re not eligible to join the Atal Pension Yojana (APY) because it is only for people who enroll **between the ages of 18 and 40**.  \n\n**Why that matters**  \n- **Age requirement:** APY says “18 to 40 years at enrollment.” You are 41, which is outside the window.  \n- All the other conditions (unorganized‑sector worker, savings account, etc.) are fine, but the age rule is the one that stops you from joining APY.\n\n**What you can do instead**  \n1. **National Pension System (NPS)** –  \n   * Age range: 18 – 70 years (so you qualify).  \n   * No income or occupation restriction.  \n   * You can open an account through e‑NPS or a bank/post office.  \n   * It’s a voluntary, long‑term pension plan that lets you build a retirement corpus with tax benefits.\n\n2. **Indira Gandhi National Old Age Pension** –  \n   * This is only for people who are **60+ years old** and below the poverty line, so it doesn’t apply right now.\n\n**Next steps for you**  \n- If you want a guaranteed pension like APY, you’ll have to wait until you reach age 60 and then look for other schemes (e.g., the old‑age pension program).  \n- If you’re ready to start saving for retirement now, the NPS is the most suitable option among the schemes listed.  \n\nFeel free to ask if you need help with the NPS application process or any other questions!",
+    "retrieved_sources": [
+      "Atal Pension Yojana",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "National Pension System (NPS)"
+    ],
+    "latency_ms": 1381,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E06",
+    "scheme": "Atal Pension Yojana",
+    "ground_truth": "Eligible",
+    "category": "boundary",
+    "query_sent": "I am exactly 40 years old today and work in the unorganized sector with a post office savings account. Am I eligible for Atal Pension Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer – Yes, you can enroll in Atal Pension Yojana (APY).**  \n\nHere’s why, based on the official eligibility rules we have:\n\n| Requirement | What the scheme says | Does you meet it? |\n|-------------|----------------------|------------------|\n| **Age at enrolment** | 18 to 40 years | You’re exactly 40 – you’re right at the upper limit, so you qualify. |\n| **Type of work** | Unorganized‑sector worker | You work in the unorganized sector, so this fits. |\n| **Savings account** | Must have a savings bank account **or** a post‑office savings account | You have a post‑office savings account – that satisfies the condition. |\n| **Other conditions** | No education requirement; all states and UTs are covered | You meet all of these. |\n\n**What happens after you enroll**\n\n- You’ll start making regular contributions to the APY account (the exact amount depends on the pension you want).\n- When you turn 60, the government will pay you a fixed monthly pension ranging from **₹1,000 to ₹5,000**. The amount you receive will depend on how much you contributed.\n\n**How to apply**\n\n1. Visit any **participating bank or post office** that offers APY.  \n2. Bring your post‑office savings account details.  \n3. Fill out the application form (you’ll also need a photo ID and a passport‑size photograph).  \n4. The bank/office will link your savings account to the APY scheme and you’ll start contributing.\n\n---\n\n### Why the other schemes aren’t relevant right now\n\n| Scheme | Why it isn’t a fit for you today |\n|--------|----------------------------------|\n| **Indira Gandhi National Old Age Pension** | Targeted at people 60 + and below the poverty line. You’re 40 now, so it’s not applicable. |\n| **Senior Citizens Savings Scheme** | Requires you to be 60 + (55 + for retirees). You’re not a senior citizen yet. |\n\nSo, **Atal Pension Yojana is the only scheme that applies to you at the moment**, and it’s a good option to start securing a regular pension once you reach 60. If you have any other questions about the enrollment process or contribution amounts, feel free to ask!",
+    "retrieved_sources": [
+      "Atal Pension Yojana",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "Senior Citizens Savings Scheme"
+    ],
+    "latency_ms": 1477,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E07",
+    "scheme": "PM YASASVI Scholarship",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am a Class 11 student from an OBC family. Our annual family income is about Rs. 1,80,000. Am I eligible for PM YASASVI Scholarship? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Good news! You’re eligible for the PM YASASVI Scholarship.**\n\n| Criterion | Scheme requirement | Your situation |\n|-----------|--------------------|----------------|\n| **Age/Level** | Class 9 – post‑graduate | You’re in Class 11 |\n| **Caste** | Must be OBC, EBC or DNT | You’re OBC |\n| **Income** | Annual family income **< ₹2,50,000** | Your income is ₹1,80,000 |\n| **Enrollment** | Studying in a recognized school/college/university | You’re a student in a recognized school |\n| **Other** | Student, all states & UTs | All criteria satisfied |\n\nBecause all the conditions match, you qualify for the scholarship, which can cover up to **₹1,25,000 per year** for post‑matric students in premier institutions (you’ll get a lower amount if you’re not in a premier institution). The scholarship is paid directly into your bank account, and you can apply online through the National Scholarship Portal (NSP) by uploading your caste certificate, income certificate, and admission proof.\n\n---\n\n### What about the other schemes?\n\n| Scheme | Who it helps | Income limit | Is it suitable? |\n|--------|--------------|--------------|-----------------|\n| **NMMS (National Means‑cum‑Merit Scholarship)** | Class 9‑12 students, dropout prevention | < ₹1,50,000 | **No** – your income is ₹1,80,000. |\n| **CSSS (Central Sector Scholarship Scheme)** | Under‑graduate & post‑graduate students, merit‑based | < ₹4,50,000 | **No** – you’re still in Class 11, not yet in college. |\n\nSo, the PM YASASVI Scholarship is the right fit for you at this time.\n\n---\n\n### How to apply\n\n1. Visit the National Scholarship Portal (NSP) at [https://yet.nta.ac.in/](https://yet.nta.ac.in/).\n2. Register and create a profile.\n3. Upload the required documents (caste certificate, income certificate, admission proof).\n4. Submit the application and wait for confirmation.\n\nFeel free to reach out if you need help with the application process or any other questions!",
+    "retrieved_sources": [
+      "PM YASASVI Scholarship",
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "latency_ms": 2967,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E08",
+    "scheme": "PM YASASVI Scholarship",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am a General-category Class 10 student. My family's annual income is Rs. 1,20,000. Am I eligible for PM YASASVI Scholarship? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, a General‑category student with an annual family income of ₹1,20,000 is **not eligible** for the **PM YASASVI Scholarship**.  \n\n**Why?**  \nThe PM YASASVI scheme is specifically for students who belong to the **OBC, EBC, or DNT (Dalit & Non‑Tribal) categories**. Since you belong to the General category, that particular eligibility condition is not met, even though your income (₹1,20,000) is below the ₹2,50,000 threshold.\n\n---\n\n### What can you look into instead?\n\n| Scheme | Who it helps | Key eligibility (from the data you gave) | Notes |\n|--------|--------------|------------------------------------------|-------|\n| **National Means‑cum‑Merit Scholarship (NMMS)** | Students in Classes 9‑12 who are economically weaker and meritorious | • Class 9‑12 student <br>• Annual parental income below ₹1,50,000 <br>• Must have cleared the NMMS qualifying exam held in Class 8 <br>• Studying in a government, government‑aided, or local body school | Since you’re in Class 10 and your income is ₹1,20,000 (below ₹1,50,000), you meet the income criterion. The only missing information is whether you cleared the NMMS Class 8 exam and whether you study in a government‑related school. If those conditions are satisfied, you can apply through your state education department. |\n| **Central Sector Scholarship Scheme (CSSS)** | Meritorious under‑graduate/post‑graduate students from low‑income families | • Must be pursuing an undergraduate or postgraduate course <br>• Annual family income below ₹4,50,000 <br>• Score above the 80th percentile in Class 12 board exams <br>• No other central scholarship | Not applicable at the Class 10 level. |\n\n---\n\n### How to proceed\n\n1. **Confirm your school type** – If you study in a government, government‑aided, or local‑body school, you qualify for the NMMS eligibility checklist.  \n2. **Check Class 8 NMMS exam** – If you passed the qualifying exam, you can now apply.  \n3. **Apply online** – Use your state education department’s portal or the National Scholarship Portal (NSP) as directed for each scheme.  \n\nIf you’re unsure about any of the steps or your eligibility for NMMS, you can visit your local education office or the National Scholarship Portal for detailed guidance.\n\nGood luck, and keep working hard!",
+    "retrieved_sources": [
+      "PM YASASVI Scholarship",
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "latency_ms": 11530,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E09",
+    "scheme": "PM YASASVI Scholarship",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am an EBC-category student in Class 12. My family's annual income is Rs. 3,20,000. Am I eligible for PM YASASVI Scholarship? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou’re **not eligible for the PM YASASVI Scholarship** because the family income threshold is Rs. 2,50,000, and yours is Rs. 3,20,000.  \n\n---\n\n## Why the PM YASASVI Scholarship doesn’t fit\n\n| Criterion | Scheme requirement | Your situation |\n|-----------|--------------------|----------------|\n| **Income** | < Rs. 2,50,000 per year | Rs. 3,20,000 |\n| **Caste** | Must be OBC / EBC / DNT | You are EBC – ✔︎ |\n| **Education level** | Class 9 – post‑matric | You’re in Class 12 – ✔︎ |\n| **Other** | Student, enrolled in recognized school/college/university | ✔︎ |\n\nSince your family income exceeds the Rs. 2,50,000 limit, you don’t meet the eligibility condition for this scholarship.\n\n---\n\n## What you *might* consider\n\n| Scheme | Eligibility overview | Does it suit you? |\n|--------|----------------------|-------------------|\n| **National Means‑cum‑Merit Scholarship (NMMS)** | Income < Rs. 1,50,000; must have passed a Class 8 qualifying exam. | Income too high ➜ Not eligible. |\n| **Central Sector Scholarship Scheme (CSSS)** | Income < Rs. 4,50,000; must score above 80th percentile in Class 12 board exams and be admitted to an undergraduate or postgraduate program. | Income is within the limit, but you’re still in Class 12. If you qualify on the merit cut‑off and enroll in college soon, you could apply for CSSS. |\n\n---\n\n### Steps if you want to pursue CSSS (once you’re in college)\n\n1. **Score above 80th percentile** in your Class 12 exams.  \n2. **Get admitted** to a recognized college/university.  \n3. **Collect** the necessary documents (caste certificate, income certificate, admission proof).  \n4. **Apply** through the National Scholarship Portal (NSP) after you’ve cleared your board exams.\n\n---\n\n### Bottom line\n\n- **PM YASASVI:** *Not eligible* due to income limit.  \n- **NMMS:** *Not eligible* due to income limit.  \n- **CSSS:** *Possibly eligible* after you enter college and meet the merit criterion; your income is below the scheme’s limit.\n\nIf you’re unsure about your Class 12 board percentile or other requirements, it’s a good idea to check with your school’s counseling office or the state education department. Good luck with your studies!",
+    "retrieved_sources": [
+      "PM YASASVI Scholarship",
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "latency_ms": 11848,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E10",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am a girl studying for a diploma in mechanical engineering at an AICTE-approved polytechnic. My family's annual income is Rs. 5,00,000, and I am the only daughter. Am I eligible for AICTE Pragati Scholarship for Girls? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes, you are eligible for the AICTE Pragati Scholarship for Girls.**\n\nHere’s why, based on the exact eligibility criteria:\n\n| Criterion | Your Situation | Eligibility Check |\n|-----------|----------------|-------------------|\n| **Family income** | ₹5,00,000 per year | Must be **below ₹8,00,000** – ✔️ |\n| **Student type** | Girl student in a **diploma program** | Must be a **girl student** – ✔️ |\n| **Institution** | AICTE‑approved polytechnic | Must be enrolled in an AICTE‑approved technical diploma or degree program – ✔️ |\n| **Number of girl children** | You are the **only** daughter in your family | Only one girl child per family can claim this scholarship – ✔️ |\n| **Age & location** | No age limit; you live in any state/UT | No restrictions – ✔️ |\n| **Other conditions** | No other AICTE scholarship claimed by a girl in your family | You are the only girl eligible for this scholarship – ✔️ |\n\n### How to apply\n1. **Create or log in** to the National Scholarship Portal (NSP) – [scholarships.gov.in](https://scholarships.gov.in/).  \n2. **Select the AICTE Pragati Scholarship for Girls** from the list of available schemes.  \n3. **Upload proof of admission** (e.g., admission letter or certificate) from your AICTE‑approved polytechnic.  \n4. **Submit the application** and wait for confirmation.\n\n---\n\n### Quick recap\n- **You meet all the income, student, institution, and family‑girl‑count criteria.**  \n- **No additional restrictions apply.**  \n- **Apply through NSP** with your admission proof to receive ₹50,000 per year for tuition and other expenses.\n\nIf you need help with the application or have other questions, feel free to ask!",
+    "retrieved_sources": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "National Scholarship Portal (NSP)"
+    ],
+    "latency_ms": 11394,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E11",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am a girl pursuing a Bachelor of Arts degree at a general university, family income Rs. 3,00,000. Am I eligible for AICTE Pragati Scholarship for Girls? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you are *not* eligible for the AICTE Pragati Scholarship for Girls because you are studying a Bachelor of Arts (BA) course, not a technical diploma or degree that is approved by AICTE.\n\n---\n\n### Why the Pragati Scholarship doesn’t apply\n\n| Requirement | What the scheme says | Your situation |\n|-------------|---------------------|----------------|\n| **Type of course** | “Enrolled in an AICTE‑approved technical diploma or degree program.” | You’re enrolled in a general Bachelor of Arts programme, which is not a technical course. |\n| **Family income** | “Annual family income below Rs. 8,00,000.” | Your family income is Rs. 3,00,000, which meets this part of the criteria. |\n| **Other conditions** | “Only one girl child per family eligible.” | That would be fine if you’re the only girl child, but the course type is the decisive factor. |\n\nBecause the course type requirement is not met, the scholarship is not available to you.\n\n---\n\n### What else you might consider\n\n| Scheme | Does it fit? | What you’d need to know |\n|--------|--------------|------------------------|\n| **Central Sector Scholarship Scheme (CSSS)** | ✔️ – it’s for undergraduate students from low‑income families. | Your family income (Rs. 3,00,000) is below the Rs. 4,50,000 threshold. The missing piece is whether you scored above the 80th percentile in your Class 12 board exams. If you did, you could apply. |\n| **Pre‑Matric/Post‑Matric Scholarship for Minorities** | ❌ | Not relevant because it is for students from notified minority communities and has very low income ceilings. |\n\n---\n\n### How to move forward\n\n1. **Check your Class 12 percentile** – If you’re above the 80th percentile, you can apply for the Central Sector Scholarship through the National Scholarship Portal (NSP).  \n2. **Look for other state‑level or university‑level scholarships** that may support non‑technical BA students.  \n3. **Confirm your family’s eligibility status** – For CSSS, you must not be receiving any other central government scholarship at the same time.\n\nFeel free to let me know if you have your Class 12 percentile or if you’d like help finding other scholarships that match your course type!",
+    "retrieved_sources": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "Pre-Matric and Post-Matric Scholarship for Minorities"
+    ],
+    "latency_ms": 10154,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E12",
+    "scheme": "AICTE Pragati Scholarship for Girls",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I am a girl in an AICTE-approved diploma program, family income Rs. 2,00,000, and I'm not sure how many of my sisters are also applying for AICTE scholarships this year. Am I eligible for AICTE Pragati Scholarship for Girls? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – you are eligible for the AICTE Pragati Scholarship for Girls!**  \nHere’s why:\n\n| Eligibility point | Scheme requirement | Does your situation meet it? |\n|--------------------|--------------------|------------------------------|\n| **Income** | Family income must be **below ₹8,00,000** per year | Your family income is ₹2,00,000 – ✅ |\n| **Student status** | You must be a **girl student** | You are a girl – ✅ |\n| **Course** | Enrolled in an AICTE‑approved **technical diploma or degree program** | You’re in an AICTE‑approved diploma – ✅ |\n| **Location** | Applies to students from **all states and UTs** | ✅ |\n| **Family rule** | *Only one girl child per family* is eligible for this scholarship, but **a maximum of two girls per family can receive any AICTE scholarship** | If you are the first or second girl in your family, you can get Pragati. If you have more than two sisters, only two of them can get AICTE scholarships in total – this does **not** affect your own eligibility. |\n\n### How to apply\n1. **Register** on the National Scholarship Portal (NSP) – <https://scholarships.gov.in/>.\n2. **Fill out** the Pragati Scholarship application.\n3. **Attach** your admission proof from the AICTE‑approved institution.\n4. Submit and wait for the verification.\n\n---\n\n#### About your sisters\n- If you have **one sister**: both of you can apply (each of you qualifies separately).\n- If you have **two sisters**: only two girls in the family can receive AICTE scholarships in total, so all three of you cannot get Pragati simultaneously.  \n- If you have **more than two sisters**: only two of them (including you, if you choose) can receive an AICTE scholarship; the rest would have to look at other schemes.\n\n---\n\n#### Other schemes (just in case)\n- **Pre‑Matric / Post‑Matric Scholarship for Minorities** – only for minority communities and has a stricter income cap (≤ ₹1 Lac pre‑matric, ≤ ₹2 Lac post‑matric).  \n- **Other NSP scholarships** – eligibility varies; you’ll need to check each one individually.\n\nBut for your situation, the **AICTE Pragati Scholarship for Girls** is the most relevant and you meet all its criteria. Good luck with your application!",
+    "retrieved_sources": [
+      "AICTE Pragati Scholarship for Girls",
+      "National Scholarship Portal (NSP)",
+      "Pre-Matric and Post-Matric Scholarship for Minorities"
+    ],
+    "latency_ms": 10819,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E13",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am in Class 9 at a government school. My parents' annual income is Rs. 90,000. I cleared the NMMS qualifying exam when I was in Class 8. Am I eligible for National Means-cum-Merit Scholarship (NMMS)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – you qualify for the National Means‑cum‑Merit Scholarship (NMMS)!**  \n\nHere’s why, based on the official criteria:\n\n| NMMS Requirement | What it means | How you fit it |\n|------------------|---------------|----------------|\n| **Class** | Must be studying in Class 9 to Class 12 | You’re in Class 9. |\n| **Income** | Annual parental income below ₹1,50,000 | Your parents earn ₹90,000 – well below the limit. |\n| **School type** | Government, government‑aided, or local‑body school | You attend a government school. |\n| **Qualifying exam** | Must have cleared the NMMS qualifying exam in Class 8 | You cleared it in Class 8. |\n\nAll the listed conditions are met, so you’re eligible to receive the NMMS scholarship of ₹12,000 per year (₹1,000 per month) for the next four years (Classes 9‑12).\n\n---\n\n### How to apply\n\n1. **Check with your state education department** – they manage the NMMS application process.\n2. **Gather your documents** – typically a copy of the qualifying exam result, your school transfer/attendance certificate, and any income proof your state requires.\n3. **Submit the application** – usually through a state‑level portal or office.  \n4. **Follow up** – once approved, the scholarship amount is disbursed directly to your bank account (or via the method specified by your state).\n\n---\n\n### Other schemes to keep in mind\n\n| Scheme | Why it may or may not be suitable |\n|--------|------------------------------------|\n| **PM YASASVI Scholarship** | Requires you to belong to the OBC, EBC, or DNT category – you didn’t mention your caste. Also aimed at students from Class 9 onward, but it’s a separate scheme. |\n| **Central Sector Scholarship Scheme (CSSS)** | Designed for undergraduate and postgraduate studies, not for Class 9‑12. |\n\nIf you later meet the caste requirement for PM YASASVI, you could apply for that too, but for now, NMMS is the relevant scholarship. Good luck, and enjoy the support it provides!",
+    "retrieved_sources": [
+      "PM YASASVI Scholarship",
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "latency_ms": 13071,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E14",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am in Class 10 at a private unaided school. My parents' annual income is Rs. 1,00,000. Am I eligible for National Means-cum-Merit Scholarship (NMMS)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you are not eligible for the National Means‑cum‑Merit Scholarship (NMMS) because of the type of school you attend.\n\n---\n\n### Why you don’t qualify\n\n| Requirement | What you have | Does it meet the requirement? |\n|-------------|---------------|------------------------------|\n| **Studying in Class 9–12** | You’re in Class 10 | ✅ |\n| **Annual parental income below ₹1,50,000** | ₹1,00,000 | ✅ |\n| **School type** | Private unaided school | ❌ – NMMS is only for students in **government, government‑aided, or local‑body schools**. |\n| **Clear the NMMS qualifying exam held in Class 8** | Not mentioned | Even if you cleared it, the school‑type condition still blocks eligibility. |\n\nBecause the scheme explicitly states that the student must be enrolled in a government, government‑aided, or local body school, students in private (unaided) schools are excluded, regardless of income or exam performance.\n\n---\n\n### What you can do next\n\n1. **Check if your state has a similar scholarship for private‑school students.**  \n   Some states offer separate schemes for students in private schools, but that information isn’t in the data you provided.\n\n2. **Look at other central scholarships that don’t require a specific school type.**  \n   The data we have only lists the Central Sector Scholarship Scheme (CSSS) for college‑age students and the National Scholarship Portal (NSP) as a gateway. Unfortunately, CSSS is for undergraduates/postgraduates and requires a Class 12 score above the 80th percentile, which is outside your current stage.\n\n3. **Use the National Scholarship Portal (NSP).**  \n   Register at https://scholarships.gov.in/ and explore other scholarship options that might suit students in private schools and your income level.\n\n---\n\n**Bottom line:** Based on the criteria given, you’re **not eligible for NMMS** because your school is a private unaided school. You may want to explore other schemes or state‑level programs that cater to students in private schools.",
+    "retrieved_sources": [
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "National Scholarship Portal (NSP)"
+    ],
+    "latency_ms": 11686,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E15",
+    "scheme": "National Means-cum-Merit Scholarship (NMMS)",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I am in Class 11 at a government-aided school, parental income Rs. 1,20,000. I'm not sure whether I actually cleared the Class 8 NMMS qualifying exam or just appeared for it. Am I eligible for National Means-cum-Merit Scholarship (NMMS)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou *could* be eligible for the **National Means‑cum‑Merit Scholarship (NMMS)**, but you must first confirm that you **cleared** the Class 8 NMMS qualifying exam. If you did, you meet all the other criteria and can apply. If you did **not** clear it, you do not qualify for NMMS.  \n\n---\n\n### Why you meet (or don’t meet) the NMMS conditions\n\n| Requirement | Scheme statement | Does you meet it? |\n|-------------|------------------|-------------------|\n| **Studying in Class 9‑12** | “Studying in Class 9 to Class 12” | **Yes** – you’re in Class 11. |\n| **Parental income below Rs 1,50,000** | “Annual parental income below Rs 1,50,000” | **Yes** – your family income is Rs 1,20,000. |\n| **Studying in a government, government‑aided, or local‑body school** | Same wording | **Yes** – you’re in a government‑aided school. |\n| **Clear the NMMS qualifying exam in Class 8** | “Must clear the NMMS qualifying examination held in Class 8” | **Unknown** – you’re not sure if you cleared it. |\n\nSo, all the criteria are satisfied **except** the “clear the exam” condition, which is the only missing piece.  \n\n---\n\n### What to do next\n\n1. **Check your Class 8 records**  \n   - Ask your school or the local education office for a copy of the NMMS qualifying‑exam result (or any certificate that shows you passed).  \n   - If you can provide a “pass” or “cleared” confirmation, you can proceed with the application.  \n\n2. **If you did not clear the exam**  \n   - You are **not** eligible for NMMS.  \n   - You might still explore other scholarships that do not require the Class 8 exam (e.g., PM YASASVI if you belong to OBC, EBC, or DNT), but you’d need to provide caste certificate, income certificate, and admission proof.  \n\n3. **Apply for NMMS**  \n   - Once you’ve confirmed the exam clearance, submit the application through your state education department.  \n   - Bring the required documents: income certificate, school admission proof, and the NMMS qualifying‑exam pass certificate.\n\n---\n\n### Bottom line\n\n- **Eligible for NMMS?** Only if you **cleared** the Class 8 qualifying exam.  \n- **If unclear or didn’t clear**, the NMMS scholarship does not apply.  \n- **Next step:** Verify your exam result with the school or education office.  \n\nFeel free to ask if you need help locating the right office or preparing the application!",
+    "retrieved_sources": [
+      "PM YASASVI Scholarship",
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "latency_ms": 9834,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E16",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "My monthly income is Rs. 22,000 and I have a UDID card showing 55% locomotor disability. I need a wheelchair. Am I eligible for Assistance to Disabled Persons Scheme (ADIP)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes, you are eligible for the Assistance to Disabled Persons Scheme (ADIP).**  \n\nHere’s why, based on the official eligibility criteria:\n\n| Criterion | Scheme requirement | Your situation |\n|-----------|--------------------|----------------|\n| **Disability status** | Must hold a UDID card showing **40 % or more** disability | You have a UDID card with **55 % locomotor disability** |\n| **Monthly income** | **Up to Rs. 22,500** → free assistive devices; Rs. 22,501–30,000 → 50 % subsidy | Your income is **Rs. 22,000**, which is below the Rs. 22,500 threshold |\n| **Age / Occupation / Location** | No specific limits | Not an issue for you |\n\nBecause you meet both the disability and income conditions, you qualify for **free assistive devices**, such as a wheelchair, under ADIP.\n\n### How to apply\n\n1. **Gather documents**  \n   - Your UDID card (shows the 55 % disability).  \n   - An income certificate or other proof showing your monthly income of Rs. 22,000.\n\n2. **Contact an empanelled implementing agency**  \n   - These can be NGOs, hospitals, or district agencies that have been approved by the Department of Personnel & Training (DEPWD).  \n   - You can find a list of agencies on the DEPWD website or by inquiring at your local disability office.\n\n3. **Submit the application**  \n   - Provide the required documents, including the UDID card and income proof.  \n   - The agency will process your request and arrange for the wheelchair to be provided at no cost to you.\n\n### Quick recap\n\n- **Disability proof**: 55 % on UDID – ✔️  \n- **Income**: Rs. 22,000 – ✔️  \n- **Benefit**: Free wheelchair (no subsidy needed because your income is below Rs. 22,500).  \n\nIf you need any help locating an empanelled agency or preparing the documents, let me know!",
+    "retrieved_sources": [
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Unique Disability ID (UDID)"
+    ],
+    "latency_ms": 12227,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E17",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "My monthly income is Rs. 25,000. I have a doctor's note describing a mild hearing impairment, but I don't have a UDID card and I don't know my certified disability percentage. Am I eligible for Assistance to Disabled Persons Scheme (ADIP)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer**\n\nBased on the information you shared and the official scheme details we have, here’s a quick rundown of why you **do not qualify for the Assistance to Disabled Persons Scheme (ADIP) at the moment** and what steps you can take next.\n\n---\n\n## 1. Why you’re not eligible for ADIP right now\n\n| ADIP Eligibility Requirement | Your Current Status | Result |\n|------------------------------|---------------------|--------|\n| **Income** – Monthly income up to Rs. 30,000 | ₹25,000 | *Meets* the income threshold |\n| **UDID card** – Must hold a UDID card showing **40 % or more disability** | • No UDID card<br>• Disability percentage not known | *Not met* – you need a UDID card with a 40 %+ rating to apply |\n| **Application** – Must apply through empanelled agencies with a UDID card and an income certificate | – | – |\n\nIn short, even though your income is within the acceptable range, the *mandatory* “UDID card showing 40 % or more disability” condition is missing. Without that card (and a confirmed disability percentage), the ADIP application cannot be processed.\n\n---\n\n## 2. What you can do next\n\n| Step | What to do | How it helps |\n|------|------------|--------------|\n| **Get a UDID card** | Apply for a Unique Disability ID through the UDID portal (https://www.swavlambancard.gov.in/). | This card serves as the official proof of your disability status and will allow you to claim benefits under many schemes, including ADIP. |\n| **Find out your disability percentage** | Ask your doctor to issue a formal medical disability certificate that specifies the percentage of impairment. | The certificate will be needed to demonstrate that you meet the 40 % threshold required for ADIP (and for other disability‑benefit schemes). |\n| **Re‑check eligibility after obtaining the card/certificate** | Once you have the UDID card and the percentage, re‑apply for ADIP through an empanelled NGO, hospital or district agency. | With the required documents in place, your application will meet all stated criteria. |\n\n---\n\n## 3. Other schemes you might consider (currently not eligible either)\n\n| Scheme | Eligibility for you (as‑is) | Why? |\n|--------|-----------------------------|------|\n| **NHFDC Loan Scheme** | • Must hold a disability certificate of 40 % or more | You don’t have such a certificate yet |\n| **Other local disability schemes** | Not listed in the information provided | No details to confirm eligibility |\n\n---\n\n### Bottom line\n\n- **You are *not* eligible for ADIP yet** because you lack both a UDID card and a confirmed disability percentage of 40 % or higher.  \n- **Next steps**: Obtain the UDID card and a formal medical disability certificate. Once those are in hand, you can re‑apply for ADIP (and for other schemes that require the same documentation).\n\nFeel free to reach out if you need help with the UDID application process or have other questions!",
+    "retrieved_sources": [
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Unique Disability ID (UDID)"
+    ],
+    "latency_ms": 10365,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E18",
+    "scheme": "Assistance to Disabled Persons Scheme (ADIP)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "My monthly income is Rs. 40,000, and my UDID card shows 60% disability. Am I eligible for Assistance to Disabled Persons Scheme (ADIP)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Assistance to Disabled Persons Scheme (ADIP)**  \n- **What it gives you:** Free or subsidised wheelchairs, hearing aids, artificial limbs, etc.  \n- **Income rule:** You must have a *monthly income of ₹30,000 or less* (free devices up to ₹22,500, 50 % subsidy between ₹22,501–₹30,000).  \n- **Disability rule:** You need a UDID card that shows **40 % or more** disability.  \n- **Your situation:**  \n  - Income: ₹40,000 / month → **above the ₹30,000 limit**.  \n  - Disability: 60 % → meets the disability requirement.\n\n**Conclusion:** Because your monthly income exceeds the ₹30,000 ceiling, you **are not eligible** for the ADIP scheme at this time, even though your 60 % disability qualifies you in that aspect.\n\n---\n\n### Other option you might look into\n\n- **National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme**  \n  - Requires a 40 %+ disability certificate (UDID qualifies).  \n  - Income eligibility is “varies by income slab”; the scheme is designed to give higher concessions to lower‑income applicants, so it could still be a good option for you.  \n\nTo confirm whether the NHFDC loan fits your exact income level, you can contact your local State Channelizing Agency (SCA) and provide your income details. They’ll be able to tell you the specific concession and eligibility criteria for your case.",
+    "retrieved_sources": [
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Unique Disability ID (UDID)"
+    ],
+    "latency_ms": 10850,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E19",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 68 years old, my monthly income is Rs. 8,000, and I have age-related difficulty walking and hearing. Am I eligible for Rashtriya Vayoshri Yojana (RVY)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – you do qualify for the Rashtriya Vayoshri Yojana (RVY).**  \n\nHere’s why, step by step:\n\n| What the scheme looks for | Your situation | Verdict |\n|---------------------------|----------------|---------|\n| **Age** – 60 years or older | You’re 68 years old | ✔ |\n| **Income** – Monthly income below ₹15,000 | Your income is ₹8,000 | ✔ |\n| **Disability/impairment** – Age‑related walking or hearing difficulty, assessed at the camp | You have walking and hearing difficulties | ✔ |\n| **Other** – Any occupation, all states/UTs, no education requirement | You fit all these | ✔ |\n\n**So you meet every requirement.**\n\n### What to do next\n\n1. **Find a local assessment camp**: These are organized by ALIMCO (All India Mission for the Welfare of the Handicapped). They’re usually announced by your district’s Social Welfare or Rural Development office.\n2. **Bring necessary documents**:\n   - Proof of age (Aadhaar, PAN, voter ID, etc.)\n   - Proof of income (salary slips, bank statements, or a certificate of income if you’re self‑employed)\n   - Any medical reports that show your walking and hearing issues (if available – the camp will assess it on the spot)\n3. **Attend the camp**: An assessor will evaluate your needs and tell you which assistive device(s) (walking stick, wheelchair, hearing aid, spectacles, etc.) you are entitled to receive for free.\n4. **Receive your device(s)**: Once the assessment is complete and your eligibility is confirmed, the device(s) will be given to you at no cost.\n\n### Quick recap\n\n- **Age**: 68 > 60 ✔  \n- **Income**: ₹8,000 < ₹15,000 ✔  \n- **Disability**: Walking/hearing difficulty ✔  \n- **Application venue**: District assessment camps (ALIMCO)\n\nYou’re fully eligible and can claim the free assistive devices. If you need help finding the nearest camp or have questions about the application process, let me know!",
+    "retrieved_sources": [
+      "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "Rashtriya Vayoshri Yojana (RVY)",
+      "Pradhan Mantri Shram Yogi Maandhan"
+    ],
+    "latency_ms": 10231,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E20",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "query_sent": "I am 58 years old with monthly income Rs. 10,000 and mobility issues. Am I eligible for Rashtriya Vayoshri Yojana (RVY)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer:**\n\nYou’re **not eligible for the Rashtriya Vayoshri Yojana (RVY)**.  \nThe scheme’s rules are:\n\n| Requirement | What it says | Your situation |\n|-------------|--------------|----------------|\n| **Age** | Must be **60 years or older** | You’re 58 years old |\n| **Income** | Monthly income below ₹15,000 | Your income (₹10,000) is below the limit – that part is fine |\n| **Disability** | Must have an age‑related physical impairment that is assessed at a camp | You do have mobility issues, but the age criterion still blocks you |\n\nBecause the age requirement is the first rule, you cannot qualify even though your income and disability would meet the other conditions.\n\n---\n\n### What you can do instead\n\n- **Pradhan Mantri Jan Dhan Yojana (PMJDY)** – If you don’t already have a bank account, this scheme lets you open a zero‑balance account, get a RuPay debit card, and even accident insurance. It has no age or income limits and is available across all states.\n\n- **Other senior‑citizen schemes** – While the information you gave only lists RVY, there may be additional state‑level or national schemes that include people aged 60‑plus or that have different age limits. You could check with your local district office or the state welfare department to see if any other program might suit you.\n\n**Bottom line:** For RVY, you need to be at least 60 years old. Until you reach that age, the scheme won’t be available to you. If you’re looking for help with mobility devices now, you might want to ask your local municipal office or a nearby health clinic if there are any other assistance programs or charitable organizations that can provide such equipment.",
+    "retrieved_sources": [
+      "Rashtriya Vayoshri Yojana (RVY)",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+      "Pradhan Mantri Shram Yogi Maandhan"
+    ],
+    "latency_ms": 9366,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E21",
+    "scheme": "Rashtriya Vayoshri Yojana (RVY)",
+    "ground_truth": "Eligible",
+    "category": "boundary",
+    "query_sent": "I am exactly 60 years old, monthly income Rs. 14,900, with an age-related hearing impairment. Am I eligible for Rashtriya Vayoshri Yojana (RVY)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes, you are eligible for the Rashtriya Vayoshri Yojana (RV Yojana).**  \n\nHere’s why:\n\n| Requirement | Your situation | Meets the requirement? |\n|-------------|----------------|------------------------|\n| **Age** | 60 years old | ✔︎ (the scheme is for 60 years and above) |\n| **Monthly income** | ₹14,900 | ✔︎ (income must be *below* ₹15,000) |\n| **Disability / impairment** | Age‑related hearing impairment | ✔︎ (the scheme requires an age‑related physical impairment – a hearing aid is one of the free devices) |\n| **Other conditions** | None listed (you can be any occupation, any education level, and you live anywhere in India) | ✔︎ |\n\n### How to apply\n\n1. **Go to a district‑level assessment camp** – the camps are organized by ALIMCO.  \n2. **Bring proof of age (birth certificate, PAN, etc.)** and proof of income (salary slip, bank statement, etc.).  \n3. The camp will assess your hearing impairment and other needs.  \n4. If you qualify, you will receive free assistive devices such as a hearing aid, spectacles, walking stick, or wheelchair – whatever you need.\n\n### Quick recap\n\n- **Age**: 60 yrs → OK  \n- **Income**: ₹14,900 < ₹15,000 → OK  \n- **Disability**: Hearing impairment (age‑related) → OK  \n- **Location / occupation**: Any → OK  \n\nSo you meet all the official criteria for RV Yojana and should be able to receive the free hearing aid (and other devices if needed) through the assessment camp. If you have any doubt, just ask the camp staff for a quick check‑in – they’re there to help!",
+    "retrieved_sources": [
+      "Rashtriya Vayoshri Yojana (RVY)",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+      "Pradhan Mantri Shram Yogi Maandhan"
+    ],
+    "latency_ms": 9896,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E22",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I scored in the 85th percentile in my Class 12 boards, my family's annual income is Rs. 3,00,000, and I'm not receiving any other central scholarship. Am I eligible for Central Sector Scholarship Scheme (CSSS)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYes – you meet the eligibility requirements for the **Central Sector Scholarship Scheme (CSSS)** *provided you are admitted to a recognised college or university*.\n\n---\n\n### Why CSSS fits your profile\n\n| What the scheme needs | Your situation |\n|-----------------------|----------------|\n| **Score requirement** – *above 80th percentile in Class‑12* | You scored **85th percentile** → ✔️ |\n| **Family income** – *below Rs. 4,50,000 per year* | Your family income is **Rs. 3,00,000** → ✔️ |\n| **No other central scholarship** | You said you’re not receiving any → ✔️ |\n| **Being a student of higher education** – *pursuing undergraduate or postgraduate studies* | The scheme applies only to students already in college/university. If you’re still in 12th th, you’ll be eligible once you get admission and start your undergraduate course. |\n\nBecause all the listed criteria are satisfied, you qualify for the CSSS. You’ll need to apply through the **National Scholarship Portal (NSP)** once you have your college admission offer.\n\n---\n\n### Schemes that don’t apply\n\n| Scheme | Why it doesn’t fit your situation |\n|--------|-----------------------------------|\n| **National Means‑cum‑Merit Scholarship (NMMS)** | Only for students in Class 9‑12 whose parents’ income is **below Rs. 1,50,000**. |\n| **Pre‑Matric / Post‑Matric Scholarship for Minorities** | Requires a family income of up to Rs. 1 lakh (pre‑matric) or Rs. 2 lakh (post‑matric) and applies to minority‑community students. |\n\n---\n\n**Next steps**\n\n1. **Secure college admission** in a recognised institution.  \n2. **Register** on the National Scholarship Portal (NSP).  \n3. **Submit** the required documents (proof of Class‑12 score, income certificate, admission letter, etc.).  \n4. Once approved, you’ll receive **Rs. 12,000 per year** for the first three years of your undergraduate studies (increasing to Rs. 20,000 per year for postgraduate studies).\n\nFeel free to let me know if you need help with the NSP application or any other details!",
+    "retrieved_sources": [
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "Pre-Matric and Post-Matric Scholarship for Minorities"
+    ],
+    "latency_ms": 8236,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E23",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I scored in the 90th percentile in Class 12 boards, family income Rs. 2,00,000, but I am currently receiving the PM YASASVI Scholarship. Am I eligible for Central Sector Scholarship Scheme (CSSS)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you can’t be eligible for the Central Sector Scholarship Scheme (CSSS) while you’re already receiving the PM YASASVI Scholarship.\n\n---\n\n### Why CSSS is not an option for you\n\n| Requirement | What the scheme says | Your situation |\n|-------------|---------------------|----------------|\n| **Family income** | < ₹4,50,000 per year | ₹2,00,000 – ✔ |\n| **Class‑12 percentile** | Above 80 % | 90 % – ✔ |\n| **Current scholarships** | Must **not** be receiving any other central government scholarship at the same time | You are getting the PM YASASVI Scholarship – ✘ |\n\nThe last point is the deciding factor. CSSS explicitly says you **must not** be receiving any other central government scholarship simultaneously. Since PM YASASVI is a central scholarship, you cannot be eligible for CSSS until you stop receiving YASASVI.\n\n---\n\n### What you can do\n\n1. **Continue with PM YASASVI** – you are already receiving it, and you meet all its criteria (income < ₹2,50,000, OBC/EBC/DNT category, etc.).\n2. **If you ever stop YASASVI** – you would then be eligible for CSSS because your income, percentile, and other conditions are all satisfied.\n3. **Other schemes** –  \n   * NMMS is not relevant (your income is above ₹1,50,000).  \n   * No other scheme in the provided list better suits your profile.\n\n---\n\n### Bottom line\n\n- **CSSS?** No, because you’re already on a central scholarship.  \n- **What’s good for you now?** Keep enjoying the PM YASASVI Scholarship.  \n- **Future option:** If you decide to switch to CSSS, you’d need to drop the YASASVI scholarship first.\n\nHope that clears it up! If you have any other questions about your scholarships, feel free to ask.",
+    "retrieved_sources": [
+      "PM YASASVI Scholarship",
+      "National Means-cum-Merit Scholarship (NMMS)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "latency_ms": 11435,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E24",
+    "scheme": "Central Sector Scholarship Scheme (CSSS)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I scored in the 60th percentile in Class 12 boards, family income Rs. 2,50,000. Am I eligible for Central Sector Scholarship Scheme (CSSS)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you do **not** meet the eligibility criteria for the Central Sector Scholarship Scheme (CSSS) based on the information you gave.\n\n---\n\n### Why CSSS isn’t a match\n\n| Criterion | Scheme requirement | Your situation |\n|-----------|--------------------|----------------|\n| **Academic merit** | “Scored above 80th percentile in Class‑12 board exams” | 60th percentile |\n| **Family income** | Below ₹4.50 lakh per year | ₹2.50 lakh (you meet this part) |\n| **Other conditions** | Not receiving any other central scholarship | – |\n| **Age/Study level** | Pursuing undergraduate/post‑graduate studies | – |\n\nThe only criterion you fail to satisfy is the *80th‑percentile* academic requirement. Therefore, you’re not eligible for CSSS at this time.\n\n---\n\n### Schemes that *might* fit your profile\n\n| Scheme | How it matches (or doesn’t) |\n|--------|---------------------------|\n| **Post‑Matric Scholarship for SC Students** | - Income limit ≤ ₹2.5 lakh ✔️ <br>- No merit requirement ✔️ <br>- *Only* if you belong to a Scheduled Caste (SC).  If you are SC, this scheme could be a good fit. |\n| **Pre‑Matric / Post‑Matric Scholarship for Minorities** | - Income limit for post‑matric ≤ ₹2.0 lakh (you are at ₹2.5 lakh) – not eligible. <br>- Also requires belonging to a notified minority community. |\n\nIf you are **not** from an SC or minority background, these schemes would not apply.\n\n---\n\n### What to do next\n\n1. **Check your caste/community status** – If you are an SC or a minority, you might qualify for the respective scholarships above.  \n2. **Re‑apply for CSSS once you improve your percentile** – The merit threshold is the only obstacle.  \n3. **Explore state‑level scholarships** – Many states offer scholarships with lower merit or income thresholds.\n\nYou can apply for all eligible schemes through the **National Scholarship Portal (NSP)**.\n\n*Good luck!*",
+    "retrieved_sources": [
+      "Central Sector Scholarship Scheme (CSSS)",
+      "Post Matric Scholarship for SC Students",
+      "Pre-Matric and Post-Matric Scholarship for Minorities"
+    ],
+    "latency_ms": 11807,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E25",
+    "scheme": "Stand-Up India Scheme",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am a 30-year-old woman planning to set up a brand-new manufacturing unit; no such branch loan has been given yet at my chosen bank branch this year. Am I eligible for Stand-Up India Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Stand‑Up India Scheme – How it fits you**\n\n| What you asked | How the scheme checks it | Result |\n|----------------|--------------------------|--------|\n| **Age** – 30 yrs | Scheme says *“age ≥ 18”* | ✔️ You meet it |\n| **Gender** – woman | Scheme is specifically for *women* (or SC/ST) entrepreneurs | ✔️ You qualify |\n| **Business type** – new manufacturing unit | Scheme is for “greenfield” (new) enterprises in manufacturing, services or trading | ✔️ Your unit is greenfield |\n| **Income** | No income limit is mentioned | ✔️ No problem |\n| **Education** | No requirement | ✔️ Not needed |\n| **Branch rule** – “at least one woman or SC/ST entrepreneur per bank branch” | This means the bank branch that lends under the scheme must already have at least one woman or SC/ST entrepreneur in its portfolio. | ❓ Depends on your chosen branch |\n\n### What the information tells us\n\n1. **You are eligible on all technical fronts** (age, gender, new enterprise, location, etc.).  \n2. The only possible hiccup is the **branch‑specific rule**.  \n   * If your chosen bank branch **has already lent Stand‑Up India money to a woman or SC/ST entrepreneur** (even if it was last year), you can apply normally.  \n   * If the branch **has not yet issued any Stand‑Up India loan this year**, it may still be able to approve one for you—many branches start offering the scheme in the first quarter of the financial year.  \n   * If the branch is truly “new” or has never served a woman/SC/ST entrepreneur, the bank may not yet have the internal set‑up to process the scheme. In that case, you might want to:\n     * **Ask the branch manager** if they are starting to offer Stand‑Up India loans soon.  \n     * **Try another branch** that already has a woman or SC/ST entrepreneur on its books.  \n     * **Apply online** through the official Stand‑Up India portal (https://www.standupmitra.in/) if your bank allows that.\n\n### Schemes that are *not* relevant here\n\n| Scheme | Why it doesn’t fit |\n|",
+    "retrieved_sources": [
+      "Stand-Up India Scheme",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Agriculture Infrastructure Fund"
+    ],
+    "latency_ms": 11074,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E26",
+    "scheme": "Stand-Up India Scheme",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_multiple_conditions",
+    "query_sent": "I am a 40-year-old General-category man looking to expand my already-running trading business with a new loan. Am I eligible for Stand-Up India Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo – you don’t meet the eligibility criteria for the **Stand‑Up India Scheme**.\n\n**Why not?**  \n\n| What the scheme requires | Your situation |\n|--------------------------|----------------|\n| **At least one woman or SC/ST entrepreneur** per bank branch | You are a general‑category man |\n| **Greenfield (new) enterprise** in manufacturing, services or trading | You’re looking to expand an already‑running trading business (not a brand‑new start‑up) |\n| **Age 18+** | You are 40 years old – that condition is fine |\n| **Any income level** | Not a problem |\n| **Any occupation** | You are an entrepreneur – that’s fine |\n\nBecause the scheme is specifically designed for *women and SC/ST entrepreneurs* and *greenfield* enterprises, it does not apply to your case.\n\n**Other schemes in the list**\n\n| Scheme | Who it is for | Does it fit your situation? |\n|--------|----------------|-----------------------------|\n| National Handicapped Finance & Development Corporation (NHFDC) Loan | Persons with a 40 %+ disability certificate | Not mentioned – no disability certificate |\n| Venture Capital Fund for Scheduled Castes | SC entrepreneurs | Not SC |\n\nNone of the schemes mentioned are relevant to a general‑category man expanding an existing trading business.\n\nIf you’re looking for a loan to expand your trading business, you might consider other bank or state‑level schemes that are open to general‑category entrepreneurs, but those are outside the information you provided.",
+    "retrieved_sources": [
+      "Stand-Up India Scheme",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Venture Capital Fund for Scheduled Castes"
+    ],
+    "latency_ms": 14833,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E27",
+    "scheme": "Stand-Up India Scheme",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I am an ST-category entrepreneur starting a new services business, but I haven't checked whether my chosen bank branch has already sanctioned a Stand-Up India loan to another SC/ST or woman entrepreneur this cycle. Am I eligible for Stand-Up India Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer**\n\nYes – you can apply for a Stand‑Up India loan.  \nYour business, as a new (greenfield) service‑sector venture and because you are an ST entrepreneur, fits all the eligibility criteria listed in the scheme. The only thing you can’t verify from the information above is whether the bank branch has already given a Stand‑Up India loan to another SC/ST or woman entrepreneur in this cycle – that’s a detail the bank can confirm for you.\n\n---\n\n### Why you qualify for Stand‑Up India\n\n| Criterion | Scheme requirement | How you fit |\n|-----------|--------------------|-------------|\n| **Age** | 18 + | You are an adult. |\n| **Occupation** | Aspiring entrepreneur | You are starting a new services business. |\n| **Business type** | Greenfield enterprise (new) | You’re setting up a brand‑new business. |\n| **Sector** | Manufacturing, services, or trading | Your business is in the services sector. |\n| **Loan amount** | Rs. 10 lakh – Rs. 1 crore | The scheme can provide a loan in this range. |\n| **Target group** | Women **or** SC/ST entrepreneurs | You are an ST entrepreneur. |\n| **Location** | All states and UTs | Not restricted. |\n| **Other conditions** | “At least one woman or SC/ST entrepreneur per bank branch” | The bank must have already given a Stand‑Up India loan to at least one SC/ST or woman entrepreneur in the same branch, but that does **not** prevent you from applying. The scheme does not limit a branch to only one loan per cycle. |\n\n### What you need to do next\n\n1. **Prepare a business plan/project report** – this is required when you apply.  \n2. **Apply** – either through the Stand‑Up India portal or directly at your bank branch.  \n3. **Ask the bank** – check whether the branch has already disbursed a Stand‑Up India loan to another SC/ST or woman entrepreneur this cycle. The scheme’s wording says a branch must have *at least* one such loan, not that it can have only one. So even if the branch already has one, you can still apply.\n\n---\n\n### Other schemes in the list\n\n| Scheme | Why it doesn’t apply to you |\n|--------|-----------------------------|\n| **NHFDC Loan Scheme** | You do not have a disability certificate of 40 % or more. |\n| **Venture Capital Fund for Scheduled Castes** | The fund is specifically for SC entrepreneurs, not for ST entrepreneurs. |\n\n---\n\n**Bottom line:**  \nYou are eligible for a Stand‑Up India loan. The only point you need to confirm is the branch’s current loan status, which you can do by speaking directly with your bank. If you meet the rest of the criteria above, you can submit an application and, if approved, receive a loan of up to ₹1 crore to start your services business.",
+    "retrieved_sources": [
+      "Stand-Up India Scheme",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Venture Capital Fund for Scheduled Castes"
+    ],
+    "latency_ms": 15019,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E28",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 24 years old, pregnant with my first child, and I registered my pregnancy at the local Anganwadi centre. Am I eligible for Pradhan Mantri Matru Vandana Yojana (PMMVY)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "Yes! Based on the information above, you are **eligible** for the **Pradhan Mantri Matru Vandana Yojana (PMMVY)**.  \n\nHere’s why:\n\n| What the scheme needs | Your situation |\n|----------------------|----------------|\n| **Age** – 18 years and above | You’re 24 years old |\n| **First living child** – Only the first pregnancy/child counts | This is your first pregnancy |\n| **Pregnancy registered at Anganwadi (or health facility)** | You already registered at your local Anganwadi centre |\n| **Any income or occupation** | Not required, so you qualify |\n| **All states & UTs** | Not a restriction |\n\n**What you’ll get**  \n- ₹5,000 in three installments directly into your bank account  \n- The money is linked to health check‑ups and vaccination milestones for you and your baby  \n\n**How to apply**  \n1. Go to the nearest Anganwadi centre (or health facility) where you registered.  \n2. Provide your Aadhaar details and the pregnancy registration documents.  \n3. The centre will guide you through the online form and submit it on your behalf.  \n\nYou can also use the **Pradhan Mantri Surakshit Matritva Abhiyan** for free monthly antenatal check‑ups on the 9th of each month, but that’s a separate benefit and not part of PMMVY.  \n\nGood luck, and congratulations on your pregnancy! If you need help with the application, the Anganwadi staff will be happy to assist you.",
+    "retrieved_sources": [
+      "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "Pradhan Mantri Surakshit Matritva Abhiyan",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "latency_ms": 13187,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E29",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 29 years old and pregnant with my third child; I have registered this pregnancy at my local health centre. Am I eligible for Pradhan Mantri Matru Vandana Yojana (PMMVY)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer**\n\nYou are 29 years old and this is your third pregnancy.  \nHere’s how that matches the rules for the schemes you asked about:\n\n| Scheme | Key Eligibility Points | Does it fit your situation? |\n|--------|------------------------|------------------------------|\n| **Pradhan Mantri Matru Vandana Yojana (PMMVY)** | • First **living** child only<br>• Pregnancy must be registered with an Anganwadi/health centre | **No** – the scheme is for the *first* child, so a third pregnancy does not qualify. |\n| **Pradhan Mantri Surakshit Matritva Abhiyan** | • For all pregnant women (any age, any child number)<br>• Free antenatal check‑ups on the 9th of every month | **Yes** – you can get the free monthly check‑ups. |\n\n### Why PMMVY is not applicable\n- **“Applicable for the first living child”** is a mandatory condition.  \n- Since you’re expecting a third child, that condition is not met, no matter your age (you are over 18) or income.  \n\n### What you can do\n- **Register for the free antenatal care** under Surakshit Matritva Abhiyan – just visit a government health facility on the 9th of each month and book your check‑up.  \n- If you haven’t already, make sure your pregnancy is officially registered at the nearest Anganwadi or health centre, as that is needed for all the maternity schemes and can help you get other benefits (e.g., vaccinations, nutrition support).\n\nIf you have any more questions about other support you might be eligible for, feel free to ask!",
+    "retrieved_sources": [
+      "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "Pradhan Mantri Surakshit Matritva Abhiyan",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "latency_ms": 7009,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E30",
+    "scheme": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am pregnant with my first child but haven't yet registered the pregnancy anywhere, and I'm not sure if I need to before applying. Am I eligible for Pradhan Mantri Matru Vandana Yojana (PMMVY)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you’re **not yet eligible for PMMVY** because your pregnancy has not been registered with an Anganwadi centre or a health facility.  \n\n---\n\n## Why that is the case\n\n| PMMVY requirement | What the scheme says | Your current situation |\n|-------------------|----------------------|------------------------|\n| **First living child** | You meet this – it’s your first baby. | ✔ |\n| **Age ≥ 18 years** | You must be at least 18 years old. | ✔ (assuming you are) |\n| **Pregnancy registered** | *“Pregnancy must be registered with Anganwadi/health facility.”* | ❌ – you haven’t registered yet |\n| **No income or occupation limits** | Anyone can apply once the above is met. | ✔ |\n\nBecause the registration of the pregnancy is a *mandatory* condition, you cannot receive the ₹5,000 benefit (split into three installments) until you complete that step.\n\n---\n\n## What you can do next\n\n1. **Register your pregnancy**  \n   * Visit the nearest **Anganwadi centre** or **government health facility**.  \n   * Bring your Aadhaar card and any medical documents you have.  \n   * They will record your pregnancy details and give you a confirmation slip.\n\n2. **After registration**  \n   * Once you’re registered, you can apply for PMMVY.  \n   * The benefit will be transferred directly to your bank account in three installments, tied to your health check‑ups and baby’s vaccination milestones.\n\n---\n\n## If you’re looking for immediate support now\n\n- **Pradhan Mantri Surakshit Matritva Abhiyan**  \n  *Provides free antenatal check‑ups every 9th of the month.*  \n  *Doesn’t require a pregnancy registration.*  \n  You can simply visit a government health facility on the 9th and receive free care.\n\n---\n\n### Bottom line\n\n- **PMMVY** → **Not eligible yet** (needs pregnancy registration).  \n- **Surakshit Matritva** → **Eligible now** (free antenatal care).\n\nOnce you register your pregnancy, you’ll be able to claim the PMMVY benefit. If you need help with the registration process, ask the staff at your local Anganwadi or health centre—they’ll guide you through it.",
+    "retrieved_sources": [
+      "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "Pradhan Mantri Surakshit Matritva Abhiyan",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "latency_ms": 9798,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E31",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 34, my family income is about Rs 2.5 lakh a year (EWS category) and none of us owns a house anywhere in India. I want a subsidy on a home loan. Am I eligible for PMAY (Pradhan Mantri Awas Yojana) 2.0? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "### Short answer  \n**Yes, you are eligible for a home‑loan subsidy under PMAY 2.0 (and the associated Credit‑Linked Subsidy Scheme).**  \n\n---\n\n## Why you qualify\n\n| Requirement | PMAY 2.0 / CLSS | Your situation |\n|-------------|----------------|----------------|\n| **Age** | 18 + years | You’re 34 years old – ✔ |\n| **Income** | EWS/LIG/MIG slab (for PMAY 2.0) / ≤ ₹18 lakh per year (for CLSS) | Your family income is ₹2.5 lakh → falls well within the EWS category – ✔ |\n| **Occupation** | Any | Not mentioned – satisfies “any” – ✔ |\n| **Location** | Urban or rural | Not specified, but both are covered – ✔ |\n| **House ownership** | You or any family member must **not own a pucca house** anywhere in India | None of your family owns a house – ✔ |\n\nAll the eligibility boxes are ticked, so you can apply for the interest‑subsidy benefit that PMAY 2.0 offers.\n\n---\n\n## How it works\n\n1. **Apply** through the official PMAY portal or via a participating bank/finance company.  \n2. The bank will check your income and ownership status.  \n3. If you meet the criteria, you’ll receive an **interest subsidy** (a lower interest rate) on the home‑loan you take, which reduces your monthly EMI.\n\n---\n\n## What to do next\n\n1. **Gather documents**:  \n   - Income proof (pay slips, income tax returns, or a Form 16).  \n   - Proof of residence (rent agreement, electricity bill, etc.).  \n   - Identity proof (Aadhaar, PAN).  \n2. **Visit the PMAY portal** or your nearest bank’s PMAY desk.  \n3. **Submit the application** and wait for approval.  \n\n---\n\n### Quick recap\n\n- **Eligible:** Yes (age, income, no house ownership).  \n- **Scheme:** PMAY 2.0 (and the CLSS is the same subsidy program).  \n- **Benefit:** Reduced interest on your home‑loan, lowering your monthly payments.  \n\nIf you have any doubts or need help with the paperwork, feel free to ask!",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "Credit Linked Subsidy Scheme (CLSS)",
+      "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)"
+    ],
+    "latency_ms": 9573,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E32",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 40 and in the MIG income group, but my family already owns a pucca house in our native village. I want a subsidy for buying a second home. Am I eligible for PMAY (Pradhan Mantri Awas Yojana) 2.0? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo – you don’t meet the eligibility for PMAY 2.0 (or the other schemes listed), because the rule is that the applicant or any family member **must not already own a pucca house anywhere in India**.  \n\n---\n\n### Why that matters\n\n| Scheme | Key eligibility note |\n|--------|----------------------|\n| **PMAY 2.0** | “Applicant or family should **not own a pucca house anywhere in India**.” |\n| **PMAY‑Gramin** | “Household should not already own a pucca house.” |\n| **CLSS (Credit‑Linked Subsidy)** | “No pucca house in family name.” |\n\nYour family already owns a pucca house in your native village, so all three schemes’ “no‑house” condition fails.  \nEven though you’re 40 years old, in the MIG income group, and want to buy a second home, the central requirement about existing house ownership blocks eligibility.\n\n### What you could consider instead\n\n- **Private lenders:** Some banks offer home‑loan schemes that don’t have the “no‑house” restriction, though they usually don’t provide the same interest‑subsidy benefit.\n- **State‑level housing schemes:** Many Indian states have their own housing schemes with different rules; you might check those if you’re looking for a subsidy or lower rates.\n- **Second‑home loan products:** Look for “second‑home” loan options that are tailored for people who already own a house. These won’t give the PMAY subsidy but may still have attractive interest rates.\n\n---\n\n### Bottom line\n\nBased on the information you gave and the official eligibility rules, you are **not eligible** for PMAY 2.0 (or the other schemes mentioned). If you want a subsidised loan, you may need to explore private or state‑level options that don’t require you to have no existing pucca house.",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "PMAY-Gramin (PMAYG)",
+      "Credit Linked Subsidy Scheme (CLSS)"
+    ],
+    "latency_ms": 3777,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E33",
+    "scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I want to buy my first flat in a city and take a home loan. Can I get the PMAY subsidy? Am I eligible for PMAY (Pradhan Mantri Awas Yojana) 2.0? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYes, you can get a PMAY 2.0 (Pradhan Mantri Awas Yojana 2.0) home‑loan subsidy *if* you meet the scheme’s eligibility criteria. Below is a quick checklist to see if you qualify.\n\n---\n\n## 1. PMAY 2.0 – What It Offers  \n\n| Feature | What it means for you |\n|---------|------------------------|\n| **Interest‑rate subsidy** | The loan you take from a bank will have a lower effective interest rate, so your EMI (monthly payment) will be cheaper. |\n| **Target groups** | Economically Weaker Sections (EWS), Low‑Income Group (LIG) and Middle‑Income Group (MIG) – the categories are defined by government income slabs. |\n| **How to apply** | Online through the PMAY portal or via a participating bank. |\n\n---\n\n## 2. Are you eligible?  \n\n| Requirement | What the scheme says | How it applies to you |\n|-------------|----------------------|-----------------------|\n| **Age** | 18 + (adult applicant) | Must be at least 18 years old. |\n| **Income** | Must fall into **EWS/LIG/MIG** categories as per government slabs | Check the current income thresholds (they’re updated every few years). If your annual household income is in one of those ranges, you’re good. |\n| **Occupation** | Any | No restriction. |\n| **Location** | Urban **or** rural | You’re buying a flat in a city – that’s fine. |\n| **Education** | No requirement | N/A. |\n| **Own a pucca house?** | **No** – neither you nor any family member should already own a pucca (permanent) house in India. | Since this is your *first* flat, you likely meet this condition. |\n\n### Quick self‑check  \n- **Do you own any permanent house already?**  \n  - **No** → ✔  \n  - **Yes** → ❌ (not eligible)\n\n- **Is your annual household income within the EWS/LIG/MIG slabs?**  \n  - **Yes** → ✔  \n  - **No** → ❌ (you’ll need a different scheme or will have to pay the full market rate)\n\nIf you tick all the ✔ boxes, you qualify for the PMAY 2.0 subsidy!\n\n---\n\n## 3. If you don’t meet the income or ownership criteria\n\n| Option | What it offers | How to proceed |\n|--------|----------------|----------------|\n| **Credit‑Linked Subsidy Scheme (CLSS)** | Same interest‑rate subsidy, but limited to households earning **up to ₹18 lakh** annually, and you still cannot own a pucca house. | Check if your income is below ₹18 lakh and apply through your bank. |\n| **Other state or private schemes** | Some banks or state‑specific programmes may offer lower rates or assistance. | Ask your bank for available options; check state‑government portals. |\n\n---\n\n## 4. Next Steps for You\n\n1. **Verify Income** – Look at the latest income brackets for EWS/LIG/MIG (available on the PMAY portal or the Ministry of Housing website).  \n2. **Gather Documents** – You’ll need proof of income, identity, and proof of residence.  \n3. **Apply** – Use the PMAY official portal or talk to your bank’s home‑loan officer; they’ll guide you through the subsidy application.  \n\n---\n\n### Bottom line\n- **If your annual household income is in the EWS/LIG/MIG range and you don’t already own a pucca house, you are eligible for the PMAY 2.0 interest‑rate subsidy.**  \n- **If not, look at the CLSS or other local schemes, or proceed with a regular home‑loan without a subsidy.**\n\nFeel free to share your exact income bracket or any other details if you’d like a more precise yes/no answer!",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+      "Credit Linked Subsidy Scheme (CLSS)"
+    ],
+    "latency_ms": 14984,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E34",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 72 years old and a retired bank manager with a good pension. Can I get Ayushman Bharat cover? Am I eligible for Ayushman Bharat PM-JAY? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Good news!**  \nYou’re eligible for **Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (PM‑JAY)**. Here’s why:\n\n| What you need to know | Scheme details |\n|----------------------|----------------|\n| **Age** | The scheme automatically includes all citizens **70 + years old** – you’re 72. |\n| **Income** | For the 70 + expansion there is **no income limit**. Your pension does not affect eligibility. |\n| **Family listing** | Your family must be listed in the **SECC database** or be covered under the 70 + rule. Most people are already in the SECC records, but if you’re not, you can get your details added. |\n| **What you get** | Up to **₹5 lakh per family per year** for secondary/tertiary care hospitalization (cashless at empanelled hospitals). |\n| **How to apply** | • Visit the **PM‑JAY portal** (pmjay.gov.in) <br>• Or go to your nearest **Ayushman Bharat Care Centre (CSC)** and fill in a short form. <br>• You’ll need a photo ID, Aadhaar, and your family’s SECC details. |\n\n### Other useful schemes\n\n| Scheme | Who can use it | Why it might help |\n|--------|----------------|-------------------|\n| **Ayushman Bharat Health & Wellness Centres (Ayushman Arogya Mandir)** | All ages | Free primary care, screenings, medicines, and diagnostics near your home. Great for routine check‑ups and preventive care. |\n| **Pradhan Mantri Shram Yogi Maandhan** | Unorganised workers 18‑40 years, low‑income | Not applicable to you (you’re a retired bank manager and over 60). |\n\n### Next steps\n\n1. **Check SECC status:** Visit an SECC office or check online if your household is listed.  \n2. **Apply:** Use the PM‑JAY portal or go to your nearest CSC. Bring your Aadhaar, photo ID, and SECC details.  \n3. **Keep your card handy:** Once approved, you’ll receive an **Ayushman Bharat Card** you can show at empanelled hospitals.  \n\nIf you’re unsure about the SECC listing, the CSC staff can help you get registered. Once you’re enrolled, you’ll have cashless hospitalization coverage for any family member, regardless of your income.  \n\nFeel free to ask if you need help with the application process!",
+    "retrieved_sources": [
+      "Ayushman Bharat PM-JAY",
+      "Ayushman Bharat Health and Wellness Centres (Ayushman Arogya Mandir)",
+      "Pradhan Mantri Shram Yogi Maandhan"
+    ],
+    "latency_ms": 8966,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E35",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "query_sent": "I am 69 years old and I checked that our family is not listed in the SECC database. Am I eligible for Ayushman Bharat PM-JAY? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou are **not eligible** for Ayushman Bharat PM‑JAY at the moment.\n\n**Why?**  \n\n| What the scheme says | How it applies to you |\n|----------------------|-----------------------|\n| **Age rule** – All ages are covered, but people **70 + years** are automatically added to the list. | You are 69 years old, so you don’t get the automatic 70 + inclusion. |\n| **Income rule** – For general beneficiaries you must be in the SECC‑deprivation list. For the 70 + category there is no income limit. | Your family is *not* on the SECC database, so you don’t meet the deprivation requirement for general beneficiaries. |\n| **Other condition** – “Family must be listed under SECC database **or qualify under the 70 + expansion.” | You are neither 70 + nor listed in SECC, so you don’t satisfy either condition. |\n\nBecause you fail both the age and SECC‑listing conditions, you do not qualify for the PM‑JAY health cover.\n\n**What can you do next?**  \n1. **Check your SECC status** – If you can get added to the SECC list (for example, if you meet the poverty criteria but were missed during the census), you could become eligible as a general beneficiary.  \n2. **Look at other schemes** – No other scheme in the information provided applies to a 69‑year‑old who isn’t in SECC or 70 +.  \n\nIf you need help updating your SECC status or exploring other health‑insurance options, you might want to talk to your local social welfare office or visit the PM‑JAY portal for more details.",
+    "retrieved_sources": [
+      "Ayushman Bharat PM-JAY",
+      "PM CARES for Children",
+      "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)"
+    ],
+    "latency_ms": 13263,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E36",
+    "scheme": "Ayushman Bharat PM-JAY",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I am 50, my income is low and I want health insurance for my family. I'm not sure if we are in any government list. Am I eligible for Ayushman Bharat PM-JAY? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou are *not* automatically eligible for the Ayushman Bharat PM‑JAY just because you are 50 years old. PM‑JAY only gives automatic coverage to citizens who are **70 years or older**.  \nHowever, you may still qualify as a *general beneficiary* if you meet the **SECC (Socio‑Economic Caste Census) deprivation criteria** that the government uses to identify families that need health insurance.  \n\nBelow is a simple rundown of what the scheme says, what you would need to prove, and what other options you have.\n\n---\n\n### 1. Ayushman Bharat PM‑JAY\n| What the scheme offers | Who can get it | How to find out if you qualify |\n|------------------------|----------------|--------------------------------|\n| **Cash‑less hospital care** up to ₹5 lakh per family per year (secondary & tertiary care) | • **All ages** – but <br>• **Automatic for anyone 70 + years** | • If you’re 70 + → you’re automatically included.<br>• If you’re <70 (like you) → you must meet the **SECC deprivation criteria** that the state uses to decide who is “economically disadvantaged.” |\n| **No separate income limit** for the 70+ group | | |\n| **Any occupation, any location** (as long as the state participates) | | |\n| **Family must be in the SECC database or qualify under the 70+ rule** | | |\n\n**So for you (age 50, low income):**  \n- You’re not automatically covered.  \n- You can still get coverage *only if* your family is listed in the SECC database **or** you meet whatever poverty‑threshold the state has set for *general beneficiaries*.  \n- The easiest way to know is to log in to the PM‑JAY portal or visit your nearest **Community Service Centre (CSC)** and ask whether your family qualifies under the SECC criteria. They’ll look up your name/household ID and tell you.\n\n---\n\n### 2. Ayushman Bharat Health & Wellness Centres (Arogya Mandir)\n| Feature | Who can use it | What you get |\n|---------|----------------|--------------|\n| Primary health care (free) – doctor visits, screening, basic medicines & diagnostics | **All ages, all incomes** | Free primary care. No income check or age restriction. |\n\n**Why this matters for you:**  \nEven if you don’t qualify for the hospital insurance part of PM‑JAY, you can still visit an Arogya Mandir for routine check‑ups, vaccinations, and basic treatments without paying. It’s a good safety net for everyday health needs.\n\n---\n\n### 3. Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)\n- **Only if you live in Rajasthan** and are a registered resident with Jan Aadhaar.  \n- Provides cash‑less treatment up to the state‑specific limit.  \n- Similar to PM‑JAY but limited to Rajasthan.\n\n---\n\n### What to do next\n\n1. **Check PM‑JAY eligibility**  \n   - Go to the PM‑JAY website or the nearest CSC.  \n   - Bring your PAN/Adhaar/SECC ID (if you have one).  \n   - Ask if your family is listed as “deprived” under SECC.  \n\n2. **If you’re not listed**  \n   - You can still apply for PM‑JAY *after* you are added to the SECC list (sometimes local authorities do this automatically for low‑income households).  \n   - In the meantime, use an **Arogya Mandir** for free primary care.\n\n3. **If you live in Rajasthan**  \n   - Register for the Chiranjeevi scheme through Jan Aadhaar at an empanelled hospital or via e‑Mitra.  \n\n---\n\n**Bottom line:**  \nYou’re 50 years old, so you’re **not automatically covered** by PM‑JAY. You’ll need to verify whether your family is on the SECC deprivation list. If not, you still have free primary care at an Arogya Mandir, and if you’re in Rajasthan, you can explore the state‑level Chiranjeevi scheme. Feel free to let me know where you’re located, and I can give you more targeted instructions!",
+    "retrieved_sources": [
+      "Ayushman Bharat PM-JAY",
+      "Ayushman Bharat Health and Wellness Centres (Ayushman Arogya Mandir)",
+      "Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)"
+    ],
+    "latency_ms": 7722,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E37",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E38",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 30 and live in a rented flat. I don't own the building and have no right to its roof. Am I eligible for PM Surya Ghar Muft Bijli Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer**\n\nYou’re **not eligible** for the PM Surya Ghar Muft Bijli Yojana.\n\n**Why?**\n\n| Criterion | Scheme requirement | Your situation |\n|-----------|---------------------|----------------|\n| **Age** | 18 + | You’re 30 (meets this). |\n| **Occupation** | Must be a **homeowner** | You rent a flat and don’t own the building or its roof. |\n| **Roof availability** | Must own a residential rooftop suitable for solar installation | You don’t have ownership or a right to use the roof, so you can’t install a solar system there. |\n\nSince the scheme explicitly requires that you own the rooftop, renting a flat does not meet the eligibility condition. Because of this, you cannot apply for the subsidy or the free electricity benefits under this scheme.\n\n**Other schemes**\n\nNone of the other schemes listed (Pradhan Mantri Jeevan Jyoti Bima Yojana or Mukhyamantri Tirth Yatra Yojana) apply to your situation—they have different aims and eligibility rules.\n\nIf you’re interested in solar power, you might explore other local or state‑level programs that support tenants, or look into community solar options. Let me know if you’d like help finding those!",
+    "retrieved_sources": [
+      "PM Surya Ghar Muft Bijli Yojana",
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "Mukhyamantri Tirth Yatra Yojana (Delhi)"
+    ],
+    "latency_ms": 975,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E39",
+    "scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I own my house but trees and neighbouring buildings shade most of my roof. Will I be eligible for the solar subsidy? Am I eligible for PM Surya Ghar Muft Bijli Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou will **not** be eligible for the **PM Surya Ghar Muft Bijli Yojana** because your roof is not suitable for a solar panel installation.\n\n---\n\n### Why you’re not eligible for PM Surya Ghar\n\n| What the scheme needs | Your situation |\n|-----------------------|----------------|\n| **A residential rooftop that is suitable for solar panels** | Your roof is heavily shaded by trees and neighboring buildings. That makes it unsuitable for solar installation. |\n| Age, income, occupation, location | You meet all of these (you’re a homeowner, 18 + years old, anywhere in India). |\n\nThe eligibility list says *“Must own a residential rooftop suitable for solar installation.”* When a roof is shaded, the panels can’t get enough sunlight, so the government does not allow the subsidy on such rooftops.\n\n---\n\n### Are there any other schemes that help you?\n\n* **Credit‑Linked Subsidy Scheme (CLSS)** – This is for interest subsidies on home loans. It has nothing to do with solar panels, so it doesn’t help your situation.\n\n* **PM‑KUSUM** – This is for farmers who own land and want to install solar pumps or grid‑connected plants. It’s not meant for residential rooftop solar.\n\nSo, based only on the information provided, there is no scheme that would give you a solar subsidy for a shaded roof.\n\n---\n\n### What you can do next\n\n1. **Check the roof again** – If there’s any part that gets enough sunlight (even a small panel can help), you might qualify.  \n2. **Explore other options** – If you still want solar, you could look into community solar projects or other local initiatives not mentioned here.\n\nIf you have any other questions or need help with a different program, just let me know!",
+    "retrieved_sources": [
+      "PM Surya Ghar Muft Bijli Yojana",
+      "Credit Linked Subsidy Scheme (CLSS)",
+      "PM-KUSUM"
+    ],
+    "latency_ms": 9957,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E40",
+    "scheme": "PM SVANidhi",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E41",
+    "scheme": "PM SVANidhi",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 42 and run a permanent shop with a shop licence in a city market. I want a working capital loan under SVANidhi. Am I eligible for PM SVANidhi? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo – you do **not** meet the eligibility criteria for the **PM SVANidhi** scheme.\n\n---\n\n### Why the PM SVANidhi scheme doesn’t fit\n\n| Requirement (PM SVANidhi) | Does your situation meet it? |\n|----------------------------|-----------------------------|\n| **Age** – 18 + years | ✔ You are 42. |\n| **Occupation** – Street vendor | ✘ You run a permanent shop with a shop licence. The scheme is only for *street vendors* who sell goods or services on the street. |\n| **Certificate of Vending / ULB survey identification** | ✘ You would need a vendor certificate or a ULB survey ID that identifies you as a street vendor. A shop licence does not qualify. |\n| **Location** – Urban area | ✔ You are in a city market. |\n\nBecause the *occupation* requirement is a strict “street vendor” rule, a shop owner with a licence does **not** qualify, even if you are otherwise an urban small‑business owner.\n\n---\n\n### What you *can* consider\n\nSince you’re a small‑business owner with a shop licence, the **Pradhan Mantri Mudra Yojana (PM MY)** would be a better fit:\n\n* **Eligibility** – age 18 +, small‑business owner or entrepreneur, any state/UT, no income or education limit, and must be engaged in a non‑farm income‑generating activity (which a shop is).\n* **Loan range** – up to Rs. 10 lakh (Tarun) or even Rs. 20 lakh (Tarun Plus) depending on the loan type.\n* **How to apply** – through any bank, NBFC, MFI, or online via the Udyamimitra portal.\n\nIf you’re looking specifically for a “street‑vendor” type loan, you would need to switch your business model to a street vending activity and obtain the required vending certificate or be identified in a ULB survey. Otherwise, the Mudra Yojana is a strong, more inclusive alternative for working‑capital needs.",
+    "retrieved_sources": [
+      "PM SVANidhi",
+      "Stand-Up India Scheme",
+      "Pradhan Mantri Mudra Yojana"
+    ],
+    "latency_ms": 3799,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E42",
+    "scheme": "PM SVANidhi",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I sell tea on a roadside in Delhi. I don't know if I am in the municipality's vendor survey or have any certificate. Am I eligible for PM SVANidhi? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYou’re only eligible for the PM SVANidhi scheme *once* you have a **Certificate of Vending** or you have been officially identified in your city’s Local Body (ULB) vendor survey.  \nSince you say you don’t know whether you’re on that survey or have the certificate, you can’t claim the scheme right now.  \n\n---\n\n## Why the scheme is a good fit for you\n\n| What the scheme offers | How it matches your situation |\n|------------------------|------------------------------|\n| **Collateral‑free loans** starting at ₹10 000, with higher amounts if you repay on time | Good for a roadside tea stall that needs working capital |\n| **Interest subsidy** on repayment | Lowers the cost of borrowing |\n| **Designed for “street vendors” in urban areas** | You sell tea on a Delhi street |\n| **No education requirement** | No extra paperwork on schooling |\n\nSo the scheme *would* suit you if the other conditions are met.\n\n---\n\n## What you **don’t** meet (currently)\n\n| Condition | Requirement | Your status |\n|-----------|-------------|-------------|\n| **Certificate of Vending / ULB identification** | Must possess a vending certificate *or* be listed in the municipal vendor survey | You’re not sure you have it |\n| **Age** | 18 + years | Not specified; you need to be an adult |\n| **Low‑income street vendor** | Implicitly, you must belong to the low‑income “street vendor” category | Presumably yes, but not confirmed |\n\nWithout the certificate or official survey identification, the scheme’s eligibility criteria aren’t satisfied.  \n\n---\n\n## What you can do next\n\n1. **Check with your local municipal office**  \n   - Ask whether you have been surveyed or if a Certificate of Vending can be issued.  \n   - Many cities have a **Vendor Identification Card** or **Vending Certificate** that you can obtain by applying at the municipal market office or through the city’s online portal.\n\n2. **Apply for the certificate**  \n   - Once you have it, you can log in to the PM SVANidhi portal or approach your ULB’s credit officer to apply for a loan.\n\n3. **Confirm your age**  \n   - Ensure you’re 18 + years old; if you’re a minor, you’d need a guardian’s consent.\n\n---\n\n### Bottom line\n\n- **You’re eligible *only if* you get a vending certificate or are officially identified in the ULB survey.**  \n- If you don’t, the scheme is not available to you at this moment.  \n- After obtaining the certificate, you can re‑check your eligibility and apply for the loan.\n\nLet me know if you need help finding the right municipal office or any other support!",
+    "retrieved_sources": [
+      "PM SVANidhi",
+      "PM Vishwakarma",
+      "PM-KUSUM"
+    ],
+    "latency_ms": 9689,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E43",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "We are a BPL family in a village, listed in the SECC data, living in a mud house with no pucca house anywhere. Am I eligible for PMAY-Gramin (PMAYG)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – you qualify for PMAY‑Gramin (PMAYG).**  \n\nHere’s why, based on the official eligibility rules:\n\n| Criterion | PMAY‑Gramin requirement | How you match it |\n|-----------|------------------------|------------------|\n| **Household type** | Must be a *BPL or SECC‑identified* household | You said you’re BPL and listed in the SECC data. |\n| **Location** | Rural areas only | You’re in a village. |\n| **Current housing** | Must *not already own a pucca house* | You live in a mud (kutcha) house with no pucca house anywhere. |\n| **Age / occupation / education** | No specific limits | Anyone qualifies. |\n| **Other conditions** | None beyond not owning a pucca house | N/A |\n\n**What you’ll get:**  \n- Financial assistance to build a *pucca* house that includes a toilet, LPG connection and electricity.  \n- The scheme covers the costs for construction and basic amenities.\n\n**How to apply:**  \n1. **Be identified first** – PMAYG uses the Awaas+ survey to identify eligible families. If you’re not already listed, the survey will come to your village.  \n2. **Apply through your Gram Panchayat** – they’ll guide you on the forms and documents.  \n3. **Alternatively, use the online portal** – log in at the official PMAYG website and fill out the application once your name appears on the list.\n\n**Tip:**  \n- Keep your SECC and BPL documents handy; the Gram Panchayat will need them for verification.  \n- Check local dates for the Awaas+ survey so you can be ready when the survey team visits.\n\nSo, in short: you meet all the listed criteria, and you’re eligible for PMAY‑Gramin. Go ahead and start the application process through your local Gram Panchayat or the PMAYG portal. Good luck building your new pucca house!",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "PMAY-Gramin (PMAYG)",
+      "PM Ujjwala Yojana"
+    ],
+    "latency_ms": 9294,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E44",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "We are a BPL family in a village but already own a two-storey pucca house inherited from my father. Am I eligible for PMAY-Gramin (PMAYG)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo – you’re not eligible for PMAY‑Gramin (or the main PMAY‑2.0 scheme) because you already own a pucca house.\n\n---\n\n### Why that’s the case\n\n| Scheme | Key eligibility points from the official information | How they apply to your situation |\n|--------|------------------------------------------------------|----------------------------------|\n| **PMAY‑Gramin (PMAYG)** | • BPL or SECC‑identified household <br>• Rural household <br>• **Household must NOT already own a pucca house** | You own a two‑storey pucca house (inherited), so the “not already own” condition is not met. |\n| **PMAY‑2.0 (main PMAY)** | • EWS/LIG/MIG income group <br>• Urban *or* rural location <br>• **Applicant or family must not own a pucca house anywhere in India** | Again, ownership of a pucca house disqualifies you from this scheme as well. |\n\nBecause both schemes share the same ownership restriction, neither would be available to you even though you’re a BPL household.\n\n---\n\n### What to do next\n\n- **Check other local schemes:** Some state or local governments run rural housing or renovation schemes that might apply to existing pucca houses (e.g., subsidies for adding amenities, structural improvements, or LPG connections).  \n- **Contact your Gram Panchayat:** They can direct you to any state‑level or local‑level programs that might benefit a BPL household already owning a house.  \n- **Re‑visit eligibility:** If you ever sell or transfer the house, you could become eligible again for PMAY‑Gramin or PMAY‑2.0.  \n\nIf you need help finding specific state schemes, let me know your state and I can look up what’s available!",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "PMAY-Gramin (PMAYG)",
+      "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)"
+    ],
+    "latency_ms": 12624,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E45",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "query_sent": "I live in a small city slum in a kutcha house; my family is BPL and has no pucca house. Am I eligible for PMAY-Gramin (PMAYG)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you’re not eligible for **PMAY‑Gramin** because that scheme is only for households living in *rural* areas.\n\n---\n\n## Why PMAY‑Gramin doesn’t apply\n\n| Eligibility factor | PMAY‑Gramin requirement | How it matches your situation |\n|--------------------|------------------------|--------------------------------|\n| **Location** | Rural areas only | You live in a small‑city slum, which is an *urban* setting. |\n| **House type** | Must not already own a pucca house | You don’t own one, so that part is fine. |\n| **Income status** | BPL / SECC‑identified households | You meet this part. |\n| **Other conditions** | None additional | — |\n\nBecause the *location* criterion is a strict “rural only” rule, households in city slums (even if they are BPL and live in kutcha houses) cannot apply for PMAY‑Gramin.\n\n---\n\n## What *might* suit you\n\n| Scheme | What it offers | Do you meet the key criteria? |\n|--------|----------------|-------------------------------|\n| **PMAY (Pradhan Mantri Awas Yojana) 2.0** | Subsidised home‑loan interest rates for EWS/LIG/MIG households | • **Location:** Urban + Rural – you’re in an urban area, so that’s ok.  <br>• **Pucca house:** You don’t own one, which is required.  <br>• **Income:** You are BPL, which falls under the EWS/LIG/MIG slabs.  <br>• **Age/occupation/education:** No restrictions. |\n| **Swachh Bharat Mission‑Gramin** | Rs 12,000 incentive to build a household toilet | • **Location:** Rural only – so you’re not eligible (your slum is urban).  <br>• If you had a rural address, you would be eligible because you’re BPL and have no toilet. |\n\n---\n\n### What to do next\n\n1. **Check your eligibility for PMAY 2.0** – You can apply for a subsidised home‑loan through the PMAY portal or a participating bank.  \n2. **Verify your BPL/SECC status** – Make sure you have the latest card/letter for the subsidy to be considered.  \n3. **Apply** – Log in to the PMAY official portal, fill out the form, and submit the required documents (income proof, identity proof, etc.).  \n\nIf you’re looking for help with building a toilet or other basic amenities, you might want to explore the Swachh Bharat Mission‑Gramin if you ever have a rural address. But for now, **PMAY‑Gramin is not an option for you** due to the location requirement.",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "PMAY-Gramin (PMAYG)",
+      "Swachh Bharat Mission - Gramin (Toilet Incentive)"
+    ],
+    "latency_ms": 14438,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E46",
+    "scheme": "PM Vishwakarma",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 40 and a carpenter working from my own small workshop. I want the toolkit and the training. Am I eligible for PM Vishwakarma? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "Yes, you can apply for **Pradhan Mantri Vishwakarma** – it is the scheme that best fits what you’re looking for.\n\n| What you need | Scheme feature | How the rules match you |\n|---------------|----------------|------------------------|\n| **Toolkit** | Toolkit incentive | The scheme is “provides toolkits” for artisans. |\n| **Skill training** | Skill‑training stipend | The scheme offers training for the 18 identified trades. |\n| **Age** | 18+ | You are 40, so you meet the age requirement. |\n| **Occupation** | Artisan/craftsperson in carpentry | Carpentry is one of the 18 specified trades. |\n| **Income** | No income limit | The scheme has no income restriction. |\n| **Location** | All states & UTs | You can apply from anywhere in India. |\n| **Education** | No requirement | You don’t need any particular educational qualification. |\n| **Other conditions** | Must be engaged in the specified trade | You run a small carpentry workshop – that qualifies. |\n\n**How to apply**\n\n1. Go to the PM Vishwakarma portal (https://pmvishwakarma.gov.in/) or visit your nearest Common Service Centre.  \n2. Register and upload proof that you are a carpentry artisan (e.g., business documents, a letter from a local trade association, etc.).  \n3. Once registered, you can claim the toolkit incentive and enroll in the skill‑training program.\n\n---\n\n### What about other schemes?\n\n* **Pradhan Mantri Kaushal Vikas Yojana (PMKVY)** – This is aimed at unemployed or school/college drop‑outs. Since you already have a workshop and are earning from it, PMKVY isn’t the right fit for you.\n\n* **PM Internship Scheme** – The age window is 21–24 and it’s meant for youth not in full‑time work or education, so it doesn’t apply either.\n\n**Bottom line:** The PM Vishwakarma scheme is the one that matches your age, occupation, and need for a toolkit and training. Good luck, and enjoy the support!",
+    "retrieved_sources": [
+      "PM Vishwakarma",
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "PM Internship Scheme"
+    ],
+    "latency_ms": 5002,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E47",
+    "scheme": "PM Vishwakarma",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 30 and work as a software engineer. I'd like the toolkit and collateral-free credit. Am I eligible for PM Vishwakarma? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you’re not eligible for the PM Vishwakarma scheme.\n\n---\n\n### Why that’s the case\n\n| Scheme | What you want | Eligibility requirement that matters |\n|--------|---------------|--------------------------------------|\n| **PM Vishwakarma** | Toolkit + collateral‑free credit (up to ₹3 lakh) | You must be an **artisan/craftsperson** in one of the 18 trades listed in the scheme (e.g., carpentry, blacksmithing, pottery, etc.). |\n\nYou’re a software engineer, which isn’t one of those artisan trades, so the scheme’s core condition isn’t met.  \n\n---\n\n### Are there any other schemes that match?\n\n- **PM SVANidhi** offers collateral‑free micro‑loans, but it’s only for **urban street vendors** and needs a vendor certificate.  \n- **PM‑Vidyalaxmi** provides collateral‑free education loans, not the toolkit or general credit you’re looking for.\n\nNone of the schemes listed above provide both a toolkit and credit for someone in the software industry.\n\n---\n\n### What you can do next\n\n1. **Check for state‑level artisan or craft programmes** – some states run their own skill‑training and credit schemes for craftsmen.  \n2. **Explore private or cooperative credit options** – banks or credit societies sometimes offer collateral‑free loans to professionals for equipment or business set‑up.  \n3. **Skill‑upgrade programmes** – if you’re interested in learning a craft, you could look into national skill‑development schemes that offer training for free or at subsidised rates.\n\nLet me know if you’d like help searching for state‑specific options or other kinds of support!",
+    "retrieved_sources": [
+      "PM SVANidhi",
+      "PM Vishwakarma",
+      "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)"
+    ],
+    "latency_ms": 8814,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E48",
+    "scheme": "PM Vishwakarma",
+    "ground_truth": "Ineligible",
+    "category": "boundary",
+    "query_sent": "I am 17 and learning pottery from my father. Can I register for PM Vishwakarma? Am I eligible for PM Vishwakarma? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo – you can’t register for PM Vishwakarma right now because you’re only 17 years old. The scheme requires a minimum age of 18 years, and you must be an *artisan/craftsperson* already working in one of the 18 identified trades (pottery is included). Since you are still learning and not yet engaged as a professional potter, you don’t meet the eligibility conditions.\n\n**Why it doesn’t fit:**\n\n| PM Vishwakarma requirement | Your situation |\n|----------------------------|----------------|\n| **Age** ≥ 18 years | You’re 17 |\n| **Occupation**: Artisan/craftsperson in one of the 18 trades (e.g., pottery) | You’re learning pottery, not yet a practicing artisan |\n| **Other conditions**: Must be actively engaged in the trade | Not yet established as a working potter |\n\nWhen you turn 18 and start working as a potter (or any other eligible trade), you can apply through the PM Vishwakarma portal or at a Common Service Centre with proof of your trade.\n\nIf you’re looking for support now, you might explore other schemes that target young learners or students, but those aren’t listed in the information we have here.",
+    "retrieved_sources": [
+      "PM Vishwakarma",
+      "Pradhan Mantri Shram Yogi Maandhan",
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)"
+    ],
+    "latency_ms": 7694,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E49",
+    "scheme": "Mission Vatsalya",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "My 12-year-old nephew lost both parents and now has nobody to look after him. Am I eligible for Mission Vatsalya? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – your nephew is eligible for Mission Vatsalya.**  \n\nHere’s why, step by step:\n\n| What the scheme looks for | Mission Vatsalya requirement | How your nephew matches |\n|----------------------------|------------------------------|--------------------------|\n| **Age** | 0 – 18 years | 12 years old – within the range |\n| **Status** | Children in “difficult circumstances” (includes orphans) | He’s an orphan, so he fits this category |\n| **Income or occupation** | No specific limit / N/A | Not relevant for an orphaned child |\n| **Where it runs** | All states and Union Territories | Applies everywhere in India |\n\n**How to apply**\n\n1. **Find the nearest State Child Protection Society** – they are the main contact points for Mission Vatsalya.  \n2. **Go to your District Child Protection Unit (DCPU)** – they handle the paperwork and can help you arrange care or foster support.  \n3. **Submit the required forms** – usually a simple application and a proof that the child is orphaned (death certificates of the parents).  \n4. **The government will decide** whether to provide institutional care, foster care, or other welfare services for your nephew.\n\n---\n\n### What about PM CARES for Children?\nPM CARES is only for children whose parents *died because of COVID‑19*. If your nephew’s parents died from COVID, you could also explore that scheme. Otherwise, Mission Vatsalya is the relevant program.\n\n**Bottom line:** Your 12‑year‑old nephew meets all the criteria for Mission Vatsalya, and you can start the application process through the child protection authorities in your state.",
+    "retrieved_sources": [
+      "Mission Vatsalya",
+      "PM CARES for Children",
+      "Pradhan Mantri Janjatiya Vikas Mission"
+    ],
+    "latency_ms": 12529,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E50",
+    "scheme": "Mission Vatsalya",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 25 and lost both my parents some years ago. Is there any support from Mission Vatsalya for me? Am I eligible for Mission Vatsalya? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo, you don’t meet the eligibility criteria for Mission Vatsalya. The scheme is only for children aged 0–18 years, and your age (25 years) is outside that window.\n\n---\n\n## Why the user isn’t eligible\n\n| Scheme | Age requirement | What it covers |\n|--------|-----------------|----------------|\n| **Mission Vatsalya** | 0 – 18 years (children) | Care, foster support, adoption, and welfare services for children in difficult circumstances (including orphans). |\n| **PM CARES for Children** | 0 – 18 years | Education, health insurance, and corpus for children orphaned by COVID‑19. |\n| **Mission Shakti** | All ages | Women safety and empowerment, not aimed at children. |\n\nThe eligibility section for Mission Vatsalya states explicitly:  \n> *“Applicable to children in difficult circumstances, orphans, or those in conflict with law.”*  \nBecause it is limited to **children (0‑18 years)**, adults, even if they are orphans, cannot benefit from this scheme.\n\n---\n\n## What you can do next\n\nThe information provided above does not list a scheme that specifically addresses support for adult orphans. If you’re looking for financial help, counseling, or other assistance for adults who have lost parents, you might want to:\n\n1. **Check with your state’s social welfare department** – many states have separate programs for elderly or orphan adults.  \n2. **Contact local NGOs or community organisations** that work with widowed or orphaned adults.  \n3. **Explore other central schemes** (e.g., pension schemes, disability benefits) that may be relevant to your situation—though these were not part of the context given.\n\nIf you need guidance on how to find such schemes, let me know and I can point you toward general resources.",
+    "retrieved_sources": [
+      "Mission Vatsalya",
+      "Mission Shakti",
+      "PM CARES for Children"
+    ],
+    "latency_ms": 8185,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E51",
+    "scheme": "Mission Vatsalya",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I am 16 and live with my parents. I just want to know if Mission Vatsalya gives me any help. Am I eligible for Mission Vatsalya? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Mission Vatsalya – Are you eligible?**\n\n| What you asked | What the scheme says | Result |\n|----------------|----------------------|--------|\n| **Age** | 0 – 18 years | ✔️ You’re 16, so the age is fine. |\n| **Living situation** | *“Applicable to children in difficult circumstances, orphans, or those in conflict with law.”* | ❌ Living with your parents (and not being an orphan or in legal trouble) does **not** meet this condition. |\n| **Income, education, occupation, location** | No limits or specific requirements – the main condition is the “difficult circumstances” clause. | ✔️ These are not barriers. |\n\n**Bottom line:**  \nYou meet the age requirement, but **Mission Vatsalya is specifically meant for children who are orphans, in conflict with law, or otherwise in difficult circumstances**. Since you live with your parents and aren’t in any of those categories, you would **not be eligible for the help under Mission Vatsalya**.\n\nIf you ever find yourself in a situation that fits the “difficult circumstances” description, you could then apply through your State Child Protection Society or District Child Protection Unit. Otherwise, you won’t receive benefits from this particular scheme.",
+    "retrieved_sources": [
+      "Mission Vatsalya",
+      "Mission Indradhanush (Universal Immunisation)",
+      "Mission Shakti"
+    ],
+    "latency_ms": 7785,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E52",
+    "scheme": "PM Ujjwala Yojana",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am a 28-year-old woman from a BPL household and cook on firewood. We have no LPG connection. Am I eligible for PM Ujjwala Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes, you are eligible for the PM Ujjwala Yojana.**  \nHere’s why, based on the criteria given:\n\n| Criterion | Scheme Requirement | Your Situation |\n|-----------|--------------------|----------------|\n| **Age** | 18 + years | You are 28 years old |\n| **Income / Household status** | BPL / low‑income household | You mentioned you’re from a BPL household |\n| **Gender** | Must be a woman | You are a woman |\n| **Existing LPG connection** | Must **not** already have one | You have no LPG connection |\n| **Occupation, education, location** | Any occupation, no education requirement, all states/UTs | You meet all of these (location not a restriction) |\n\nBecause all of the above conditions are satisfied, you qualify for the free LPG connection and the Rs. 300 per‑cylinder subsidy that PM Ujjwala Yojana offers.\n\n### How to apply\n1. **Find your nearest LPG distributor** – they handle the scheme applications.  \n2. **Prepare the required documents** –  \n   * A copy of your BPL or income certificate (sometimes a local Panchayat or Gram Panchayat letter suffices).  \n   * Your Aadhaar card.  \n3. **Submit the application** – give the distributor the documents and they will register you for a free LPG connection.  \n\nOnce you’re connected, you’ll receive a free cylinder and a Rs. 300 subsidy on every cylinder you purchase, which can help reduce your firewood usage and improve kitchen safety.\n\n---\n\n#### What about other schemes you saw?\n\n- **PM MVY (Maternity benefit)** – This is for pregnant or lactating women and gives money for the first child; it doesn’t help with cooking fuels.  \n- **PM JDY (Financial inclusion)** – Gives a zero‑balance bank account; useful but not related to cooking fuel.\n\nIf you’re interested in those for other reasons (e.g., if you’re pregnant, want a bank account), you can apply separately, but they won’t affect the Ujjwala eligibility.\n\n**Bottom line:** You meet all the stated conditions for PM Ujjwala Yojana and can apply right away to get a free LPG connection and the subsidy. Good luck!",
+    "retrieved_sources": [
+      "PM Ujjwala Yojana",
+      "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "latency_ms": 7225,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E53",
+    "scheme": "PM Ujjwala Yojana",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am a 35-year-old woman from a BPL family and we already have an LPG connection in my husband's name. Am I eligible for PM Ujjwala Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nBased on the information you gave and the official eligibility rules for **PM Ujjwala Yojana**, you would normally be eligible because:\n\n1. **Age** – You’re 35 years old, which is above the 18‑year minimum.  \n2. **Income status** – You are from a BPL household, which meets the income requirement.  \n3. **Gender** – The scheme is specifically for women.  \n4. **Existing LPG connection** – The rule says *“Applicant must be a woman … without an existing LPG connection.”* Since the LPG connection is registered in your husband’s name, you do **not** have a connection in your own name, so the rule is technically satisfied.\n\n**What you should check**  \nThe only caveat is how the scheme interprets “existing LPG connection.” In practice, many local officers treat the presence of an LPG connection in the household (even if it’s in a spouse’s name) as “already having LPG,” which would make you ineligible. The official text, however, does not mention the spouse’s name, so it is usually interpreted as your own connection.\n\n**Next steps**\n\n- **Confirm with your nearest LPG distributor**: Ask them whether a connection in a spouse’s name counts as an existing connection for the Ujjwala Yojana.\n- **Gather documents**: If you are deemed eligible, you’ll need your BPL (or income) certificate, Aadhaar, and any other proof that you do not hold an LPG connection in your own name.\n- **Apply**: Submit the application to the distributor and keep a copy for your records.\n\n**Other schemes**  \nThe other schemes listed (PM MVY and PM JDY) are unrelated to your current situation—they concern maternity benefits and bank account opening, respectively. They don’t impact your Ujjwala eligibility.\n\n**Bottom line**  \nYou appear to meet all the written criteria for PM Ujjwala Yojana, but you should verify locally whether a connection in your husband’s name disqualifies you. If it does, you’ll need to wait until the household is truly “connection‑free” before you can apply.",
+    "retrieved_sources": [
+      "PM Ujjwala Yojana",
+      "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "latency_ms": 15014,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E54",
+    "scheme": "PM Ujjwala Yojana",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am a 35-year-old man from a BPL household with no LPG connection. I want to apply in my name. Am I eligible for PM Ujjwala Yojana? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**PM Ujjwala Yojana – are you eligible?**  \nNo. The scheme is specifically for **women** from below‑poverty‑line (BPL) households who do not already have an LPG connection.  \nYour profile matches everything else (35 years old, BPL, no LPG), but because you are a man, the scheme’s “Applicant must be a woman” condition makes you ineligible.\n\nIf you want a free LPG connection for your household, you could look into applying on behalf of a woman family member who meets the criteria, or check if the program has a different option for men (none is listed in the provided information). If you’re looking for other types of support, the other schemes mentioned (PM KVY and PM JDY) cover skills training and bank accounts, not LPG connections.",
+    "retrieved_sources": [
+      "PM Ujjwala Yojana",
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "latency_ms": 10146,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E55",
+    "scheme": "PM Rahat Scheme",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I was injured in a road accident on the highway near Jaipur and need emergency treatment. Am I eligible for PM Rahat Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes – you are eligible for the PM Rahat Scheme**\n\n- **Who it’s for**: Any victim of a road accident on an Indian road.  \n- **What it gives**: Cash‑less medical treatment up to ₹1.5 lakh.  \n- **Where it works**: All states and union territories – Rajasthan (Jaipur) is included.  \n- **Age, income, occupation, education**: No limits or special conditions.  \n- **How to get it**: No application is required; the treatment is arranged automatically at a network hospital immediately after the accident.  \n\nSo, because you were injured in a road accident near Jaipur, you can go straight to a PM Rahat‑network hospital and receive free, cash‑less treatment under the scheme.  \n\nOther schemes mentioned (ADIP and Pradhan Mantri Suraksha Bima Yojana) are not intended for immediate emergency care – ADIP is for assistive devices after a disability is established, and the Bima Yojana is an insurance plan that pays after the fact, not a cash‑less treatment facility. Therefore, PM Rahat is the most relevant and applicable scheme for your situation.",
+    "retrieved_sources": [
+      "PM Rahat Scheme",
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "Pradhan Mantri Suraksha Bima Yojana"
+    ],
+    "latency_ms": 3327,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E56",
+    "scheme": "PM Rahat Scheme",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I broke my leg after falling down the stairs at home. Can PM Rahat pay for it? Am I eligible for PM Rahat Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nNo – the PM Rahat Scheme is for people who were injured in a *road accident*. Falling down the stairs at home does not meet that condition, so you would not be eligible for PM Rahat.\n\n---\n\n## Why PM Rahat is not a fit\n\n| What the scheme covers | Your situation |\n|------------------------|----------------|\n| Free, cashless medical treatment **only for victims of road accidents** (regardless of fault or insurance) | Accident at home (stairs) – not a road accident |\n| No need to apply – treatment is automatically provided at network hospitals | You would need a different scheme for home‑based injury |\n\n---\n\n## What you can look at next\n\n1. **Assistance to Disabled Persons Scheme (ADIP)**  \n   * **Eligibility:**  \n     * Must have a UDID card showing **40 % or more disability**.  \n     * Monthly income must be **≤ Rs. 30,000** (free devices for ≤ 22,500, 50 % subsidy for 22,501–30,000).  \n   * **What it offers:** Free assistive devices (wheelchairs, hearing aids, artificial limbs, etc.).  \n   * **Does it fit you?** If your broken leg has been assessed as giving you 40 % or more disability and you have the UDID card, you could apply. If you don’t have a UDID card or the disability assessment, this scheme won’t apply.\n\n2. **Rashtriya Vayoshri Yojana (RVY)** – for senior citizens (60 + years) from BPL households who have age‑related disabilities.  \n   * This does not apply unless you are a senior with a qualifying disability and meet the income/age criteria.\n\n---\n\n### Bottom line\n\n- **PM Rahat:** *Not applicable* – it is strictly for road‑accident victims.  \n- **ADIP:** *Possibly applicable* if you have a UDID card showing ≥ 40 % disability and your income is ≤ Rs. 30,000.  \n- **RVY:** Not applicable unless you are a senior (60+) with a qualifying age‑related disability from a BPL household.\n\nIf you don’t meet the ADIP requirements, you might need to look into other medical aid schemes or local health‑benefit programmes that cover injuries sustained at home. Feel free to let me know if you’d like help researching those!",
+    "retrieved_sources": [
+      "PM Rahat Scheme",
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "Rashtriya Vayoshri Yojana (RVY)"
+    ],
+    "latency_ms": 12751,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E57",
+    "scheme": "PM Rahat Scheme",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I was injured and the doctor says I need treatment. Does PM Rahat cover me? Am I eligible for PM Rahat Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nPM Rahat will cover you *only if your injury happened in a road accident*. If it was a different kind of injury, the scheme does not apply.\n\n---\n\n### Why PM Rahat works for road‑accident victims\n\n| What you need to have | PM Rahat rule |\n|-----------------------|---------------|\n| **Injury from a road accident on Indian roads** | ✔️ All such victims, no matter who was at fault or whether you have insurance, get free cashless treatment. |\n| **Age, occupation, income, education, location** | No limits. Anyone in any state or union territory is covered. |\n| **Application** | No separate application. If you go to a network hospital right after the accident, the treatment will be provided automatically. |\n\n**If your injury was not caused by a road accident** (e.g., a workplace injury, a fall, or any other incident), the PM Rahat scheme does **not** cover you. In that case, you would need to look at other schemes or private insurance.\n\n---\n\n### What to do if the injury isn’t a road‑accident\n\n1. **Check your disability status** – if you have a disability card (UDID) showing 40 % or more, you may qualify for the *Assistance to Disabled Persons (ADIP)* scheme, which gives free assistive devices or a subsidy for such items.  \n2. **Check your income** – if you are below the poverty line, you might be eligible for *Rashtriya Arogya Nidhi*, which offers a one‑time financial help for treatment in government hospitals.  \n\nIf neither of those matches your situation, the information above is all the schemes we have to share that could help with treatment costs.\n\n---\n\n### Bottom line\n\n- **Yes, you are eligible for PM Rahat **if and only if** the injury was from a road accident on an Indian road.  \n- If it wasn’t a road accident, PM Rahat does **not** cover you. Look into ADIP or Rashtriya Arogya Nidhi based on your disability and income status.  \n\nFeel free to let us know more details (e.g., how the injury happened, if you have a disability card, or your income level) so we can give more precise guidance.",
+    "retrieved_sources": [
+      "PM Rahat Scheme",
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "Rashtriya Arogya Nidhi"
+    ],
+    "latency_ms": 9625,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E58",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 32 and have a 55% locomotor disability with a valid disability certificate. I want a business loan. Am I eligible for National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYes – you can apply for the **NHFDC Loan Scheme**. It is designed exactly for people like you who have a valid disability certificate (40 % or more) and want to start a business.  \n\n---\n\n### Why the NHFDC scheme fits your situation  \n\n| Criterion | Scheme requirement | Your situation |\n|-----------|--------------------|----------------|\n| **Age** | 18 + | You’re 32 ✔️ |\n| **Disability** | Valid certificate with 40 % or more | You have a 55 % certificate ✔️ |\n| **Purpose** | Self‑employment venture, skill development, or higher education | You want a business loan ✔️ |\n| **Income** | Varies by income slab – higher concession for lower income | The scheme allows different income brackets. As long as you’re within the prescribed slab, you qualify. |\n| **Application channel** | State Channelizing Agencies (SCAs) | You can apply through the SCA in your state with your certificate and a business plan. |\n\n### How to apply\n\n1. **Gather documents**  \n   * Valid disability certificate (55 %).  \n   * Proof of identity & address.  \n   * Business/entrepreneurial plan (project report).  \n   * Income proof (if required for your slab).\n\n2. **Find your State Channelizing Agency (SCA)**  \n   Each state has an appointed SCA that handles NHFDC applications. Search online or ask at your local disability welfare office.\n\n3. **Submit the application**  \n   * Fill out the application form (available from the SCA).  \n   * Attach the documents.  \n   * The SCA will guide you through the approval and loan disbursement process.\n\n### What to expect\n\n* **Loan amount**: Up to ₹25 lakh (depending on your business plan).  \n* **Interest rate**: Concessional (typically 4‑8 % per annum).  \n* **Repayment period**: Usually 5–10 years, depending on the loan size and purpose.  \n\n---\n\n### Other schemes mentioned in the context\n\n* **ADIP** – gives free assistive devices (not a loan).  \n* **Stand‑Up India** – focused on women & SC/ST entrepreneurs and greenfield enterprises; it’s not tailored for disability‑based borrowers and would still require a valid disability certificate to qualify for a separate disability‑focused loan (not covered in the provided information).\n\nSo, based on the information you shared and the scheme details above, the **NHFDC Loan Scheme** is the right fit for your business loan needs. If you’re unsure about your income slab or need help preparing your business plan, the SCA is the place to start. Good luck with your venture!",
+    "retrieved_sources": [
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "Stand-Up India Scheme",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme"
+    ],
+    "latency_ms": 12945,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E59",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 30 and have a 30% hearing impairment with a certificate. I want a business loan. Am I eligible for National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer**\n\n- **NHFDC Loan Scheme:** You are **not eligible** because the scheme requires a *disability certificate of 40 % or more*. Your certificate shows a 30 % hearing impairment, which falls below that threshold.\n\n- **Other schemes you could look at for a business loan** (if you meet their conditions):\n  * **Pradhan Mantri Mudra Yojana (PM Murda):**  Loans up to ₹20 lakh for any small‑business owner, no special disability requirement.  \n  * **Stand‑Up India Scheme:**  Loans between ₹10 lakh and ₹1 crore for new (greenfield) enterprises, but the scheme is specifically for **women or SC/ST entrepreneurs**.  If you belong to one of those categories, you could apply; otherwise it doesn’t apply to you.\n\n---\n\n### Why NHFDC is not an option\n\n| Requirement | NHFDC Scheme | Your Situation |\n|-------------|--------------|----------------|\n| **Disability certification** | Must be **40 % or higher** | 30 % hearing impairment |\n| **Age** | 18 + | 30 (eligible) |\n| **Income** | Varies, but no fixed cut‑off | Not relevant – the disability requirement is stricter |\n| **Other** | Any occupation, all states | You satisfy these, but the disability cut‑off is the deciding factor |\n\nBecause the disability certificate requirement is the *only* absolute condition in the eligibility list, a 30 % certificate does **not** meet it. The scheme explicitly states “Must hold a valid disability certificate of **40% or more**.”\n\n---\n\n### What you can do next\n\n1. **Verify if you qualify for other schemes**  \n   - *PM Mudra:* Check the loan amount you need and submit a business plan to a bank, NBFC, or MFI.  \n   - *Stand‑Up India:* Only applicable if you are a woman or belong to SC/ST. If not, skip this scheme.\n\n2. **Look for other disability‑friendly loan programs**  \n   (Not listed in the provided context, so you’d need to check the latest government resources.)\n\n3. **Use your existing 30 % certificate for other benefits**  \n   While it may not qualify for NHFDC, it may still entitle you to certain subsidies, scholarships, or employment schemes that do not have the 40 % threshold.\n\nIf you have any more questions about the eligibility or how to apply for PM Mudra or other schemes, feel free to ask!",
+    "retrieved_sources": [
+      "Stand-Up India Scheme",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Pradhan Mantri Mudra Yojana"
+    ],
+    "latency_ms": 9571,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E60",
+    "scheme": "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+    "ground_truth": "Insufficient Information",
+    "category": "insufficient_information",
+    "query_sent": "I have a disability and want a concessional loan to start a shop. Am I eligible for National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Short answer:**  \nYes – you can apply for the **NHFDC Loan Scheme** for your shop, provided you meet the eligibility points listed below.\n\n---\n\n### Why the NHFDC scheme fits your situation\n\n| Eligibility factor | What the scheme says | Does it match your situation? |\n|--------------------|----------------------|------------------------------|\n| **Age** | 18 + years | Most adults are eligible. |\n| **Disability** | Must hold a valid disability certificate of **40 % or more** | You mentioned you have a disability, so if you have a certificate of ≥ 40 % you qualify. |\n| **Income** | Varies by income slab; concession is higher for lower‑income applicants | The scheme is designed to help people of all income levels – you can still apply even if your monthly income is above Rs. 30 000. |\n| **Occupation** | Any | Starting a shop (self‑employment) fits perfectly. |\n| **Location** | All states and UTs | Wherever you are, the scheme is available. |\n| **Education** | No requirement for the loan (academic enrollment only needed if you’re taking an education loan) | You don’t need any specific qualification. |\n| **Other conditions** | No extra conditions listed beyond the disability certificate | – |\n\n### What you’ll need to apply\n\n1. **Valid disability certificate** (40 % or higher).  \n2. **Business plan** for the shop you want to open.  \n3. **Application through your State Channelizing Agency (SCA)** – they will guide you on forms and required documents.  \n4. The loan can go up to **Rs. 25 lakh** with concessional interest rates (around **4‑8 %**, depending on the loan amount and your income slab).\n\n### Quick steps\n\n1. **Collect** your disability certificate and any income documents you may want to include.  \n2. **Prepare** a simple business plan (what you’ll sell, expected costs, how you’ll repay, etc.).  \n3. **Visit** or contact your nearest State Channelizing Agency.  \n4. **Submit** the application and wait for the SCA to process it.\n\n---\n\n### Bottom line\n\nBecause the NHFDC Loan Scheme is specifically for people with a ≥ 40 % disability who want to start or grow a self‑employment venture, you are eligible—provided you have the required certificate and a business plan. The scheme will offer you a low‑interest loan (up to Rs. 25 lakh) that can help you launch your shop.\n\nIf you have any other eligibility questions (e.g., about your specific income level or paperwork), you can discuss those with the SCA when you apply. Good luck with your shop!",
+    "retrieved_sources": [
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "Stand-Up India Scheme",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme"
+    ],
+    "latency_ms": 10897,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E61",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "ground_truth": "Eligible",
+    "category": "clearly_eligible",
+    "query_sent": "I am 29, unemployed, living in a slum in an Indian city for 10 years in a BPL household. Am I eligible for Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Yes, you are eligible for the Deendayal Antyodaya Yojana – National Urban Livelihoods Mission (DAY‑NULM).**  \n\nHere’s why:\n\n| Eligibility requirement | How it matches your situation |\n|--------------------------|--------------------------------|\n| **Age 18+** | You are 29 years old. |\n| **Urban poor / below‑poverty‑line household** | You live in a slum in a city and are in a BPL household. |\n| **Unemployed or informally employed** | You said you’re unemployed. |\n| **Urban resident** | You reside in an urban area. |\n| **No education requirement** | Not needed. |\n| **Resident of the urban local body area for a minimum period** | You’ve lived there for 10 years – that satisfies the “minimum period” (the exact number isn’t specified in the snippet, but 10 years comfortably exceeds any typical requirement). |\n\n### What DAY‑NULM offers you\n\n- **Skill training** to help you learn a trade or improve an existing skill.  \n- **Self‑employment loans** up to ₹2 lakhs for an individual or ₹10 lakhs for a group, with an interest subsidy.  \n- Support for activities such as street vending, small shops, or other informal urban enterprises.\n\n### How to apply\n\n1. **Visit your nearest Urban Local Body (ULB)** or City Livelihood Centre.  \n2. Bring proof of urban residency (e.g., ration card, BPL card, or a municipal document).  \n3. Complete the application form and submit any required documents.\n\n### Quick recap\n\n- **Scheme:** DAY‑NULM (Deendayal Antyodaya Yojana – National Urban Livelihoods Mission).  \n- **You qualify** because you meet all listed criteria.  \n- **Next step:** Go to the ULB or city livelihood centre and apply.\n\nIf you’re also interested in rural schemes like DDU‑GKY or Lakhpati Didi, those are meant for rural residents, so they wouldn’t apply to your current situation.\n\nGood luck—this program can give you the training and financial boost you need to start a self‑employment venture!",
+    "retrieved_sources": [
+      "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)"
+    ],
+    "latency_ms": 11588,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E62",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E63",
+    "scheme": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+    "ground_truth": "Insufficient Information",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E64",
+    "scheme": "PM Kisan Maandhan Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E65",
+    "scheme": "PM Kisan Maandhan Yojana",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E66",
+    "scheme": "PM Internship Scheme",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E67",
+    "scheme": "PM Internship Scheme",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E68",
+    "scheme": "PM Internship Scheme",
+    "ground_truth": "Ineligible",
+    "category": "ineligible_single_condition",
+    "query_sent": "I am 23 and unemployed with family income Rs 6 lakh, but my father is a government clerk. Am I eligible for PM Internship Scheme? Please explain why or why not based on the actual eligibility criteria.",
+    "raw_answer": "**Answer**\n\nYou’re **not eligible** for the PM Internship Scheme.\n\n**Why?**\n\n| Requirement of PM Internship Scheme | Your Situation | Result |\n|-------------------------------------|----------------|--------|\n| **Age 21‑24** | 23 | ✔️ |\n| **Family income ≤ ₹8 lakh** | ₹6 lakh | ✔️ |\n| **Not full‑time employed or in full‑time education** | You’re unemployed (not full‑time employed) and not in full‑time education | ✔️ |\n| **No government job in the family** | Your father is a government clerk | ❌ |\n\nThe scheme explicitly states that it is **not available to families with a government employee**. Since your father is a government clerk, this condition makes you ineligible.\n\n---\n\n### Are there any other schemes that could help you?\n\n- **PMAY (Pradhan Mantri Awas Yojana)** – This is a housing loan scheme, not a job‑placement program, so it doesn’t address your need for employment.\n- **PMEGP (Pradhan Mantri Employment Generation Programme)** – This is aimed at entrepreneurs setting up micro‑enterprises. It requires you to be an entrepreneur (i.e., running or planning to run a business). If you’re willing to start a small venture, this could be an option.\n\nIf your goal is to get a structured internship or a job, you may need to look at other government or private sector internship schemes that don’t have the “no government job in family” restriction. Feel free to let me know if you’d like help exploring those options!",
+    "retrieved_sources": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "Pradhan Mantri Employment Generation Programme (PMEGP)",
+      "PM Internship Scheme"
+    ],
+    "latency_ms": 1377,
+    "predicted_eligibility": null,
+    "prediction_correct": null,
+    "scorer_notes": ""
+  },
+  {
+    "id": "E69",
+    "scheme": "PM Internship Scheme",
+    "ground_truth": "Insufficient Information",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E70",
+    "scheme": "e-Shram Card",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E71",
+    "scheme": "e-Shram Card",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E72",
+    "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E73",
+    "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E74",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E75",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E76",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "ground_truth": "Insufficient Information",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E77",
+    "scheme": "Indira Gandhi National Widow Pension Scheme",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E78",
+    "scheme": "Indira Gandhi National Widow Pension Scheme",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E79",
+    "scheme": "Indira Gandhi National Disability Pension Scheme",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E80",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E81",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E82",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E83",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "ground_truth": "Insufficient Information",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E84",
+    "scheme": "Gruha Lakshmi (Karnataka)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E85",
+    "scheme": "Gruha Lakshmi (Karnataka)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E86",
+    "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E87",
+    "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E88",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E89",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E90",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E91",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E92",
+    "scheme": "Sukanya Samriddhi Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E93",
+    "scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E94",
+    "scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E95",
+    "scheme": "Pradhan Mantri Mudra Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E96",
+    "scheme": "Pradhan Mantri Mudra Yojana",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E97",
+    "scheme": "Janani Suraksha Yojana (JSY)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E98",
+    "scheme": "Janani Suraksha Yojana (JSY)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E99",
+    "scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E100",
+    "scheme": "Kasturba Gandhi Balika Vidyalaya",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E101",
+    "scheme": "Eklavya Model Residential Schools",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E102",
+    "scheme": "Eklavya Model Residential Schools",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E103",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E104",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E105",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "ground_truth": "Insufficient Information",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E106",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E107",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E108",
+    "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E109",
+    "scheme": "PM-KUSUM",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E110",
+    "scheme": "PM-KUSUM",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E111",
+    "scheme": "Senior Citizens Savings Scheme",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E112",
+    "scheme": "Senior Citizens Savings Scheme",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E113",
+    "scheme": "Senior Citizens Savings Scheme",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E114",
+    "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E115",
+    "scheme": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E116",
+    "scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E117",
+    "scheme": "Pradhan Mantri Suraksha Bima Yojana",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E118",
+    "scheme": "Startup India Seed Fund Scheme",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E119",
+    "scheme": "Startup India Seed Fund Scheme",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E120",
+    "scheme": "Startup India Seed Fund Scheme",
+    "ground_truth": "Insufficient Information",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E121",
+    "scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E122",
+    "scheme": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E123",
+    "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E124",
+    "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E125",
+    "scheme": "Lakshmir Bhandar (West Bengal)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E126",
+    "scheme": "Lakshmir Bhandar (West Bengal)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E127",
+    "scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+    "ground_truth": "Eligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E128",
+    "scheme": "PM Internship Scheme",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E129",
+    "scheme": "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E130",
+    "scheme": "Kanyashree Prakalpa (West Bengal)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E131",
+    "scheme": "PMAY-Gramin (PMAYG)",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E132",
+    "scheme": "Post Matric Scholarship for SC Students",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  },
+  {
+    "id": "E133",
+    "scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "ground_truth": "Ineligible",
+    "error": "HTTP 500: {\"error\":\"Query failed\",\"details\":\"429 {\\\"error\\\":{\\\"message\\\":\\\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m1vw9nzkeer9zx8q15vwhczp` service tier `on_demand` on tokens p"
+  }
+]

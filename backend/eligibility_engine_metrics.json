@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-10-22T16:59:44.937Z",
+  "engine": "deterministic rule engine (no LLM in the loop)",
+  "test_cases": 133,
+  "evaluated": 133,
+  "missing_schemes": [],
+  "metrics": {
+    "labeled_cases": 133,
+    "accuracy": 86.47,
+    "confusion_matrix_actual_rows_predicted_cols": {
+      "Eligible": {
+        "Eligible": 39,
+        "Ineligible": 1,
+        "Insufficient Information": 12
+      },
+      "Ineligible": {
+        "Eligible": 0,
+        "Ineligible": 59,
+        "Insufficient Information": 5
+      },
+      "Insufficient Information": {
+        "Eligible": 0,
+        "Ineligible": 0,
+        "Insufficient Information": 17
+      }
+    },
+    "per_class": {
+      "Eligible": {
+        "precision": 100,
+        "recall": 75,
+        "f1": 85.71,
+        "support": 52
+      },
+      "Ineligible": {
+        "precision": 98.33,
+        "recall": 92.19,
+        "f1": 95.16,
+        "support": 64
+      },
+      "Insufficient Information": {
+        "precision": 50,
+        "recall": 100,
+        "f1": 66.67,
+        "support": 17
+      }
+    },
+    "macro_precision": 82.78,
+    "macro_recall": 89.06,
+    "macro_f1": 82.51
+  },
+  "per_category": {
+    "clearly_eligible": {
+      "cases": 48,
+      "correct": 36,
+      "accuracy": 75
+    },
+    "ineligible_single_condition": {
+      "cases": 48,
+      "correct": 43,
+      "accuracy": 89.58
+    },
+    "boundary": {
+      "cases": 13,
+      "correct": 12,
+      "accuracy": 92.31
+    },
+    "insufficient_information": {
+      "cases": 17,
+      "correct": 17,
+      "accuracy": 100
+    },
+    "ineligible_multiple_conditions": {
+      "cases": 7,
+      "correct": 7,
+      "accuracy": 100
+    }
+  },
+  "errors_by_type": {
+    "falseIneligible": 1,
+    "falseEligible": 0,
+    "overCautious": 12,
+    "missedUncertainty": 0
+  }
+}

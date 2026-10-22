@@ -1,31 +1,64 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CheckCircle2, Bot, FileCheck, ChevronDown, Mic, Search,
-  CheckSquare, Package, User
+  CheckSquare, Package, User, Sprout, GraduationCap, HeartPulse, ShieldCheck,
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import { useLanguage } from '../context/LanguageContext';
-
-function PlaceholderAvatar() {
-  return (
-    <div className="w-12 h-12 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center shrink-0 text-on-surface-variant text-[10px] font-semibold">
-      IMG
-    </div>
-  );
-}
+import { api } from '../lib/api';
 
 export default function Home() {
   const { t } = useLanguage();
+  const [stats, setStats] = useState({ schemes: 112, reviewed: 49, embedded: 112 });
 
-  const testimonials = [
-    { name: '[Citizen Name]', role: '[Occupation, Location]', quote: t('testimonials_subtitle'), scheme: '[Scheme Name]', benefit: '[Benefit Amount]' },
-    { name: '[Citizen Name]', role: '[Occupation, Location]', quote: t('testimonials_subtitle'), scheme: '[Scheme Name]', benefit: '[Benefit Amount]' },
-    { name: '[Citizen Name]', role: '[Occupation, Location]', quote: t('testimonials_subtitle'), scheme: '[Scheme Name]', benefit: '[Benefit Amount]' },
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .health()
+      .then((data) => {
+        if (cancelled) return;
+        setStats({
+          schemes: data.knowledge_base?.schemes ?? 112,
+          reviewed: data.knowledge_base?.rules_reviewed ?? 49,
+          embedded: data.knowledge_base?.embedded_documents ?? 112,
+        });
+      })
+      .catch(() => {
+        /* keep the documented defaults when the API is offline */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const examples = [
+    {
+      icon: Sprout,
+      person: t('example1_person'),
+      text: t('example1_text'),
+      scheme: t('example1_scheme'),
+      benefit: t('example1_benefit'),
+    },
+    {
+      icon: GraduationCap,
+      person: t('example2_person'),
+      text: t('example2_text'),
+      scheme: t('example2_scheme'),
+      benefit: t('example2_benefit'),
+    },
+    {
+      icon: HeartPulse,
+      person: t('example3_person'),
+      text: t('example3_text'),
+      scheme: t('example3_scheme'),
+      benefit: t('example3_benefit'),
+    },
   ];
 
   return (
-    <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen">
+    <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen pb-16 md:pb-0">
       <SiteHeader active="home" />
 
       <main className="w-full pt-28 bg-surface">
@@ -41,7 +74,7 @@ export default function Home() {
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8 leading-normal">
                 {t('hero_subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-10">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-2">
                 <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container border border-primary transition-all" to="/eligibility">
                   <CheckCircle2 size={18} />
                   <span>{t('hero_cta_primary')}</span>
@@ -50,6 +83,21 @@ export default function Home() {
                   <Bot size={18} className="text-secondary" />
                   <span>{t('hero_cta_secondary')}</span>
                 </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mt-4">
+                {[
+                  { value: stats.schemes, label: t('stats_schemes'), icon: FileCheck },
+                  { value: stats.reviewed, label: t('stats_reviewed'), icon: ShieldCheck },
+                  { value: '3', label: t('stats_classes'), icon: CheckSquare },
+                ].map((stat) => (
+                  <div key={stat.label} className="flex items-center justify-center gap-2.5 rounded border border-outline-variant bg-surface-container-lowest px-3 py-2">
+                    <stat.icon size={16} className="text-secondary shrink-0" />
+                    <div className="text-left">
+                      <div className="font-headline-sm text-[16px] font-bold text-primary leading-tight">{stat.value}</div>
+                      <div className="font-label-sm text-[10px] text-on-surface-variant leading-tight">{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -150,22 +198,22 @@ export default function Home() {
                       <div className="flex flex-col gap-1">
                         <label className="font-label-sm text-label-sm font-bold text-primary">{t('passbook_state_label')}</label>
                         <div className="flex items-center justify-between px-3 py-2 rounded border border-outline-variant bg-surface-container-low font-body-sm text-body-sm text-primary font-medium">
-                          <span>[State]</span>
+                          <span>{t('passbook_state_value')}</span>
                           <ChevronDown size={18} className="text-outline" />
                         </div>
                       </div>
                       <div className="flex flex-col gap-1">
                         <label className="font-label-sm text-label-sm font-bold text-primary">{t('passbook_category_label')}</label>
                         <div className="grid grid-cols-2 gap-2">
-                          <div className="px-2 py-1.5 rounded border border-outline-variant bg-surface-container-low text-center font-label-sm text-label-sm font-semibold text-primary">[Category]</div>
-                          <div className="px-2 py-1.5 rounded border border-secondary bg-secondary text-center font-label-sm text-label-sm font-semibold text-on-secondary">[Gender]</div>
+                          <div className="px-2 py-1.5 rounded border border-outline-variant bg-surface-container-low text-center font-label-sm text-label-sm font-semibold text-primary">{t('passbook_category_value')}</div>
+                          <div className="px-2 py-1.5 rounded border border-secondary bg-secondary text-center font-label-sm text-label-sm font-semibold text-on-secondary">{t('passbook_gender_value')}</div>
                         </div>
                       </div>
                       <div className="flex flex-col gap-1">
                         <label className="font-label-sm text-label-sm font-bold text-primary">{t('passbook_income_label')}</label>
                         <div className="px-3 py-2 rounded border border-outline-variant bg-surface-container-low flex items-center justify-between">
-                          <span className="font-body-sm text-body-sm font-semibold text-primary">[Amount]</span>
-                          <span className="font-label-sm text-[11px] px-1.5 py-0.5 rounded border border-secondary text-secondary bg-white font-bold">[Threshold Tag]</span>
+                          <span className="font-body-sm text-body-sm font-semibold text-primary">{t('passbook_income_value')}</span>
+                          <span className="font-label-sm text-[11px] px-1.5 py-0.5 rounded border border-secondary text-secondary bg-white font-bold">{t('passbook_tag_value')}</span>
                         </div>
                       </div>
                     </div>
@@ -225,34 +273,40 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col gap-8">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-outline-variant">
                 <div className="flex flex-col gap-1">
-                  <h2 className="font-headline-xl text-headline-xl text-primary font-bold">{t('testimonials_title')}</h2>
-                  <p className="font-body-md text-body-md text-on-surface-variant">
-                    {t('testimonials_subtitle')}
+                  <h2 className="font-headline-xl text-headline-xl text-primary font-bold">{t('examples_title')}</h2>
+                  <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                    {t('examples_subtitle')}
                   </p>
                 </div>
+                <Link to="/chat" className="inline-flex items-center gap-1.5 font-label-md text-label-md font-semibold text-secondary hover:underline shrink-0">
+                  <Bot size={16} />
+                  <span>{t('demo_continue')}</span>
+                </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {testimonials.map((tItem, i) => (
-                  <div key={i} className="flex flex-col justify-between p-5 rounded border border-outline-variant bg-surface-container-lowest">
+                {examples.map((example) => (
+                  <div key={example.person} className="flex flex-col justify-between p-5 rounded border border-outline-variant bg-surface-container-lowest">
                     <div className="flex flex-col gap-3">
                       <div className="flex items-center gap-3">
-                        <PlaceholderAvatar />
-                        <div>
-                          <span className="font-headline-sm text-[16px] text-primary font-bold block leading-tight">{tItem.name}</span>
-                          <span className="font-label-sm text-label-sm text-on-surface-variant block">{tItem.role}</span>
+                        <div className="w-10 h-10 rounded bg-secondary-container border border-outline-variant flex items-center justify-center shrink-0">
+                          <example.icon size={19} className="text-secondary" />
                         </div>
+                        <span className="font-headline-sm text-[16px] text-primary font-bold leading-tight">{example.person}</span>
                       </div>
                       <p className="font-body-sm text-body-sm text-on-surface leading-normal border-y border-dashed border-outline-variant py-3 my-1">
-                        "{tItem.quote}"
+                        {example.text}
                       </p>
                     </div>
-                    <div className="pt-2 flex items-center justify-between text-label-sm">
-                      <span className="border border-outline-variant bg-surface-container-low px-2 py-0.5 rounded font-medium text-primary">{tItem.scheme}</span>
-                      <span className="font-bold text-secondary">{tItem.benefit}</span>
+                    <div className="pt-2 flex items-center justify-between gap-2 text-label-sm">
+                      <span className="border border-outline-variant bg-surface-container-low px-2 py-0.5 rounded font-medium text-primary">{example.scheme}</span>
+                      <span className="font-bold text-secondary whitespace-nowrap">{example.benefit}</span>
                     </div>
                   </div>
                 ))}
               </div>
+              <p className="font-label-sm text-label-sm text-on-surface-variant border-l-2 border-secondary pl-3">
+                {t('examples_note')}
+              </p>
             </div>
           </section>
 
@@ -282,7 +336,7 @@ export default function Home() {
               <CheckCircle2 size={20} className="text-secondary" />
               <div className="flex flex-col">
                 <span className="font-label-md text-label-md font-bold text-primary leading-tight">{t('mobile_cta_title')}</span>
-                <span className="font-label-sm text-label-sm text-on-surface-variant">{t('mobile_cta_subtitle')}</span>
+                <span className="font-label-sm text-label-sm text-on-surface-variant">{stats.schemes} {t('mobile_cta_subtitle')}</span>
               </div>
             </div>
             <Link className="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-semibold" to="/eligibility">
