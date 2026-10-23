@@ -3,13 +3,71 @@
  * container bootstrap. Keeping the document/metadata shape here means a fresh
  * deployment and a local re-index cannot drift apart.
  */
+const fs = require('fs');
 const { ChromaClient } = require('chromadb');
+const { DefaultEmbeddingFunction } = require('@chroma-core/default-embed');
 const config = require('./config');
 
 const BATCH = 100;
 
 function createChromaClient() {
   return new ChromaClient(config.chroma);
+}
+
+let precomputedEmbeddings;
+let embedder;
+
+/**
+ * Load the committed document vectors once. The file is optional so a custom
+ * seed file still works (the embedding function is used as a fallback).
+ */
+function loadPrecomputedEmbeddings() {
+  if (precomputedEmbeddings !== undefined) return precomputedEmbeddings;
+
+  try {
+    const raw = JSON.parse(fs.readFileSync(config.precomputedEmbeddingsFile, 'utf8'));
+    const entries = raw.embeddings && typeof raw.embeddings === 'object' ? raw.embeddings : raw;
+    precomputedEmbeddings = new Map(
+      Object.entries(entries).filter(([, vector]) => Array.isArray(vector) && vector.length > 0),
+    );
+    if (raw.model && raw.model !== config.embeddingModel) {
+      console.warn(
+        `Precomputed embeddings use ${raw.model}, but EMBEDDING_MODEL is ${config.embeddingModel}; ignoring them`,
+      );
+      precomputedEmbeddings = new Map();
+    }
+  } catch (err) {
+    if (err.code !== 'ENOENT') {
+      console.warn(`Could not read precomputed embeddings (${err.message}); falling back to runtime embedding`);
+    }
+    precomputedEmbeddings = new Map();
+  }
+
+  return precomputedEmbeddings;
+}
+
+function getEmbedder() {
+  if (!embedder) {
+    embedder = new DefaultEmbeddingFunction({ modelName: config.embeddingModel });
+  }
+  return embedder;
+}
+
+async function embedChunk(chunk) {
+  const cached = loadPrecomputedEmbeddings();
+  const vectors = [];
+
+  for (const scheme of chunk) {
+    const vector = cached.get(scheme.scheme_name);
+    if (vector) {
+      vectors.push(vector);
+    } else {
+      const [generated] = await getEmbedder().generate([documentFor(scheme)]);
+      vectors.push(generated);
+    }
+  }
+
+  return vectors;
 }
 
 /** One searchable passage per scheme: name + geography + classification + prose. */
@@ -86,6 +144,7 @@ async function syncIndex({
       ids: chunk.map((scheme) => scheme._id.toString()),
       documents: chunk.map(documentFor),
       metadatas: chunk.map(metadataFor),
+      embeddings: await embedChunk(chunk),
     });
     done += chunk.length;
     onProgress?.(done, schemes.length);

@@ -1,0 +1,62 @@
+# syntax=docker/dockerfile:1
+
+# ---------------------------------------------------------------------------
+# Free-tier all-in-one image: API + local Chroma in the same container.
+#
+# Render's free web service does not support persistent disks, and Chroma >=1.0
+# does not provide built-in auth. Running Chroma on loopback inside the API
+# container avoids exposing an unauthenticated vector database to the internet.
+# The vector index is rebuilt from the precomputed embeddings on each cold
+# start; MongoDB Atlas remains the durable source of truth.
+# ---------------------------------------------------------------------------
+
+FROM chromadb/chroma:1.5.9 AS chroma
+
+# Chroma 1.5.x is built against Debian 13 (glibc 2.38+), so the API base image
+# must use trixie rather than bookworm.
+FROM node:22-trixie-slim AS runtime
+
+LABEL org.opencontainers.image.title="SchemeSaathi (all-in-one)" \
+      org.opencontainers.image.description="API and local Chroma for free-tier hosting"
+
+# The Chroma Rust binary needs libstdc++/libgcc; onnxruntime needs libgomp.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates libgomp1 libstdc++6 \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV NODE_ENV=production \
+    PORT=10000 \
+    CHROMA_URL=http://127.0.0.1:8000 \
+    CHROMA_COLLECTION=schemes \
+    HF_HOME=/home/node/.cache/huggingface \
+    ONNXRUNTIME_NODE_INSTALL_CUDA=skip
+
+WORKDIR /app/backend
+
+COPY backend/package.json backend/package-lock.json ./
+RUN npm ci --omit=dev \
+    && find /app/backend/node_modules/onnxruntime-node/bin/napi-v3 \
+         -mindepth 1 -maxdepth 1 -type d ! -name linux -exec rm -rf '{}' + \
+    && mkdir -p /app/backend/node_modules/@huggingface/transformers/.cache \
+    && npm cache clean --force
+
+COPY backend/ ./
+COPY data/ /app/data/
+COPY deploy/start-allinone.sh /app/start-allinone.sh
+COPY --from=chroma /usr/local/bin/chroma /usr/local/bin/chroma
+
+# Cache the query-embedding model in the image so the first request after a
+# cold start does not download ~90 MB from Hugging Face.
+RUN node scripts/warm-embeddings.js \
+    && chmod +x /usr/local/bin/chroma /app/start-allinone.sh \
+    && mkdir -p /data \
+    && chown -R node:node /data /app/start-allinone.sh /app/backend/node_modules/@huggingface/transformers/.cache
+
+USER node
+
+EXPOSE 10000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=180s --retries=3 \
+  CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||10000)+'/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+
+CMD ["/app/start-allinone.sh"]

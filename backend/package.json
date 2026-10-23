@@ -11,6 +11,8 @@
     "chroma": "chroma run --path ../chroma_db --port 8000",
     "migrate": "node migrate.js",
     "embed": "node embed-schemes.js",
+    "embeddings:build": "node scripts/build-embeddings.js",
+    "embeddings:warm": "node scripts/warm-embeddings.js",
     "rules": "node scripts/build-rules.js",
     "test": "node --test \"test/**/*.test.js\"",
     "smoke": "node scripts/smoke.js",

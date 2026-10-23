@@ -82,6 +82,13 @@ const config = {
   // set, retrieval skips the dense client entirely and uses the BM25 fallback.
   chromaDisabled: bool(process.env.DISABLE_CHROMA, false),
 
+  // Local ONNX embedding model. Precomputed document vectors live in
+  // data/scheme_embeddings.json; query embeddings are generated on demand.
+  embeddingModel: process.env.EMBEDDING_MODEL || 'Xenova/all-MiniLM-L6-v2',
+  precomputedEmbeddingsFile:
+    process.env.SCHEME_EMBEDDINGS_FILE ||
+    path.join(__dirname, '../../data/scheme_embeddings.json'),
+
   defaultTopK: num(process.env.TOP_K, 3),
   maxTopK: num(process.env.MAX_TOP_K, 10),
 
