@@ -134,9 +134,11 @@ Hybrid is slower because it queries Chroma for candidates and scores the full
 BM25 corpus. Chat latency is dominated by the LLM, not retrieval.
 
 **Deployment note:** these retrieval numbers come from the Docker/Chroma stack.
-The public Vercel serverless demo runs BM25 only (Chroma is not reachable from a
-Function); use the BM25 row as the deployed demo's retrieval reference. The
-deployment does not silently claim dense/hybrid quality. See
+The public demo now uses the same all-in-one image on Render, so its chat path is
+the dense + BM25 hybrid while the container is awake. Render's free tier has no
+persistent disk and sleeps after idle; Chroma is rebuilt from committed
+precomputed embeddings on wake. The retained Vercel Function API is still
+BM25-only and reports that honestly. See
 [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
 
 ### Retrieval complementarity

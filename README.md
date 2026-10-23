@@ -5,11 +5,13 @@ SchemeSaathi is a web-based conversational application that helps citizens disco
 Users can provide details such as age, income, occupation, location, education, and specific needs through a chat interface. The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant scheme information from its knowledge base and generate simple responses covering scheme details, eligibility, and benefits. The platform aims to simplify welfare scheme discovery and demonstrate the use of conversational AI for public-service information.
 
 **Live demo:** <https://schemesaathi-chi.vercel.app>  
-**API health:** <https://schemesaathi-api-delta.vercel.app/api/health>
+**API health:** <https://schemesaathi-api-6zjg.onrender.com/api/health>
 
-The public deployment runs the React frontend and the Express API as two Vercel
-projects. The serverless API uses MongoDB Atlas and BM25 retrieval; the evaluated
-dense + BM25 hybrid needs the optional Chroma/Docker deployment. See
+The public deployment is a Vercel-hosted React SPA talking to a Render Docker
+API. The API container runs Express and Chroma together, backed by MongoDB
+Atlas, so the live chat uses the evaluated dense + BM25 hybrid. Chroma has no
+persistent disk on Render's free tier: the index is rebuilt from committed
+precomputed embeddings when the container wakes. See
 [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
 
 **7.2 Software Requirements:**
@@ -49,7 +51,7 @@ dense + BM25 hybrid needs the optional Chroma/Docker deployment. See
 | Structured eligibility form (full-corpus and need-based modes) | Working |
 | Accounts, query history, saved schemes, feedback | Working |
 | Grounded answers with a verdict per retrieved scheme | Working; automatic quality checks, manual groundedness scoring pending |
-| Unit tests for the rule engine, coverage, retrieval and expansion | `npm test` (26 tests) |
+| Unit tests for the rule engine, coverage, retrieval and expansion | `npm test` (28 tests) |
 
 > **Academic honesty:** this is an informational tool, not an official eligibility decision. Every answer tells the user to confirm details on the official portal.
 
@@ -95,7 +97,9 @@ backend/
     routes/                     health, auth, schemes, eligibility, query, account
   scripts/build-rules.js        curated + auto -> rules.json
   scripts/bootstrap.js          idempotent first-run seed + embed
-  test/                        26 unit tests (engine, rules, hybrid, regressions)
+  scripts/build-embeddings.js   precompute the 112 document vectors
+  scripts/warm-embeddings.js    cache the ONNX model inside Docker images
+  test/                        28 unit tests (engine, rules, hybrid, embeddings)
   run_eligibility_eval.js       133-case reproducible evaluation
 frontend/
   src/lib/api.js                single API client (JWT, SSE)
@@ -110,11 +114,13 @@ frontend/
   src/pages/Compare.jsx         side-by-side comparison
   src/pages/History.jsx         query history + saved schemes
 data/schemes.json               112 schemes
+data/scheme_embeddings.json     precomputed 384-d document vectors
 chroma_db/                      canonical Chroma persistence directory
 Dockerfile                      production image (API + built SPA)
+deploy/Dockerfile.allinone      free-tier image with API + loopback Chroma
 docker-compose.yml              app + MongoDB + Chroma
 DEPLOYMENT.md                   self-hosted / managed deployment runbook
-DEPLOYMENT_VERCEL.md            Vercel frontend + Docker API runbook
+DEPLOYMENT_VERCEL.md            Vercel + Render deployment runbook
 RESULTS.md                      evaluation tables, methodology and caveats
 ```
 
@@ -202,17 +208,24 @@ RESULTS.md                      evaluation tables, methodology and caveats
 
 ## Deployment
 
-The current public demo is deployed on Vercel:
+The current public demo is split across Vercel and Render:
 
 - Frontend: <https://schemesaathi-chi.vercel.app>
-- API: <https://schemesaathi-api-delta.vercel.app>
-- Health: <https://schemesaathi-api-delta.vercel.app/api/health>
+- API: <https://schemesaathi-api-6zjg.onrender.com>
+- Health: <https://schemesaathi-api-6zjg.onrender.com/api/health>
 
-The API is an Express app exported as a Vercel Function and backed by MongoDB
-Atlas. Chroma is disabled in that environment, so the API uses BM25 retrieval.
-The full dense + BM25 hybrid stack is available through the Docker path below or
-a Render/Railway API + private Chroma deployment. Step-by-step instructions for
-both Vercel projects are in
+The frontend is a static Vite build on Vercel. The API is a Render Docker
+service built from [`deploy/Dockerfile.allinone`](deploy/Dockerfile.allinone);
+Chroma runs on loopback inside that container and MongoDB Atlas remains the
+durable store. `/api/health` reports MongoDB `up`, Chroma `up`, and 112 embedded
+documents when the service is awake. Render's free tier spins the service down
+after idle periods, so the first request after a pause can take a minute; the
+container then rebuilds Chroma from `data/scheme_embeddings.json` in about a
+second.
+
+The older Vercel Function API (<https://schemesaathi-api-delta.vercel.app>) is
+retained as a BM25-only fallback and for comparison. Step-by-step instructions,
+environment variables, and free-tier caveats are in
 **[DEPLOYMENT_VERCEL.md](DEPLOYMENT_VERCEL.md)**.
 
 ### Self-hosted / Docker (full hybrid retrieval)
@@ -309,7 +322,7 @@ Reproduce the numbers with:
 
 ```bash
 cd backend
-npm test                     # 26 unit tests: engine, coverage, hybrid, regressions
+npm test                     # 28 unit tests: engine, coverage, hybrid, embeddings
 npm run eval:eligibility     # strict 133-case benchmark
 npm run eval:eligibility:v3  # audited correction/regression suite
 node run_eval_v2.js retrieval          # dense Chroma baseline
@@ -420,8 +433,8 @@ reproduces. Full tables and caveats are in [`RESULTS.md`](RESULTS.md).
   documents, not an official checklist. The UI labels them as a preparation aid.
 - The embedding model is English-only. Hinglish/Devanagari quality comes from
   the query bridge and BM25, not from a multilingual embedding model.
-- The public Vercel deployment uses BM25 only because a serverless function
-  cannot reach the local Chroma process. The reported hybrid-retrieval scores
-  come from the Docker/Chroma deployment; the deployed demo's `/api/health`
-  says `"chroma":"down (lexical fallback active)"` rather than hiding the
-  difference. See [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
+- The public Render free-tier API runs the full dense + BM25 hybrid while the
+  container is awake. It has no persistent disk, so Chroma is rebuilt from
+  committed embeddings on each cold start, and idle services sleep. The older
+  Vercel Function API remains BM25-only and reports that honestly. See
+  [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).

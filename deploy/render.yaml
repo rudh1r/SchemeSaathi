@@ -1,5 +1,9 @@
 # Render Blueprint: Vercel frontend + Render API + private Chroma.
 #
+# This is the paid, persistent-disk variant. For the current free-tier
+# deployment (API + loopback Chroma in one container), use
+# `deploy/render-free.yaml` and `deploy/Dockerfile.allinone` instead.
+#
 # Before applying:
 #   1. Create a MongoDB Atlas cluster and copy its SRV URI.
 #   2. Set the four sync:false secrets in the Render dashboard.
