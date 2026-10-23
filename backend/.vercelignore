@@ -1,0 +1,8 @@
+.env
+.env.*
+node_modules
+chroma_db
+test
+*.log
+*.md
+rag_manual_scoring_sheet.csv

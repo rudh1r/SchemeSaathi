@@ -7,12 +7,21 @@
  * top-ranked candidates. `searchSchemes()` now hydrates documents while
  * preserving rank and attaches the similarity score.
  */
-const { ChromaClient } = require('chromadb');
 const config = require('./config');
 const { collections } = require('./db');
 const { buildBM25, documentText, expandQuery, rrfFuse } = require('./search/hybrid');
 
-const client = new ChromaClient(config.chroma);
+// Keep the Chroma client lazy. Vercel/serverless deployments set
+// DISABLE_CHROMA=true and never load the dependency or attempt a connection.
+let client = null;
+function getClient() {
+  if (!client) {
+    const { ChromaClient } = require('chromadb');
+    client = new ChromaClient(config.chroma);
+  }
+  return client;
+}
+
 let collectionPromise = null;
 let corpusCache = null;
 let heartbeatCache = { at: 0, ok: false };
@@ -20,8 +29,11 @@ const CORPUS_TTL_MS = 60_000;
 const HEARTBEAT_TTL_MS = 5_000;
 
 function getCollection() {
+  if (config.chromaDisabled) {
+    return Promise.reject(new Error('Dense retrieval is disabled (DISABLE_CHROMA=true)'));
+  }
   if (!collectionPromise) {
-    collectionPromise = client.getOrCreateCollection({ name: config.chromaCollection });
+    collectionPromise = getClient().getOrCreateCollection({ name: config.chromaCollection });
     // A failed lookup should not poison every later request.
     collectionPromise.catch(() => {
       collectionPromise = null;
@@ -31,9 +43,10 @@ function getCollection() {
 }
 
 async function heartbeat({ force = false } = {}) {
+  if (config.chromaDisabled) return false;
   if (!force && Date.now() - heartbeatCache.at < HEARTBEAT_TTL_MS) return heartbeatCache.ok;
   try {
-    await client.heartbeat();
+    await getClient().heartbeat();
     heartbeatCache = { at: Date.now(), ok: true };
     return true;
   } catch {

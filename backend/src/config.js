@@ -78,6 +78,9 @@ const config = {
   },
   chromaUrl: chromaUrl.origin,
   chromaCollection: process.env.CHROMA_COLLECTION || 'schemes',
+  // Serverless deployments cannot reach a local Chroma process. When this is
+  // set, retrieval skips the dense client entirely and uses the BM25 fallback.
+  chromaDisabled: bool(process.env.DISABLE_CHROMA, false),
 
   defaultTopK: num(process.env.TOP_K, 3),
   maxTopK: num(process.env.MAX_TOP_K, 10),

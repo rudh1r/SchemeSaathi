@@ -133,6 +133,12 @@ Retrieval latency in this environment (270 queries):
 Hybrid is slower because it queries Chroma for candidates and scores the full
 BM25 corpus. Chat latency is dominated by the LLM, not retrieval.
 
+**Deployment note:** these retrieval numbers come from the Docker/Chroma stack.
+The public Vercel serverless demo runs BM25 only (Chroma is not reachable from a
+Function); use the BM25 row as the deployed demo's retrieval reference. The
+deployment does not silently claim dense/hybrid quality. See
+[`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
+
 ### Retrieval complementarity
 
 For the 245 single-relevant English queries:

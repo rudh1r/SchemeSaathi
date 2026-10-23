@@ -100,11 +100,36 @@ async function prepare(req) {
   const { attributes, original } = normaliseProfile(mergedProfile);
 
   const searchText = buildSearchText(attributes, question);
-  const { schemes: found, engine } = await retrieve(searchText, { topK, filters });
-  const schemes = attachRules(found);
-
   const hasProfile = Object.keys(attributes).length > 0;
-  const assessments = hasProfile ? assessCandidates(schemes, attributes) : [];
+
+  // With a structured profile the rules engine can discard candidates that
+  // are definitely ineligible. Retrieve a slightly wider pool, evaluate it,
+  // then surface Eligible/Insufficient Information before Ineligible. This
+  // keeps a state-specific but irrelevant scheme from crowding out a relevant
+  // national scheme in a three-source answer.
+  const candidateK = hasProfile ? Math.min(Math.max(topK, 8), config.maxTopK) : topK;
+  const { schemes: found, engine } = await retrieve(searchText, { topK: candidateK, filters });
+  const candidates = attachRules(found);
+  const candidateAssessments = hasProfile ? assessCandidates(candidates, attributes) : [];
+  const assessmentById = new Map(candidateAssessments.map((item) => [String(item.schemeId), item]));
+  const statusOrder = { Eligible: 0, 'Insufficient Information': 1, Ineligible: 2 };
+
+  const schemes = hasProfile
+    ? [...candidates]
+        .sort((a, b) => {
+          const byStatus =
+            (statusOrder[assessmentById.get(String(a._id))?.status] ?? 3) -
+            (statusOrder[assessmentById.get(String(b._id))?.status] ?? 3);
+          if (byStatus !== 0) return byStatus;
+          return (a._rank || 0) - (b._rank || 0);
+        })
+        .slice(0, Math.max(topK, 3))
+        .map((scheme, index) => ({ ...scheme, _rank: index + 1 }))
+    : candidates;
+
+  const assessments = hasProfile
+    ? schemes.map((scheme) => assessmentById.get(String(scheme._id))).filter(Boolean)
+    : [];
 
   const key = conversationKey(req, sessionId);
   const history = await loadConversation(key);

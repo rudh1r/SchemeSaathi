@@ -4,6 +4,14 @@ SchemeSaathi is a web-based conversational application that helps citizens disco
 
 Users can provide details such as age, income, occupation, location, education, and specific needs through a chat interface. The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant scheme information from its knowledge base and generate simple responses covering scheme details, eligibility, and benefits. The platform aims to simplify welfare scheme discovery and demonstrate the use of conversational AI for public-service information.
 
+**Live demo:** <https://schemesaathi-chi.vercel.app>  
+**API health:** <https://schemesaathi-api-delta.vercel.app/api/health>
+
+The public deployment runs the React frontend and the Express API as two Vercel
+projects. The serverless API uses MongoDB Atlas and BM25 retrieval; the evaluated
+dense + BM25 hybrid needs the optional Chroma/Docker deployment. See
+[`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
+
 **7.2 Software Requirements:**
 
 **Programming Language:** Python, JavaScript
@@ -194,6 +202,21 @@ RESULTS.md                      evaluation tables, methodology and caveats
 
 ## Deployment
 
+The current public demo is deployed on Vercel:
+
+- Frontend: <https://schemesaathi-chi.vercel.app>
+- API: <https://schemesaathi-api-delta.vercel.app>
+- Health: <https://schemesaathi-api-delta.vercel.app/api/health>
+
+The API is an Express app exported as a Vercel Function and backed by MongoDB
+Atlas. Chroma is disabled in that environment, so the API uses BM25 retrieval.
+The full dense + BM25 hybrid stack is available through the Docker path below or
+a Render/Railway API + private Chroma deployment. Step-by-step instructions for
+both Vercel projects are in
+**[DEPLOYMENT_VERCEL.md](DEPLOYMENT_VERCEL.md)**.
+
+### Self-hosted / Docker (full hybrid retrieval)
+
 A production build is self-contained: Express serves the compiled React app and
 the API on one origin, and Docker Compose provides MongoDB and Chroma.
 
@@ -205,9 +228,7 @@ curl http://localhost:5000/api/health
 
 The first boot imports all 112 schemes and builds the vector index
 automatically. See **[DEPLOYMENT.md](DEPLOYMENT.md)** for HTTPS/Caddy, managed
-hosting, backups, environment variables and troubleshooting. For a split
-deployment with the SPA on Vercel and the API/Chroma on Render or Railway, see
-**[DEPLOYMENT_VERCEL.md](DEPLOYMENT_VERCEL.md)**.
+hosting, backups, environment variables and troubleshooting.
 
 ## The eligibility engine
 
@@ -399,6 +420,8 @@ reproduces. Full tables and caveats are in [`RESULTS.md`](RESULTS.md).
   documents, not an official checklist. The UI labels them as a preparation aid.
 - The embedding model is English-only. Hinglish/Devanagari quality comes from
   the query bridge and BM25, not from a multilingual embedding model.
-- The current production stack needs a long-running API and a reachable Chroma
-  service; a Vercel-only deployment would require a vector-store migration.
-  See [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
+- The public Vercel deployment uses BM25 only because a serverless function
+  cannot reach the local Chroma process. The reported hybrid-retrieval scores
+  come from the Docker/Chroma deployment; the deployed demo's `/api/health`
+  says `"chroma":"down (lexical fallback active)"` rather than hiding the
+  difference. See [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).
