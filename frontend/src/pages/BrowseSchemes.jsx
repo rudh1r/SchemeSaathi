@@ -3,12 +3,15 @@ import { Link, useSearchParams } from 'react-router-dom';
 import {
   Search, Mic, MicOff, Bookmark, BookmarkCheck, Landmark, Info, Printer, Share2,
   ExternalLink, Bot, SlidersHorizontal, X, Loader2, AlertTriangle, ListChecks,
+  GitCompare, ClipboardPlus, ClipboardCheck, ArrowRight,
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import api from '../lib/api';
+import { addCompare, loadCompare, removeCompare } from '../lib/compare';
+import { addToPlan, loadPlan, removeFromPlan } from '../lib/plan';
 
 const EMPTY_FILTERS = { search: '', state: '', category: '', level: '' };
 
@@ -21,7 +24,7 @@ function LevelBadge({ level, t }) {
   );
 }
 
-function SchemeCard({ scheme, active, onSelect, bookmarked, onToggleBookmark, signedIn, t }) {
+function SchemeCard({ scheme, active, onSelect, bookmarked, onToggleBookmark, signedIn, compared, planned, onToggleCompare, onTogglePlan, t }) {
   return (
     <div
       onClick={onSelect}
@@ -41,18 +44,44 @@ function SchemeCard({ scheme, active, onSelect, bookmarked, onToggleBookmark, si
             </span>
           )}
         </div>
-        <button
-          type="button"
-          aria-label={bookmarked ? t('browse_bookmark_remove') : t('browse_bookmark_add')}
-          title={signedIn ? (bookmarked ? t('browse_bookmark_remove') : t('browse_bookmark_add')) : t('browse_bookmark_login')}
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggleBookmark(scheme);
-          }}
-          className={`p-0.5 shrink-0 transition-colors ${bookmarked ? 'text-secondary' : 'text-muted hover:text-primary'}`}
-        >
-          {bookmarked ? <BookmarkCheck size={19} /> : <Bookmark size={19} />}
-        </button>
+        <div className="flex items-center gap-1 shrink-0">
+          <button
+            type="button"
+            aria-label={compared ? t('browse_compare_remove') : t('browse_compare_add')}
+            title={compared ? t('browse_compare_remove') : t('browse_compare_add')}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleCompare(scheme);
+            }}
+            className={`p-1 rounded transition-colors ${compared ? 'text-secondary bg-secondary-light' : 'text-muted hover:text-primary'}`}
+          >
+            <GitCompare size={17} />
+          </button>
+          <button
+            type="button"
+            aria-label={planned ? t('browse_plan_remove') : t('browse_plan_add')}
+            title={planned ? t('browse_plan_remove') : t('browse_plan_add')}
+            onClick={(e) => {
+              e.stopPropagation();
+              onTogglePlan(scheme);
+            }}
+            className={`p-1 rounded transition-colors ${planned ? 'text-secondary bg-secondary-light' : 'text-muted hover:text-primary'}`}
+          >
+            {planned ? <ClipboardCheck size={17} /> : <ClipboardPlus size={17} />}
+          </button>
+          <button
+            type="button"
+            aria-label={bookmarked ? t('browse_bookmark_remove') : t('browse_bookmark_add')}
+            title={signedIn ? (bookmarked ? t('browse_bookmark_remove') : t('browse_bookmark_add')) : t('browse_bookmark_login')}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleBookmark(scheme);
+            }}
+            className={`p-1 rounded transition-colors ${bookmarked ? 'text-secondary' : 'text-muted hover:text-primary'}`}
+          >
+            {bookmarked ? <BookmarkCheck size={18} /> : <Bookmark size={18} />}
+          </button>
+        </div>
       </div>
       <div className="pt-3">
         <h2 className="font-serif text-xl font-bold text-primary mb-1">{scheme.scheme_name}</h2>
@@ -81,7 +110,7 @@ function SchemeCard({ scheme, active, onSelect, bookmarked, onToggleBookmark, si
   );
 }
 
-function DossierPanel({ scheme, t, bookmarked, onToggleBookmark, signedIn }) {
+function DossierPanel({ scheme, t, bookmarked, onToggleBookmark, signedIn, compared, planned, onToggleCompare, onTogglePlan }) {
   const [tab, setTab] = useState('overview');
 
   if (!scheme) {
@@ -129,6 +158,24 @@ function DossierPanel({ scheme, t, bookmarked, onToggleBookmark, signedIn }) {
           </div>
         </div>
         <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            aria-label={compared ? t('browse_compare_remove') : t('browse_compare_add')}
+            title={compared ? t('browse_compare_remove') : t('browse_compare_add')}
+            onClick={() => onToggleCompare(scheme)}
+            className={`w-8 h-8 rounded border border-border bg-parchment hover:bg-white flex items-center justify-center ${compared ? 'text-secondary' : 'text-muted'}`}
+          >
+            <GitCompare size={16} />
+          </button>
+          <button
+            type="button"
+            aria-label={planned ? t('browse_plan_remove') : t('browse_plan_add')}
+            title={planned ? t('browse_plan_remove') : t('browse_plan_add')}
+            onClick={() => onTogglePlan(scheme)}
+            className={`w-8 h-8 rounded border border-border bg-parchment hover:bg-white flex items-center justify-center ${planned ? 'text-secondary' : 'text-muted'}`}
+          >
+            {planned ? <ClipboardCheck size={16} /> : <ClipboardPlus size={16} />}
+          </button>
           <button
             type="button"
             aria-label={bookmarked ? t('browse_bookmark_remove') : t('browse_bookmark_add')}
@@ -276,6 +323,8 @@ export default function BrowseSchemes() {
   const [schemes, setSchemes] = useState([]);
   const [filters, setFilters] = useState({ states: [], categories: [], levels: [] });
   const [bookmarkIds, setBookmarkIds] = useState(() => new Set());
+  const [compareIds, setCompareIds] = useState(() => new Set(loadCompare().map((item) => String(item.id))));
+  const [planIds, setPlanIds] = useState(() => new Set(loadPlan().map((item) => String(item.id))));
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [notice, setNotice] = useState(null);
@@ -421,6 +470,48 @@ export default function BrowseSchemes() {
     }
   };
 
+  const toggleCompare = (scheme) => {
+    const id = String(scheme._id);
+    if (compareIds.has(id)) {
+      removeCompare(id);
+      setCompareIds((prev) => {
+        const next = new Set(prev);
+        next.delete(id);
+        return next;
+      });
+      setNotice(t('browse_compare_removed'));
+      return;
+    }
+    const result = addCompare(scheme);
+    if (!result.ok) {
+      setNotice(t('browse_compare_limit'));
+      return;
+    }
+    setCompareIds((prev) => new Set(prev).add(id));
+    setNotice(t('browse_compare_saved'));
+  };
+
+  const togglePlan = (scheme) => {
+    const id = String(scheme._id);
+    if (planIds.has(id)) {
+      removeFromPlan(id);
+      setPlanIds((prev) => {
+        const next = new Set(prev);
+        next.delete(id);
+        return next;
+      });
+      setNotice(t('browse_plan_removed'));
+      return;
+    }
+    const result = addToPlan(scheme);
+    if (!result.ok) {
+      setNotice(t('browse_plan_add'));
+      return;
+    }
+    setPlanIds((prev) => new Set(prev).add(id));
+    setNotice(t('browse_plan_saved'));
+  };
+
   const activeFilters = useMemo(
     () => Boolean(query.search || query.state || query.category || query.level),
     [query],
@@ -548,6 +639,10 @@ export default function BrowseSchemes() {
                 bookmarked={Boolean(user) && bookmarkIds.has(String(scheme._id))}
                 onToggleBookmark={toggleBookmark}
                 signedIn={Boolean(user)}
+                compared={compareIds.has(String(scheme._id))}
+                planned={planIds.has(String(scheme._id))}
+                onToggleCompare={toggleCompare}
+                onTogglePlan={togglePlan}
                 t={t}
               />
             ))}
@@ -560,9 +655,28 @@ export default function BrowseSchemes() {
               bookmarked={selectedScheme && Boolean(user) && bookmarkIds.has(String(selectedScheme._id))}
               onToggleBookmark={toggleBookmark}
               signedIn={Boolean(user)}
+              compared={selectedScheme && compareIds.has(String(selectedScheme._id))}
+              planned={selectedScheme && planIds.has(String(selectedScheme._id))}
+              onToggleCompare={toggleCompare}
+              onTogglePlan={togglePlan}
             />
           </div>
         </div>
+
+        {compareIds.size > 0 && (
+          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 bg-primary text-white rounded-full shadow-lg px-4 py-2.5 flex items-center gap-3 text-xs">
+            <GitCompare size={15} />
+            <span className="font-semibold">{compareIds.size} {t('nav_compare').toLowerCase()}</span>
+            <Link to="/compare" className="inline-flex items-center gap-1 font-bold text-white hover:underline">
+              {t('browse_compare_open')} <ArrowRight size={13} />
+            </Link>
+            {planIds.size > 0 && (
+              <Link to="/plan" className="hidden sm:inline-flex items-center gap-1 text-white/80 hover:text-white">
+                {t('browse_plan_open')}
+              </Link>
+            )}
+          </div>
+        )}
 
         <div className="w-full mt-8 rounded border border-border bg-white p-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">

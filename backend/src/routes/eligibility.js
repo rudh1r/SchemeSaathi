@@ -3,7 +3,8 @@ const { ObjectId } = require('mongodb');
 const { collections } = require('../db');
 const { attachRules, assessCandidates, assessAll, buildSearchText, normaliseProfile, missingAttributes } = require('../eligibility/service');
 const { evaluateScheme } = require('../eligibility/evaluate');
-const { searchSchemes, lexicalSearchSchemes, heartbeat } = require('../retrieval');
+const { hybridSearchSchemes, searchSchemes, lexicalSearchSchemes, heartbeat } = require('../retrieval');
+const config = require('../config');
 const { optionalAuth } = require('../middleware/auth');
 const { rateLimit } = require('../middleware/rateLimit');
 const { HttpError, object, str, int } = require('../http/validate');
@@ -75,17 +76,29 @@ router.post('/match', rateLimit(), optionalAuth, async (req, res) => {
 
   if (need) {
     const searchText = buildSearchText(attributes, need);
-    try {
-      if (await heartbeat()) {
-        candidates = await searchSchemes(searchText, { topK: 25 });
-        retrieval = { engine: 'dense-vector', candidates: candidates.length };
+    if (config.hybridRetrieval) {
+      try {
+        candidates = await hybridSearchSchemes(searchText, { topK: 25 });
+        if (candidates.length > 0) {
+          retrieval = { engine: candidates[0]._retrieval || 'hybrid', candidates: candidates.length };
+        }
+      } catch (err) {
+        console.warn('Hybrid eligibility retrieval failed:', err.message);
       }
-    } catch (err) {
-      console.warn('Eligibility retrieval fallback:', err.message);
+    }
+    if (!candidates || candidates.length === 0) {
+      try {
+        if (await heartbeat()) {
+          candidates = await searchSchemes(searchText, { topK: 25 });
+          retrieval = { engine: 'dense-vector', candidates: candidates.length };
+        }
+      } catch (err) {
+        console.warn('Eligibility dense retrieval fallback:', err.message);
+      }
     }
     if (!candidates || candidates.length === 0) {
       candidates = await lexicalSearchSchemes(searchText, { topK: 25 });
-      retrieval = { engine: 'lexical-fallback', candidates: candidates.length };
+      retrieval = { engine: 'lexical-bm25', candidates: candidates.length };
     }
     candidates = attachRules(candidates);
     const assessments = assessCandidates(candidates, attributes);
@@ -151,6 +164,8 @@ function withSchemes(assessments, schemes) {
             category: s.category,
             source_url: s.source_url,
             application_process: s.application_process,
+            _relevance: s._relevance ?? null,
+            _rank: s._rank ?? null,
           }
         : null,
     };

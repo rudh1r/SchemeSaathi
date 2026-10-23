@@ -4,8 +4,8 @@
     "conditions": [
       { "attr": "gender", "op": "eq", "value": "female", "label": "Applicant is a girl student" },
       { "attr": "income", "op": "lte", "value": 800000, "label": "Annual family income below ₹8,00,000" },
-      { "attr": "is_student", "op": "is_true", "value": true, "label": "Currently enrolled in a technical diploma or degree programme" },
-      { "attr": "girl_children", "op": "lte", "value": 2, "label": "At most two girls from the family across AICTE scholarships", "optional": true }
+      { "attr": "technical_programme", "op": "is_true", "value": true, "label": "Currently enrolled in a technical diploma or degree programme" },
+      { "attr": "girl_children", "op": "lte", "value": 2, "label": "At most two girls from the family across AICTE scholarships" }
     ]
   },
   "Assistance to Disabled Persons Scheme (ADIP)": {
@@ -107,7 +107,7 @@
         ],
         "label": "BPL household, or SC/ST category"
       },
-      { "attr": "delivery_in_facility", "op": "is_true", "value": true, "label": "Delivery in a recognised health facility", "optional": true }
+      { "attr": "delivery_in_facility", "op": "is_true", "value": true, "label": "Delivery in a recognised health facility" }
     ]
   },
   "Kalaignar Magalir Urimai Thogai (Tamil Nadu)": {
@@ -327,7 +327,7 @@
         "op": "any_of",
         "value": [
           [{ "attr": "project_cost", "op": "lte", "value": 1000000, "label": "Project cost up to ₹10 lakh" }],
-          [{ "attr": "education_level", "op": "matches", "value": ["class 8", "8th", "9th", "10th", "12th", "graduate", "diploma", "degree"], "label": "At least Class 8 pass" }]
+          [{ "attr": "education_level", "op": "matches", "value": ["class 8", "class 9", "class 10", "class 11", "class 12", "8th", "9th", "10th", "11th", "12th", "matric", "intermediate", "high school", "higher secondary", "graduate", "diploma", "degree"], "label": "At least Class 8 pass" }]
         ],
         "label": "At least Class 8 pass for projects above ₹10 lakh"
       }
@@ -441,7 +441,7 @@
     "reviewed": true,
     "conditions": [
       { "attr": "daughter_age", "op": "lte", "value": 10, "label": "Girl child below 10 years" },
-      { "attr": "girl_children", "op": "lte", "value": 2, "label": "Maximum two accounts per family" }
+      { "attr": "existing_accounts", "op": "lte", "value": 2, "label": "Maximum two existing accounts per family" }
     ]
   },
   "e-Shram Card": {

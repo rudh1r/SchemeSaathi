@@ -1,0 +1,140 @@
+{
+  "engine": "hybrid-dense-bm25-rrf",
+  "benchmark": "multilingual_benchmark.json",
+  "note": "Dense Chroma candidates + BM25 candidates fused with reciprocal-rank fusion. BM25 sees the full filtered corpus; dense candidates are capped by maxTopK.",
+  "single_relevant": {
+    "k3": {
+      "queries": 24,
+      "k": 3,
+      "top1_accuracy": 75,
+      "hit_at_3": 91.67,
+      "recall_at_3": 89.58,
+      "precision_at_3": 31.94,
+      "f1_at_3": 47.1,
+      "mrr": 0.8438
+    },
+    "k5": {
+      "queries": 24,
+      "k": 5,
+      "top1_accuracy": 75,
+      "hit_at_5": 95.83,
+      "recall_at_5": 95.83,
+      "precision_at_5": 20.83,
+      "f1_at_5": 34.23,
+      "mrr": 0.8438
+    }
+  },
+  "multi_relevant": {
+    "k3": {
+      "queries": 0,
+      "k": 3,
+      "top1_accuracy": null,
+      "hit_at_3": null,
+      "recall_at_3": null,
+      "precision_at_3": null,
+      "f1_at_3": 0,
+      "mrr": null
+    },
+    "k5": {
+      "queries": 0,
+      "k": 5,
+      "top1_accuracy": null,
+      "hit_at_5": null,
+      "recall_at_5": null,
+      "precision_at_5": null,
+      "f1_at_5": 0,
+      "mrr": null
+    }
+  },
+  "overall": {
+    "k3": {
+      "queries": 24,
+      "k": 3,
+      "top1_accuracy": 75,
+      "hit_at_3": 91.67,
+      "recall_at_3": 89.58,
+      "precision_at_3": 31.94,
+      "f1_at_3": 47.1,
+      "mrr": 0.8438
+    },
+    "k5": {
+      "queries": 24,
+      "k": 5,
+      "top1_accuracy": 75,
+      "hit_at_5": 95.83,
+      "recall_at_5": 95.83,
+      "precision_at_5": 20.83,
+      "f1_at_5": 34.23,
+      "mrr": 0.8438
+    }
+  },
+  "retrieval_latency_ms": {
+    "n": 24,
+    "mean": 242,
+    "median": 225,
+    "p95": 267,
+    "max": 696
+  },
+  "top1_failures": [
+    {
+      "id": "ML02",
+      "query": "kheti ke liye sasta loan",
+      "expected": "Kisan Credit Card (KCC)",
+      "got_top3": [
+        "Agriculture Infrastructure Fund",
+        "Pradhan Mantri Matsya Sampada Yojana",
+        "KALIA Scheme (Odisha)"
+      ]
+    },
+    {
+      "id": "ML03",
+      "query": "ghar banane ke liye subsidy",
+      "expected": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "got_top3": [
+        "Credit Linked Subsidy Scheme (CLSS)",
+        "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+        "PMAY-Gramin (PMAYG)"
+      ]
+    },
+    {
+      "id": "ML04",
+      "query": "hospital ka kharcha bima se",
+      "expected": "Ayushman Bharat PM-JAY",
+      "got_top3": [
+        "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+        "Pradhan Mantri Suraksha Bima Yojana",
+        "Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)"
+      ]
+    },
+    {
+      "id": "ML06",
+      "query": "beti ke padhai ke liye scholarship",
+      "expected": "AICTE Pragati Scholarship for Girls",
+      "got_top3": [
+        "Beti Bachao Beti Padhao",
+        "AICTE Pragati Scholarship for Girls",
+        "National Scholarship Portal (NSP)"
+      ]
+    },
+    {
+      "id": "ML17",
+      "query": "ration card khana",
+      "expected": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "got_top3": [
+        "One Nation One Ration Card",
+        "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+        "Soil Health Card Scheme"
+      ]
+    },
+    {
+      "id": "ML24",
+      "query": "artisan ko loan aur training",
+      "expected": "PM Vishwakarma",
+      "got_top3": [
+        "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+        "PM Vishwakarma",
+        "PM SVANidhi"
+      ]
+    }
+  ]
+}

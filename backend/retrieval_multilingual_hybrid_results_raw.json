@@ -1,0 +1,922 @@
+[
+  {
+    "id": "ML01",
+    "query": "kisan ko saal mein 6000 rupaye chahiye",
+    "type": "single",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "relevant": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)"
+    ],
+    "ranked": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "Kisan Credit Card (KCC)",
+      "PM Kisan Maandhan Yojana",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+      "e-NAM (National Agriculture Market)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.032258,
+      0.031746,
+      0.029963,
+      0.029719
+    ],
+    "dense_similarities": [
+      0.126,
+      0.0229,
+      -0.0774,
+      -0.0828,
+      -0.1508
+    ],
+    "bm25_scores": [
+      12.832587789338536,
+      11.318567375220805,
+      8.256065456923201,
+      2.9714549777309864,
+      3.069593703309109
+    ],
+    "retrieval_latency_ms": 696
+  },
+  {
+    "id": "ML02",
+    "query": "kheti ke liye sasta loan",
+    "type": "single",
+    "expected_scheme": "Kisan Credit Card (KCC)",
+    "relevant": [
+      "Kisan Credit Card (KCC)"
+    ],
+    "ranked": [
+      "Agriculture Infrastructure Fund",
+      "Pradhan Mantri Matsya Sampada Yojana",
+      "KALIA Scheme (Odisha)",
+      "e-NAM (National Agriculture Market)",
+      "PM SVANidhi"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.029667,
+      0.029521,
+      0.029231,
+      0.029107
+    ],
+    "dense_similarities": [
+      0.1627,
+      -0.1385,
+      -0.0046,
+      -0.1449,
+      -0.1365
+    ],
+    "bm25_scores": [
+      11.59737606459346,
+      6.015211820951459,
+      3.405745039820523,
+      5.462939932499353,
+      4.405916773960458
+    ],
+    "retrieval_latency_ms": 197
+  },
+  {
+    "id": "ML03",
+    "query": "ghar banane ke liye subsidy",
+    "type": "single",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "relevant": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0"
+    ],
+    "ranked": [
+      "Credit Linked Subsidy Scheme (CLSS)",
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "PMAY-Gramin (PMAYG)",
+      "PM Surya Ghar Muft Bijli Yojana",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.032104,
+      0.031552,
+      0.031177,
+      0.029819
+    ],
+    "dense_similarities": [
+      0.0355,
+      -0.0066,
+      -0.0025,
+      -0.1371,
+      -0.1145
+    ],
+    "bm25_scores": [
+      13.643055097726895,
+      12.979417906953714,
+      10.334079659803825,
+      11.161208297702721,
+      2.7782475265046553
+    ],
+    "retrieval_latency_ms": 192
+  },
+  {
+    "id": "ML04",
+    "query": "hospital ka kharcha bima se",
+    "type": "single",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "relevant": [
+      "Ayushman Bharat PM-JAY"
+    ],
+    "ranked": [
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "Pradhan Mantri Suraksha Bima Yojana",
+      "Chiranjeevi / Mukhyamantri Ayushman Arogya Yojana (Rajasthan)",
+      "Ayushman Bharat PM-JAY",
+      "Rashtriya Arogya Nidhi"
+    ],
+    "hybrid_scores": [
+      0.032417,
+      0.0319,
+      0.030966,
+      0.030769,
+      0.030587
+    ],
+    "dense_similarities": [
+      0.0277,
+      -0.0314,
+      -0.176,
+      -0.1169,
+      -0.0931
+    ],
+    "bm25_scores": [
+      9.063883234578508,
+      8.864664552609103,
+      5.870107659460338,
+      5.369094042768262,
+      5.015698368569245
+    ],
+    "retrieval_latency_ms": 210
+  },
+  {
+    "id": "ML05",
+    "query": "street vendor ko loan chahiye",
+    "type": "single",
+    "expected_scheme": "PM SVANidhi",
+    "relevant": [
+      "PM SVANidhi"
+    ],
+    "ranked": [
+      "PM SVANidhi",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)",
+      "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.030966,
+      0.03011,
+      0.029898,
+      0.029242
+    ],
+    "dense_similarities": [
+      0.2972,
+      -0.1141,
+      -0.1765,
+      -0.2541,
+      -0.0516
+    ],
+    "bm25_scores": [
+      32.6321120688219,
+      7.07878327637372,
+      5.0808512638383325,
+      11.773246006956716,
+      4.71458290307649
+    ],
+    "retrieval_latency_ms": 196
+  },
+  {
+    "id": "ML06",
+    "query": "beti ke padhai ke liye scholarship",
+    "type": "single",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "relevant": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "ranked": [
+      "Beti Bachao Beti Padhao",
+      "AICTE Pragati Scholarship for Girls",
+      "National Scholarship Portal (NSP)",
+      "Kanyashree Prakalpa (West Bengal)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "hybrid_scores": [
+      0.032628,
+      0.032417,
+      0.03083,
+      0.030443,
+      0.030362
+    ],
+    "dense_similarities": [
+      0.1806,
+      0.2913,
+      0.0396,
+      0.0675,
+      0.0301
+    ],
+    "bm25_scores": [
+      14.471776445144567,
+      11.063594202740347,
+      6.950504964565856,
+      6.416209596677244,
+      6.773018621756481
+    ],
+    "retrieval_latency_ms": 205
+  },
+  {
+    "id": "ML07",
+    "query": "budhiya ke liye pension",
+    "type": "single",
+    "expected_scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "relevant": [
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension"
+    ],
+    "ranked": [
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "Indira Gandhi National Disability Pension Scheme",
+      "Indira Gandhi National Widow Pension Scheme",
+      "National Pension System (NPS)",
+      "Pradhan Mantri Shram Yogi Maandhan"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031956,
+      0.031552,
+      0.031046,
+      0.029851
+    ],
+    "dense_similarities": [
+      0.0998,
+      -0.0523,
+      -0.0109,
+      -0.1065,
+      -0.1011
+    ],
+    "bm25_scores": [
+      14.384593701809473,
+      7.155194326412062,
+      6.598596870429669,
+      6.61881899258993,
+      3.6835335387504324
+    ],
+    "retrieval_latency_ms": 267
+  },
+  {
+    "id": "ML08",
+    "query": "vidhwa mahila pension",
+    "type": "single",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "relevant": [
+      "Indira Gandhi National Widow Pension Scheme"
+    ],
+    "ranked": [
+      "Indira Gandhi National Widow Pension Scheme",
+      "Indira Gandhi National Disability Pension Scheme",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "Atal Pension Yojana",
+      "PM Kisan Maandhan Yojana"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031152,
+      0.030362,
+      0.030094,
+      0.029284
+    ],
+    "dense_similarities": [
+      0.0273,
+      -0.2393,
+      -0.235,
+      -0.281,
+      -0.2353
+    ],
+    "bm25_scores": [
+      16.62071440373103,
+      7.150507832043305,
+      6.4573519855063655,
+      6.5871564359202015,
+      3.637832384349462
+    ],
+    "retrieval_latency_ms": 212
+  },
+  {
+    "id": "ML09",
+    "query": "divyang pension",
+    "type": "single",
+    "expected_scheme": "Indira Gandhi National Disability Pension Scheme",
+    "relevant": [
+      "Indira Gandhi National Disability Pension Scheme"
+    ],
+    "ranked": [
+      "Indira Gandhi National Disability Pension Scheme",
+      "Assistance to Disabled Persons Scheme (ADIP)",
+      "Unique Disability ID (UDID)",
+      "Atal Pension Yojana",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.032258,
+      0.031597,
+      0.030036,
+      0.029986
+    ],
+    "dense_similarities": [
+      -0.1123,
+      -0.1217,
+      -0.2376,
+      -0.2854,
+      -0.2683
+    ],
+    "bm25_scores": [
+      18.784553314805578,
+      10.241875445968418,
+      7.99443115665575,
+      6.5871564359202015,
+      6.4573519855063655
+    ],
+    "retrieval_latency_ms": 239
+  },
+  {
+    "id": "ML10",
+    "query": "gaon mein toilet banane ke liye paisa",
+    "type": "single",
+    "expected_scheme": "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+    "relevant": [
+      "Swachh Bharat Mission - Gramin (Toilet Incentive)"
+    ],
+    "ranked": [
+      "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+      "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)",
+      "Pradhan Mantri Gram Sadak Yojana",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "PMAY-Gramin (PMAYG)"
+    ],
+    "hybrid_scores": [
+      0.032628,
+      0.031404,
+      0.031375,
+      0.030736,
+      0.030673
+    ],
+    "dense_similarities": [
+      -0.0743,
+      -0.1631,
+      -0.0707,
+      -0.0856,
+      -0.1936
+    ],
+    "bm25_scores": [
+      13.345453273393144,
+      6.896281356335313,
+      4.921150251807487,
+      4.69367783378714,
+      6.692575752326739
+    ],
+    "retrieval_latency_ms": 225
+  },
+  {
+    "id": "ML11",
+    "query": "SC student ke liye chhatravriti",
+    "type": "single",
+    "expected_scheme": "Post Matric Scholarship for SC Students",
+    "relevant": [
+      "Post Matric Scholarship for SC Students"
+    ],
+    "ranked": [
+      "Post Matric Scholarship for SC Students",
+      "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "National Scholarship Portal (NSP)",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "PM YASASVI Scholarship"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.0319,
+      0.031811,
+      0.03125,
+      0.030494
+    ],
+    "dense_similarities": [
+      0.2289,
+      0.0948,
+      -0.007,
+      0.0675,
+      -0.0144
+    ],
+    "bm25_scores": [
+      16.27061061441955,
+      9.132450600876913,
+      9.851529093401039,
+      8.242843891134115,
+      7.78555028956813
+    ],
+    "retrieval_latency_ms": 260
+  },
+  {
+    "id": "ML12",
+    "query": "minority student scholarship",
+    "type": "single",
+    "expected_scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "relevant": [
+      "Pre-Matric and Post-Matric Scholarship for Minorities"
+    ],
+    "ranked": [
+      "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "Nai Udaan and Nai Roshni (Minority Schemes)",
+      "Post Matric Scholarship for SC Students",
+      "National Scholarship Portal (NSP)",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031404,
+      0.031313,
+      0.03125,
+      0.031216
+    ],
+    "dense_similarities": [
+      0.299,
+      -0.1755,
+      -0.1393,
+      -0.0589,
+      0.0702
+    ],
+    "bm25_scores": [
+      14.097648185237782,
+      11.599438089725236,
+      10.126715145857673,
+      9.851529093401039,
+      8.242843891134115
+    ],
+    "retrieval_latency_ms": 198
+  },
+  {
+    "id": "ML13",
+    "query": "skill training seekhna hai",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "relevant": [
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)"
+    ],
+    "ranked": [
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)",
+      "Pradhan Mantri Janjatiya Vikas Mission",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031313,
+      0.031276,
+      0.031216,
+      0.02977
+    ],
+    "dense_similarities": [
+      0.4691,
+      0.057,
+      0.0499,
+      0.1062,
+      -0.0063
+    ],
+    "bm25_scores": [
+      48.99132269438149,
+      12.651642178042005,
+      13.792810507738762,
+      10.333917875871371,
+      10.477080417474367
+    ],
+    "retrieval_latency_ms": 210
+  },
+  {
+    "id": "ML14",
+    "query": "mudra loan business ke liye",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Mudra Yojana",
+    "relevant": [
+      "Pradhan Mantri Mudra Yojana"
+    ],
+    "ranked": [
+      "Pradhan Mantri Mudra Yojana",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "PM SVANidhi",
+      "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+      "Stand-Up India Scheme"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031956,
+      0.031552,
+      0.030794,
+      0.030419
+    ],
+    "dense_similarities": [
+      0.0954,
+      -0.2005,
+      -0.1409,
+      -0.2882,
+      -0.1828
+    ],
+    "bm25_scores": [
+      10.782491116364739,
+      9.804681207645714,
+      4.405916773960458,
+      6.174452229001103,
+      2.8937297423323534
+    ],
+    "retrieval_latency_ms": 238
+  },
+  {
+    "id": "ML15",
+    "query": "startup funding scheme",
+    "type": "single",
+    "expected_scheme": "Startup India Seed Fund Scheme",
+    "relevant": [
+      "Startup India Seed Fund Scheme"
+    ],
+    "ranked": [
+      "Startup India Seed Fund Scheme",
+      "Venture Capital Fund for Scheduled Castes",
+      "Stand-Up India Scheme",
+      "Agriculture Infrastructure Fund",
+      "Employees' Provident Fund - Employment Linked Incentive"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.032258,
+      0.009524,
+      0.009375,
+      0.009231
+    ],
+    "dense_similarities": [
+      0.2408,
+      0.0487,
+      0.042,
+      -0.0419,
+      -0.1806
+    ],
+    "bm25_scores": [
+      11.344360714938578,
+      4.924322005191481,
+      null,
+      null,
+      null
+    ],
+    "retrieval_latency_ms": 234
+  },
+  {
+    "id": "ML16",
+    "query": "ghar par solar panel lagwana hai",
+    "type": "single",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "relevant": [
+      "PM Surya Ghar Muft Bijli Yojana"
+    ],
+    "ranked": [
+      "PM Surya Ghar Muft Bijli Yojana",
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "PMAY-Gramin (PMAYG)",
+      "Credit Linked Subsidy Scheme (CLSS)",
+      "PM-KUSUM"
+    ],
+    "hybrid_scores": [
+      0.032475,
+      0.032258,
+      0.031711,
+      0.031313,
+      0.030769
+    ],
+    "dense_similarities": [
+      -0.1164,
+      -0.0829,
+      -0.0026,
+      -0.2971,
+      -0.2754
+    ],
+    "bm25_scores": [
+      20.030540021106276,
+      10.029942720134816,
+      7.709659738557804,
+      8.441241442502998,
+      7.179269909028776
+    ],
+    "retrieval_latency_ms": 221
+  },
+  {
+    "id": "ML17",
+    "query": "ration card khana",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "relevant": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act"
+    ],
+    "ranked": [
+      "One Nation One Ration Card",
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "Soil Health Card Scheme",
+      "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+      "Gruha Lakshmi (Karnataka)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.032258,
+      0.030736,
+      0.030673,
+      0.030446
+    ],
+    "dense_similarities": [
+      0.2277,
+      -0.1815,
+      -0.3469,
+      -0.4298,
+      -0.428
+    ],
+    "bm25_scores": [
+      13.473796661389777,
+      7.355484580006859,
+      4.856226527735931,
+      6.405411254686282,
+      5.528767657458587
+    ],
+    "retrieval_latency_ms": 262
+  },
+  {
+    "id": "ML18",
+    "query": "UP kanya sumangala yojana",
+    "type": "single",
+    "expected_scheme": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+    "relevant": [
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)"
+    ],
+    "ranked": [
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+      "Sukanya Samriddhi Yojana",
+      "Mukhyamantri Ladli Laxmi (Madhya Pradesh)",
+      "Kanyashree Prakalpa (West Bengal)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.032104,
+      0.0319,
+      0.030966,
+      0.030443
+    ],
+    "dense_similarities": [
+      0.5,
+      0.1525,
+      0.1719,
+      0.0933,
+      0.1031
+    ],
+    "bm25_scores": [
+      30.571362983090463,
+      15.800577752963036,
+      6.717456923386516,
+      6.111383193559188,
+      5.034479586083801
+    ],
+    "retrieval_latency_ms": 230
+  },
+  {
+    "id": "ML19",
+    "query": "किसान को पैसा",
+    "type": "single",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "relevant": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)"
+    ],
+    "ranked": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "KALIA Scheme (Odisha)",
+      "PM-KUSUM",
+      "e-NAM (National Agriculture Market)",
+      "Rythu Bharosa (Telangana)"
+    ],
+    "hybrid_scores": [
+      0.032417,
+      0.030643,
+      0.030362,
+      0.030303,
+      0.030222
+    ],
+    "dense_similarities": [
+      0.0987,
+      -0.1523,
+      -0.1072,
+      -0.097,
+      -0.1474
+    ],
+    "bm25_scores": [
+      3.349667016357212,
+      3.7720324103906506,
+      3.217695593104258,
+      3.0760004540014045,
+      3.313080704029251
+    ],
+    "retrieval_latency_ms": 240
+  },
+  {
+    "id": "ML20",
+    "query": "बेटी की पढ़ाई के लिए छात्रवृत्ति",
+    "type": "single",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "relevant": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "ranked": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "Kanyashree Prakalpa (West Bengal)",
+      "National Scholarship Portal (NSP)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031177,
+      0.030913,
+      0.030699,
+      0.030689
+    ],
+    "dense_similarities": [
+      0.1462,
+      -0.0235,
+      0.0018,
+      -0.0347,
+      -0.0826
+    ],
+    "bm25_scores": [
+      11.063594202740347,
+      6.773018621756481,
+      6.389375262774365,
+      6.416209596677244,
+      6.950504964565856
+    ],
+    "retrieval_latency_ms": 238
+  },
+  {
+    "id": "ML21",
+    "query": "गरीब परिवार के लिए राशन",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "relevant": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act"
+    ],
+    "ranked": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)",
+      "Antyodaya Anna Yojana",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "Saubhagya (Universal Household Electrification)"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031216,
+      0.029722,
+      0.028042,
+      0.028002
+    ],
+    "dense_similarities": [
+      -0.0912,
+      -0.1448,
+      -0.2932,
+      -0.2007,
+      -0.2271
+    ],
+    "bm25_scores": [
+      14.859745531244323,
+      9.151593774714296,
+      11.466162575863013,
+      2.4933407293283243,
+      2.973767560621963
+    ],
+    "retrieval_latency_ms": 225
+  },
+  {
+    "id": "ML22",
+    "query": "विधवा महिला पेंशन",
+    "type": "single",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "relevant": [
+      "Indira Gandhi National Widow Pension Scheme"
+    ],
+    "ranked": [
+      "Indira Gandhi National Widow Pension Scheme",
+      "Indira Gandhi National Disability Pension Scheme",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "Lakshmir Bhandar (West Bengal)",
+      "Atal Pension Yojana"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031152,
+      0.030769,
+      0.029663,
+      0.029192
+    ],
+    "dense_similarities": [
+      -0.0582,
+      -0.1859,
+      -0.1414,
+      -0.1872,
+      -0.2511
+    ],
+    "bm25_scores": [
+      16.62071440373103,
+      7.150507832043305,
+      6.4573519855063655,
+      4.447789846176454,
+      6.5871564359202015
+    ],
+    "retrieval_latency_ms": 226
+  },
+  {
+    "id": "ML23",
+    "query": "kheti ka bima",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "relevant": [
+      "Pradhan Mantri Fasal Bima Yojana (PMFBY)"
+    ],
+    "ranked": [
+      "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "Agriculture Infrastructure Fund",
+      "KALIA Scheme (Odisha)",
+      "Pradhan Mantri Suraksha Bima Yojana"
+    ],
+    "hybrid_scores": [
+      0.032787,
+      0.031811,
+      0.030918,
+      0.030913,
+      0.029983
+    ],
+    "dense_similarities": [
+      0.0681,
+      -0.0253,
+      -0.0723,
+      0.0091,
+      -0.1276
+    ],
+    "bm25_scores": [
+      12.581768855768829,
+      9.063883234578508,
+      8.90483298455407,
+      6.066724615837622,
+      8.864664552609103
+    ],
+    "retrieval_latency_ms": 190
+  },
+  {
+    "id": "ML24",
+    "query": "artisan ko loan aur training",
+    "type": "single",
+    "expected_scheme": "PM Vishwakarma",
+    "relevant": [
+      "PM Vishwakarma"
+    ],
+    "ranked": [
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "PM Vishwakarma",
+      "PM SVANidhi",
+      "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)"
+    ],
+    "hybrid_scores": [
+      0.032258,
+      0.032182,
+      0.030913,
+      0.030794,
+      0.030571
+    ],
+    "dense_similarities": [
+      -0.1516,
+      -0.18,
+      -0.1784,
+      -0.3236,
+      -0.2906
+    ],
+    "bm25_scores": [
+      7.07878327637372,
+      9.246583379812368,
+      4.405916773960458,
+      6.174452229001103,
+      5.11223732798475
+    ],
+    "retrieval_latency_ms": 189
+  }
+]

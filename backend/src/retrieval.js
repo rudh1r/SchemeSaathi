@@ -10,9 +10,14 @@
 const { ChromaClient } = require('chromadb');
 const config = require('./config');
 const { collections } = require('./db');
+const { buildBM25, documentText, expandQuery, rrfFuse } = require('./search/hybrid');
 
 const client = new ChromaClient(config.chroma);
 let collectionPromise = null;
+let corpusCache = null;
+let heartbeatCache = { at: 0, ok: false };
+const CORPUS_TTL_MS = 60_000;
+const HEARTBEAT_TTL_MS = 5_000;
 
 function getCollection() {
   if (!collectionPromise) {
@@ -25,11 +30,14 @@ function getCollection() {
   return collectionPromise;
 }
 
-async function heartbeat() {
+async function heartbeat({ force = false } = {}) {
+  if (!force && Date.now() - heartbeatCache.at < HEARTBEAT_TTL_MS) return heartbeatCache.ok;
   try {
     await client.heartbeat();
+    heartbeatCache = { at: Date.now(), ok: true };
     return true;
   } catch {
+    heartbeatCache = { at: Date.now(), ok: false };
     return false;
   }
 }
@@ -60,8 +68,8 @@ function buildWhere(filters = {}) {
 /**
  * Raw retrieval: returns ranked ids, distances and metadata.
  */
-async function search(queryText, { topK = config.defaultTopK, filters } = {}) {
-  const k = Math.min(Math.max(Number(topK) || config.defaultTopK, 1), config.maxTopK);
+async function search(queryText, { topK = config.defaultTopK, filters, maxTopK = config.maxTopK } = {}) {
+  const k = Math.min(Math.max(Number(topK) || config.defaultTopK, 1), Math.max(Number(maxTopK) || config.maxTopK, 1));
   const collection = await getCollection();
   const result = await collection.query({
     queryTexts: [queryText],
@@ -108,41 +116,133 @@ async function searchSchemes(queryText, { topK, filters } = {}) {
 }
 
 /**
- * Lexical fallback used when the vector store is down. Deliberately simple and
- * dependency-free; it is a degradation path, not the primary retriever.
+ * Return the in-memory BM25 corpus for the current filter set. The corpus is
+ * small (112 schemes), so a short-lived cache is enough; it avoids rebuilding
+ * the index on every chat turn while still picking up a fresh import quickly.
  */
-async function lexicalSearchSchemes(queryText, { topK = config.defaultTopK } = {}) {
-  const tokens = String(queryText || '')
-    .toLowerCase()
-    .match(/[a-z0-9]{3,}/g) || [];
-  if (tokens.length === 0) return [];
+function matchesFilters(scheme, filters = {}) {
+  if (filters.state) {
+    if (scheme.state && scheme.state !== 'All' && scheme.state !== filters.state) return false;
+  }
+  if (filters.category && scheme.category !== filters.category) return false;
+  if (filters.level && scheme.level !== filters.level) return false;
+  return true;
+}
 
-  const docs = await collections.schemes().find({}).toArray();
-  const scored = docs.map((doc) => {
-    const haystack = [
-      doc.scheme_name,
-      doc.description,
-      doc.benefits,
-      JSON.stringify(doc.eligibility || {}),
-      doc.category,
-      doc.state,
-    ]
-      .filter(Boolean)
-      .join(' ')
-      .toLowerCase();
-    let score = 0;
-    for (const token of new Set(tokens)) {
-      if (haystack.includes(token)) score += 1;
-      if (String(doc.scheme_name || '').toLowerCase().includes(token)) score += 2;
-    }
-    return { ...doc, _relevance: null, _lexicalScore: score };
+async function getCorpus(filters = {}) {
+  const key = JSON.stringify({
+    state: filters.state || '',
+    category: filters.category || '',
+    level: filters.level || '',
   });
+  if (corpusCache && corpusCache.key === key && Date.now() - corpusCache.at < CORPUS_TTL_MS) {
+    return corpusCache;
+  }
 
-  return scored
-    .filter((doc) => doc._lexicalScore > 0)
-    .sort((a, b) => b._lexicalScore - a._lexicalScore)
-    .slice(0, topK)
-    .map((doc, i) => ({ ...doc, _rank: i + 1 }));
+  const docs = (await collections.schemes().find({}).toArray()).filter((scheme) => matchesFilters(scheme, filters));
+  const byId = new Map(docs.map((scheme) => [String(scheme._id), scheme]));
+  const index = buildBM25(
+    docs.map((scheme) => ({
+      id: String(scheme._id),
+      name: scheme.scheme_name,
+      text: documentText(scheme),
+    })),
+  );
+  corpusCache = { key, at: Date.now(), docs, byId, index };
+  return corpusCache;
+}
+
+/** Force a rebuild after an import or a test fixture change. */
+function clearCorpusCache() {
+  corpusCache = null;
+}
+
+/**
+ * Hybrid retrieval: Chroma dense candidates + BM25 candidates, fused with
+ * reciprocal-rank fusion. If Chroma is unavailable, BM25 still returns a
+ * usable ranking instead of failing the whole request.
+ */
+async function hybridSearchSchemes(queryText, { topK = config.defaultTopK, filters } = {}) {
+  const k = Math.min(Math.max(Number(topK) || config.defaultTopK, 1), config.maxTopK);
+  const candidateK = Math.min(Math.max(k * 5, config.hybridCandidates), 60);
+  const searchText = expandQuery(queryText) || String(queryText || '');
+
+  let denseHits = [];
+  let denseAvailable = false;
+  try {
+    if (await heartbeat()) {
+      denseHits = await search(searchText, { topK: candidateK, filters, maxTopK: candidateK });
+      denseAvailable = denseHits.length > 0;
+    }
+  } catch (err) {
+    console.warn('Dense retrieval unavailable during hybrid search:', err.message);
+  }
+
+  let corpus;
+  try {
+    corpus = await getCorpus(filters || {});
+  } catch (err) {
+    console.warn('BM25 corpus unavailable during hybrid search:', err.message);
+    corpus = { byId: new Map(), index: { score: () => [] } };
+  }
+
+  const lexicalHits = corpus.index.score(searchText).slice(0, candidateK);
+  if (denseHits.length === 0 && lexicalHits.length === 0) return [];
+
+  const fused = rrfFuse(
+    denseHits.map((hit) => hit.id),
+    lexicalHits.map((hit) => hit.id),
+    {
+      k: config.hybridRrfK,
+      denseWeight: config.hybridDenseWeight,
+      lexicalWeight: config.hybridLexicalWeight,
+    },
+  );
+
+  const denseById = new Map(denseHits.map((hit) => [String(hit.id), hit]));
+  const lexicalById = new Map(lexicalHits.map((hit) => [String(hit.id), hit]));
+
+  return fused
+    .slice(0, k)
+    .map((row, index) => {
+      const scheme = corpus.byId.get(String(row.id));
+      if (!scheme) return null;
+      const dense = denseById.get(String(row.id));
+      return {
+        ...scheme,
+        _relevance: dense?.similarity ?? null,
+        _bm25: lexicalById.get(String(row.id))?.score ?? null,
+        _hybrid: Number(row.score.toFixed(6)),
+        _rank: index + 1,
+        _retrieval: denseAvailable ? 'hybrid' : 'lexical-bm25',
+      };
+    })
+    .filter(Boolean);
+}
+
+/**
+ * Lexical fallback used when the vector store is down. It uses the same BM25
+ * index as hybrid retrieval rather than a separate ad-hoc substring score.
+ */
+async function lexicalSearchSchemes(queryText, { topK = config.defaultTopK, filters } = {}) {
+  const k = Math.min(Math.max(Number(topK) || config.defaultTopK, 1), config.maxTopK);
+  const corpus = await getCorpus(filters || {});
+  return corpus.index
+    .score(queryText)
+    .slice(0, k)
+    .map((row, index) => {
+      const scheme = corpus.byId.get(String(row.id));
+      return scheme
+        ? {
+            ...scheme,
+            _relevance: null,
+            _bm25: row.score,
+            _rank: index + 1,
+            _retrieval: 'lexical-bm25',
+          }
+        : null;
+    })
+    .filter(Boolean);
 }
 
 module.exports = {
@@ -152,5 +252,8 @@ module.exports = {
   count,
   search,
   searchSchemes,
+  hybridSearchSchemes,
   lexicalSearchSchemes,
+  clearCorpusCache,
+  getCorpus,
 };

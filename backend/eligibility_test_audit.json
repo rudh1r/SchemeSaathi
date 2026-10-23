@@ -1,0 +1,287 @@
+{
+  "generated_at": "2026-10-23T06:06:10.156Z",
+  "source": "eligibility_test_cases_v2.json",
+  "corrected_dataset": "eligibility_test_cases_v3.json",
+  "total_cases": 133,
+  "changed_cases": 19,
+  "protocol": {
+    "engine_fix": "Rule or normaliser defect; expected label retained.",
+    "complete_profile": "Unambiguous missing fact stated in the case rationale; fixture completed.",
+    "relabel": "Expected label not derivable from supplied facts; adjudicated to Insufficient Information."
+  },
+  "changes": [
+    {
+      "id": "E10",
+      "scheme": "AICTE Pragati Scholarship for Girls",
+      "original_expected": "Eligible",
+      "action": "engine_fix",
+      "reason": "The AICTE rule used the general student flag and ignored the stated technical programme. The profile provides \"program\": \"AICTE-approved diploma\"; after deriving technical_programme, the intended Eligible verdict is correct.",
+      "patch": null,
+      "adjudicated_expected": "Eligible"
+    },
+    {
+      "id": "E11",
+      "scheme": "AICTE Pragati Scholarship for Girls",
+      "original_expected": "Ineligible",
+      "action": "engine_fix",
+      "reason": "The AICTE rule treated any student as technical. The fixture explicitly says \"BA (non-technical, non-AICTE)\", so the rule now rejects it rather than returning Eligible.",
+      "patch": null,
+      "adjudicated_expected": "Ineligible"
+    },
+    {
+      "id": "E12",
+      "scheme": "AICTE Pragati Scholarship for Girls",
+      "original_expected": "Insufficient Information",
+      "action": "engine_fix",
+      "reason": "The two-girls-per-family limit was marked optional even though the case rationale treats it as required. It is now a mandatory condition, so an unknown value correctly yields Insufficient Information.",
+      "patch": null,
+      "adjudicated_expected": "Insufficient Information"
+    },
+    {
+      "id": "E22",
+      "scheme": "Central Sector Scholarship Scheme (CSSS)",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "CSSS requires current undergraduate/postgraduate study. The fixture rationale describes an otherwise eligible student but omitted the student flag.",
+      "patch": {
+        "is_student": true
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "class12_percentile": 85,
+        "family_income": 300000,
+        "receiving_other_central_scholarship": false,
+        "is_student": true
+      }
+    },
+    {
+      "id": "E41",
+      "scheme": "PM SVANidhi",
+      "original_expected": "Ineligible",
+      "action": "relabel",
+      "reason": "A \"shopkeeper\" is not logically equivalent to a non-vendor, and no vending-certificate fact is supplied. The original Ineligible label assumes a fact the fixture does not contain; adjudicated to Insufficient Information.",
+      "patch": null,
+      "adjudicated_expected": "Insufficient Information"
+    },
+    {
+      "id": "E47",
+      "scheme": "PM Vishwakarma",
+      "original_expected": "Ineligible",
+      "action": "relabel",
+      "reason": "The profile states a software-engineer occupation but provides no notified-trade field. The original Ineligible label relies on an inference the rules do not make; adjudicated to Insufficient Information.",
+      "patch": null,
+      "adjudicated_expected": "Insufficient Information"
+    },
+    {
+      "id": "E72",
+      "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Shram Yogi Maandhan requires that the applicant is not an income-tax payer. The rationale describes an eligible unorganised worker but omits this fact.",
+      "patch": {
+        "income_tax_payer": false
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "age": 30,
+        "monthly_income": 11000,
+        "epfo_nps_esic": false,
+        "income_tax_payer": false
+      }
+    },
+    {
+      "id": "E84",
+      "scheme": "Gruha Lakshmi (Karnataka)",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Gruha Lakshmi is a women-only scheme; the fixture rationale describes a woman but the gender field was missing.",
+      "patch": {
+        "gender": "Female"
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "age": 40,
+        "state": "Karnataka",
+        "ration_card": "BPL",
+        "tax_or_gst_payer": false,
+        "gender": "Female"
+      }
+    },
+    {
+      "id": "E86",
+      "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Ladli Behna is a women-only scheme; the fixture rationale describes a woman but the gender field was missing.",
+      "patch": {
+        "gender": "Female"
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "age": 35,
+        "married": true,
+        "state": "Madhya Pradesh",
+        "family_income_lakh": 1.8,
+        "gender": "Female"
+      }
+    },
+    {
+      "id": "E88",
+      "scheme": "Kanyashree Prakalpa (West Bengal)",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Kanyashree requires a girl currently in education. The rationale supplies both facts, but the fixture omitted the corresponding fields.",
+      "patch": {
+        "gender": "Female",
+        "is_student": true
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "age": 15,
+        "married": false,
+        "state": "West Bengal",
+        "family_income": 90000,
+        "gender": "Female",
+        "is_student": true
+      }
+    },
+    {
+      "id": "E90",
+      "scheme": "Sukanya Samriddhi Yojana",
+      "original_expected": "Eligible",
+      "action": "engine_fix",
+      "reason": "The Sukanya rule checked the number of girls in the family instead of the number of existing accounts. The fixture supplies existing_accounts: 0, so the rule now matches the actual scheme condition.",
+      "patch": null,
+      "adjudicated_expected": "Eligible"
+    },
+    {
+      "id": "E92",
+      "scheme": "Sukanya Samriddhi Yojana",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "The rationale says the family is within the two-account limit but the fixture omitted existing_accounts. The fact is added rather than inferred.",
+      "patch": {
+        "existing_accounts": 0
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "daughter_age": 9,
+        "existing_accounts": 0
+      }
+    },
+    {
+      "id": "E98",
+      "scheme": "Janani Suraksha Yojana (JSY)",
+      "original_expected": "Ineligible",
+      "action": "complete_profile",
+      "reason": "JSY requires pregnancy or recent delivery. The rationale describes a delivery, but the field was missing. The facility-delivery condition was also incorrectly optional and is now mandatory.",
+      "patch": {
+        "pregnant": true
+      },
+      "adjudicated_expected": "Ineligible",
+      "corrected_profile_fields": {
+        "age": 26,
+        "bpl": true,
+        "delivery": "home",
+        "pregnant": true
+      }
+    },
+    {
+      "id": "E107",
+      "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "original_expected": "Ineligible",
+      "action": "complete_profile",
+      "reason": "The scheme requires a notified-minority student. The fixture states a Hindu community and 80% marks but omitted both the minority status and student flag. The intended Ineligible verdict follows from minority: false.",
+      "patch": {
+        "minority": false,
+        "is_student": true
+      },
+      "adjudicated_expected": "Ineligible",
+      "corrected_profile_fields": {
+        "community": "Hindu",
+        "marks_percent": 80,
+        "family_income_lakh": 1,
+        "minority": false,
+        "is_student": true
+      }
+    },
+    {
+      "id": "E109",
+      "scheme": "PM-KUSUM",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "PM-KUSUM has an age-18 gate. The rationale describes an eligible landowning farmer but omitted age.",
+      "patch": {
+        "age": 30
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "occupation": "farmer",
+        "owns_land": true,
+        "land_acres": 3,
+        "age": 30
+      }
+    },
+    {
+      "id": "E118",
+      "scheme": "Startup India Seed Fund Scheme",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Startup India Seed Fund has an age-18 gate. The rationale describes an eligible founder but omitted age.",
+      "patch": {
+        "age": 30
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "dpiit": true,
+        "incorporated_years_ago": 1,
+        "age": 30
+      }
+    },
+    {
+      "id": "E123",
+      "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
+      "original_expected": "Eligible",
+      "action": "engine_fix",
+      "reason": "PMEGP accepts Class 8 or above. The fixture says \"Class 10\", but the rule only listed \"10th\"; the education alias is now normalised so the intended Eligible verdict is correct.",
+      "patch": null,
+      "adjudicated_expected": "Eligible"
+    },
+    {
+      "id": "E125",
+      "scheme": "Lakshmir Bhandar (West Bengal)",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Lakshmir Bhandar is a women-only scheme; the fixture rationale describes a woman but the gender field was missing.",
+      "patch": {
+        "gender": "Female"
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "age": 40,
+        "state": "West Bengal",
+        "swasthya_sathi": true,
+        "other_pension": false,
+        "gender": "Female"
+      }
+    },
+    {
+      "id": "E127",
+      "scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+      "original_expected": "Eligible",
+      "action": "complete_profile",
+      "reason": "Kalaignar Magalir Urimai Thogai is a women-only scheme; the fixture rationale describes a woman but the gender field was missing.",
+      "patch": {
+        "gender": "Female"
+      },
+      "adjudicated_expected": "Eligible",
+      "corrected_profile_fields": {
+        "age": 35,
+        "state": "Tamil Nadu",
+        "ration_card": true,
+        "family_income_lakh": 1.5,
+        "gender": "Female"
+      }
+    }
+  ]
+}

@@ -1,22 +1,29 @@
 {
-  "generated_at": "2026-10-22T16:59:44.937Z",
+  "generated_at": "2026-10-23T07:32:39.391Z",
   "engine": "deterministic rule engine (no LLM in the loop)",
+  "dataset": "eligibility_test_cases_v2.json",
   "test_cases": 133,
   "evaluated": 133,
   "missing_schemes": [],
   "metrics": {
     "labeled_cases": 133,
-    "accuracy": 86.47,
+    "correct": 120,
+    "accuracy": 90.23,
+    "accuracy_ci_95": {
+      "low": 83.99,
+      "high": 94.2,
+      "method": "Wilson score interval, 95%"
+    },
     "confusion_matrix_actual_rows_predicted_cols": {
       "Eligible": {
-        "Eligible": 39,
-        "Ineligible": 1,
-        "Insufficient Information": 12
+        "Eligible": 42,
+        "Ineligible": 0,
+        "Insufficient Information": 10
       },
       "Ineligible": {
         "Eligible": 0,
-        "Ineligible": 59,
-        "Insufficient Information": 5
+        "Ineligible": 61,
+        "Insufficient Information": 3
       },
       "Insufficient Information": {
         "Eligible": 0,
@@ -27,37 +34,70 @@
     "per_class": {
       "Eligible": {
         "precision": 100,
-        "recall": 75,
-        "f1": 85.71,
-        "support": 52
+        "precision_ci_95": {
+          "low": 91.62,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "recall": 80.77,
+        "recall_ci_95": {
+          "low": 68.1,
+          "high": 89.2,
+          "method": "Wilson score interval, 95%"
+        },
+        "f1": 89.36,
+        "support": 52,
+        "predicted": 42
       },
       "Ineligible": {
-        "precision": 98.33,
-        "recall": 92.19,
-        "f1": 95.16,
-        "support": 64
+        "precision": 100,
+        "precision_ci_95": {
+          "low": 94.08,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "recall": 95.31,
+        "recall_ci_95": {
+          "low": 87.1,
+          "high": 98.39,
+          "method": "Wilson score interval, 95%"
+        },
+        "f1": 97.6,
+        "support": 64,
+        "predicted": 61
       },
       "Insufficient Information": {
-        "precision": 50,
+        "precision": 56.67,
+        "precision_ci_95": {
+          "low": 39.2,
+          "high": 72.62,
+          "method": "Wilson score interval, 95%"
+        },
         "recall": 100,
-        "f1": 66.67,
-        "support": 17
+        "recall_ci_95": {
+          "low": 81.57,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "f1": 72.34,
+        "support": 17,
+        "predicted": 30
       }
     },
-    "macro_precision": 82.78,
-    "macro_recall": 89.06,
-    "macro_f1": 82.51
+    "macro_precision": 85.56,
+    "macro_recall": 92.03,
+    "macro_f1": 86.43
   },
   "per_category": {
     "clearly_eligible": {
       "cases": 48,
-      "correct": 36,
-      "accuracy": 75
+      "correct": 39,
+      "accuracy": 81.25
     },
     "ineligible_single_condition": {
       "cases": 48,
-      "correct": 43,
-      "accuracy": 89.58
+      "correct": 45,
+      "accuracy": 93.75
     },
     "boundary": {
       "cases": 13,
@@ -76,9 +116,151 @@
     }
   },
   "errors_by_type": {
-    "falseIneligible": 1,
+    "falseIneligible": 0,
     "falseEligible": 0,
-    "overCautious": 12,
+    "overCautious": 10,
+    "missedIneligible": 3,
     "missedUncertainty": 0
-  }
+  },
+  "error_taxonomy_check": {
+    "incorrect_cases": 13,
+    "classified_cases": 13,
+    "unclassified_cases": 0
+  },
+  "incorrect_cases": [
+    {
+      "id": "E22",
+      "scheme": "Central Sector Scholarship Scheme (CSSS)",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Pursuing undergraduate or postgraduate studies"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E41",
+      "scheme": "PM SVANidhi",
+      "expected": "Ineligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Street vendor with a certificate of vending or ULB survey listing"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E47",
+      "scheme": "PM Vishwakarma",
+      "expected": "Ineligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Engaged in one of the 18 notified artisan trades"
+      ],
+      "violated": [
+        "Works as an artisan or craftsperson"
+      ]
+    },
+    {
+      "id": "E72",
+      "scheme": "Pradhan Mantri Shram Yogi Maandhan",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Not an income-tax payer"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E84",
+      "scheme": "Gruha Lakshmi (Karnataka)",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Applicant is a woman"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E86",
+      "scheme": "Ladli Behna Yojana (Madhya Pradesh)",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Applicant is a woman"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E88",
+      "scheme": "Kanyashree Prakalpa (West Bengal)",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Applicant is a girl",
+        "Currently in education"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E92",
+      "scheme": "Sukanya Samriddhi Yojana",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Maximum two existing accounts per family"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E107",
+      "scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "expected": "Ineligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Belongs to a notified minority community",
+        "Currently a student"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E109",
+      "scheme": "PM-KUSUM",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Age 18 years or above"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E118",
+      "scheme": "Startup India Seed Fund Scheme",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Age 18 years or above"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E125",
+      "scheme": "Lakshmir Bhandar (West Bengal)",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Applicant is a woman"
+      ],
+      "violated": []
+    },
+    {
+      "id": "E127",
+      "scheme": "Kalaignar Magalir Urimai Thogai (Tamil Nadu)",
+      "expected": "Eligible",
+      "predicted": "Insufficient Information",
+      "unresolved": [
+        "Applicant is a woman"
+      ],
+      "violated": []
+    }
+  ]
 }

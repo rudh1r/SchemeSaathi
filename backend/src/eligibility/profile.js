@@ -128,11 +128,41 @@ function isStudent(raw, classLevel) {
   if (classLevel !== undefined) return true;
   const occupation = String(raw.occupation || '').toLowerCase();
   if (/student|pupil|scholar|studying/.test(occupation)) return true;
-  const education = [raw.education, raw.education_level, raw.class_or_level, raw.course]
+  const education = [
+    raw.education,
+    raw.education_level,
+    raw.class_or_level,
+    raw.course,
+    raw.programme,
+    raw.program,
+    raw.stream,
+    raw.course_type,
+  ]
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
   if (/studying|enrolled|pursuing|class \d|school|college|university|b\.?tech|b\.?sc|b\.?a\b|b\.?com|m\.?tech|m\.?sc|m\.?a\b|mba|diploma|degree|graduation|post.?graduat|intermediate|12th|11th|10th/.test(education)) {
+    return true;
+  }
+  return undefined;
+}
+
+/**
+ * Detect whether a stated course is a technical/AICTE-type programme.
+ * This is deliberately conservative: when the course text is ambiguous, the
+ * value stays undefined and the rules engine returns "Insufficient
+ * Information" rather than guessing.
+ */
+function isTechnicalProgramme(raw) {
+  const text = [raw.programme, raw.program, raw.course, raw.stream, raw.course_type, raw.education, raw.education_level]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+  if (!text) return undefined;
+  if (/\bnon[- ]?technical\b|non[- ]?aicte|\bgeneral university\b|\bba\b|b\.?a\b|bachelor of arts|b\.?com|commerce/.test(text)) {
+    return false;
+  }
+  if (/aicte|technical|polytechnic|diploma|b\.?tech|b\.?e\b|engineering|iti\b|vocational/.test(text)) {
     return true;
   }
   return undefined;
@@ -247,6 +277,16 @@ function normaliseProfile(input = {}) {
   if (attributes.ration_card === undefined && raw.ration_card) attributes.ration_card = true;
   // A registered pregnancy presupposes a pregnancy.
   if (attributes.pregnant === undefined && attributes.pregnancy_registered === true) attributes.pregnant = true;
+  // Free-text delivery place is common in the eligibility form; map it to the
+  // facility-delivery condition instead of treating it as opaque metadata.
+  const deliveryPlace = firstDefined(raw, ['delivery', 'delivery_place', 'birth_place', 'place_of_delivery']);
+  if (deliveryPlace !== undefined && attributes.delivery_in_facility === undefined) {
+    const text = String(deliveryPlace).toLowerCase();
+    if (/\bhome\b|domestic|house/.test(text)) attributes.delivery_in_facility = false;
+    else if (/hospital|facility|institution|phc|chc|government|govt|private|clinic/.test(text)) {
+      attributes.delivery_in_facility = true;
+    }
+  }
   // "greenfield manufacturing" / "new enterprise"
   if (attributes.greenfield === undefined && raw.enterprise_type && /greenfield|new/i.test(String(raw.enterprise_type))) {
     attributes.greenfield = true;
@@ -268,6 +308,11 @@ function normaliseProfile(input = {}) {
   if (schoolType) attributes.school_type = String(schoolType);
   const student = isStudent(raw, classLevel);
   if (student !== undefined) attributes.is_student = student;
+  const technicalProgramme = isTechnicalProgramme(raw);
+  if (technicalProgramme !== undefined) attributes.technical_programme = technicalProgramme;
+  // A stated technical/AICTE course is evidence of current enrolment; it does
+  // not work in reverse (being a student does not imply a technical course).
+  if (attributes.is_student === undefined && technicalProgramme === true) attributes.is_student = true;
 
   // --- disability ------------------------------------------------------
   let disability = toNumber(firstDefined(raw, ['disability_percent', 'disability_percentage', 'udid_disability_percent']));
@@ -298,6 +343,8 @@ function normaliseProfile(input = {}) {
   if (daughterAge !== undefined) attributes.daughter_age = daughterAge;
   const girlChildren = toNumber(firstDefined(raw, ['girl_children', 'girls_in_family_applying', 'number_of_girls', 'daughters']));
   if (girlChildren !== undefined) attributes.girl_children = girlChildren;
+  const existingAccounts = toNumber(firstDefined(raw, ['existing_accounts', 'existing_sukanya_accounts', 'sukanya_accounts']));
+  if (existingAccounts !== undefined) attributes.existing_accounts = existingAccounts;
   const childrenCount = toNumber(firstDefined(raw, ['children', 'children_count', 'number_of_children']));
   if (childrenCount !== undefined) attributes.children_count = childrenCount;
 
@@ -347,12 +394,14 @@ const ATTR_QUESTIONS = {
   ration_card: 'Do you hold a ration card?',
   disability_percent: 'What percentage of disability is recorded on your certificate?',
   is_student: 'Are you currently a student?',
+  technical_programme: 'Are you enrolled in a technical diploma or degree programme (for example AICTE-approved, polytechnic, B.Tech)?',
   class_level: 'Which class are you studying in?',
   marks_percent: 'What percentage did you score in your previous examination?',
   class12_percentile: 'What was your Class 12 percentile?',
   marital_status: 'What is your marital status?',
   pregnant: 'Are you pregnant or has the delivery just taken place?',
   girl_children: 'How many girl children are there in the family?',
+  existing_accounts: 'How many Sukanya Samriddhi accounts already exist in the family?',
   daughter_age: 'How old is the girl child?',
   government_job_in_family: 'Is anyone in your family in a government job?',
   employed_full_time: 'Are you in full-time employment?',
@@ -368,4 +417,4 @@ const ATTR_QUESTIONS = {
   cause: 'What is the reason for your claim?',
 };
 
-module.exports = { normaliseProfile, ATTR_QUESTIONS, STATES };
+module.exports = { normaliseProfile, isTechnicalProgramme, ATTR_QUESTIONS, STATES };

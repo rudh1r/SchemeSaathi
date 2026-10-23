@@ -1,0 +1,148 @@
+[
+  {
+    "id": "ML01",
+    "query": "kisan ko saal mein 6000 rupaye chahiye",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "type": "single"
+  },
+  {
+    "id": "ML02",
+    "query": "kheti ke liye sasta loan",
+    "expected_scheme": "Kisan Credit Card (KCC)",
+    "type": "single"
+  },
+  {
+    "id": "ML03",
+    "query": "ghar banane ke liye subsidy",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "type": "single"
+  },
+  {
+    "id": "ML04",
+    "query": "hospital ka kharcha bima se",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "type": "single"
+  },
+  {
+    "id": "ML05",
+    "query": "street vendor ko loan chahiye",
+    "expected_scheme": "PM SVANidhi",
+    "type": "single"
+  },
+  {
+    "id": "ML06",
+    "query": "beti ke padhai ke liye scholarship",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": ["Central Sector Scholarship Scheme (CSSS)"],
+    "type": "single"
+  },
+  {
+    "id": "ML07",
+    "query": "budhiya ke liye pension",
+    "expected_scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "type": "single"
+  },
+  {
+    "id": "ML08",
+    "query": "vidhwa mahila pension",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "type": "single"
+  },
+  {
+    "id": "ML09",
+    "query": "divyang pension",
+    "expected_scheme": "Indira Gandhi National Disability Pension Scheme",
+    "type": "single"
+  },
+  {
+    "id": "ML10",
+    "query": "gaon mein toilet banane ke liye paisa",
+    "expected_scheme": "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+    "type": "single"
+  },
+  {
+    "id": "ML11",
+    "query": "SC student ke liye chhatravriti",
+    "expected_scheme": "Post Matric Scholarship for SC Students",
+    "type": "single"
+  },
+  {
+    "id": "ML12",
+    "query": "minority student scholarship",
+    "expected_scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "type": "single"
+  },
+  {
+    "id": "ML13",
+    "query": "skill training seekhna hai",
+    "expected_scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "type": "single"
+  },
+  {
+    "id": "ML14",
+    "query": "mudra loan business ke liye",
+    "expected_scheme": "Pradhan Mantri Mudra Yojana",
+    "type": "single"
+  },
+  {
+    "id": "ML15",
+    "query": "startup funding scheme",
+    "expected_scheme": "Startup India Seed Fund Scheme",
+    "type": "single"
+  },
+  {
+    "id": "ML16",
+    "query": "ghar par solar panel lagwana hai",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "type": "single"
+  },
+  {
+    "id": "ML17",
+    "query": "ration card khana",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "type": "single"
+  },
+  {
+    "id": "ML18",
+    "query": "UP kanya sumangala yojana",
+    "expected_scheme": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+    "type": "single"
+  },
+  {
+    "id": "ML19",
+    "query": "किसान को पैसा",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "type": "single"
+  },
+  {
+    "id": "ML20",
+    "query": "बेटी की पढ़ाई के लिए छात्रवृत्ति",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": ["Central Sector Scholarship Scheme (CSSS)"],
+    "type": "single"
+  },
+  {
+    "id": "ML21",
+    "query": "गरीब परिवार के लिए राशन",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "type": "single"
+  },
+  {
+    "id": "ML22",
+    "query": "विधवा महिला पेंशन",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "type": "single"
+  },
+  {
+    "id": "ML23",
+    "query": "kheti ka bima",
+    "expected_scheme": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "type": "single"
+  },
+  {
+    "id": "ML24",
+    "query": "artisan ko loan aur training",
+    "expected_scheme": "PM Vishwakarma",
+    "type": "single"
+  }
+]

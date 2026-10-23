@@ -1,0 +1,161 @@
+{
+  "baseline": "BM25 over scheme_name + description + benefits + eligibility",
+  "benchmark": "multilingual_benchmark.json",
+  "schemes": 112,
+  "single_relevant": {
+    "k3": {
+      "queries": 24,
+      "k": 3,
+      "top1_accuracy": 50,
+      "hit_at_3": 66.67,
+      "recall_at_3": 64.58,
+      "precision_at_3": 22.22,
+      "f1_at_3": 33.07,
+      "mrr": 0.5903
+    },
+    "k5": {
+      "queries": 24,
+      "k": 5,
+      "top1_accuracy": 50,
+      "hit_at_5": 75,
+      "recall_at_5": 72.92,
+      "precision_at_5": 15,
+      "f1_at_5": 24.88,
+      "mrr": 0.5903
+    }
+  },
+  "multi_relevant": {
+    "k3": {
+      "queries": 0,
+      "k": 3,
+      "top1_accuracy": null,
+      "hit_at_3": null,
+      "recall_at_3": null,
+      "precision_at_3": null,
+      "f1_at_3": 0,
+      "mrr": null
+    }
+  },
+  "top1_failures": [
+    {
+      "id": "ML02",
+      "query": "kheti ke liye sasta loan",
+      "expected": "Kisan Credit Card (KCC)",
+      "got_top3": [
+        "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+        "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+        "PM SVANidhi"
+      ]
+    },
+    {
+      "id": "ML03",
+      "query": "ghar banane ke liye subsidy",
+      "expected": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "got_top3": [
+        "PM Surya Ghar Muft Bijli Yojana",
+        "Credit Linked Subsidy Scheme (CLSS)",
+        "Pradhan Mantri Employment Generation Programme (PMEGP)"
+      ]
+    },
+    {
+      "id": "ML04",
+      "query": "hospital ka kharcha bima se",
+      "expected": "Ayushman Bharat PM-JAY",
+      "got_top3": [
+        "Rashtriya Arogya Nidhi",
+        "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+        "Pradhan Mantri Suraksha Bima Yojana"
+      ]
+    },
+    {
+      "id": "ML06",
+      "query": "beti ke padhai ke liye scholarship",
+      "expected": "AICTE Pragati Scholarship for Girls",
+      "got_top3": [
+        "Beti Bachao Beti Padhao",
+        "National Scholarship Portal (NSP)",
+        "Central Sector Scholarship Scheme (CSSS)"
+      ]
+    },
+    {
+      "id": "ML07",
+      "query": "budhiya ke liye pension",
+      "expected": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "got_top3": [
+        "Indira Gandhi National Widow Pension Scheme",
+        "Indira Gandhi National Disability Pension Scheme",
+        "Atal Pension Yojana"
+      ]
+    },
+    {
+      "id": "ML09",
+      "query": "divyang pension",
+      "expected": "Indira Gandhi National Disability Pension Scheme",
+      "got_top3": [
+        "Indira Gandhi National Widow Pension Scheme",
+        "Indira Gandhi National Disability Pension Scheme",
+        "Atal Pension Yojana"
+      ]
+    },
+    {
+      "id": "ML13",
+      "query": "skill training seekhna hai",
+      "expected": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "got_top3": [
+        "PM Vishwakarma",
+        "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+        "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission (DAY-NULM)"
+      ]
+    },
+    {
+      "id": "ML17",
+      "query": "ration card khana",
+      "expected": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "got_top3": [
+        "One Nation One Ration Card",
+        "Gruha Lakshmi (Karnataka)",
+        "Kalaignar Magalir Urimai Thogai (Tamil Nadu)"
+      ]
+    },
+    {
+      "id": "ML20",
+      "query": "बेटी की पढ़ाई के लिए छात्रवृत्ति",
+      "expected": "AICTE Pragati Scholarship for Girls",
+      "got_top3": [
+        "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+        "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+        "Ayushman Bharat PM-JAY"
+      ]
+    },
+    {
+      "id": "ML21",
+      "query": "गरीब परिवार के लिए राशन",
+      "expected": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "got_top3": [
+        "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+        "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+        "Ayushman Bharat PM-JAY"
+      ]
+    },
+    {
+      "id": "ML22",
+      "query": "विधवा महिला पेंशन",
+      "expected": "Indira Gandhi National Widow Pension Scheme",
+      "got_top3": [
+        "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+        "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+        "Ayushman Bharat PM-JAY"
+      ]
+    },
+    {
+      "id": "ML23",
+      "query": "kheti ka bima",
+      "expected": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "got_top3": [
+        "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+        "Pradhan Mantri Suraksha Bima Yojana",
+        "Pradhan Mantri Fasal Bima Yojana (PMFBY)"
+      ]
+    }
+  ]
+}

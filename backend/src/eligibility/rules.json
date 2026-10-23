@@ -331,7 +331,7 @@
         "label": "Annual family income below ₹8,00,000"
       },
       {
-        "attr": "is_student",
+        "attr": "technical_programme",
         "op": "is_true",
         "value": true,
         "label": "Currently enrolled in a technical diploma or degree programme"
@@ -340,8 +340,7 @@
         "attr": "girl_children",
         "op": "lte",
         "value": 2,
-        "label": "At most two girls from the family across AICTE scholarships",
-        "optional": true
+        "label": "At most two girls from the family across AICTE scholarships"
       }
     ],
     "source": "curated"
@@ -877,8 +876,7 @@
         "attr": "delivery_in_facility",
         "op": "is_true",
         "value": true,
-        "label": "Delivery in a recognised health facility",
-        "optional": true
+        "label": "Delivery in a recognised health facility"
       }
     ],
     "source": "curated"
@@ -1216,10 +1214,10 @@
         "label": "Girl child below 10 years"
       },
       {
-        "attr": "girl_children",
+        "attr": "existing_accounts",
         "op": "lte",
         "value": 2,
-        "label": "Maximum two accounts per family"
+        "label": "Maximum two existing accounts per family"
       }
     ],
     "source": "curated"
@@ -1315,10 +1313,19 @@
               "op": "matches",
               "value": [
                 "class 8",
+                "class 9",
+                "class 10",
+                "class 11",
+                "class 12",
                 "8th",
                 "9th",
                 "10th",
+                "11th",
                 "12th",
+                "matric",
+                "intermediate",
+                "high school",
+                "higher secondary",
                 "graduate",
                 "diploma",
                 "degree"

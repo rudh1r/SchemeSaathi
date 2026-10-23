@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-10-23T07:32:39.336Z",
+  "engine": "deterministic rule engine (no LLM in the loop)",
+  "dataset": "eligibility_test_cases_v3.json",
+  "test_cases": 133,
+  "evaluated": 133,
+  "missing_schemes": [],
+  "metrics": {
+    "labeled_cases": 133,
+    "correct": 133,
+    "accuracy": 100,
+    "accuracy_ci_95": {
+      "low": 97.19,
+      "high": 100,
+      "method": "Wilson score interval, 95%"
+    },
+    "confusion_matrix_actual_rows_predicted_cols": {
+      "Eligible": {
+        "Eligible": 52,
+        "Ineligible": 0,
+        "Insufficient Information": 0
+      },
+      "Ineligible": {
+        "Eligible": 0,
+        "Ineligible": 62,
+        "Insufficient Information": 0
+      },
+      "Insufficient Information": {
+        "Eligible": 0,
+        "Ineligible": 0,
+        "Insufficient Information": 19
+      }
+    },
+    "per_class": {
+      "Eligible": {
+        "precision": 100,
+        "precision_ci_95": {
+          "low": 93.12,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "recall": 100,
+        "recall_ci_95": {
+          "low": 93.12,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "f1": 100,
+        "support": 52,
+        "predicted": 52
+      },
+      "Ineligible": {
+        "precision": 100,
+        "precision_ci_95": {
+          "low": 94.17,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "recall": 100,
+        "recall_ci_95": {
+          "low": 94.17,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "f1": 100,
+        "support": 62,
+        "predicted": 62
+      },
+      "Insufficient Information": {
+        "precision": 100,
+        "precision_ci_95": {
+          "low": 83.18,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "recall": 100,
+        "recall_ci_95": {
+          "low": 83.18,
+          "high": 100,
+          "method": "Wilson score interval, 95%"
+        },
+        "f1": 100,
+        "support": 19,
+        "predicted": 19
+      }
+    },
+    "macro_precision": 100,
+    "macro_recall": 100,
+    "macro_f1": 100
+  },
+  "per_category": {
+    "clearly_eligible": {
+      "cases": 48,
+      "correct": 48,
+      "accuracy": 100
+    },
+    "ineligible_single_condition": {
+      "cases": 48,
+      "correct": 48,
+      "accuracy": 100
+    },
+    "boundary": {
+      "cases": 13,
+      "correct": 13,
+      "accuracy": 100
+    },
+    "insufficient_information": {
+      "cases": 17,
+      "correct": 17,
+      "accuracy": 100
+    },
+    "ineligible_multiple_conditions": {
+      "cases": 7,
+      "correct": 7,
+      "accuracy": 100
+    }
+  },
+  "errors_by_type": {
+    "falseIneligible": 0,
+    "falseEligible": 0,
+    "overCautious": 0,
+    "missedIneligible": 0,
+    "missedUncertainty": 0
+  },
+  "error_taxonomy_check": {
+    "incorrect_cases": 0,
+    "classified_cases": 0,
+    "unclassified_cases": 0
+  },
+  "incorrect_cases": []
+}

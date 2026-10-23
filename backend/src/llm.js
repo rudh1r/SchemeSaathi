@@ -83,22 +83,56 @@ Write the answer using only this evidence. Mention the most relevant scheme(s) f
   return messages;
 }
 
-async function generateAnswer(input) {
-  const completion = await getClient().chat.completions.create(
-    {
-      model: config.groqModel,
-      messages: buildMessages(input),
-      temperature: 0.2,
-      max_tokens: 900,
-    },
-    { timeout: config.groqTimeoutMs },
-  );
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  return {
-    text: completion.choices?.[0]?.message?.content?.trim() || '',
-    model: completion.model || config.groqModel,
-    usage: completion.usage || null,
-  };
+function isRetryable(error) {
+  const status = Number(error?.status || error?.response?.status || 0);
+  if ([408, 409, 425, 429, 500, 502, 503, 504].includes(status)) return true;
+  const message = String(error?.message || '').toLowerCase();
+  return /rate.?limit|too many requests|timeout|timed out|fetch failed|econnreset|econnrefused|socket hang up|overloaded|temporar/.test(message);
+}
+
+async function withRetry(label, operation) {
+  const attempts = Math.max(1, Math.min(Number(config.groqMaxRetries) || 1, 5));
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await operation(attempt);
+    } catch (error) {
+      lastError = error;
+      if (!isRetryable(error) || attempt === attempts) throw error;
+      const delay = 700 * 2 ** (attempt - 1) + Math.floor(Math.random() * 350);
+      console.warn(`${label} failed (attempt ${attempt}/${attempts}); retrying in ${delay}ms: ${error.message}`);
+      await sleep(delay);
+    }
+  }
+  throw lastError;
+}
+
+async function generateAnswer(input) {
+  return withRetry('Groq completion', async () => {
+    const completion = await getClient().chat.completions.create(
+      {
+        model: config.groqModel,
+        messages: buildMessages(input),
+        temperature: 0.2,
+        max_tokens: 900,
+      },
+      { timeout: config.groqTimeoutMs },
+    );
+
+    const text = completion.choices?.[0]?.message?.content?.trim() || '';
+    if (!text) {
+      const error = new Error('Groq returned an empty completion');
+      error.status = 502;
+      throw error;
+    }
+    return {
+      text,
+      model: completion.model || config.groqModel,
+      usage: completion.usage || null,
+    };
+  });
 }
 
 /**
@@ -106,26 +140,47 @@ async function generateAnswer(input) {
  * `onToken` receives incremental text; resolves with the full answer.
  */
 async function streamAnswer(input, onToken) {
-  const stream = await getClient().chat.completions.create(
-    {
-      model: config.groqModel,
-      messages: buildMessages(input),
-      temperature: 0.2,
-      max_tokens: 900,
-      stream: true,
-    },
-    { timeout: config.groqTimeoutMs },
-  );
+  const attempts = Math.max(1, Math.min(Number(config.groqMaxRetries) || 1, 5));
 
-  let text = '';
-  for await (const chunk of stream) {
-    const delta = chunk.choices?.[0]?.delta?.content || '';
-    if (delta) {
-      text += delta;
-      onToken?.(delta);
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    let text = '';
+    try {
+      const stream = await getClient().chat.completions.create(
+        {
+          model: config.groqModel,
+          messages: buildMessages(input),
+          temperature: 0.2,
+          max_tokens: 900,
+          stream: true,
+        },
+        { timeout: config.groqTimeoutMs },
+      );
+
+      for await (const chunk of stream) {
+        const delta = chunk.choices?.[0]?.delta?.content || '';
+        if (delta) {
+          text += delta;
+          onToken?.(delta);
+        }
+      }
+
+      if (!text.trim()) {
+        const error = new Error('Groq returned an empty streamed answer');
+        error.status = 502;
+        throw error;
+      }
+      return { text: text.trim(), model: config.groqModel };
+    } catch (error) {
+      // Never retry after the user has already seen streamed tokens: that
+      // would duplicate text. Retrying is safe only for a failed/empty stream.
+      if (text || !isRetryable(error) || attempt === attempts) throw error;
+      const delay = 700 * 2 ** (attempt - 1) + Math.floor(Math.random() * 350);
+      console.warn(`Groq stream failed (attempt ${attempt}/${attempts}); retrying in ${delay}ms: ${error.message}`);
+      await sleep(delay);
     }
   }
-  return { text: text.trim(), model: config.groqModel };
+
+  throw new Error('Groq stream failed after retries');
 }
 
 module.exports = { generateAnswer, streamAnswer, buildMessages, SYSTEM_PROMPT };

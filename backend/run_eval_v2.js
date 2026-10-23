@@ -2,13 +2,16 @@
  * run_eval_v2.js  ->  put this file and the three *_v2.json / retrieval_benchmark.json files
  * into SchemeSaathi/backend/ (same folder as server.js).
  *
- *   node run_eval_v2.js retrieval     # automatic metrics, needs Chroma only
+ *   node run_eval_v2.js retrieval     # dense-only metrics, needs Chroma only
+ *   node run_eval_v2.js hybrid        # dense+BM25 fusion, needs Mongo + Chroma
+ *   node run_eval_v2.js multilingual  # Hinglish/Hindi benchmark through hybrid retrieval
+ *   node run_eval_v2.js multilingual-dense|multilingual-lexical
  *   node run_eval_v2.js lexical       # BM25 baseline for comparison, needs nothing running
  *   node run_eval_v2.js eligibility   # needs backend (server.js) running
  *   node run_eval_v2.js rag           # needs backend running
  *   node run_eval_v2.js load 3        # concurrency test, 3 parallel users
  *   node run_eval_v2.js metrics       # after you have scored the raw files by hand
- *   node run_eval_v2.js all           # retrieval + eligibility + rag
+ *   node run_eval_v2.js all           # retrieval + hybrid + eligibility + rag
  *
  * Why retrieval talks to Chroma directly: /api/query returns schemes in MongoDB order,
  * not ranked order, so Top-1 cannot be measured through the API.
@@ -51,7 +54,7 @@ function retrievalMetrics(rows, k) {
     rr.push(idx >= 0 && idx < K ? 1 / (idx + 1) : 0);
   }
   const P = mean(prec), R = mean(rec);
-  return { queries: r.length, k, top1_accuracy: pct(mean(top1)), [`hit_at_${k}`]: pct(mean(hit)), [`recall_at_${k}`]: pct(R), [`precision_at_${k}`]: pct(P), [`f1_at_${k}`]: pct(P + R ? (2 * P * R) / (P + R) : 0), mrr: +mean(rr).toFixed(4) };
+  return { queries: r.length, k, top1_accuracy: pct(mean(top1)), [`hit_at_${k}`]: pct(mean(hit)), [`recall_at_${k}`]: pct(R), [`precision_at_${k}`]: pct(P), [`f1_at_${k}`]: pct(P + R ? (2 * P * R) / (P + R) : 0), mrr: rr.length ? +mean(rr).toFixed(4) : null };
 }
 function confusion(rows) {
   const L = ['Eligible', 'Ineligible', 'Insufficient Information'];
@@ -83,19 +86,104 @@ function buildBM25(docs) {
   const df = new Map(); tf.forEach((m) => m.forEach((_, w) => df.set(w, (df.get(w) || 0) + 1)));
   return (q) => docs.map((_, i) => { let s = 0; for (const w of new Set(tok(q))) { const f = tf[i].get(w) || 0; if (!f) continue; const idf = Math.log(1 + (N - df.get(w) + 0.5) / (df.get(w) + 0.5)); s += (idf * f * 2.5) / (f + 1.5 * (0.25 + 0.75 * (len[i] / avg))); } return s; });
 }
-async function runLexical() {
+async function runLexical({ benchmark = 'retrieval_benchmark.json', prefix = 'lexical_baseline' } = {}) {
   const schemes = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/schemes.json'), 'utf8'));
   const docs = schemes.map((s) => `${s.scheme_name}. ${s.description} ${s.benefits || ''} ${JSON.stringify(s.eligibility || {})}`);
   const score = buildBM25(docs);
-  const bench = read('retrieval_benchmark.json');
+  const bench = read(benchmark);
   const rows = bench.map((c) => {
     const sc = score(c.query).map((v, i) => [v, schemes[i].scheme_name]).sort((a, b) => b[0] - a[0]);
-    return { id: c.id, type: c.type, relevant: c.expected_scheme ? [c.expected_scheme, ...c.also_relevant] : [], ranked: sc.slice(0, K).map((x) => x[1]) };
+    return { id: c.id, query: c.query, type: c.type, expected_scheme: c.expected_scheme, relevant: c.expected_scheme ? [c.expected_scheme, ...(c.also_relevant || [])] : [], ranked: sc.slice(0, K).map((x) => x[1]) };
   });
   const single = rows.filter((r) => r.type === 'single'), multi = rows.filter((r) => r.type === 'multi_relevant');
-  const m = { baseline: 'BM25 over scheme_name + description + benefits + eligibility', schemes: schemes.length, single_relevant: { k3: retrievalMetrics(single, 3), k5: retrievalMetrics(single, 5) }, multi_relevant: { k3: retrievalMetrics(multi, 3) } };
-  write('lexical_baseline_metrics.json', m);
+  const m = {
+    baseline: 'BM25 over scheme_name + description + benefits + eligibility',
+    benchmark,
+    schemes: schemes.length,
+    single_relevant: { k3: retrievalMetrics(single, 3), k5: retrievalMetrics(single, 5) },
+    multi_relevant: { k3: retrievalMetrics(multi, 3) },
+    top1_failures: single.filter((r) => r.ranked[0] !== r.expected_scheme).map((r) => ({ id: r.id, query: r.query, expected: r.expected_scheme, got_top3: r.ranked.slice(0, 3) })),
+  };
+  write(`${prefix}_metrics.json`, m);
   console.log(JSON.stringify(m, null, 2));
+}
+
+// ---------------- hybrid retrieval (dense + BM25 RRF) ----------------
+async function runHybrid({ benchmark = 'retrieval_benchmark.json', prefix = 'hybrid_retrieval' } = {}) {
+  const { connectDB, closeDB } = require('./src/db');
+  const { hybridSearchSchemes, clearCorpusCache } = require('./src/retrieval');
+
+  await connectDB();
+  clearCorpusCache();
+  const bench = read(benchmark);
+  const rows = [];
+  const latencies = [];
+
+  try {
+    for (let i = 0; i < bench.length; i += 1) {
+      const c = bench[i];
+      const t0 = Date.now();
+      const hits = await hybridSearchSchemes(c.query, { topK: K });
+      const ms = Date.now() - t0;
+      latencies.push(ms);
+      rows.push({
+        id: c.id,
+        query: c.query,
+        type: c.type,
+        expected_scheme: c.expected_scheme,
+        also_relevant: c.also_relevant,
+        relevant: c.expected_scheme ? [c.expected_scheme, ...(c.also_relevant || [])] : [],
+        ranked: hits.map((hit) => hit.scheme_name),
+        hybrid_scores: hits.map((hit) => hit._hybrid ?? null),
+        dense_similarities: hits.map((hit) => hit._relevance ?? null),
+        bm25_scores: hits.map((hit) => hit._bm25 ?? null),
+        retrieval_latency_ms: ms,
+      });
+      if ((i + 1) % 10 === 0) process.stdout.write(`\r[hybrid] ${i + 1}/${bench.length}`);
+    }
+    process.stdout.write('\n');
+  } finally {
+    await closeDB().catch(() => {});
+  }
+
+  const single = rows.filter((r) => r.type === 'single');
+  const multi = rows.filter((r) => r.type === 'multi_relevant');
+  const inScope = rows.filter((r) => r.type !== 'out_of_scope');
+  const top1Failures = single
+    .filter((r) => r.ranked[0] !== r.expected_scheme)
+    .map((r) => ({
+      id: r.id,
+      query: r.query,
+      expected: r.expected_scheme,
+      got_top3: r.ranked.slice(0, 3),
+    }));
+
+  const metrics = {
+    engine: 'hybrid-dense-bm25-rrf',
+    benchmark,
+    note: 'Dense Chroma candidates + BM25 candidates fused with reciprocal-rank fusion. BM25 sees the full filtered corpus; dense candidates are capped by maxTopK.',
+    single_relevant: { k3: retrievalMetrics(single, 3), k5: retrievalMetrics(single, 5) },
+    multi_relevant: { k3: retrievalMetrics(multi, 3), k5: retrievalMetrics(multi, 5) },
+    overall: { k3: retrievalMetrics(inScope, 3), k5: retrievalMetrics(inScope, 5) },
+    retrieval_latency_ms: {
+      n: latencies.length,
+      mean: Math.round(mean(latencies)),
+      median: percentile(latencies, 50),
+      p95: percentile(latencies, 95),
+      max: Math.max(...latencies),
+    },
+    top1_failures: top1Failures,
+  };
+
+  write(`${prefix}_results_raw.json`, rows);
+  write(`${prefix}_metrics.json`, metrics);
+  console.log(JSON.stringify({
+    single: metrics.single_relevant,
+    multi: metrics.multi_relevant,
+    overall: metrics.overall,
+    latency_ms: metrics.retrieval_latency_ms,
+    failures: top1Failures.length,
+  }, null, 2));
 }
 
 // ---------------- backend call ----------------
@@ -108,11 +196,11 @@ async function ask(query) {
 }
 
 // ---------------- runners ----------------
-async function runRetrieval() {
+async function runRetrieval({ benchmark = 'retrieval_benchmark.json', prefix = 'retrieval' } = {}) {
   const { ChromaClient } = require('chromadb');
   const chroma = new ChromaClient({ host: 'localhost', port: 8000, ssl: false });
   const col = await chroma.getOrCreateCollection({ name: 'schemes' });
-  const bench = read('retrieval_benchmark.json');
+  const bench = read(benchmark);
   const rows = [];
   const BATCH = 10;
   for (let i = 0; i < bench.length; i += BATCH) {
@@ -123,7 +211,7 @@ async function runRetrieval() {
     chunk.forEach((c, j) => {
       rows.push({
         id: c.id, query: c.query, type: c.type, expected_scheme: c.expected_scheme, also_relevant: c.also_relevant,
-        relevant: c.expected_scheme ? [c.expected_scheme, ...c.also_relevant] : [],
+        relevant: c.expected_scheme ? [c.expected_scheme, ...(c.also_relevant || [])] : [],
         ranked: out.metadatas[j].map((m) => m.scheme_name),
         distances: out.distances ? out.distances[j] : null,
         retrieval_latency_ms: Math.round(per),
@@ -145,10 +233,10 @@ async function runRetrieval() {
     retrieval_latency_ms: latencyStats(rows.map((r) => r.retrieval_latency_ms)),
     top1_failures: failures,
   };
-  write('retrieval_results_raw.json', rows);
-  write('retrieval_metrics.json', m);
+  write(`${prefix}_results_raw.json`, rows);
+  write(`${prefix}_metrics.json`, m);
   console.log(JSON.stringify({ single: m.single_relevant.k3, multi: m.multi_relevant.k3, failures: failures.length }, null, 2));
-  console.log('Wrote retrieval_results_raw.json and retrieval_metrics.json');
+  console.log(`Wrote ${prefix}_results_raw.json and ${prefix}_metrics.json`);
 }
 
 async function runEligibility() {
@@ -239,8 +327,19 @@ module.exports = { buildBM25, tok, retrievalMetrics, confusion, latencyStats, pe
 
 if (require.main === module) {
   const mode = process.argv[2];
-  const job = { retrieval: runRetrieval, lexical: runLexical, eligibility: runEligibility, rag: runRag, load: () => runLoad(+process.argv[3] || 3), metrics: async () => runMetrics(),
-    all: async () => { await runRetrieval(); await runEligibility(); await runRag(); } }[mode];
-  if (!job) { console.log('usage: node run_eval_v2.js retrieval|lexical|eligibility|rag|load [N]|metrics|all'); process.exit(1); }
+  const job = {
+    retrieval: runRetrieval,
+    hybrid: runHybrid,
+    multilingual: () => runHybrid({ benchmark: 'multilingual_benchmark.json', prefix: 'retrieval_multilingual_hybrid' }),
+    'multilingual-dense': () => runRetrieval({ benchmark: 'multilingual_benchmark.json', prefix: 'retrieval_multilingual_dense' }),
+    'multilingual-lexical': () => runLexical({ benchmark: 'multilingual_benchmark.json', prefix: 'retrieval_multilingual_lexical' }),
+    lexical: runLexical,
+    eligibility: runEligibility,
+    rag: runRag,
+    load: () => runLoad(+process.argv[3] || 3),
+    metrics: async () => runMetrics(),
+    all: async () => { await runRetrieval(); await runHybrid(); await runEligibility(); await runRag(); },
+  }[mode];
+  if (!job) { console.log('usage: node run_eval_v2.js retrieval|hybrid|multilingual|multilingual-dense|multilingual-lexical|lexical|eligibility|rag|load [N]|metrics|all'); process.exit(1); }
   job().catch((e) => { console.error('\n❌', e.message); process.exit(1); });
 }

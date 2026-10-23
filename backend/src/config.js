@@ -69,6 +69,7 @@ const config = {
   groqApiKey: process.env.GROQ_API_KEY,
   groqModel: process.env.GROQ_MODEL || 'openai/gpt-oss-20b',
   groqTimeoutMs: num(process.env.GROQ_TIMEOUT_MS, 30000),
+  groqMaxRetries: num(process.env.GROQ_MAX_RETRIES, 3),
 
   chroma: {
     host: chromaUrl.hostname,
@@ -80,6 +81,13 @@ const config = {
 
   defaultTopK: num(process.env.TOP_K, 3),
   maxTopK: num(process.env.MAX_TOP_K, 10),
+
+  // Hybrid retrieval: dense + BM25 fused with reciprocal-rank fusion.
+  hybridRetrieval: bool(process.env.HYBRID_RETRIEVAL, true),
+  hybridCandidates: num(process.env.HYBRID_CANDIDATES, 25),
+  hybridRrfK: num(process.env.HYBRID_RRF_K, 60),
+  hybridDenseWeight: num(process.env.HYBRID_DENSE_WEIGHT, 0.6),
+  hybridLexicalWeight: num(process.env.HYBRID_LEXICAL_WEIGHT, 1.4),
 
   corsOrigins: list(process.env.CORS_ORIGINS, [
     'http://localhost:5173',

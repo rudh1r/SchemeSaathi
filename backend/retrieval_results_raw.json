@@ -22,7 +22,7 @@
       1.198139,
       1.2158046
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q002",
@@ -47,7 +47,7 @@
       1.1219847,
       1.1411217
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q003",
@@ -72,7 +72,7 @@
       1.203265,
       1.2298009
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q004",
@@ -97,7 +97,7 @@
       1.13543,
       1.2407391
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q005",
@@ -122,7 +122,7 @@
       1.2338853,
       1.2810233
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q006",
@@ -147,7 +147,7 @@
       1.3645474,
       1.3729969
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q007",
@@ -172,7 +172,7 @@
       1.1258361,
       1.1604813
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q008",
@@ -197,7 +197,7 @@
       1.4576955,
       1.4645509
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q009",
@@ -222,7 +222,7 @@
       1.2193781,
       1.2997864
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q010",
@@ -247,7 +247,7 @@
       1.2949233,
       1.2994745
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 36
   },
   {
     "id": "Q011",
@@ -272,7 +272,7 @@
       1.2475241,
       1.3894709
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q012",
@@ -297,7 +297,7 @@
       1.4017196,
       1.4236231
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q013",
@@ -322,7 +322,7 @@
       1.2142227,
       1.2264917
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q014",
@@ -347,7 +347,7 @@
       1.2962424,
       1.3196609
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q015",
@@ -372,7 +372,7 @@
       1.36802,
       1.3838124
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q016",
@@ -397,7 +397,7 @@
       1.058547,
       1.0750251
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q017",
@@ -422,7 +422,7 @@
       0.8192988,
       0.8468803
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q018",
@@ -447,7 +447,7 @@
       0.88814837,
       0.8906462
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q019",
@@ -472,7 +472,7 @@
       1.3032141,
       1.3260287
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q020",
@@ -497,7 +497,7 @@
       1.2687556,
       1.271615
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 27
   },
   {
     "id": "Q021",
@@ -522,7 +522,7 @@
       1.1842676,
       1.2469494
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q022",
@@ -547,7 +547,7 @@
       1.362208,
       1.3946909
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q023",
@@ -572,7 +572,7 @@
       1.3680093,
       1.3980875
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q024",
@@ -597,7 +597,7 @@
       1.5273066,
       1.551861
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q025",
@@ -622,7 +622,7 @@
       1.2068038,
       1.2116603
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q026",
@@ -647,7 +647,7 @@
       1.3258026,
       1.3366925
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q027",
@@ -672,7 +672,7 @@
       1.2645619,
       1.3179709
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q028",
@@ -697,7 +697,7 @@
       1.4878464,
       1.5027496
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q029",
@@ -722,7 +722,7 @@
       1.6909176,
       1.7063048
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q030",
@@ -747,7 +747,7 @@
       1.1165133,
       1.1254951
     ],
-    "retrieval_latency_ms": 18
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q031",
@@ -772,7 +772,7 @@
       1.3441923,
       1.3801608
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q032",
@@ -797,7 +797,7 @@
       1.4925449,
       1.4965783
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q033",
@@ -822,7 +822,7 @@
       1.509829,
       1.5508144
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q034",
@@ -847,7 +847,7 @@
       0.7538733,
       0.8203021
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q035",
@@ -872,7 +872,7 @@
       0.9566651,
       0.97838897
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q036",
@@ -897,7 +897,7 @@
       0.99362946,
       0.9986258
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q037",
@@ -922,7 +922,7 @@
       0.97102475,
       0.9742893
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q038",
@@ -947,7 +947,7 @@
       0.9767061,
       1.0077467
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q039",
@@ -972,7 +972,7 @@
       1.1192324,
       1.1240933
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q040",
@@ -997,7 +997,7 @@
       0.82597315,
       0.82684624
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q041",
@@ -1022,7 +1022,7 @@
       1.3010522,
       1.3518605
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q042",
@@ -1047,7 +1047,7 @@
       0.9815423,
       0.98312414
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q043",
@@ -1072,7 +1072,7 @@
       1.1086228,
       1.1406778
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q044",
@@ -1097,7 +1097,7 @@
       1.2388688,
       1.2519208
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q045",
@@ -1122,7 +1122,7 @@
       1.4319298,
       1.4340842
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q046",
@@ -1147,7 +1147,7 @@
       1.2769896,
       1.3317221
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q047",
@@ -1172,7 +1172,7 @@
       1.3828847,
       1.404613
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q048",
@@ -1197,7 +1197,7 @@
       1.4565874,
       1.4772496
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q049",
@@ -1222,7 +1222,7 @@
       1.3559039,
       1.3685709
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q050",
@@ -1247,7 +1247,7 @@
       1.3086604,
       1.3247696
     ],
-    "retrieval_latency_ms": 20
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q051",
@@ -1272,7 +1272,7 @@
       1.3008821,
       1.3083262
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q052",
@@ -1297,7 +1297,7 @@
       1.0364759,
       1.0546143
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q053",
@@ -1322,7 +1322,7 @@
       1.2668979,
       1.3294665
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q054",
@@ -1347,7 +1347,7 @@
       1.1479663,
       1.2233894
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q055",
@@ -1372,7 +1372,7 @@
       1.1588453,
       1.2284778
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q056",
@@ -1397,7 +1397,7 @@
       1.2342111,
       1.2608056
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q057",
@@ -1422,7 +1422,7 @@
       1.0083964,
       1.0846257
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q058",
@@ -1447,7 +1447,7 @@
       0.9788866,
       1.0460427
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q059",
@@ -1472,7 +1472,7 @@
       1.201874,
       1.2294015
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q060",
@@ -1497,7 +1497,7 @@
       1.203059,
       1.2357308
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q061",
@@ -1522,7 +1522,7 @@
       0.86457574,
       0.89918756
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q062",
@@ -1547,7 +1547,7 @@
       0.8750928,
       0.8756018
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q063",
@@ -1572,7 +1572,7 @@
       0.9458238,
       0.9544997
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q064",
@@ -1597,7 +1597,7 @@
       1.4737178,
       1.5128351
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q065",
@@ -1622,7 +1622,7 @@
       1.4766965,
       1.5146095
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q066",
@@ -1647,7 +1647,7 @@
       1.2942238,
       1.3920608
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q067",
@@ -1672,7 +1672,7 @@
       1.2032925,
       1.2197554
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q068",
@@ -1697,7 +1697,7 @@
       0.98631287,
       1.0642252
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q069",
@@ -1722,7 +1722,7 @@
       1.0108666,
       1.0297779
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q070",
@@ -1747,7 +1747,7 @@
       1.4290154,
       1.4493133
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q071",
@@ -1772,7 +1772,7 @@
       1.3306394,
       1.3636584
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q072",
@@ -1797,7 +1797,7 @@
       1.223585,
       1.244441
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q073",
@@ -1822,7 +1822,7 @@
       1.3673873,
       1.3885179
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q074",
@@ -1847,7 +1847,7 @@
       1.2811836,
       1.3048548
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q075",
@@ -1872,7 +1872,7 @@
       1.4832242,
       1.4902021
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q076",
@@ -1897,7 +1897,7 @@
       1.4461378,
       1.4709173
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q077",
@@ -1922,7 +1922,7 @@
       1.3057656,
       1.312066
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q078",
@@ -1947,7 +1947,7 @@
       1.382387,
       1.4240694
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q079",
@@ -1972,7 +1972,7 @@
       1.2764671,
       1.2850734
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q080",
@@ -1997,7 +1997,7 @@
       1.5003058,
       1.5142803
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 26
   },
   {
     "id": "Q081",
@@ -2022,7 +2022,7 @@
       1.5493681,
       1.640796
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q082",
@@ -2047,7 +2047,7 @@
       1.3403912,
       1.3530263
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q083",
@@ -2072,7 +2072,7 @@
       1.2942916,
       1.3326645
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q084",
@@ -2097,7 +2097,7 @@
       1.5522184,
       1.5871704
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q085",
@@ -2122,7 +2122,7 @@
       1.6863126,
       1.6940242
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q086",
@@ -2147,7 +2147,7 @@
       1.3516966,
       1.3674979
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q087",
@@ -2172,7 +2172,7 @@
       1.2368436,
       1.2482377
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q088",
@@ -2197,7 +2197,7 @@
       1.4893448,
       1.5348186
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q089",
@@ -2222,7 +2222,7 @@
       1.3324237,
       1.3424017
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q090",
@@ -2247,7 +2247,7 @@
       1.1699789,
       1.1927713
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q091",
@@ -2272,7 +2272,7 @@
       1.1561193,
       1.1813956
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q092",
@@ -2297,7 +2297,7 @@
       1.4870837,
       1.4983375
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q093",
@@ -2322,7 +2322,7 @@
       1.511465,
       1.5187677
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q094",
@@ -2347,7 +2347,7 @@
       1.3703282,
       1.3846447
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q095",
@@ -2372,7 +2372,7 @@
       1.2583885,
       1.2787397
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q096",
@@ -2397,7 +2397,7 @@
       1.0592487,
       1.0621243
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q097",
@@ -2422,7 +2422,7 @@
       1.2282052,
       1.2594264
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q098",
@@ -2447,7 +2447,7 @@
       1.2416027,
       1.2935722
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q099",
@@ -2472,7 +2472,7 @@
       1.492709,
       1.556835
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q100",
@@ -2497,7 +2497,7 @@
       1.2636577,
       1.3133081
     ],
-    "retrieval_latency_ms": 19
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q101",
@@ -2522,7 +2522,7 @@
       1.403482,
       1.4160805
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q102",
@@ -2547,7 +2547,7 @@
       1.1457627,
       1.2158955
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q103",
@@ -2572,7 +2572,7 @@
       1.0402459,
       1.078677
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q104",
@@ -2597,7 +2597,7 @@
       1.1945086,
       1.201828
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q105",
@@ -2622,7 +2622,7 @@
       1.1036351,
       1.1557178
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q106",
@@ -2647,7 +2647,7 @@
       0.7972416,
       0.8308523
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q107",
@@ -2672,7 +2672,7 @@
       1.2472401,
       1.2646353
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q108",
@@ -2697,7 +2697,7 @@
       0.9147787,
       0.93710136
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q109",
@@ -2722,7 +2722,7 @@
       1.1466196,
       1.190979
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q110",
@@ -2747,7 +2747,7 @@
       1.3696342,
       1.3783777
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 31
   },
   {
     "id": "Q111",
@@ -2772,7 +2772,7 @@
       1.4838138,
       1.4952189
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q112",
@@ -2797,7 +2797,7 @@
       1.1385018,
       1.186069
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q113",
@@ -2822,7 +2822,7 @@
       1.4198046,
       1.4212942
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q114",
@@ -2847,7 +2847,7 @@
       1.4194865,
       1.4264739
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q115",
@@ -2872,7 +2872,7 @@
       1.456265,
       1.4981787
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q116",
@@ -2897,7 +2897,7 @@
       1.2127992,
       1.2494508
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q117",
@@ -2922,7 +2922,7 @@
       1.217143,
       1.2930719
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q118",
@@ -2947,7 +2947,7 @@
       1.1751044,
       1.1762943
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q119",
@@ -2972,7 +2972,7 @@
       1.1550258,
       1.2108579
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q120",
@@ -2997,7 +2997,7 @@
       1.2195096,
       1.2990571
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q121",
@@ -3022,7 +3022,7 @@
       0.983447,
       1.0612016
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q122",
@@ -3047,7 +3047,7 @@
       1.3010417,
       1.357239
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q123",
@@ -3072,7 +3072,7 @@
       1.0408057,
       1.0627763
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q124",
@@ -3097,7 +3097,7 @@
       1.2368373,
       1.2381165
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q125",
@@ -3122,7 +3122,7 @@
       1.368191,
       1.3909495
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q126",
@@ -3147,7 +3147,7 @@
       1.4254448,
       1.4382303
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q127",
@@ -3172,7 +3172,7 @@
       1.245735,
       1.2553276
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q128",
@@ -3197,7 +3197,7 @@
       1.1938088,
       1.2295371
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q129",
@@ -3222,7 +3222,7 @@
       1.2004198,
       1.2047821
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q130",
@@ -3247,7 +3247,7 @@
       1.3508718,
       1.3600366
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q131",
@@ -3272,7 +3272,7 @@
       1.5353618,
       1.5601425
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q132",
@@ -3297,7 +3297,7 @@
       1.210372,
       1.2231767
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q133",
@@ -3322,7 +3322,7 @@
       1.144311,
       1.1702795
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q134",
@@ -3347,7 +3347,7 @@
       1.3871434,
       1.4086696
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q135",
@@ -3372,7 +3372,7 @@
       1.2991219,
       1.3575048
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q136",
@@ -3397,7 +3397,7 @@
       1.1888998,
       1.2447003
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q137",
@@ -3422,7 +3422,7 @@
       1.0635976,
       1.0733553
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q138",
@@ -3447,7 +3447,7 @@
       1.4140276,
       1.429778
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q139",
@@ -3472,7 +3472,7 @@
       1.0398495,
       1.0404518
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q140",
@@ -3497,7 +3497,7 @@
       1.1519849,
       1.1792263
     ],
-    "retrieval_latency_ms": 24
+    "retrieval_latency_ms": 37
   },
   {
     "id": "Q141",
@@ -3522,7 +3522,7 @@
       1.1209441,
       1.1521529
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q142",
@@ -3547,7 +3547,7 @@
       1.2825541,
       1.3354181
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q143",
@@ -3572,7 +3572,7 @@
       1.3343561,
       1.345566
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q144",
@@ -3597,7 +3597,7 @@
       1.1275954,
       1.1307373
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q145",
@@ -3622,7 +3622,7 @@
       1.2605287,
       1.2746601
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q146",
@@ -3647,7 +3647,7 @@
       1.15055,
       1.1853943
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q147",
@@ -3672,7 +3672,7 @@
       1.4119966,
       1.4182135
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q148",
@@ -3697,7 +3697,7 @@
       1.0041202,
       1.0093571
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q149",
@@ -3722,7 +3722,7 @@
       1.1652308,
       1.2246352
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q150",
@@ -3747,7 +3747,7 @@
       0.9551078,
       1.062262
     ],
-    "retrieval_latency_ms": 22
+    "retrieval_latency_ms": 23
   },
   {
     "id": "Q151",
@@ -3772,7 +3772,7 @@
       1.0670024,
       1.0823267
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q152",
@@ -3797,7 +3797,7 @@
       1.1281656,
       1.1295364
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q153",
@@ -3822,7 +3822,7 @@
       0.9965116,
       1.0261137
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q154",
@@ -3847,7 +3847,7 @@
       1.0301391,
       1.0446686
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q155",
@@ -3872,7 +3872,7 @@
       1.0531516,
       1.1417391
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q156",
@@ -3897,7 +3897,7 @@
       1.073518,
       1.0738342
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q157",
@@ -3922,7 +3922,7 @@
       1.3310641,
       1.3489771
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q158",
@@ -3947,7 +3947,7 @@
       1.3513587,
       1.3749821
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q159",
@@ -3972,7 +3972,7 @@
       1.2276281,
       1.2512646
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q160",
@@ -3997,7 +3997,7 @@
       1.4648608,
       1.4816945
     ],
-    "retrieval_latency_ms": 32
+    "retrieval_latency_ms": 19
   },
   {
     "id": "Q161",
@@ -4022,7 +4022,7 @@
       1.3824558,
       1.431246
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q162",
@@ -4047,7 +4047,7 @@
       1.1440405,
       1.2026674
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q163",
@@ -4072,7 +4072,7 @@
       1.2761538,
       1.2800345
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q164",
@@ -4097,7 +4097,7 @@
       1.2341391,
       1.3000695
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q165",
@@ -4122,7 +4122,7 @@
       1.2827647,
       1.291178
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q166",
@@ -4147,7 +4147,7 @@
       1.3242567,
       1.3611001
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q167",
@@ -4172,7 +4172,7 @@
       1.4230859,
       1.4348671
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q168",
@@ -4197,7 +4197,7 @@
       1.346452,
       1.3631722
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q169",
@@ -4222,7 +4222,7 @@
       1.6111127,
       1.6659875
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q170",
@@ -4247,7 +4247,7 @@
       1.3412397,
       1.3711518
     ],
-    "retrieval_latency_ms": 25
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q171",
@@ -4272,7 +4272,7 @@
       1.6735995,
       1.6847361
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q172",
@@ -4297,7 +4297,7 @@
       1.1709092,
       1.2203025
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q173",
@@ -4322,7 +4322,7 @@
       0.9415693,
       0.9817221
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q174",
@@ -4347,7 +4347,7 @@
       1.3590424,
       1.366851
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q175",
@@ -4372,7 +4372,7 @@
       1.1689032,
       1.1747476
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q176",
@@ -4397,7 +4397,7 @@
       1.0316019,
       1.0408928
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q177",
@@ -4422,7 +4422,7 @@
       1.2166235,
       1.2168562
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q178",
@@ -4447,7 +4447,7 @@
       1.4474428,
       1.4679209
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q179",
@@ -4472,7 +4472,7 @@
       1.4083484,
       1.4104705
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q180",
@@ -4497,7 +4497,7 @@
       1.3485024,
       1.3740734
     ],
-    "retrieval_latency_ms": 34
+    "retrieval_latency_ms": 22
   },
   {
     "id": "Q181",
@@ -4522,7 +4522,7 @@
       1.328816,
       1.3736628
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q182",
@@ -4547,7 +4547,7 @@
       1.256937,
       1.2767032
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q183",
@@ -4572,7 +4572,7 @@
       1.2084608,
       1.2569461
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q184",
@@ -4597,7 +4597,7 @@
       1.1013712,
       1.1171521
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q185",
@@ -4622,7 +4622,7 @@
       1.2753209,
       1.3064274
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q186",
@@ -4647,7 +4647,7 @@
       1.2794428,
       1.3112884
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q187",
@@ -4672,7 +4672,7 @@
       1.275515,
       1.2950153
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q188",
@@ -4697,7 +4697,7 @@
       1.1138068,
       1.1929128
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q189",
@@ -4722,7 +4722,7 @@
       1.3200839,
       1.3627483
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q190",
@@ -4747,7 +4747,7 @@
       1.3420961,
       1.3850927
     ],
-    "retrieval_latency_ms": 23
+    "retrieval_latency_ms": 29
   },
   {
     "id": "Q191",
@@ -4772,7 +4772,7 @@
       1.2093124,
       1.2277716
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q192",
@@ -4797,7 +4797,7 @@
       1.277394,
       1.3013916
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q193",
@@ -4822,7 +4822,7 @@
       1.2926607,
       1.3088325
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q194",
@@ -4847,7 +4847,7 @@
       1.2035624,
       1.2941965
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q195",
@@ -4872,7 +4872,7 @@
       1.1811922,
       1.253142
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q196",
@@ -4897,7 +4897,7 @@
       1.4712346,
       1.484149
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q197",
@@ -4922,7 +4922,7 @@
       1.3236532,
       1.336093
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q198",
@@ -4947,7 +4947,7 @@
       1.6479887,
       1.6538836
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q199",
@@ -4972,7 +4972,7 @@
       1.3866768,
       1.5031826
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q200",
@@ -4997,7 +4997,7 @@
       1.2255605,
       1.2494621
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 53
   },
   {
     "id": "Q201",
@@ -5022,7 +5022,7 @@
       1.2117054,
       1.2191706
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q202",
@@ -5047,7 +5047,7 @@
       1.2822435,
       1.3371979
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q203",
@@ -5072,7 +5072,7 @@
       1.447483,
       1.448891
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q204",
@@ -5097,7 +5097,7 @@
       1.1488789,
       1.1661885
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q205",
@@ -5122,7 +5122,7 @@
       1.2242087,
       1.2277982
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q206",
@@ -5147,7 +5147,7 @@
       0.8088655,
       0.8268027
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q207",
@@ -5172,7 +5172,7 @@
       1.0728116,
       1.0804564
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q208",
@@ -5197,7 +5197,7 @@
       1.0733007,
       1.1070771
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q209",
@@ -5222,7 +5222,7 @@
       0.95130575,
       0.9760923
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q210",
@@ -5247,7 +5247,7 @@
       1.1086159,
       1.1192145
     ],
-    "retrieval_latency_ms": 28
+    "retrieval_latency_ms": 54
   },
   {
     "id": "Q211",
@@ -5272,7 +5272,7 @@
       1.0078503,
       1.0350718
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q212",
@@ -5297,7 +5297,7 @@
       0.9062275,
       0.91580164
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q213",
@@ -5322,7 +5322,7 @@
       0.9210717,
       0.9297769
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q214",
@@ -5347,7 +5347,7 @@
       0.9538071,
       0.95827794
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q215",
@@ -5372,7 +5372,7 @@
       0.91350794,
       0.9174669
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q216",
@@ -5397,7 +5397,7 @@
       0.9583223,
       0.96961445
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q217",
@@ -5422,7 +5422,7 @@
       0.93244725,
       0.9392013
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q218",
@@ -5447,7 +5447,7 @@
       0.8187024,
       0.85804343
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q219",
@@ -5472,7 +5472,7 @@
       1.0251949,
       1.0315989
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q220",
@@ -5497,7 +5497,7 @@
       0.97770536,
       0.9936717
     ],
-    "retrieval_latency_ms": 33
+    "retrieval_latency_ms": 49
   },
   {
     "id": "Q221",
@@ -5522,7 +5522,7 @@
       0.9070034,
       0.90920013
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q222",
@@ -5547,7 +5547,7 @@
       1.2014754,
       1.2033502
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q223",
@@ -5572,7 +5572,7 @@
       1.0296844,
       1.112221
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q224",
@@ -5597,7 +5597,7 @@
       0.91037154,
       0.9383558
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q225",
@@ -5622,7 +5622,7 @@
       0.9766456,
       0.98378205
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q226",
@@ -5647,7 +5647,7 @@
       0.9058958,
       0.9497247
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q227",
@@ -5672,7 +5672,7 @@
       1.2829354,
       1.2942644
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q228",
@@ -5697,7 +5697,7 @@
       0.96641874,
       0.9817329
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q229",
@@ -5722,7 +5722,7 @@
       1.2165073,
       1.263999
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q230",
@@ -5747,7 +5747,7 @@
       0.94235647,
       0.95405734
     ],
-    "retrieval_latency_ms": 27
+    "retrieval_latency_ms": 39
   },
   {
     "id": "Q231",
@@ -5772,7 +5772,7 @@
       1.0775044,
       1.0790322
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q232",
@@ -5797,7 +5797,7 @@
       0.9552077,
       0.9845061
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q233",
@@ -5822,7 +5822,7 @@
       1.0220335,
       1.0335015
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q234",
@@ -5847,7 +5847,7 @@
       1.0576495,
       1.0808828
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q235",
@@ -5872,7 +5872,7 @@
       1.0911498,
       1.1147451
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q236",
@@ -5897,7 +5897,7 @@
       1.012414,
       1.1359785
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q237",
@@ -5922,7 +5922,7 @@
       1.2593746,
       1.2747207
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q238",
@@ -5947,7 +5947,7 @@
       1.1091768,
       1.1191937
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q239",
@@ -5972,7 +5972,7 @@
       1.0623927,
       1.1017019
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q240",
@@ -5997,7 +5997,7 @@
       0.8708737,
       0.8957584
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 24
   },
   {
     "id": "Q241",
@@ -6022,7 +6022,7 @@
       0.8419434,
       0.8503414
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q242",
@@ -6047,7 +6047,7 @@
       0.7733391,
       0.7786329
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q243",
@@ -6072,7 +6072,7 @@
       0.98585236,
       1.0100095
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q244",
@@ -6097,7 +6097,7 @@
       0.733027,
       0.73456794
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q245",
@@ -6122,7 +6122,7 @@
       1.1188291,
       1.123308
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q246",
@@ -6152,7 +6152,7 @@
       1.1648724,
       1.1740043
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q247",
@@ -6182,7 +6182,7 @@
       1.3463552,
       1.3811059
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q248",
@@ -6212,7 +6212,7 @@
       1.3816262,
       1.3987892
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q249",
@@ -6242,7 +6242,7 @@
       1.0738499,
       1.1178706
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q250",
@@ -6272,7 +6272,7 @@
       1.2273115,
       1.3047434
     ],
-    "retrieval_latency_ms": 35
+    "retrieval_latency_ms": 25
   },
   {
     "id": "Q251",
@@ -6302,7 +6302,7 @@
       0.9337176,
       0.97062534
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q252",
@@ -6332,7 +6332,7 @@
       1.2480233,
       1.2850353
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q253",
@@ -6362,7 +6362,7 @@
       1.5722432,
       1.5752622
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q254",
@@ -6392,7 +6392,7 @@
       1.3854935,
       1.4017179
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q255",
@@ -6422,7 +6422,7 @@
       1.1114764,
       1.1581845
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q256",
@@ -6450,7 +6450,7 @@
       0.97303903,
       0.98828846
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q257",
@@ -6478,7 +6478,7 @@
       1.325863,
       1.3417772
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q258",
@@ -6508,7 +6508,7 @@
       1.0853664,
       1.1184238
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q259",
@@ -6538,7 +6538,7 @@
       1.345385,
       1.3601785
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q260",
@@ -6566,7 +6566,7 @@
       1.3696182,
       1.3696659
     ],
-    "retrieval_latency_ms": 43
+    "retrieval_latency_ms": 33
   },
   {
     "id": "Q261",
@@ -6589,7 +6589,7 @@
       1.5222013,
       1.5381149
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q262",
@@ -6612,7 +6612,7 @@
       1.4111564,
       1.4997599
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q263",
@@ -6635,7 +6635,7 @@
       1.551708,
       1.5610236
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q264",
@@ -6658,7 +6658,7 @@
       1.7547292,
       1.7763112
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q265",
@@ -6681,7 +6681,7 @@
       1.4940348,
       1.5185127
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q266",
@@ -6704,7 +6704,7 @@
       1.4404426,
       1.4577702
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q267",
@@ -6727,7 +6727,7 @@
       1.4489708,
       1.4548291
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q268",
@@ -6750,7 +6750,7 @@
       1.8172686,
       1.8218403
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q269",
@@ -6773,7 +6773,7 @@
       1.1198413,
       1.1252143
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   },
   {
     "id": "Q270",
@@ -6796,6 +6796,6 @@
       1.4878664,
       1.4893811
     ],
-    "retrieval_latency_ms": 26
+    "retrieval_latency_ms": 28
   }
 ]

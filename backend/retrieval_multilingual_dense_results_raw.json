@@ -1,0 +1,586 @@
+[
+  {
+    "id": "ML01",
+    "query": "kisan ko saal mein 6000 rupaye chahiye",
+    "type": "single",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "relevant": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)"
+    ],
+    "ranked": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "Kisan Credit Card (KCC)",
+      "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "PM SVANidhi"
+    ],
+    "distances": [
+      1.0944884,
+      1.1079448,
+      1.1859345,
+      1.1936053,
+      1.2215791
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML02",
+    "query": "kheti ke liye sasta loan",
+    "type": "single",
+    "expected_scheme": "Kisan Credit Card (KCC)",
+    "relevant": [
+      "Kisan Credit Card (KCC)"
+    ],
+    "ranked": [
+      "Kisan Credit Card (KCC)",
+      "PM SVANidhi",
+      "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)",
+      "AICTE Pragati Scholarship for Girls",
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)"
+    ],
+    "distances": [
+      1.0884514,
+      1.1111666,
+      1.1522509,
+      1.1631525,
+      1.1720212
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML03",
+    "query": "ghar banane ke liye subsidy",
+    "type": "single",
+    "expected_scheme": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+    "relevant": [
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0"
+    ],
+    "ranked": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+      "PM Surya Ghar Muft Bijli Yojana",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "PM Ujjwala Yojana"
+    ],
+    "distances": [
+      1.0000542,
+      1.0315567,
+      1.0586534,
+      1.0935119,
+      1.0939746
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML04",
+    "query": "hospital ka kharcha bima se",
+    "type": "single",
+    "expected_scheme": "Ayushman Bharat PM-JAY",
+    "relevant": [
+      "Ayushman Bharat PM-JAY"
+    ],
+    "ranked": [
+      "Rashtriya Bal Swasthya Karyakram (RBSK)",
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "Rashtriya Arogya Nidhi",
+      "Pradhan Mantri Suraksha Bima Yojana",
+      "Kasturba Gandhi Balika Vidyalaya"
+    ],
+    "distances": [
+      1.1406703,
+      1.1489152,
+      1.1882629,
+      1.2081661,
+      1.2294536
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML05",
+    "query": "street vendor ko loan chahiye",
+    "type": "single",
+    "expected_scheme": "PM SVANidhi",
+    "relevant": [
+      "PM SVANidhi"
+    ],
+    "ranked": [
+      "PM SVANidhi",
+      "Kisan Credit Card (KCC)",
+      "Pradhan Mantri Mudra Yojana",
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0"
+    ],
+    "distances": [
+      0.98822695,
+      1.1140221,
+      1.1364965,
+      1.2114019,
+      1.220945
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML06",
+    "query": "beti ke padhai ke liye scholarship",
+    "type": "single",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "relevant": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "ranked": [
+      "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "Beti Bachao Beti Padhao",
+      "AICTE Pragati Scholarship for Girls",
+      "Post Matric Scholarship for SC Students",
+      "Kasturba Gandhi Balika Vidyalaya"
+    ],
+    "distances": [
+      0.95500493,
+      0.95626676,
+      0.9695766,
+      1.014574,
+      1.0189546
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML07",
+    "query": "budhiya ke liye pension",
+    "type": "single",
+    "expected_scheme": "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+    "relevant": [
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension"
+    ],
+    "ranked": [
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+      "Indira Gandhi National Widow Pension Scheme",
+      "Indira Gandhi National Disability Pension Scheme",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)"
+    ],
+    "distances": [
+      1.0243642,
+      1.1096389,
+      1.1142672,
+      1.1305974,
+      1.1355255
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML08",
+    "query": "vidhwa mahila pension",
+    "type": "single",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "relevant": [
+      "Indira Gandhi National Widow Pension Scheme"
+    ],
+    "ranked": [
+      "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+      "PM Kisan Maandhan Yojana",
+      "Pradhan Mantri Shram Yogi Maandhan",
+      "Atal Pension Yojana",
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension"
+    ],
+    "distances": [
+      1.0604964,
+      1.0937561,
+      1.1019077,
+      1.107545,
+      1.1491272
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML09",
+    "query": "divyang pension",
+    "type": "single",
+    "expected_scheme": "Indira Gandhi National Disability Pension Scheme",
+    "relevant": [
+      "Indira Gandhi National Disability Pension Scheme"
+    ],
+    "ranked": [
+      "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+      "Atal Pension Yojana",
+      "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "Pradhan Mantri Shram Yogi Maandhan"
+    ],
+    "distances": [
+      1.2292279,
+      1.2427299,
+      1.250489,
+      1.2650259,
+      1.2790952
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML10",
+    "query": "gaon mein toilet banane ke liye paisa",
+    "type": "single",
+    "expected_scheme": "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+    "relevant": [
+      "Swachh Bharat Mission - Gramin (Toilet Incentive)"
+    ],
+    "ranked": [
+      "Swachh Bharat Mission - Gramin (Toilet Incentive)",
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "Pradhan Mantri Gram Sadak Yojana",
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)"
+    ],
+    "distances": [
+      1.1688275,
+      1.2779126,
+      1.2995625,
+      1.3111055,
+      1.3182718
+    ],
+    "retrieval_latency_ms": 19
+  },
+  {
+    "id": "ML11",
+    "query": "SC student ke liye chhatravriti",
+    "type": "single",
+    "expected_scheme": "Post Matric Scholarship for SC Students",
+    "relevant": [
+      "Post Matric Scholarship for SC Students"
+    ],
+    "ranked": [
+      "Kasturba Gandhi Balika Vidyalaya",
+      "Post Matric Scholarship for SC Students",
+      "Kanyashree Prakalpa (West Bengal)",
+      "Amma Vodi / Thalliki Vandanam (Andhra Pradesh)",
+      "Samagra Shiksha Abhiyan"
+    ],
+    "distances": [
+      1.0601599,
+      1.1905115,
+      1.2143888,
+      1.227867,
+      1.3375796
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML12",
+    "query": "minority student scholarship",
+    "type": "single",
+    "expected_scheme": "Pre-Matric and Post-Matric Scholarship for Minorities",
+    "relevant": [
+      "Pre-Matric and Post-Matric Scholarship for Minorities"
+    ],
+    "ranked": [
+      "Pre-Matric and Post-Matric Scholarship for Minorities",
+      "Central Sector Scholarship Scheme (CSSS)",
+      "AICTE Pragati Scholarship for Girls",
+      "Nai Udaan and Nai Roshni (Minority Schemes)",
+      "National Means-cum-Merit Scholarship (NMMS)"
+    ],
+    "distances": [
+      0.6791363,
+      0.93619686,
+      1.0705097,
+      1.0998813,
+      1.1168826
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML13",
+    "query": "skill training seekhna hai",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+    "relevant": [
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)"
+    ],
+    "ranked": [
+      "National Apprenticeship Promotion Scheme",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "Beti Bachao Beti Padhao",
+      "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)"
+    ],
+    "distances": [
+      1.0430765,
+      1.1212037,
+      1.1393595,
+      1.1402783,
+      1.1651835
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML14",
+    "query": "mudra loan business ke liye",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Mudra Yojana",
+    "relevant": [
+      "Pradhan Mantri Mudra Yojana"
+    ],
+    "ranked": [
+      "Pradhan Mantri Mudra Yojana",
+      "PM SVANidhi",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)",
+      "Stand-Up India Scheme"
+    ],
+    "distances": [
+      0.9573258,
+      1.1895219,
+      1.199342,
+      1.2176551,
+      1.2224435
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML15",
+    "query": "startup funding scheme",
+    "type": "single",
+    "expected_scheme": "Startup India Seed Fund Scheme",
+    "relevant": [
+      "Startup India Seed Fund Scheme"
+    ],
+    "ranked": [
+      "Startup India Seed Fund Scheme",
+      "Venture Capital Fund for Scheduled Castes",
+      "Stand-Up India Scheme",
+      "Agriculture Infrastructure Fund",
+      "Employees' Provident Fund - Employment Linked Incentive"
+    ],
+    "distances": [
+      0.75920224,
+      0.95128727,
+      0.9579531,
+      1.0419097,
+      1.1806371
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML16",
+    "query": "ghar par solar panel lagwana hai",
+    "type": "single",
+    "expected_scheme": "PM Surya Ghar Muft Bijli Yojana",
+    "relevant": [
+      "PM Surya Ghar Muft Bijli Yojana"
+    ],
+    "ranked": [
+      "PM Surya Ghar Muft Bijli Yojana",
+      "PMAY-Gramin (PMAYG)",
+      "PM-KUSUM",
+      "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)"
+    ],
+    "distances": [
+      1.1681523,
+      1.2639241,
+      1.2967484,
+      1.3362778,
+      1.3652556
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML17",
+    "query": "ration card khana",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "relevant": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act"
+    ],
+    "ranked": [
+      "One Nation One Ration Card",
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "Soil Health Card Scheme",
+      "Kisan Credit Card (KCC)",
+      "Beti Bachao Beti Padhao"
+    ],
+    "distances": [
+      0.7723332,
+      1.1815363,
+      1.3468823,
+      1.3537564,
+      1.370376
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML18",
+    "query": "UP kanya sumangala yojana",
+    "type": "single",
+    "expected_scheme": "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+    "relevant": [
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)"
+    ],
+    "ranked": [
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission (Lakhpati Didi)",
+      "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)"
+    ],
+    "distances": [
+      0.4486047,
+      0.8215107,
+      0.9252367,
+      0.9307578,
+      0.9331459
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML19",
+    "query": "किसान को पैसा",
+    "type": "single",
+    "expected_scheme": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "relevant": [
+      "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)"
+    ],
+    "ranked": [
+      "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+      "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+      "Pradhan Mantri Janjatiya Vikas Mission"
+    ],
+    "distances": [
+      1.2883731,
+      1.2981217,
+      1.3141272,
+      1.3269956,
+      1.3349382
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML20",
+    "query": "बेटी की पढ़ाई के लिए छात्रवृत्ति",
+    "type": "single",
+    "expected_scheme": "AICTE Pragati Scholarship for Girls",
+    "also_relevant": [
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "relevant": [
+      "AICTE Pragati Scholarship for Girls",
+      "Central Sector Scholarship Scheme (CSSS)"
+    ],
+    "ranked": [
+      "Mukhyamantri Ladli Laxmi (Madhya Pradesh)",
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+      "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+      "Ladki Bahin Yojana (Mukhyamantri Majhi Ladki Bahin)"
+    ],
+    "distances": [
+      1.279452,
+      1.3000802,
+      1.3155915,
+      1.3237524,
+      1.3283688
+    ],
+    "retrieval_latency_ms": 15
+  },
+  {
+    "id": "ML21",
+    "query": "गरीब परिवार के लिए राशन",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+    "relevant": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act"
+    ],
+    "ranked": [
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+      "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+      "Lakshmir Bhandar (West Bengal)",
+      "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)",
+      "Pradhan Mantri Surakshit Matritva Abhiyan"
+    ],
+    "distances": [
+      1.2199214,
+      1.2356408,
+      1.2775223,
+      1.3057375,
+      1.3086324
+    ],
+    "retrieval_latency_ms": 39
+  },
+  {
+    "id": "ML22",
+    "query": "विधवा महिला पेंशन",
+    "type": "single",
+    "expected_scheme": "Indira Gandhi National Widow Pension Scheme",
+    "relevant": [
+      "Indira Gandhi National Widow Pension Scheme"
+    ],
+    "ranked": [
+      "Pradhan Mantri Surakshit Matritva Abhiyan",
+      "Pradhan Mantri Jan Aushadhi Pariyojana",
+      "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "Mukhyamantri Kanya Utthan Yojana (Bihar)"
+    ],
+    "distances": [
+      1.2056013,
+      1.2587333,
+      1.296766,
+      1.3060491,
+      1.3074818
+    ],
+    "retrieval_latency_ms": 39
+  },
+  {
+    "id": "ML23",
+    "query": "kheti ka bima",
+    "type": "single",
+    "expected_scheme": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "relevant": [
+      "Pradhan Mantri Fasal Bima Yojana (PMFBY)"
+    ],
+    "ranked": [
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+      "Pradhan Mantri Suraksha Bima Yojana",
+      "Kasturba Gandhi Balika Vidyalaya",
+      "Beti Bachao Beti Padhao",
+      "Rashtriya Bal Swasthya Karyakram (RBSK)"
+    ],
+    "distances": [
+      1.1299759,
+      1.2559352,
+      1.2576119,
+      1.2732339,
+      1.2774837
+    ],
+    "retrieval_latency_ms": 39
+  },
+  {
+    "id": "ML24",
+    "query": "artisan ko loan aur training",
+    "type": "single",
+    "expected_scheme": "PM Vishwakarma",
+    "relevant": [
+      "PM Vishwakarma"
+    ],
+    "ranked": [
+      "Kisan Credit Card (KCC)",
+      "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+      "Pradhan Mantri Mudra Yojana",
+      "PM SVANidhi",
+      "PM Vishwakarma"
+    ],
+    "distances": [
+      1.1070571,
+      1.151597,
+      1.1548362,
+      1.1783733,
+      1.1799916
+    ],
+    "retrieval_latency_ms": 39
+  }
+]

@@ -1,0 +1,57 @@
+# Render Blueprint: Vercel frontend + Render API + private Chroma.
+#
+# Before applying:
+#   1. Create a MongoDB Atlas cluster and copy its SRV URI.
+#   2. Set the four sync:false secrets in the Render dashboard.
+#   3. Set CORS_ORIGINS to the exact Vercel production/preview origins.
+#   4. Point the Vercel project at this repository's `frontend/` directory and
+#      set VITE_API_BASE to the Render API URL.
+#
+# Render private services are reachable inside the same Render workspace at
+# http://<service-name>:<port>. The API uses CHROMA_URL below.
+
+services:
+  - type: pserv
+    name: schemesaathi-chroma
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./deploy/chroma.Dockerfile
+    dockerContext: .
+    disk:
+      name: chroma-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: IS_PERSISTENT
+        value: 'TRUE'
+      - key: ANONYMIZED_TELEMETRY
+        value: 'FALSE'
+
+  - type: web
+    name: schemesaathi-api
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: schemesaathi
+      - key: CHROMA_URL
+        value: http://schemesaathi-chroma:8000
+      - key: CHROMA_COLLECTION
+        value: schemes
+      - key: GROQ_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: TRUST_PROXY
+        value: 'true'
+      - key: HYBRID_RETRIEVAL
+        value: 'true'

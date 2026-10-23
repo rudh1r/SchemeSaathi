@@ -15,7 +15,10 @@
     "test": "node --test \"test/**/*.test.js\"",
     "smoke": "node scripts/smoke.js",
     "eval": "node run_eval_v2.js",
-    "eval:eligibility": "node run_eligibility_eval.js"
+    "eval:eligibility": "node run_eligibility_eval.js",
+    "eval:eligibility:v3": "node run_eligibility_eval.js --dataset eligibility_test_cases_v3.json",
+    "audit:eligibility": "node scripts/build-eligibility-audit.js",
+    "quality:rag": "node scripts/rag_quality.js"
   },
   "engines": {
     "node": ">=20"

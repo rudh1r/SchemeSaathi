@@ -1,0 +1,213 @@
+{
+  "note": "Single-relevant queries mirror the paper protocol (Precision@3 is capped at 33.3%). Multi-relevant queries use several acceptable schemes.",
+  "single_relevant": {
+    "k3": {
+      "queries": 24,
+      "k": 3,
+      "top1_accuracy": 41.67,
+      "hit_at_3": 58.33,
+      "recall_at_3": 56.25,
+      "precision_at_3": 19.44,
+      "f1_at_3": 28.9,
+      "mrr": 0.4944
+    },
+    "k5": {
+      "queries": 24,
+      "k": 5,
+      "top1_accuracy": 41.67,
+      "hit_at_5": 62.5,
+      "recall_at_5": 60.42,
+      "precision_at_5": 12.5,
+      "f1_at_5": 20.71,
+      "mrr": 0.4944
+    }
+  },
+  "multi_relevant": {
+    "k3": {
+      "queries": 0,
+      "k": 3,
+      "top1_accuracy": null,
+      "hit_at_3": null,
+      "recall_at_3": null,
+      "precision_at_3": null,
+      "f1_at_3": 0,
+      "mrr": null
+    },
+    "k5": {
+      "queries": 0,
+      "k": 5,
+      "top1_accuracy": null,
+      "hit_at_5": null,
+      "recall_at_5": null,
+      "precision_at_5": null,
+      "f1_at_5": 0,
+      "mrr": null
+    }
+  },
+  "overall": {
+    "k3": {
+      "queries": 24,
+      "k": 3,
+      "top1_accuracy": 41.67,
+      "hit_at_3": 58.33,
+      "recall_at_3": 56.25,
+      "precision_at_3": 19.44,
+      "f1_at_3": 28.9,
+      "mrr": 0.4944
+    }
+  },
+  "out_of_scope": {
+    "queries": 0,
+    "top1_distances": [],
+    "in_scope_top1_distance_mean": 1.03617433
+  },
+  "retrieval_latency_ms": {
+    "n": 24,
+    "mean_s": 0.020666666666666667,
+    "median_s": 0.019,
+    "p95_s": 0.039,
+    "max_s": 0.039
+  },
+  "top1_failures": [
+    {
+      "id": "ML03",
+      "query": "ghar banane ke liye subsidy",
+      "expected": "PMAY (Pradhan Mantri Awas Yojana) 2.0",
+      "got_top3": [
+        "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+        "Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)",
+        "PM Surya Ghar Muft Bijli Yojana"
+      ]
+    },
+    {
+      "id": "ML04",
+      "query": "hospital ka kharcha bima se",
+      "expected": "Ayushman Bharat PM-JAY",
+      "got_top3": [
+        "Rashtriya Bal Swasthya Karyakram (RBSK)",
+        "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+        "Rashtriya Arogya Nidhi"
+      ]
+    },
+    {
+      "id": "ML06",
+      "query": "beti ke padhai ke liye scholarship",
+      "expected": "AICTE Pragati Scholarship for Girls",
+      "got_top3": [
+        "Pre-Matric and Post-Matric Scholarship for Minorities",
+        "Beti Bachao Beti Padhao",
+        "AICTE Pragati Scholarship for Girls"
+      ]
+    },
+    {
+      "id": "ML08",
+      "query": "vidhwa mahila pension",
+      "expected": "Indira Gandhi National Widow Pension Scheme",
+      "got_top3": [
+        "PM-USHA / Education Loan Interest Subsidy (PM-Vidyalaxmi)",
+        "PM Kisan Maandhan Yojana",
+        "Pradhan Mantri Shram Yogi Maandhan"
+      ]
+    },
+    {
+      "id": "ML09",
+      "query": "divyang pension",
+      "expected": "Indira Gandhi National Disability Pension Scheme",
+      "got_top3": [
+        "National Social Assistance Programme - Indira Gandhi National Old Age Pension",
+        "Atal Pension Yojana",
+        "Pradhan Mantri Jan Dhan Yojana (PMJDY)"
+      ]
+    },
+    {
+      "id": "ML11",
+      "query": "SC student ke liye chhatravriti",
+      "expected": "Post Matric Scholarship for SC Students",
+      "got_top3": [
+        "Kasturba Gandhi Balika Vidyalaya",
+        "Post Matric Scholarship for SC Students",
+        "Kanyashree Prakalpa (West Bengal)"
+      ]
+    },
+    {
+      "id": "ML13",
+      "query": "skill training seekhna hai",
+      "expected": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+      "got_top3": [
+        "National Apprenticeship Promotion Scheme",
+        "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+        "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)"
+      ]
+    },
+    {
+      "id": "ML17",
+      "query": "ration card khana",
+      "expected": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "got_top3": [
+        "One Nation One Ration Card",
+        "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+        "Soil Health Card Scheme"
+      ]
+    },
+    {
+      "id": "ML19",
+      "query": "किसान को पैसा",
+      "expected": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "got_top3": [
+        "Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDU-GKY)",
+        "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+        "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)"
+      ]
+    },
+    {
+      "id": "ML20",
+      "query": "बेटी की पढ़ाई के लिए छात्रवृत्ति",
+      "expected": "AICTE Pragati Scholarship for Girls",
+      "got_top3": [
+        "Mukhyamantri Ladli Laxmi (Madhya Pradesh)",
+        "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+        "Mukhyamantri Kanya Sumangala Yojana (Uttar Pradesh)"
+      ]
+    },
+    {
+      "id": "ML21",
+      "query": "गरीब परिवार के लिए राशन",
+      "expected": "Pradhan Mantri Garib Kalyan Anna Yojana / National Food Security Act",
+      "got_top3": [
+        "Mukhyamantri Kanya Utthan Yojana (Bihar)",
+        "Mukhyamantri Tirth Yatra Yojana (Delhi)",
+        "Lakshmir Bhandar (West Bengal)"
+      ]
+    },
+    {
+      "id": "ML22",
+      "query": "विधवा महिला पेंशन",
+      "expected": "Indira Gandhi National Widow Pension Scheme",
+      "got_top3": [
+        "Pradhan Mantri Surakshit Matritva Abhiyan",
+        "Pradhan Mantri Jan Aushadhi Pariyojana",
+        "Mukhyamantri Tirth Yatra Yojana (Delhi)"
+      ]
+    },
+    {
+      "id": "ML23",
+      "query": "kheti ka bima",
+      "expected": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "got_top3": [
+        "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+        "Pradhan Mantri Suraksha Bima Yojana",
+        "Kasturba Gandhi Balika Vidyalaya"
+      ]
+    },
+    {
+      "id": "ML24",
+      "query": "artisan ko loan aur training",
+      "expected": "PM Vishwakarma",
+      "got_top3": [
+        "Kisan Credit Card (KCC)",
+        "National Handicapped Finance and Development Corporation (NHFDC) Loan Scheme",
+        "Pradhan Mantri Mudra Yojana"
+      ]
+    }
+  ]
+}

@@ -50,6 +50,8 @@ export default function SiteHeader({ active }) {
     { key: 'chat', label: t('nav_chat'), to: '/chat' },
     { key: 'eligibility', label: t('nav_eligibility'), to: '/eligibility' },
     { key: 'schemes', label: t('nav_schemes'), to: '/schemes' },
+    { key: 'plan', label: t('nav_plan'), to: '/plan' },
+    { key: 'compare', label: t('nav_compare'), to: '/compare' },
     { key: 'history', label: t('nav_history'), to: '/history' },
     { key: 'about', label: t('nav_about'), to: '/about' },
   ];
@@ -88,15 +90,15 @@ export default function SiteHeader({ active }) {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1 border-x border-outline-variant px-3 py-1">
+        <nav className="hidden lg:flex items-center gap-0.5 border-x border-outline-variant px-1.5 py-1">
           {links.map((link) => (
             <Link
               key={link.key}
               to={link.to}
               className={
                 active === link.key
-                  ? 'bg-primary text-on-primary font-semibold px-3 py-1.5 rounded text-label-md'
-                  : 'text-on-surface-variant hover:text-primary px-3 py-1.5 font-label-md text-label-md transition-colors'
+                  ? 'bg-primary text-on-primary font-semibold px-2 py-1.5 rounded text-[11px]'
+                  : 'text-on-surface-variant hover:text-primary px-2 py-1.5 text-[11px] font-medium transition-colors'
               }
             >
               {link.label}

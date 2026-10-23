@@ -9,6 +9,8 @@ import Legal from "./pages/Legal";
 
 const Chat = lazy(() => import("./pages/Chat"));
 const History = lazy(() => import("./pages/History"));
+const Plan = lazy(() => import("./pages/Plan"));
+const Compare = lazy(() => import("./pages/Compare"));
 
 function PageLoading() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/eligibility" element={<EligibilityForm />} />
           <Route path="/schemes" element={<BrowseSchemes />} />
+          <Route path="/plan" element={<Plan />} />
+          <Route path="/compare" element={<Compare />} />
           <Route path="/history" element={<History />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Auth />} />

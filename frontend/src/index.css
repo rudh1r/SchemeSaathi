@@ -150,3 +150,25 @@ body {
 .dark ::placeholder {
   color: #6b7789;
 }
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  header,
+  footer,
+  nav,
+  button {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    max-width: none !important;
+  }
+
+  a[href]::after {
+    content: "";
+  }
+}

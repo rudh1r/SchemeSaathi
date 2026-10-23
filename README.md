@@ -33,12 +33,15 @@ Users can provide details such as age, income, occupation, location, education, 
 | Area | Status |
 | --- | --- |
 | Conversation assistant (RAG + streaming answers) | Working |
-| **Deterministic eligibility engine** (three outcome classes) | Working, 133-case evaluation |
-| Scheme directory with state / category / level filters, bookmarks, voice search | Working |
+| **Deterministic eligibility engine** (three outcome classes) | Working, 133-case strict benchmark + audited regression suite |
+| **Hybrid retrieval** (dense Chroma + BM25, reciprocal-rank fusion) | Working, evaluated |
+| Hinglish / Devanagari query bridge | Working, 24-query evaluation |
+| Scheme directory with filters, bookmarks, voice search, comparison | Working |
+| **My Plan**: saved profile, per-scheme document checklist, personal reminders | Working (device-local) |
 | Structured eligibility form (full-corpus and need-based modes) | Working |
 | Accounts, query history, saved schemes, feedback | Working |
-| Grounded answers with a verdict per retrieved scheme | Working |
-| Unit tests for the rule engine and rule coverage | `npm test` (16 tests) |
+| Grounded answers with a verdict per retrieved scheme | Working; automatic quality checks, manual groundedness scoring pending |
+| Unit tests for the rule engine, coverage, retrieval and expansion | `npm test` (26 tests) |
 
 > **Academic honesty:** this is an informational tool, not an official eligibility decision. Every answer tells the user to confirm details on the official portal.
 
@@ -70,8 +73,9 @@ backend/
   src/
     config.js                   env + feature checks
     db.js                       MongoDB collections
-    retrieval.js                Chroma search, lexical fallback
+    retrieval.js                Chroma search, hybrid search, lexical fallback
     vector-index.js             shared Chroma indexing / sync
+    search/hybrid.js            BM25 + reciprocal-rank fusion + query expansion
     llm.js                      grounded prompt + streaming
     eligibility/
       profile.js                alias/unit normalisation
@@ -83,20 +87,27 @@ backend/
     routes/                     health, auth, schemes, eligibility, query, account
   scripts/build-rules.js        curated + auto -> rules.json
   scripts/bootstrap.js          idempotent first-run seed + embed
-  test/eligibility.test.js      16 unit tests
+  test/                        26 unit tests (engine, rules, hybrid, regressions)
   run_eligibility_eval.js       133-case reproducible evaluation
 frontend/
   src/lib/api.js                single API client (JWT, SSE)
   src/lib/profile.js            canonical client profile
+  src/lib/checklist.js          derived document/step guidance
+  src/lib/plan.js               device-local plan + reminders
+  src/lib/compare.js            device-local comparison
   src/pages/Chat.jsx            streaming chat + verdict badges
   src/pages/EligibilityForm.jsx structured check, 3 result tabs
-  src/pages/BrowseSchemes.jsx   directory, filters, bookmarks, mic
+  src/pages/BrowseSchemes.jsx   directory, filters, bookmarks, mic, compare/plan
+  src/pages/Plan.jsx            saved profile, checklist, reminders
+  src/pages/Compare.jsx         side-by-side comparison
   src/pages/History.jsx         query history + saved schemes
 data/schemes.json               112 schemes
 chroma_db/                      canonical Chroma persistence directory
 Dockerfile                      production image (API + built SPA)
 docker-compose.yml              app + MongoDB + Chroma
 DEPLOYMENT.md                   self-hosted / managed deployment runbook
+DEPLOYMENT_VERCEL.md            Vercel frontend + Docker API runbook
+RESULTS.md                      evaluation tables, methodology and caveats
 ```
 
 ## Prerequisites
@@ -194,7 +205,9 @@ curl http://localhost:5000/api/health
 
 The first boot imports all 112 schemes and builds the vector index
 automatically. See **[DEPLOYMENT.md](DEPLOYMENT.md)** for HTTPS/Caddy, managed
-hosting, backups, environment variables and troubleshooting.
+hosting, backups, environment variables and troubleshooting. For a split
+deployment with the SPA on Vercel and the API/Chroma on Render or Railway, see
+**[DEPLOYMENT_VERCEL.md](DEPLOYMENT_VERCEL.md)**.
 
 ## The eligibility engine
 
@@ -275,48 +288,98 @@ Reproduce the numbers with:
 
 ```bash
 cd backend
-npm run eval:eligibility     # 133 labelled cases -> eligibility_engine_metrics.json
-npm test                     # engine + rule-coverage unit tests
+npm test                     # 26 unit tests: engine, coverage, hybrid, regressions
+npm run eval:eligibility     # strict 133-case benchmark
+npm run eval:eligibility:v3  # audited correction/regression suite
+node run_eval_v2.js retrieval          # dense Chroma baseline
+node run_eval_v2.js hybrid             # dense + BM25 fusion
+node run_eval_v2.js multilingual-dense
+node run_eval_v2.js multilingual-lexical
+node run_eval_v2.js multilingual
+npm run quality:rag          # automatic RAG support checks + manual scoring sheet
 ```
 
-Latest eligibility-engine result (`eligibility_engine_metrics.json`):
+### Eligibility engine
 
-| Metric | Value |
-| --- | --- |
-| Cases | 133 |
-| Accuracy | 86.47% |
-| Macro precision / recall / F1 | 82.78 / 89.06 / 82.51 |
-| False-positive "Eligible" | **0** |
-| False "Ineligible" | 1 |
-| Over-cautious (Eligible label → Insufficient) | 12 |
-| Missed uncertainty | 0 |
+The headline result is the **original strict 133-case benchmark**, kept
+unchanged so that the comparison is reproducible. After the rule fixes it
+scores 90.23% accuracy (95% Wilson CI 83.99–94.20), macro precision 85.56%,
+macro recall 92.03%, and macro F1 86.43%.
 
-The six-rule confusion matrix is stored in the same file. `Insufficient
-Information` has low precision (50%) because it is the safe fallback whenever
-any mandatory attribute is absent; recall is 100%. This trade-off is deliberate:
-for a welfare tool, wrongly telling someone they are ineligible is worse than
-asking one more question.
+| Class | Precision | Recall | F1 | n |
+| --- | --- | --- | --- | --- |
+| Eligible | 100.00% | 80.77% | 89.36% | 52 |
+| Ineligible | 100.00% | 95.31% | 97.60% | 64 |
+| Insufficient Information | 56.67% | 100.00% | 72.34% | 17 |
+
+There are **zero false-`Eligible`** and **zero false-`Ineligible`** cases. The
+13 remaining errors are all conservative: 10 expected-`Eligible` cases return
+`Insufficient Information`, and 3 expected-`Ineligible` cases return
+`Insufficient Information`. The committed `run_eligibility_eval.js` classifies
+all 13 into the five-cell error taxonomy, with `unclassified_cases: 0`.
+
+A separate **audited v3 suite** (`eligibility_test_cases_v3.json`) documents 19
+corrections. The audit distinguishes three actions: engine fixes, completing a
+fixture with a fact already stated in its rationale, and relabelling an
+overreaching expected label. The corrected suite scores 100% by construction and
+is therefore a **regression suite, not a held-out generalisation benchmark**.
+The original v2 file is not modified. See `eligibility_test_audit.json` for the
+per-case evidence.
+
+### Retrieval
+
+English benchmark: 270 queries, of which 245 have one relevant scheme and 15
+have multiple relevant schemes.
+
+| Method | Single Top-1 | Single Hit@3 | Single MRR | Multi Top-1 | Multi Hit@3 |
+| --- | --- | --- | --- | --- | --- |
+| Dense (`all-MiniLM-L6-v2`) | 77.96% | 92.65% | 0.8543 | 80.00% | 93.33% |
+| BM25 | 87.76% | 96.33% | 0.9210 | 73.33% | 93.33% |
+| Hybrid (dense + BM25 RRF) | **89.80%** | **98.78%** | **0.9415** | **86.67%** | **100.00%** |
+
+The hybrid result is not a guarantee: it is an actual end-to-end run of the
+retrieval function used by the API. Dense retrieval latency was 30.7 ms mean /
+53 ms p95; hybrid retrieval was 374 ms mean / 598 ms p95 in this environment,
+because it queries Chroma and scores the full BM25 corpus. The LLM dominates
+end-to-end chat latency.
+
+Hinglish/Hindi benchmark: 24 queries written in Romanised Hinglish or
+Devanagari.
+
+| Method | Top-1 | Hit@3 | MRR |
+| --- | --- | --- | --- |
+| Dense | 41.67% | 58.33% | 0.4944 |
+| BM25 | 50.00% | 66.67% | 0.5903 |
+| Hybrid + query bridge | **75.00%** | **91.67%** | **0.8438** |
+
+The remaining hybrid failures are mostly near misses where a reasonable
+alternative scheme ranks first (for example, a PMAY component instead of the
+umbrella scheme). These are reported as failures rather than relabelled.
+
+### RAG answers
+
+The 88-answer suite completed with 0 errors/empty answers, 3.0 sources per
+answer, and mean answer length 1,281 characters. Automatic support checks
+(`rag_quality_metrics.json`) report 84.85% source-name coverage, 67.05% bracket
+citation-marker rate, 81.82% confirmation language, 85.23% actionable next
+steps, and 11 answers containing a currency amount absent from their retrieved
+evidence.
+
+These are **not** groundedness scores. The manual 1–5 rubric and scoring sheet
+are in `backend/GROUNDEDNESS_RUBRIC.md` and
+`backend/rag_manual_scoring_sheet.csv`; groundedness/relevance should not be
+claimed until that sheet is scored and checked for agreement.
 
 ### Reconciliation with the paper
 
-The drafted paper reports **63 retrieval queries** (92.06% Top-1, 98.41%
-Recall@3) and **30 eligibility cases**. The committed artefacts in this
-repository are larger and more conservative:
+The drafted paper reports 63 retrieval queries and 30 eligibility cases. The
+committed artefacts are larger and more conservative. The 63-query set was an
+earlier, easier subset; the 245-query benchmark adds paraphrases and hard
+negatives. The paper should quote the committed benchmark, or state explicitly
+that 63 queries are a subset. The eligibility benchmark was expanded from 30 to
+133 cases for the same reason — it is the number the script actually
+reproduces. Full tables and caveats are in [`RESULTS.md`](RESULTS.md).
 
-| Source | Queries / cases | Dense Top-1 | Lexical (BM25) Top-1 |
-| --- | --- | --- | --- |
-| Paper draft | 63 | 92.06% | — |
-| `retrieval_metrics.json` | 245 single-relevant | 77.96% (Hit@3 92.65%) | 87.76% (Hit@3 96.33%) |
-| `eligibility_engine_metrics.json` | 133 | — | — |
-
-Why they differ: the 63-query set was an earlier, easier subset; the 245-query
-benchmark adds paraphrases and hard negatives. The repository numbers are the
-ones that reproduce from committed data, so the paper should either quote the
-245-query benchmark or state that 63 queries are a subset. The lexical baseline
-outperforming dense Top-1 is reported rather than hidden; the running system
-therefore keeps a lexical fallback when Chroma is unavailable. The eligibility
-evaluation was expanded from 30 to 133 cases for the same reason — it is the
-number that the committed script actually reproduces.
 
 ## Limitations
 
@@ -327,3 +390,15 @@ number that the committed script actually reproduces.
 - Voice search depends on the browser Web Speech API (Chrome/Edge).
 - The LLM can still phrase an explanation poorly; the verdict badge and the
   per-condition breakdown are the authoritative parts of an answer.
+- Manual groundedness/relevance scoring is pending. The automatic checks in
+  `rag_quality_metrics.json` are diagnostics, not a substitute.
+- My Plan and comparison are stored in the browser, not synced across devices.
+  Reminders use a user-chosen target date; the scheme dataset has no official
+  deadline field.
+- Application checklists are derived from scheme text plus commonly requested
+  documents, not an official checklist. The UI labels them as a preparation aid.
+- The embedding model is English-only. Hinglish/Devanagari quality comes from
+  the query bridge and BM25, not from a multilingual embedding model.
+- The current production stack needs a long-running API and a reachable Chroma
+  service; a Vercel-only deployment would require a vector-store migration.
+  See [`DEPLOYMENT_VERCEL.md`](DEPLOYMENT_VERCEL.md).

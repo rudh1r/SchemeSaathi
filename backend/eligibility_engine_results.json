@@ -219,51 +219,55 @@
     "id": "E10",
     "scheme": "AICTE Pragati Scholarship for Girls",
     "expected": "Eligible",
-    "predicted": "Insufficient Information",
-    "correct": false,
+    "predicted": "Eligible",
+    "correct": true,
     "category": "clearly_eligible",
     "profile": {
       "gender": "female",
       "income": 500000,
       "monthly_income": 41667,
+      "is_student": true,
+      "technical_programme": true,
       "girl_children": 1,
       "programme": "AICTE-approved diploma"
     },
     "satisfied": [
       "Applicant is a girl student",
       "Annual family income below ₹8,00,000",
+      "Currently enrolled in a technical diploma or degree programme",
       "At most two girls from the family across AICTE scholarships"
     ],
     "violated": [],
-    "unresolved": [
-      "Currently enrolled in a technical diploma or degree programme"
-    ],
-    "summary": "All checked conditions are met, but 1 condition could not be verified: Currently enrolled in a technical diploma or degree programme.",
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
     "rationale": "Girl, enrolled in AICTE-approved technical program, income under cap, only one applicant per family."
   },
   {
     "id": "E11",
     "scheme": "AICTE Pragati Scholarship for Girls",
     "expected": "Ineligible",
-    "predicted": "Insufficient Information",
-    "correct": false,
+    "predicted": "Ineligible",
+    "correct": true,
     "category": "ineligible_single_condition",
     "profile": {
       "gender": "female",
       "income": 300000,
       "monthly_income": 25000,
+      "is_student": true,
+      "technical_programme": false,
       "programme": "BA (non-technical, non-AICTE)"
     },
     "satisfied": [
       "Applicant is a girl student",
       "Annual family income below ₹8,00,000"
     ],
-    "violated": [],
+    "violated": [
+      "Currently enrolled in a technical diploma or degree programme"
+    ],
     "unresolved": [
-      "Currently enrolled in a technical diploma or degree programme",
       "At most two girls from the family across AICTE scholarships"
     ],
-    "summary": "All checked conditions are met, but 1 condition could not be verified: Currently enrolled in a technical diploma or degree programme.",
+    "summary": "Does not meet 1 mandatory condition: Currently enrolled in a technical diploma or degree programme.",
     "rationale": "Gender and income are fine, but a BA at a general university is not an AICTE-approved technical program — this scheme is technical-education specific."
   },
   {
@@ -277,18 +281,20 @@
       "gender": "female",
       "income": 200000,
       "monthly_income": 16667,
+      "is_student": true,
+      "technical_programme": true,
       "programme": "AICTE-approved diploma"
     },
     "satisfied": [
       "Applicant is a girl student",
-      "Annual family income below ₹8,00,000"
+      "Annual family income below ₹8,00,000",
+      "Currently enrolled in a technical diploma or degree programme"
     ],
     "violated": [],
     "unresolved": [
-      "Currently enrolled in a technical diploma or degree programme",
       "At most two girls from the family across AICTE scholarships"
     ],
-    "summary": "All checked conditions are met, but 1 condition could not be verified: Currently enrolled in a technical diploma or degree programme.",
+    "summary": "All checked conditions are met, but 1 condition could not be verified: At most two girls from the family across AICTE scholarships.",
     "rationale": "All conditions satisfiable except the 'max two girls per family across all AICTE scholarships' cap, which depends on a fact the profile doesn't state."
   },
   {
@@ -2071,20 +2077,20 @@
     "id": "E90",
     "scheme": "Sukanya Samriddhi Yojana",
     "expected": "Eligible",
-    "predicted": "Insufficient Information",
-    "correct": false,
+    "predicted": "Eligible",
+    "correct": true,
     "category": "clearly_eligible",
     "profile": {
-      "daughter_age": 6
+      "daughter_age": 6,
+      "existing_accounts": 0
     },
     "satisfied": [
-      "Girl child below 10 years"
+      "Girl child below 10 years",
+      "Maximum two existing accounts per family"
     ],
     "violated": [],
-    "unresolved": [
-      "Maximum two accounts per family"
-    ],
-    "summary": "All checked conditions are met, but 1 condition could not be verified: Maximum two accounts per family.",
+    "unresolved": [],
+    "summary": "Meets all 2 checked conditions.",
     "rationale": "Girl below 10 and within the two-account limit."
   },
   {
@@ -2102,7 +2108,7 @@
       "Girl child below 10 years"
     ],
     "unresolved": [
-      "Maximum two accounts per family"
+      "Maximum two existing accounts per family"
     ],
     "summary": "Does not meet 1 mandatory condition: Girl child below 10 years.",
     "rationale": "The girl is not below 10 years."
@@ -2122,9 +2128,9 @@
     ],
     "violated": [],
     "unresolved": [
-      "Maximum two accounts per family"
+      "Maximum two existing accounts per family"
     ],
-    "summary": "All checked conditions are met, but 1 condition could not be verified: Maximum two accounts per family.",
+    "summary": "All checked conditions are met, but 1 condition could not be verified: Maximum two existing accounts per family.",
     "rationale": "Still below 10, so eligible just inside the limit."
   },
   {
@@ -2219,41 +2225,43 @@
     "profile": {
       "age": 24,
       "bpl": true,
-      "pregnant": true
+      "pregnant": true,
+      "delivery_in_facility": true
     },
     "satisfied": [
       "Age 19 years or above",
       "Pregnant woman or recent delivery",
-      "BPL household, or SC/ST category"
-    ],
-    "violated": [],
-    "unresolved": [
+      "BPL household, or SC/ST category",
       "Delivery in a recognised health facility"
     ],
-    "summary": "Meets all 3 checked conditions.",
+    "violated": [],
+    "unresolved": [],
+    "summary": "Meets all 4 checked conditions.",
     "rationale": "Adult BPL pregnant woman delivering in a government facility."
   },
   {
     "id": "E98",
     "scheme": "Janani Suraksha Yojana (JSY)",
     "expected": "Ineligible",
-    "predicted": "Insufficient Information",
-    "correct": false,
+    "predicted": "Ineligible",
+    "correct": true,
     "category": "ineligible_single_condition",
     "profile": {
       "age": 26,
-      "bpl": true
+      "bpl": true,
+      "delivery_in_facility": false
     },
     "satisfied": [
       "Age 19 years or above",
       "BPL household, or SC/ST category"
     ],
-    "violated": [],
-    "unresolved": [
-      "Pregnant woman or recent delivery",
+    "violated": [
       "Delivery in a recognised health facility"
     ],
-    "summary": "All checked conditions are met, but 1 condition could not be verified: Pregnant woman or recent delivery.",
+    "unresolved": [
+      "Pregnant woman or recent delivery"
+    ],
+    "summary": "Does not meet 1 mandatory condition: Delivery in a recognised health facility.",
     "rationale": "Benefit requires delivery in a recognised health facility."
   },
   {
@@ -2355,7 +2363,8 @@
       "monthly_income": 12500,
       "category": "sc",
       "education_level": "B.A.",
-      "is_student": true
+      "is_student": true,
+      "technical_programme": false
     },
     "satisfied": [
       "Belongs to a Scheduled Caste",
@@ -2788,8 +2797,8 @@
     "id": "E123",
     "scheme": "Pradhan Mantri Employment Generation Programme (PMEGP)",
     "expected": "Eligible",
-    "predicted": "Ineligible",
-    "correct": false,
+    "predicted": "Eligible",
+    "correct": true,
     "category": "clearly_eligible",
     "profile": {
       "age": 30,
@@ -2799,13 +2808,12 @@
       "project_cost": 1200000
     },
     "satisfied": [
-      "Age 18 years or above"
-    ],
-    "violated": [
+      "Age 18 years or above",
       "At least Class 8 pass for projects above ₹10 lakh"
     ],
+    "violated": [],
     "unresolved": [],
-    "summary": "Does not meet 1 mandatory condition: At least Class 8 pass for projects above ₹10 lakh.",
+    "summary": "Meets all 2 checked conditions.",
     "rationale": "Meets the Class 8 requirement for projects above Rs 10 lakh."
   },
   {

@@ -2,7 +2,7 @@ const express = require('express');
 const { ObjectId } = require('mongodb');
 const config = require('../config');
 const { collections } = require('../db');
-const { searchSchemes, lexicalSearchSchemes, heartbeat } = require('../retrieval');
+const { hybridSearchSchemes, searchSchemes, lexicalSearchSchemes, heartbeat } = require('../retrieval');
 const { attachRules, assessCandidates, buildSearchText, normaliseProfile, missingAttributes } = require('../eligibility/service');
 const { extractProfileFromText } = require('../eligibility/text-profile');
 const { generateAnswer, streamAnswer } = require('../llm');
@@ -12,8 +12,19 @@ const { HttpError, str, int, object } = require('../http/validate');
 
 const router = express.Router();
 
-/** Retrieve candidates, degrading to lexical search if Chroma is unavailable. */
+/** Retrieve candidates, preferring hybrid retrieval and degrading safely. */
 async function retrieve(queryText, { topK, filters }) {
+  if (config.hybridRetrieval) {
+    try {
+      const schemes = await hybridSearchSchemes(queryText, { topK, filters });
+      if (schemes.length > 0) {
+        return { schemes, engine: schemes[0]._retrieval || 'hybrid' };
+      }
+    } catch (err) {
+      console.warn('Hybrid retrieval unavailable, trying dense retrieval:', err.message);
+    }
+  }
+
   try {
     if (!(await heartbeat())) throw new Error('vector store offline');
     const schemes = await searchSchemes(queryText, { topK, filters });
@@ -21,8 +32,9 @@ async function retrieve(queryText, { topK, filters }) {
   } catch (err) {
     console.warn('Vector retrieval unavailable, using lexical fallback:', err.message);
   }
-  const schemes = await lexicalSearchSchemes(queryText, { topK });
-  return { schemes, engine: 'lexical-fallback' };
+
+  const schemes = await lexicalSearchSchemes(queryText, { topK, filters });
+  return { schemes, engine: 'lexical-bm25' };
 }
 
 async function loadConversation(key) {
