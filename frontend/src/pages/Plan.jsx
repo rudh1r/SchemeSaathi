@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import Illos from '../components/Illos';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import api from '../lib/api';
@@ -36,7 +37,7 @@ function SchemePlanCard({ scheme, t, reminder, checked, onToggleDocument, onSetR
                 <span className="text-[10px] px-1.5 py-0.5 rounded border border-border text-muted">{scheme.category}</span>
               )}
               {due && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 border border-amber-200 text-amber-700 font-semibold">
+                <span className="text-[10px] px-1.5 py-0.5 bg-surface-container-low border border-border text-primary font-semibold">
                   {t('plan_reminder_due')}
                 </span>
               )}
@@ -278,35 +279,38 @@ export default function Plan() {
     <div className="min-h-screen bg-parchment">
       <SiteHeader active="plan" />
       <main className="pt-28 max-w-5xl mx-auto px-6 py-5">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 items-center border-b border-border pb-6 mb-6">
           <div>
             <h1 className="font-serif text-2xl font-bold text-primary mb-1">{t('plan_title')}</h1>
             <p className="text-sm text-muted max-w-2xl">{t('plan_subtitle')}</p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {due.length > 0 && (
+                <button type="button" onClick={askNotifications} className="h-9 px-3 border border-border bg-surface-container-low text-primary text-[11px] font-semibold inline-flex items-center gap-1.5">
+                  <Bell size={14} /> {t('plan_reminder_permission')}
+                </button>
+              )}
+              {(profile || selected.length > 0) && (
+                <button type="button" onClick={() => window.print()} className="h-9 px-3 border border-border bg-white text-primary text-[11px] font-semibold inline-flex items-center gap-1.5">
+                  <Printer size={14} /> {t('plan_print')}
+                </button>
+              )}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {due.length > 0 && (
-              <button type="button" onClick={askNotifications} className="h-9 px-3 rounded border border-amber-200 bg-amber-50 text-amber-800 text-[11px] font-semibold inline-flex items-center gap-1.5">
-                <Bell size={14} /> {t('plan_reminder_permission')}
-              </button>
-            )}
-            {(profile || selected.length > 0) && (
-              <button type="button" onClick={() => window.print()} className="h-9 px-3 rounded border border-border bg-white text-primary text-[11px] font-semibold inline-flex items-center gap-1.5">
-                <Printer size={14} /> {t('plan_print')}
-              </button>
-            )}
+          <div className="hidden lg:block w-full border-y border-border py-2">
+            <Illos kind="notifications" />
           </div>
         </div>
 
         {notice && (
           <div className="mb-4 text-xs rounded border border-border bg-white px-3 py-2 text-primary flex items-center gap-2">
-            <Info size={14} className="text-amber shrink-0" /> <span>{notice}</span>
+            <Info size={14} className="text-secondary shrink-0" /> <span>{notice}</span>
           </div>
         )}
         {error && (
           <div className="mb-4 text-xs rounded border border-red-200 bg-red-50 px-3 py-2 text-red-700">{error}</div>
         )}
 
-        <section className="bg-white border border-border rounded p-5 mb-6">
+        <section className="border-y border-border py-4 mb-6">
           <div className="flex items-start justify-between gap-3">
             <div>
               <h2 className="text-xs font-bold text-primary uppercase tracking-wide mb-2 inline-flex items-center gap-1.5">

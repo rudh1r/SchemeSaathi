@@ -69,7 +69,7 @@ export default function SiteHeader({ active }) {
   }, [menuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
       <div className="h-20 max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center gap-3 group" aria-label="SchemeSaathi home">
           <span className="h-9 w-9 rounded bg-primary text-on-primary flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors">
@@ -90,15 +90,15 @@ export default function SiteHeader({ active }) {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-0.5 border-x border-outline-variant px-1.5 py-1">
+        <nav className="hidden xl:flex items-center gap-3">
           {links.map((link) => (
             <Link
               key={link.key}
               to={link.to}
               className={
                 active === link.key
-                  ? 'bg-primary text-on-primary font-semibold px-2 py-1.5 rounded text-[11px]'
-                  : 'text-on-surface-variant hover:text-primary px-2 py-1.5 text-[11px] font-medium transition-colors'
+                  ? 'border-b-2 border-secondary text-primary font-bold px-1 py-2 text-[11px]'
+                  : 'border-b-2 border-transparent text-on-surface-variant hover:text-primary px-1 py-2 text-[11px] font-medium transition-colors'
               }
             >
               {link.label}
@@ -135,7 +135,7 @@ export default function SiteHeader({ active }) {
           >
             {theme === 'light' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <Link className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded bg-secondary text-on-secondary hover:bg-[#155734] transition-all font-label-md text-label-md font-semibold border border-[#155734]" to="/eligibility">
+          <Link className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 bg-secondary text-on-secondary hover:bg-secondary-dark transition-all font-label-md text-label-md font-semibold border border-secondary-dark" to="/eligibility">
             <UserCheck size={17} />
             <span>{t('check_eligibility_btn')}</span>
           </Link>
@@ -145,7 +145,7 @@ export default function SiteHeader({ active }) {
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
-            className="lg:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors"
+            className="xl:hidden w-8 h-8 rounded border border-outline-variant bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors"
             type="button"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -154,11 +154,11 @@ export default function SiteHeader({ active }) {
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 z-40 bg-black/30" onClick={() => setMenuOpen(false)}>
+        <div className="xl:hidden fixed inset-0 top-20 z-40 bg-black/30" onClick={() => setMenuOpen(false)}>
           <nav
             id="mobile-navigation"
             aria-label="Mobile navigation"
-            className="bg-surface-container-lowest border-b border-outline-variant shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto p-3"
+            className="bg-surface-container-lowest border-b border-outline-variant max-h-[calc(100vh-5rem)] overflow-y-auto p-3"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex flex-col gap-1">

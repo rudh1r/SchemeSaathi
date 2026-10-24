@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import Illos from '../components/Illos';
 
 const PILLARS = [
   {
@@ -84,27 +85,32 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
 
           {/* Page header */}
-          <section className="bg-surface-container-low rounded-xl p-6 md:p-8 mb-8">
-            <div className="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-4">
+          <section className="bg-surface-container-low p-6 md:p-8 mb-8 border-y border-outline-variant">
+            <div className="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-5">
               <Landmark size={16} />
               <span>SchemeSaathi</span>
               <span>/</span>
               <span className="text-primary font-bold">About the Project</span>
             </div>
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                Final-Year B.Tech Project
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-8 items-center">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider">
+                  <span className="w-2 h-2 bg-secondary"></span>
+                  Final-Year B.Tech Project
+                </div>
+                <h1 className="font-headline-xl text-headline-xl text-primary max-w-3xl tracking-tight">
+                  Making Government Welfare Schemes Easier to Discover
+                </h1>
+                <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                  India has hundreds of government welfare schemes, but finding the ones relevant to a specific person's
+                  situation usually means searching multiple portals and decoding formal eligibility language.
+                  SchemeSaathi is a Retrieval-Augmented Generation (RAG) assistant built to make that discovery process
+                  conversational and grounded in real scheme data.
+                </p>
               </div>
-              <h1 className="font-headline-xl text-headline-xl text-primary max-w-3xl tracking-tight">
-                Making Government Welfare Schemes Easier to Discover
-              </h1>
-              <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                India has hundreds of government welfare schemes, but finding the ones relevant to a specific person's
-                situation usually means searching multiple portals and decoding formal eligibility language.
-                SchemeSaathi is a Retrieval-Augmented Generation (RAG) assistant built to make that discovery process
-                conversational and grounded in real scheme data.
-              </p>
+              <div className="hidden lg:block w-full border-y border-outline-variant py-2">
+                <Illos kind="analytics" />
+              </div>
             </div>
           </section>
 

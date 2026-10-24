@@ -14,7 +14,7 @@ import { STATUS_STYLES } from '../lib/profile';
 
 const STATUS_CLASS = {
   Eligible: 'bg-secondary-light text-secondary border-secondary/30',
-  'Insufficient Information': 'bg-amber-50 text-amber-700 border-amber-200',
+  'Insufficient Information': 'bg-surface-container-low text-primary border-border',
   Ineligible: 'bg-red-50 text-red-700 border-red-200',
 };
 
@@ -138,7 +138,7 @@ export default function History() {
             <Link
               to="/login"
               state={{ from: '/history' }}
-              className="mt-1 px-4 py-2.5 rounded bg-secondary hover:bg-[#155332] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors"
+              className="mt-1 px-4 py-2.5 rounded bg-secondary hover:bg-secondary-dark text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors"
             >
               <LogIn size={16} />
               {t('browse_signin')}
@@ -221,7 +221,7 @@ export default function History() {
               <div className="bg-white border border-border rounded p-8 text-center flex flex-col items-center gap-3">
                 <MessageSquare size={26} className="text-muted" />
                 <p className="text-sm text-muted max-w-sm">{t('history_empty_queries')}</p>
-                <Link to="/chat" className="px-3.5 py-2 rounded bg-secondary text-white text-xs font-bold inline-flex items-center gap-1.5 hover:bg-[#155332] transition-colors">
+                <Link to="/chat" className="px-3.5 py-2 rounded bg-secondary text-white text-xs font-bold inline-flex items-center gap-1.5 hover:bg-secondary-dark transition-colors">
                   {t('history_ask_btn')}
                   <ArrowRight size={14} />
                 </Link>
@@ -295,7 +295,7 @@ export default function History() {
               <div className="bg-white border border-border rounded p-8 text-center flex flex-col items-center gap-3">
                 <Bookmark size={26} className="text-muted" />
                 <p className="text-sm text-muted max-w-sm">{t('history_empty_bookmarks')}</p>
-                <Link to="/schemes" className="px-3.5 py-2 rounded bg-secondary text-white text-xs font-bold inline-flex items-center gap-1.5 hover:bg-[#155332] transition-colors">
+                <Link to="/schemes" className="px-3.5 py-2 rounded bg-secondary text-white text-xs font-bold inline-flex items-center gap-1.5 hover:bg-secondary-dark transition-colors">
                   {t('nav_schemes')}
                   <ArrowRight size={14} />
                 </Link>

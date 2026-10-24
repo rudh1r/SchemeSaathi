@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import Illos from '../components/Illos';
 import { useLanguage } from '../context/LanguageContext';
 import { api } from '../lib/api';
 
@@ -64,40 +65,47 @@ export default function Home() {
       <main className="w-full pt-28 bg-surface">
         <div className="flex flex-col w-full">
 
-          <section className="relative w-full border-b border-outline-variant bg-surface-container-low/40 pt-10 pb-12">
-            <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col items-center text-center">
-              <div className="max-w-4xl flex flex-col items-center gap-2 mb-4">
-                <h1 className="font-headline-xl text-[34px] sm:text-[40px] text-primary tracking-tight leading-[1.2]">
+          <section className="relative w-full border-b border-outline-variant bg-surface pt-10 pb-12">
+            <div className="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.75fr)] gap-10 items-center">
+              <div className="flex flex-col items-start text-left">
+                <div className="inline-flex items-center gap-2 border-l-2 border-secondary pl-3 mb-5">
+                  <span className="font-label-sm text-[11px] uppercase tracking-[0.18em] text-secondary font-bold">SchemeSaathi</span>
+                  <span className="font-label-sm text-[11px] uppercase tracking-[0.18em] text-on-surface-variant">Civic Welfare Copilot</span>
+                </div>
+                <h1 className="font-headline-xl text-[34px] sm:text-[42px] text-primary tracking-tight leading-[1.15] max-w-3xl">
                   {t('hero_title')}
                 </h1>
-              </div>
-              <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8 leading-normal">
-                {t('hero_subtitle')}
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mb-2">
-                <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container border border-primary transition-all" to="/eligibility">
-                  <CheckCircle2 size={18} />
-                  <span>{t('hero_cta_primary')}</span>
-                </Link>
-                <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded bg-surface-container-lowest text-primary font-label-lg text-label-lg font-semibold border border-outline-variant hover:bg-surface-container-low transition-all" to="/chat">
-                  <Bot size={18} className="text-secondary" />
-                  <span>{t('hero_cta_secondary')}</span>
-                </Link>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-2xl mt-4">
-                {[
-                  { value: stats.schemes, label: t('stats_schemes'), icon: FileCheck },
-                  { value: stats.reviewed, label: t('stats_reviewed'), icon: ShieldCheck },
-                  { value: '3', label: t('stats_classes'), icon: CheckSquare },
-                ].map((stat) => (
-                  <div key={stat.label} className="flex items-center justify-center gap-2.5 rounded border border-outline-variant bg-surface-container-lowest px-3 py-2">
-                    <stat.icon size={16} className="text-secondary shrink-0" />
-                    <div className="text-left">
-                      <div className="font-headline-sm text-[16px] font-bold text-primary leading-tight">{stat.value}</div>
-                      <div className="font-label-sm text-[10px] text-on-surface-variant leading-tight">{stat.label}</div>
+                <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4 mb-7 leading-normal">
+                  {t('hero_subtitle')}
+                </p>
+                <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-md">
+                  <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container border border-primary transition-all" to="/eligibility">
+                    <CheckCircle2 size={18} />
+                    <span>{t('hero_cta_primary')}</span>
+                  </Link>
+                  <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-surface-container-lowest text-primary font-label-lg text-label-lg font-semibold border border-outline-variant hover:bg-surface-container-low transition-all" to="/chat">
+                    <Bot size={18} className="text-secondary" />
+                    <span>{t('hero_cta_secondary')}</span>
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 w-full max-w-2xl mt-8 border-y border-outline-variant">
+                  {[
+                    { value: stats.schemes, label: t('stats_schemes'), icon: FileCheck },
+                    { value: stats.reviewed, label: t('stats_reviewed'), icon: ShieldCheck },
+                    { value: '3', label: t('stats_classes'), icon: CheckSquare },
+                  ].map((stat) => (
+                    <div key={stat.label} className="flex items-center gap-2.5 px-4 py-3 sm:border-l sm:first:border-l-0 border-outline-variant">
+                      <stat.icon size={16} className="text-secondary shrink-0" />
+                      <div className="text-left">
+                        <div className="font-headline-sm text-[16px] font-bold text-primary leading-tight">{stat.value}</div>
+                        <div className="font-label-sm text-[10px] text-on-surface-variant leading-tight">{stat.label}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+              <div className="hidden lg:block w-full max-w-xl justify-self-center lg:justify-self-end border-y border-outline-variant py-4">
+                <Illos kind="search" />
               </div>
             </div>
           </section>
@@ -225,14 +233,14 @@ export default function Home() {
 
           <section className="w-full py-12 bg-surface-container-low/40 border-b border-outline-variant">
             <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col gap-8">
-              <div className="flex flex-col items-center text-center gap-1.5">
+              <div className="flex flex-col items-start gap-1.5 max-w-2xl">
                 <h2 className="font-headline-xl text-headline-xl text-primary font-bold">{t('pillars_title')}</h2>
-                <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                <p className="font-body-md text-body-md text-on-surface-variant">
                   {t('pillars_subtitle')}
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex flex-col justify-between p-5 rounded border border-outline-variant bg-surface-container-lowest">
+              <div className="grid grid-cols-1 md:grid-cols-3 border-y border-outline-variant md:divide-x md:divide-outline-variant">
+                <div className="flex flex-col justify-between py-5 md:pr-6 border-b md:border-b-0 border-outline-variant">
                   <div className="flex flex-col gap-2.5">
                     <span className="font-headline-sm text-headline-sm text-primary font-bold">{t('pillar1_title')}</span>
                     <span className="font-label-sm text-label-sm text-on-surface-variant font-medium">{t('pillar1_subtitle')}</span>
@@ -243,7 +251,7 @@ export default function Home() {
                     <span>{t('pillar1_footnote')}</span>
                   </div>
                 </div>
-                <div className="flex flex-col justify-between p-5 rounded border border-outline-variant bg-surface-container-lowest">
+                <div className="flex flex-col justify-between py-5 md:px-6 border-b md:border-b-0 border-outline-variant">
                   <div className="flex flex-col gap-2.5">
                     <span className="font-headline-sm text-headline-sm text-primary font-bold">{t('pillar2_title')}</span>
                     <span className="font-label-sm text-label-sm text-on-surface-variant font-medium">{t('pillar2_subtitle')}</span>
@@ -254,7 +262,7 @@ export default function Home() {
                     <span>{t('pillar2_footnote')}</span>
                   </div>
                 </div>
-                <div className="flex flex-col justify-between p-5 rounded border border-outline-variant bg-surface-container-lowest">
+                <div className="flex flex-col justify-between py-5 md:pl-6">
                   <div className="flex flex-col gap-2.5">
                     <span className="font-headline-sm text-headline-sm text-primary font-bold">{t('pillar3_title')}</span>
                     <span className="font-label-sm text-label-sm text-on-surface-variant font-medium">{t('pillar3_subtitle')}</span>
@@ -283,22 +291,22 @@ export default function Home() {
                   <span>{t('demo_continue')}</span>
                 </Link>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 border-y border-outline-variant md:divide-x md:divide-outline-variant">
                 {examples.map((example) => (
-                  <div key={example.person} className="flex flex-col justify-between p-5 rounded border border-outline-variant bg-surface-container-lowest">
+                  <div key={example.person} className="flex flex-col justify-between py-5 md:px-6 first:md:pl-0 last:md:pr-0 border-b md:border-b-0 border-outline-variant">
                     <div className="flex flex-col gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded bg-secondary-container border border-outline-variant flex items-center justify-center shrink-0">
+                        <div className="w-10 h-10 bg-secondary-container border border-outline-variant flex items-center justify-center shrink-0">
                           <example.icon size={19} className="text-secondary" />
                         </div>
                         <span className="font-headline-sm text-[16px] text-primary font-bold leading-tight">{example.person}</span>
                       </div>
-                      <p className="font-body-sm text-body-sm text-on-surface leading-normal border-y border-dashed border-outline-variant py-3 my-1">
+                      <p className="font-body-sm text-body-sm text-on-surface leading-normal border-y border-outline-variant py-3 my-1">
                         {example.text}
                       </p>
                     </div>
                     <div className="pt-2 flex items-center justify-between gap-2 text-label-sm">
-                      <span className="border border-outline-variant bg-surface-container-low px-2 py-0.5 rounded font-medium text-primary">{example.scheme}</span>
+                      <span className="border border-outline-variant bg-surface-container-low px-2 py-0.5 font-medium text-primary">{example.scheme}</span>
                       <span className="font-bold text-secondary whitespace-nowrap">{example.benefit}</span>
                     </div>
                   </div>
@@ -319,11 +327,11 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
-                <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-[#155734] border border-[#155734] transition-all" to="/eligibility">
+                <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-dark border border-secondary-dark transition-all" to="/eligibility">
                   <CheckCircle2 size={17} />
                   <span>{t('cta_primary_btn')}</span>
                 </Link>
-                <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded bg-transparent text-on-primary hover:bg-[#1f2d42] font-label-md text-label-md font-semibold border border-outline-variant transition-all" to="/schemes">
+                <Link className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent text-on-primary hover:bg-primary-dark font-label-md text-label-md font-semibold border border-outline-variant transition-all" to="/schemes">
                   <Package size={17} />
                   <span>{t('cta_secondary_btn')}</span>
                 </Link>

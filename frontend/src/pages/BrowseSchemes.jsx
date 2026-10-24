@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import Illos from '../components/Illos';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import api from '../lib/api';
@@ -147,17 +148,17 @@ function DossierPanel({ scheme, t, bookmarked, onToggleBookmark, signedIn, compa
 
   return (
     <div className="bg-white rounded border border-border p-5 xl:sticky xl:top-24 flex flex-col gap-4">
-      <div className="pb-3 border-b border-border flex items-start justify-between gap-2">
-        <div className="flex items-start gap-3">
+      <div className="pb-3 border-b border-border flex flex-wrap items-start justify-between gap-2">
+        <div className="flex items-start gap-3 min-w-0">
           <div className="w-10 h-10 rounded border border-border bg-parchment flex items-center justify-center text-primary shrink-0 mt-0.5">
             <Landmark size={22} />
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="text-[11px] font-bold text-primary uppercase mb-0.5">{t('browse_scheme_file')}</div>
-            <h3 className="font-serif text-lg font-bold text-primary leading-snug">{scheme.scheme_name}</h3>
+            <h3 className="font-serif text-lg font-bold text-primary leading-snug break-words">{scheme.scheme_name}</h3>
           </div>
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 ml-auto">
           <button
             type="button"
             aria-label={compared ? t('browse_compare_remove') : t('browse_compare_add')}
@@ -233,7 +234,7 @@ function DossierPanel({ scheme, t, bookmarked, onToggleBookmark, signedIn, compa
           </div>
           {scheme.application_process && (
             <div className="p-2.5 border border-border rounded bg-white flex items-start gap-2">
-              <Info size={18} className="text-amber shrink-0 mt-0.5" />
+              <Info size={18} className="text-secondary shrink-0 mt-0.5" />
               <div className="text-muted leading-relaxed">
                 <strong className="text-primary font-semibold">{t('browse_how_to_apply')} </strong>
                 {scheme.application_process}
@@ -537,12 +538,21 @@ export default function BrowseSchemes() {
       <SiteHeader active="schemes" />
 
       <main className="pt-28 max-w-6xl mx-auto px-6 py-5">
-        <div className="mb-6">
-          <h1 className="font-serif text-2xl font-bold text-primary mb-1">{t('browse_title')}</h1>
-          <p className="text-sm text-muted max-w-2xl">{t('browse_subtitle')}</p>
+        <div className="mb-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 items-end border-b border-border pb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 border-l-2 border-secondary pl-3 mb-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-secondary">{t('nav_schemes')}</span>
+              <span className="text-[11px] uppercase tracking-[0.16em] text-muted">{schemes.length} {t('browse_results_suffix')}</span>
+            </div>
+            <h1 className="font-serif text-2xl font-bold text-primary mb-1">{t('browse_title')}</h1>
+            <p className="text-sm text-muted max-w-2xl">{t('browse_subtitle')}</p>
+          </div>
+          <div className="hidden lg:block w-full border-y border-border py-2">
+            <Illos kind="search" />
+          </div>
         </div>
 
-        <div className="w-full bg-white border border-border rounded p-4 mb-6 flex flex-col gap-3">
+        <div className="w-full border-y border-border py-4 mb-6 flex flex-col gap-3">
           <div className="relative flex items-center">
             <Search size={20} className="absolute left-3.5 text-muted" />
             <input
@@ -604,7 +614,7 @@ export default function BrowseSchemes() {
 
         {notice && (
           <div className="mb-4 text-xs rounded border border-border bg-white px-3 py-2 text-primary flex items-center gap-2">
-            <Info size={14} className="text-amber shrink-0" />
+            <Info size={14} className="text-secondary shrink-0" />
             <span>{notice}</span>
           </div>
         )}
@@ -664,7 +674,7 @@ export default function BrowseSchemes() {
         </div>
 
         {compareIds.size > 0 && (
-          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 bg-primary text-white rounded-full shadow-lg px-4 py-2.5 flex items-center gap-3 text-xs">
+          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 bg-primary text-white border border-primary-dark px-4 py-2.5 flex items-center gap-3 text-xs">
             <GitCompare size={15} />
             <span className="font-semibold">{compareIds.size} {t('nav_compare').toLowerCase()}</span>
             <Link to="/compare" className="inline-flex items-center gap-1 font-bold text-white hover:underline">
@@ -678,9 +688,9 @@ export default function BrowseSchemes() {
           </div>
         )}
 
-        <div className="w-full mt-8 rounded border border-border bg-white p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="w-full mt-8 border-y border-border py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded border border-border bg-parchment flex items-center justify-center text-primary shrink-0">
+            <div className="w-12 h-12 border border-border bg-parchment flex items-center justify-center text-primary shrink-0">
               <Bot size={26} />
             </div>
             <div>
@@ -688,7 +698,7 @@ export default function BrowseSchemes() {
               <p className="text-xs text-muted leading-relaxed">{t('browse_not_sure_text')}</p>
             </div>
           </div>
-          <Link to="/chat" className="px-3.5 py-2 rounded bg-secondary hover:bg-[#155332] text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors shrink-0">
+          <Link to="/chat" className="px-3.5 py-2 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold inline-flex items-center gap-1.5 transition-colors shrink-0">
             <Bot size={16} />
             <span>{t('browse_consult_btn')}</span>
           </Link>

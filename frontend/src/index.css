@@ -1,55 +1,58 @@
 @import "tailwindcss";
 
 @theme {
+  /* A single civic palette: navy ink, forest accent, paper neutrals. */
   --color-primary: #132238;
   --color-primary-dark: #0b1625;
-  --color-secondary: #1f6b43;
-  --color-secondary-light: #edf5f0;
-  --color-tertiary: #a3431f;
-  --color-tertiary-light: #faf0eb;
-  --color-parchment: #f6f6f4;
-  --color-border: #d5d8d2;
-  --color-border-strong: #8b97a8;
-  --color-muted: #364558;
-
-  --color-error-container: #ffdad6;
-  --color-tertiary-container: #3f1406;
-  --color-on-primary-fixed-variant: #39475f;
-  --color-background: #fbfbfa;
-  --color-surface-bright: #fbfbfa;
-  --color-surface-container: #eeeeec;
-  --color-surface-container-lowest: #ffffff;
-  --color-outline: #75777e;
-  --color-on-surface: #1a1c1b;
-  --color-inverse-on-surface: #f1f1ef;
-  --color-on-surface-variant: #44474d;
+  --color-primary-container: #1b3049;
   --color-on-primary: #ffffff;
-  --color-primary-container: #132238;
-  --color-error: #ba1a1a;
-  --color-secondary-container: #e8f5ed;
-  --color-on-primary-container: #7b8aa4;
-  --color-on-tertiary: #ffffff;
-  --color-outline-variant: #d8dcd6;
-  --color-on-error-container: #93000a;
-  --color-on-tertiary-container: #c35726;
-  --color-on-error: #ffffff;
-  --color-surface-container-highest: #e2e3e1;
-  --color-on-secondary-container: #155734;
-  --color-surface-container-high: #e8e8e6;
-  --color-on-background: #1a1c1b;
-  --color-surface-variant: #f4f4f2;
-  --color-surface: #fbfbfa;
-  --color-surface-dim: #dadad8;
-  --color-inverse-surface: #2f3130;
-  --color-on-secondary: #ffffff;
-  --color-surface-container-low: #f5f5f2;
-  --color-amber: #9c5208;
-  --color-amber-light: #fdf5ea;
+  --color-on-primary-container: #c7d2df;
 
-  --radius-DEFAULT: 0.125rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.375rem;
-  --radius-full: 0.5rem;
+  --color-secondary: #1f6b43;
+  --color-secondary-dark: #155332;
+  --color-secondary-light: #edf5f0;
+  --color-secondary-container: #dcebe1;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #155332;
+
+  --color-parchment: #f5f4ef;
+  --color-background: #fbfbf8;
+  --color-surface: #fbfbf8;
+  --color-surface-bright: #fbfbf8;
+  --color-surface-dim: #dadad5;
+  --color-surface-variant: #f1f1ec;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f7f7f3;
+  --color-surface-container: #eeeeea;
+  --color-surface-container-high: #e7e7e2;
+  --color-surface-container-highest: #dfdfda;
+
+  --color-on-surface: #18201f;
+  --color-on-surface-variant: #44515f;
+  --color-on-background: #18201f;
+  --color-muted: #465264;
+  --color-inverse-surface: #2f3130;
+  --color-inverse-on-surface: #f1f1ef;
+
+  --color-border: #c9cec5;
+  --color-border-strong: #7a8796;
+  --color-outline: #737a82;
+  --color-outline-variant: #d8dcd5;
+
+  --color-error: #b3261e;
+  --color-on-error: #ffffff;
+  --color-error-container: #fbe9e7;
+  --color-on-error-container: #8c1d18;
+
+  /* Square everywhere. No decorative rounding. */
+  --radius-sm: 0px;
+  --radius-DEFAULT: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
 
   --font-serif: "Noto Serif", serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
@@ -86,19 +89,70 @@
   --text-headline-sm--line-height: 24px;
 }
 
+/* ---------- GLOBAL SHAPE ---------- */
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #f6f6f4;
+  background-color: #f5f4ef;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #1a1c1b;
+  color: #18201f;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+::selection {
+  background: #1f6b43;
+  color: #ffffff;
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid #1f6b43;
+  outline-offset: 2px;
+}
+
+/* ---------- ILLOS.DEV ILLUSTRATIONS ---------- */
+
+.illos {
+  line-height: 0;
+  width: 100%;
+}
+
+.illos svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.illos-hud {
+  --illos-ground: #f5f4ef;
+  --illos-ink: #132238;
+  --illos-line: #7a8796;
+  --illos-faint: #d8dcd5;
+  --illos-accent: #1f6b43;
+  --illos-accent-dim: #adc9b8;
+}
+
+.illos-iso {
+  --illos-ground: #f5f4ef;
+  --illos-ink: #132238;
+  --illos-accent: #1f6b43;
+  --illos-dark: 0;
+}
+
 /* ---------- DARK MODE OVERRIDES ---------- */
-/* Brand-colored blocks (bg-primary, bg-secondary, text-on-primary, etc.) are left
-   unchanged intentionally — only neutral surface/text/border utilities flip. */
+/* Brand-coloured blocks stay intact; neutral surfaces and text flip. */
 
 .dark body {
-  background-color: #0d1420;
+  background-color: #0b111a;
   color: #e6ebf3;
 }
 
@@ -107,8 +161,9 @@ body {
 .dark .bg-surface-container-low,
 .dark .bg-surface-container,
 .dark .bg-surface-container-high,
-.dark .bg-surface-container-highest {
-  background-color: #17202b;
+.dark .bg-surface-container-highest,
+.dark .bg-surface-variant {
+  background-color: #141d28;
 }
 
 .dark .bg-parchment,
@@ -116,7 +171,7 @@ body {
 .dark .bg-background,
 .dark .bg-surface-bright,
 .dark .bg-surface-dim {
-  background-color: #0d1420;
+  background-color: #0b111a;
 }
 
 .dark .text-primary,
@@ -137,8 +192,46 @@ body {
   border-color: #2a3547;
 }
 
-.dark .bg-secondary-light {
+.dark .bg-secondary-light,
+.dark .bg-secondary-container {
   background-color: #123626;
+}
+
+.dark .text-secondary,
+.dark .text-on-secondary-container {
+  color: #79b996;
+}
+
+.dark .border-secondary {
+  border-color: #4f8c68;
+}
+
+.dark .bg-red-50 {
+  background-color: #2a1414;
+}
+
+.dark .border-red-200 {
+  border-color: #5b2525;
+}
+
+.dark .text-red-700 {
+  color: #f0a8a2;
+}
+
+.dark .illos-hud {
+  --illos-ground: #0b111a;
+  --illos-ink: #dbe5f0;
+  --illos-line: #7d8ca0;
+  --illos-faint: #26354a;
+  --illos-accent: #6fb08a;
+  --illos-accent-dim: #275741;
+}
+
+.dark .illos-iso {
+  --illos-ground: #0b111a;
+  --illos-ink: #dbe5f0;
+  --illos-accent: #6fb08a;
+  --illos-dark: 1;
 }
 
 .dark input,
@@ -160,6 +253,10 @@ body {
   footer,
   nav,
   button {
+    display: none !important;
+  }
+
+  .illos {
     display: none !important;
   }
 

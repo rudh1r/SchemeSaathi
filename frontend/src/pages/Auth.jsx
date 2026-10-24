@@ -55,7 +55,7 @@ export default function Auth() {
               <button
                 type="button"
                 onClick={() => navigate('/history')}
-                className="flex-1 py-2.5 px-4 bg-secondary hover:bg-[#155332] text-white font-semibold text-sm rounded-lg transition-all"
+                className="flex-1 py-2.5 px-4 bg-secondary hover:bg-secondary-dark text-white font-semibold text-sm transition-all"
               >
                 Go to My Activity
               </button>
@@ -182,7 +182,7 @@ export default function Auth() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-5 bg-secondary hover:bg-[#155332] text-white font-semibold text-sm rounded-lg shadow-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full py-3 px-5 bg-secondary hover:bg-secondary-dark text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {loading ? 'Please wait…' : mode === 'signin' ? 'Sign In' : 'Create Account'}
                 {!loading && <ArrowRight size={16} />}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ThumbsUp, ThumbsDown, PencilLine, AlertCircle, RotateCcw, ExternalLink } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import Markdown from '../components/Markdown';
+import Illos from '../components/Illos';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { api, ApiError, getSessionId, newSessionId } from '../lib/api';
@@ -56,8 +57,8 @@ function SchemeCard({ scheme, assessment }) {
             ))}
             {assessment.unresolved.slice(0, 2).map((c, i) => (
               <div key={`u${i}`} className="flex items-start gap-1.5">
-                <span className="text-amber-700 shrink-0">?</span>
-                <span className="text-amber-700">{c.label}</span>
+                <span className="text-primary shrink-0">?</span>
+                <span className="text-primary">{c.label}</span>
               </div>
             ))}
             {assessment.satisfied.length === 0 && assessment.violated.length === 0 && assessment.unresolved.length === 0 && (
@@ -272,12 +273,20 @@ export default function Chat() {
 
       <div className="flex-1 flex flex-col pt-24 h-screen">
         <main className="flex-1 overflow-y-auto px-6 py-5 max-w-5xl w-full mx-auto">
-          <div className="w-full bg-secondary-light border-l-4 border-secondary border-y border-r border-border px-4 py-2.5 rounded-sm mb-4 flex flex-wrap items-center gap-2.5 text-[13px] text-primary font-medium">
-            <span className="text-secondary">✓</span>
-            {t('chat_banner')}
+          <div className="w-full grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-5 items-center border-b border-border pb-4 mb-5">
+            <div>
+              <h1 className="font-serif text-xl font-bold text-primary">{t('nav_chat')}</h1>
+              <p className="mt-1.5 flex items-start gap-2 text-[13px] text-primary font-medium leading-relaxed">
+                <span className="mt-0.5 text-secondary">✓</span>
+                <span>{t('chat_banner')}</span>
+              </p>
+            </div>
+            <div className="hidden lg:block w-full border-y border-border py-1.5">
+              <Illos kind="search" />
+            </div>
           </div>
 
-          <div className="w-full bg-white border border-border rounded-sm px-4 py-2 mb-6 flex flex-wrap items-center justify-between gap-2 text-[12px]">
+          <div className="w-full border-y border-border py-2 mb-5 flex flex-wrap items-center justify-between gap-2 text-[12px]">
             <span className="text-muted">
               {profileLine ? (
                 <>Saved profile: <strong className="text-primary">{profileLine}</strong> — details in your message take precedence.</>
@@ -331,10 +340,10 @@ export default function Chat() {
 
         <div className="border-t border-border bg-white p-3.5 shrink-0">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-2">
+            <div className="flex flex-wrap items-center gap-2 pb-2 mb-2">
               <span className="text-[11px] font-bold text-muted uppercase shrink-0">{t('chat_try_label')}</span>
               {SUGGESTED_PROMPTS.map((prompt) => (
-                <button key={prompt} onClick={() => sendQuery(prompt)} className="shrink-0 bg-parchment hover:bg-border text-primary text-[12px] px-2.5 py-1 rounded-sm border border-border transition-colors">{prompt}</button>
+                <button key={prompt} onClick={() => sendQuery(prompt)} className="bg-parchment hover:bg-border text-primary text-[12px] px-2.5 py-1 rounded-sm border border-border transition-colors text-left leading-snug max-w-full">{prompt}</button>
               ))}
             </div>
             <div className="relative flex items-center bg-parchment border border-border-strong rounded-sm px-3 py-1.5 focus-within:border-primary focus-within:border-2 transition-all">

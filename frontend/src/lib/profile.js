@@ -85,7 +85,7 @@ export const STATUS_STYLES = {
   },
   'Insufficient Information': {
     label: 'Needs info',
-    className: 'bg-amber-50 text-amber-700 border-amber-200',
+    className: 'bg-surface-container-low text-primary border-border',
   },
   Ineligible: {
     label: 'Not eligible',

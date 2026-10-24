@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { ShieldCheck, ExternalLink, Bookmark, BookmarkCheck, ChevronDown, AlertTriangle, CircleHelp, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import Illos from '../components/Illos';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../lib/api';
@@ -13,7 +14,7 @@ const SOCIAL_CATEGORIES = ['General', 'OBC', 'SC', 'ST', 'EWS'];
 
 const TABS = [
   { key: 'Eligible', label: 'Likely eligible', icon: CheckCircle2, tone: 'text-secondary' },
-  { key: 'Insufficient Information', label: 'Need more info', icon: CircleHelp, tone: 'text-amber-600' },
+  { key: 'Insufficient Information', label: 'Need more info', icon: CircleHelp, tone: 'text-primary' },
   { key: 'Ineligible', label: 'Not eligible', icon: XCircle, tone: 'text-red-600' },
 ];
 
@@ -70,7 +71,7 @@ function AssessmentCard({ assessment, bookmarked, onToggleBookmark, canBookmark 
             </p>
           ))}
           {assessment.unresolved.map((item, i) => (
-            <p key={`u${i}`} className="flex items-start gap-1.5 text-amber-700">
+            <p key={`u${i}`} className="flex items-start gap-1.5 text-primary">
               <CircleHelp size={13} className="mt-0.5 shrink-0" />
               <span>{item.label}{item.question ? ` — ${item.question}` : ''}</span>
             </p>
@@ -237,15 +238,23 @@ export default function EligibilityForm() {
       <SiteHeader active="eligibility" />
 
       <main className="pt-28 max-w-5xl mx-auto px-6 py-6">
-        <div className="mb-6">
-          <h1 className="font-serif text-2xl font-bold text-primary mb-1">{t('elig_title')}</h1>
-          <p className="text-sm text-muted max-w-2xl">
-            {t('elig_subtitle')}
-          </p>
-          <p className="text-[12px] text-muted max-w-2xl mt-2">
-            Your answers are checked against explicit scheme conditions. A condition that cannot be verified is reported as
-            <strong className="text-amber-700"> “Needs info”</strong> — never as eligible.
-          </p>
+        <div className="mb-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 items-end border-b border-border pb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 border-l-2 border-secondary pl-3 mb-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-secondary">{t('nav_eligibility')}</span>
+            </div>
+            <h1 className="font-serif text-2xl font-bold text-primary mb-1">{t('elig_title')}</h1>
+            <p className="text-sm text-muted max-w-2xl">
+              {t('elig_subtitle')}
+            </p>
+            <p className="text-[12px] text-muted max-w-2xl mt-2">
+              Your answers are checked against explicit scheme conditions. A condition that cannot be verified is reported as
+              <strong className="text-primary"> “Needs info”</strong> — never as eligible.
+            </p>
+          </div>
+          <div className="hidden lg:block w-full border-y border-border py-2">
+            <Illos kind="analytics" />
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white border border-border rounded p-6 flex flex-col gap-6 mb-6">
@@ -296,7 +305,7 @@ export default function EligibilityForm() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 p-4 bg-parchment border border-border rounded">
+          <div className="flex flex-col gap-2 border-y border-border py-4">
             <div className="flex items-center justify-between">
               <label className="text-sm font-semibold text-primary">{t('elig_income_label')}</label>
               <span className="font-serif text-lg font-bold text-primary">₹{Number(form.income || 0).toLocaleString('en-IN')}</span>
@@ -343,7 +352,7 @@ export default function EligibilityForm() {
           </div>
 
           <div className="mt-2 flex flex-col sm:flex-row gap-2">
-            <button type="submit" disabled={loading} className="inline-flex flex-1 items-center justify-center gap-2 bg-secondary hover:bg-[#155332] text-white font-semibold text-sm py-3 rounded transition-colors disabled:opacity-50">
+            <button type="submit" disabled={loading} className="inline-flex flex-1 items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-white font-semibold text-sm py-3 transition-colors disabled:opacity-50">
               {loading ? <Loader2 size={18} className="animate-spin" /> : <ShieldCheck size={18} />}
               {loading ? t('elig_submit_loading') : t('elig_submit_btn')}
             </button>
@@ -381,9 +390,9 @@ export default function EligibilityForm() {
             </div>
 
             {missing.length > 0 && (
-              <div className="bg-amber-50 border border-amber-200 rounded p-4">
-                <p className="text-[12px] font-bold text-amber-800 uppercase mb-1.5">Answer these to unlock more results</p>
-                <ul className="text-[12px] text-amber-800 space-y-1 list-disc pl-4">
+              <div className="border-y border-border bg-surface-container-low px-4 py-3">
+                <p className="text-[12px] font-bold text-primary uppercase mb-1.5">Answer these to unlock more results</p>
+                <ul className="text-[12px] text-primary space-y-1 list-disc pl-4">
                   {missing.slice(0, 5).map((item) => <li key={item.attr}>{item.question}</li>)}
                 </ul>
               </div>
